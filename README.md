@@ -1,2 +1,5 @@
-# talynd-website
-Talynd — officiële website (talynd.com). Hands-on AI consulting voor de vastgoedsector.
+# Talynd Website
+
+Officiele website van Talynd — hands-on AI consulting.
+
+**In ontwikkeling.** Wordt gehost op talynd.com
