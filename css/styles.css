@@ -1,0 +1,77 @@
+/* ============================================
+   TALYND — Global Stylesheet
+   ============================================ */
+
+/* --- Variables --- */
+:root {
+  /* Colors */
+  --color-bg-dark:       #080D1A;
+  --color-bg-dark-card:  #131D33;
+  --color-bg-section:    #0D1526;
+  --color-bg-light:      #F9F9F7;
+  --color-text-light:    #FFFFFF;
+  --color-text-dark:     #0D1526;
+  --color-text-muted:    rgba(255, 255, 255, 0.55);
+  --color-accent:        #E87B3A;
+  --color-accent-blue:   #3A7BE8;
+  --color-border:        rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --font-main: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Syne", "Inter", sans-serif;
+
+  /* Spacing */
+  --section-padding-y:   80px;
+  --section-padding-x:   24px;
+  --max-width:           1200px;
+
+  /* Radius */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   24px;
+  --radius-pill: 999px;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-main); background: var(--color-bg-dark); color: var(--color-text-light); line-height: 1.7; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* --- Container --- */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--section-padding-x); }
+
+/* --- Sections --- */
+.section { padding: var(--section-padding-y) 0; }
+.section--light { background: var(--color-bg-light); color: var(--color-text-dark); }
+.section--dark { background: var(--color-bg-section); }
+
+/* --- Typography --- */
+.headline-xl { font-family: var(--font-display); font-size: clamp(40px, 6vw, 80px); font-weight: 800; line-height: 1.1; }
+.headline-lg { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 700; line-height: 1.2; }
+.headline-md { font-family: var(--font-display); font-size: clamp(20px, 2.5vw, 32px); font-weight: 700; }
+.body-lg { font-size: 18px; line-height: 1.7; }
+.body-md { font-size: 16px; line-height: 1.7; }
+.label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* --- Buttons --- */
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-pill); font-weight: 600; font-size: 15px; transition: opacity 0.2s, transform 0.2s; cursor: pointer; border: none; }
+.btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn--primary { background: var(--color-accent); color: #fff; }
+.btn--ghost { background: transparent; border: 1px solid var(--color-border); color: var(--color-text-light); }
+
+/* --- Nav --- */
+.nav { position: sticky; top: 0; z-index: 100; padding: 20px 0; transition: background 0.3s; }
+.nav.scrolled { background: rgba(8, 13, 26, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; }
+.nav__logo { font-family: var(--font-display); font-weight: 800; font-size: 20px; }
+.nav__links { display: flex; gap: 32px; list-style: none; }
+.nav__links a { font-size: 14px; font-weight: 500; opacity: 0.8; transition: opacity 0.2s; }
+.nav__links a:hover { opacity: 1; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  :root { --section-padding-y: 48px; --section-padding-x: 16px; }
+  .nav__links { display: none; }
+}
