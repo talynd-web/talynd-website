@@ -471,6 +471,7 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
   .hero__topgrid, .hero__row { grid-template-columns: 1fr; justify-items: start; text-align: left; gap: 18px; }
   .hero__topgrid { align-items: start; padding-bottom: 24px; }
   .hero__row { gap: 24px; padding-top: 24px; }
+  .hero__row::before { left: -8px; right: -8px; }
   .hero__kicker { font-size: 19px; }
   .hero__kicker br { display: none; }
   .hero__title { font-size: clamp(32px, 8.6vw, 46px); }
