@@ -28,42 +28,14 @@
     .how__intro h2 { font-weight: 400; }
     .how__intro h2 em { font-style: normal; font-weight: 400; color: inherit; }
 
-    /* ---- HOW IT WORKS (Cambio-style) ---- */
+    /* ---- HOW IT WORKS ---- */
     .how__rotate { color: #a6aeb9; }
     .how__rotate__word { display: inline-block; animation: howWordIn 0.5s ease; }
     @keyframes howWordIn { from { opacity: 0; transform: translateY(0.18em); } to { opacity: 1; transform: none; } }
-    .how .tab { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 21px 0; border-top: 1px solid var(--gray-2); cursor: pointer; transition: none; }
-    .how .tab:not(.active):hover .tab__label { color: var(--gray-6); }
-    .how .tab__main { display: flex; flex-direction: column; min-width: 0; }
-    .how .tab__num { order: 2; flex-shrink: 0; font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--gray-6); letter-spacing: 0.02em; font-variant-numeric: tabular-nums; margin: 0; }
-    .how .tab__label { font-family: var(--font-body); font-size: 15px; font-weight: 400; color: var(--black); letter-spacing: -0.005em; margin: 0; transition: color 0.2s ease; }
-    .how .tab__body { font-size: 14.5px; color: var(--gray-5); line-height: 1.55; max-height: 0; overflow: hidden; opacity: 0; margin: 0; transition: max-height 0.35s ease, opacity 0.3s ease, margin 0.3s ease; }
-    .how .tab.active .tab__body { max-height: 170px; opacity: 1; margin-top: 9px; }
-    .how__pane { position: absolute; inset: 0; }
-    .how__pane img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    /* Desktop only */
-    @media (min-width: 1001px) {
-      .how { display: grid; grid-template-columns: 1fr 1.1fr; grid-template-rows: auto 1fr; grid-template-areas: "header panel" "tabs panel"; gap: 0 64px; }
-      .how__header { grid-area: header; align-self: end; padding-bottom: 28px; }
-      .how__tabs   { grid-area: tabs; align-self: start; }
-      .how__panel  { grid-area: panel; position: relative; aspect-ratio: 1 / 1.1; overflow: hidden; border-radius: var(--radius-card); box-shadow: 0 24px 60px -28px rgba(4,14,31,0.32); }
-      .how .eyebrow { white-space: nowrap; }
-      .how__title { font-weight: 400; max-width: 9ch; }
-      .how__cta { margin: 16px 0 0; }
-      .how .tabs { margin-top: 34px; }
-    }
-
-    /* Mobiel: header → afbeelding → tabs */
-    @media (max-width: 1000px) {
-      .how { display: flex; flex-direction: column; gap: 20px; }
-      .how__header { width: 100%; }
-      .how__title { font-weight: 400; }
-      .how__cta { margin: 12px 0 0; }
-      .how .tabs { margin-top: 4px; }
-      .how__panel { width: 100%; aspect-ratio: 4 / 3; position: relative; overflow: hidden; border-radius: var(--radius-card); box-shadow: 0 24px 60px -28px rgba(4,14,31,0.32); }
-      .how__panel .placeholder { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
-    }
+    .how__intro h2 { font-weight: 400; }
+    .how__title { font-weight: 400; }
+    .how__cta { margin: 16px 0 2px; }
+    .how .tabs { margin-top: 34px; }
 
     /* ---- TESTIMONIALS (overgenomen van diensten) ---- */
     .dquote-sec { background: var(--white); padding: var(--section-y) 0; }
@@ -221,13 +193,11 @@
   <section class="section" style="padding-bottom: clamp(36px, 4vw, 48px);">
     <div class="container">
       <div class="how dproc">
-        <div class="how__header fade-in-up">
+        <div class="how__intro fade-in-up">
           <span class="eyebrow">Hoe het werkt</span>
           <h2 class="how__title">Intelligentie die je helpt <span class="how__rotate"><span class="how__rotate__word" id="howRotator">schalen</span></span></h2>
           <p class="lead">Van losse Excel-bestanden naar één AI-gedreven systeem.</p>
           <a href="diensten.html" class="btn btn--primary how__cta">Ontdek onze aanpak</a>
-        </div>
-        <div class="how__tabs fade-in-up" data-delay="2">
           <div class="tabs" id="tabs">
             <div class="tab active" data-tab="0">
               <div class="tab__main">
@@ -259,7 +229,7 @@
             </div>
           </div>
         </div>
-        <div class="how__panel fade-in-up" data-delay="3">
+        <div class="how__panel fade-in-up" data-delay="1">
           <div class="how__pane" data-pane="0"><img src="assets/how-intake-locatie.jpg" alt="Intake op locatie" /></div>
           <div class="how__pane" data-pane="1" style="display:none"><img src="assets/how-analyse-plan.jpg" alt="Analyse en plan" /></div>
           <div class="how__pane" data-pane="2" style="display:none"><img src="assets/how-bouwen.jpg" alt="Bouwen en implementeren" /></div>
