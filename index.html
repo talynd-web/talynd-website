@@ -40,7 +40,7 @@
     .how .tab__body { font-size: 14.5px; color: var(--gray-5); line-height: 1.55; max-height: 0; overflow: hidden; opacity: 0; margin: 0; transition: max-height 0.35s ease, opacity 0.3s ease, margin 0.3s ease; }
     .how .tab.active .tab__body { max-height: 170px; opacity: 1; margin-top: 9px; }
     .how__pane { position: absolute; inset: 0; }
-    .how__pane-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .how__pane img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     /* Desktop only */
     @media (min-width: 1001px) {
@@ -245,18 +245,10 @@
           </div>
         </div>
         <div class="how__panel fade-in-up" data-delay="3">
-          <div class="how__pane" data-pane="0">
-            <img src="assets/how-intake-locatie.jpg" alt="Intake op locatie" class="how__pane-img" />
-          </div>
-          <div class="how__pane" data-pane="1" style="display:none">
-            <img src="assets/how-analyse-plan.jpg" alt="Analyse en plan" class="how__pane-img" />
-          </div>
-          <div class="how__pane" data-pane="2" style="display:none">
-            <img src="assets/how-bouwen.jpg" alt="Bouwen en implementeren" class="how__pane-img" />
-          </div>
-          <div class="how__pane" data-pane="3" style="display:none">
-            <img src="assets/how-overdracht.jpg" alt="Overdracht" class="how__pane-img" style="object-position: center 55%;" />
-          </div>
+          <div class="how__pane" data-pane="0"><img src="assets/how-intake-locatie.jpg" alt="Intake op locatie" /></div>
+          <div class="how__pane" data-pane="1" style="display:none"><img src="assets/how-analyse-plan.jpg" alt="Analyse en plan" /></div>
+          <div class="how__pane" data-pane="2" style="display:none"><img src="assets/how-bouwen.jpg" alt="Bouwen en implementeren" /></div>
+          <div class="how__pane" data-pane="3" style="display:none"><img src="assets/how-overdracht.jpg" alt="Overdracht" /></div>
         </div>
       </div>
     </div>
