@@ -158,16 +158,14 @@
       .dhero-media { aspect-ratio: 4 / 3; }
       .dfeat { grid-template-columns: 1fr; gap: 28px; margin-bottom: 56px; }
       .dfeat.reverse .dfeat__visual { order: 0; }
-      /* Solutions: horizontal swipe carousel to keep height low */
-      .dsol__grid { display: flex; grid-template-columns: none; gap: 14px; overflow-x: auto;
-        scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;
-        margin: 0 calc(-1 * var(--pad-x)); padding: 0 var(--pad-x) 16px; }
-      .dsol__grid::-webkit-scrollbar { display: none; }
-      .dsol-card { flex: 0 0 72%; scroll-snap-align: start; }
-      .dsol-card__hover { font-size: 12.5px; padding: 14px 14px 12px; }
+      /* Solutions: 2-kolommen grid op mobiel */
+      .dsol__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; overflow-x: visible; margin: 0; padding: 0; scroll-snap-type: none; }
+      .dsol-card { flex: none; scroll-snap-align: none; }
       .dsol-card__img { aspect-ratio: 4/5; }
-      .dsol-card__label { font-size: 18px; }
-      .dsol__head .dsol__hint { display: flex; }
+      .dsol-card__hover { font-size: 12.5px; padding: 14px 14px 12px; }
+      .dsol-card__label { font-size: 15px; }
+      .dsol-card__foot { padding: 10px 2px 0; }
+      .dsol__head .dsol__hint { display: none; }
       .dquote__grid { grid-template-columns: 1fr; }
       .dpromise__grid { grid-template-columns: 1fr; }
       .dquote-card, .dpromise-card { padding: 32px; }
