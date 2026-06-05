@@ -443,8 +443,6 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 @media (max-width: 1000px) {
   :root { --section-y: 64px; }
   .how { grid-template-columns: 1fr; gap: 24px; }
-  .how__panel { order: -1; aspect-ratio: 16 / 9; align-self: stretch; }
-  .how__pane-img { object-position: center 30%; }
   .panel { padding: 56px 40px; }
   .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 40px; }
   .posit { grid-template-columns: 1fr; gap: 32px; }
@@ -467,11 +465,11 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
   .navbar__mobile a:hover { background: var(--gray-1); color: var(--black); }
   .hero__content { padding-top: 118px; }
   .hero { margin: calc(-1 * (34px + 14px)) 0 0; border-radius: 0; min-height: auto; }
-  .hero__inner { padding: 108px 0 64px; gap: 0; }
+  .hero__inner { padding: 108px var(--pad-x) 64px; gap: 0; }
   .hero__topgrid, .hero__row { grid-template-columns: 1fr; justify-items: start; text-align: left; gap: 18px; }
   .hero__topgrid { align-items: start; padding-bottom: 24px; }
   .hero__row { gap: 24px; padding-top: 24px; }
-  .hero__row::before { left: -8px; right: -8px; }
+  .hero__row::before { left: 4px; right: 4px; }
   .hero__kicker { font-size: 19px; }
   .hero__kicker br { display: none; }
   .hero__title { font-size: clamp(32px, 8.6vw, 46px); }
