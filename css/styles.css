@@ -442,7 +442,9 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 /* === RESPONSIVE === */
 @media (max-width: 1000px) {
   :root { --section-y: 64px; }
-  .how { grid-template-columns: 1fr; gap: 40px; }
+  .how { grid-template-columns: 1fr; gap: 24px; }
+  .how__panel { order: -1; aspect-ratio: 16 / 9; align-self: stretch; }
+  .how__pane-img { object-position: center 30%; }
   .panel { padding: 56px 40px; }
   .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 40px; }
   .posit { grid-template-columns: 1fr; gap: 32px; }
@@ -486,6 +488,8 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
   .cards-grid { grid-template-columns: 1fr; }
   .tiers { grid-template-columns: 1fr; }
   .stats__grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .how { gap: 16px; }
+  .how__panel { aspect-ratio: 16 / 9; }
   .tmnl-card { padding: 36px 26px; }
   .cta { padding: 56px 26px; }
   .svc-block { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
