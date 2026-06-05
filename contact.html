@@ -3,13 +3,328 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Talynd</title>
+  <title>Contact | Talynd</title>
+  <meta name="description" content="Neem contact op met Talynd. Plan een gratis intake of stuur ons een bericht. Hands-on AI consultancy uit Amsterdam. Wij bouwen het systeem, jij houdt de controle.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ============================================================
+       CONTACT — Talynd (cambio careers: white hero + one photo)
+       ============================================================ */
+    .cpage { background: var(--white); }
+
+    /* ---- HERO (white, centered — cambio careers style) ---- */
+    .chero-wrap { max-width: var(--container); margin: 0 auto; padding: calc(34px + 14px + 26px) var(--pad-x) 0; }
+    .chero { position: relative; text-align: center; }
+    .chero__inner { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; }
+    .chero .eyebrow { color: var(--black); justify-content: center; margin-bottom: 24px; }
+    .chero__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.05; letter-spacing: -0.02em; color: var(--black); margin: 0 auto 20px; max-width: 720px; }
+    .chero__sub { font-size: 18px; line-height: 1.6; color: #43566b; max-width: 640px; margin: 0 auto; }
+
+    /* Single photo card below hero (same pattern as other hero pages) */
+    .chero-media { position: relative; width: 100%; margin-top: clamp(40px, 5vw, 64px); border-radius: var(--radius-section);
+      overflow: hidden; aspect-ratio: 5 / 2.1; background: linear-gradient(150deg, #0d2b2b, #14524a);
+      border: 1px dashed rgba(255,255,255,0.18); display: grid; place-items: center; min-height: 0; }
+    .chero-media .ph-label { color: rgba(255,255,255,0.7); font-size: 13px; font-style: italic; padding: 24px; text-align: center; max-width: 440px; }
+
+    /* ---- CONTACT SECTION (split: info + form) ---- */
+    .contact-sec { padding: clamp(64px, 7vw, 104px) 0 clamp(44px, 4.6vw, 64px); }
+    .contact-grid { display: grid; grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
+
+    /* left — direct contact */
+    .cinfo__eyebrow { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dark-teal); margin-bottom: 16px; }
+    .cinfo__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 3.4vw, 42px); line-height: 1.08; letter-spacing: -0.02em; color: var(--black); margin-bottom: 16px; }
+    .cinfo__lead { font-size: 16px; line-height: 1.65; color: var(--gray-5); max-width: 400px; margin-bottom: 36px; }
+
+    .cmethods { display: flex; flex-direction: column; border-top: 1px solid var(--gray-2); margin-bottom: 0; }
+    .cmethod { position: relative; display: flex; flex-direction: column; gap: 7px; padding: 26px 48px 26px 0; border-bottom: 1px solid var(--gray-2); transition: padding 0.28s cubic-bezier(0.22,1,0.36,1); }
+    a.cmethod:hover { padding-left: 6px; }
+    .cmethod__label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dark-teal); }
+    .cmethod__value { font-family: var(--font-body); font-weight: 400; font-size: clamp(19px, 1.7vw, 22px); line-height: 1.2; letter-spacing: -0.005em; color: var(--black); transition: color 0.2s ease; }
+    a.cmethod:hover .cmethod__value { color: var(--dark-teal); }
+    .cmethod__arrow { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); color: var(--gray-3); transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), color 0.2s ease; }
+    .cmethod__arrow svg { width: 20px; height: 20px; display: block; }
+    a.cmethod:hover .cmethod__arrow { color: var(--dark-teal); transform: translateY(-50%) translateX(4px); }
+
+    .cexpect { border-top: 1px solid var(--gray-2); padding-top: 26px; }
+    .cexpect__title { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark-teal); margin-bottom: 16px; }
+    .cexpect__list { display: flex; flex-direction: column; gap: 12px; }
+    .cexpect__item { position: relative; padding-left: 28px; font-size: 15px; line-height: 1.55; color: var(--gray-6); }
+    .cexpect__item svg { position: absolute; left: 0; top: 2px; width: 17px; height: 17px; color: var(--dark-teal); }
+
+    /* right — form card */
+    .cform-card { background: var(--gray-0); border: 1px solid var(--gray-2); border-radius: var(--radius-section); padding: clamp(28px, 3vw, 44px); }
+    .cform-card__head { margin-bottom: 26px; }
+    .cform-card__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.12; letter-spacing: -0.015em; color: var(--black); margin-bottom: 8px; }
+    .cform-card__sub { font-size: 14.5px; line-height: 1.55; color: var(--gray-5); }
+    .cform { display: flex; flex-direction: column; gap: 18px; }
+    .cform__row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .cfield { display: flex; flex-direction: column; gap: 8px; }
+    .cfield label { font-size: 13px; font-weight: 600; color: var(--gray-6); letter-spacing: 0.01em; }
+    .cfield input, .cfield select, .cfield textarea {
+      font-family: var(--font-body); font-size: 15px; color: var(--black);
+      background: var(--white); border: 1px solid var(--gray-2); border-radius: 11px;
+      padding: 13px 15px; width: 100%; transition: border-color 0.18s ease, box-shadow 0.18s ease; }
+    .cfield textarea { resize: vertical; min-height: 124px; line-height: 1.55; }
+    .cfield select { appearance: none; -webkit-appearance: none; cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236b7688' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 15px center; padding-right: 40px; }
+    .cfield input::placeholder, .cfield textarea::placeholder { color: var(--gray-4); }
+    .cfield input:focus, .cfield select:focus, .cfield textarea:focus { outline: none; border-color: var(--dark-teal); box-shadow: 0 0 0 3px rgba(0,132,125,0.12); }
+    .cform__foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 4px; }
+    .cform__note { font-size: 12.5px; color: var(--gray-4); max-width: 260px; line-height: 1.5; }
+    .cform__submit { background: var(--black); color: #fff; border: none; cursor: pointer; font-family: var(--font-body); font-weight: 500; font-size: 15px; padding: 13px 26px; border-radius: 34px; display: inline-flex; align-items: center; gap: 9px; transition: background 0.2s ease, transform 0.15s ease; }
+    .cform__submit:hover { background: #15233d; transform: translateY(-1px); }
+    .cform__submit svg { width: 16px; height: 16px; }
+
+    /* success state */
+    .cform-success { display: none; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 36px 12px; }
+    .cform-success.show { display: flex; }
+    .cform-success__ico { width: 56px; height: 56px; border-radius: 50%; background: var(--pale-teal); color: var(--dark-teal); display: grid; place-items: center; }
+    .cform-success__ico svg { width: 28px; height: 28px; }
+    .cform-success h3 { font-family: var(--font-display); font-weight: 400; font-size: 26px; color: var(--black); letter-spacing: -0.01em; }
+    .cform-success p { font-size: 15px; color: var(--gray-5); line-height: 1.6; max-width: 360px; }
+
+    /* ---- VALUES (identical to Over ons — "Waar we voor staan") ---- */
+    .vals__head { text-align: center; max-width: 640px; margin: 0 auto 44px; }
+    .vals__head .eyebrow { color: var(--gray-6); justify-content: center; margin-bottom: 16px; }
+    .vals__head .eyebrow::before { display: none; }
+    .vals__head h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 5vw, 68px); color: var(--black); letter-spacing: -0.02em; line-height: 1; }
+    .vals__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .val-item { position: relative; overflow: hidden; border-radius: var(--radius-card); padding: 34px; min-height: 300px; display: flex; flex-direction: column; justify-content: flex-start; color: #fff; }
+    .val-item__body { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 10px; max-width: 460px; }
+    .val-item h3 { font-family: var(--font-body); font-weight: 500; font-size: 21px; line-height: 1.2; color: #fff; letter-spacing: -0.005em; }
+    .val-item p { font-size: 14.5px; line-height: 1.55; color: rgba(255,255,255,0.86); }
+    .val-item--video { background: #0a1f1f; }
+    .val-item--video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .val-item--video::after { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, rgba(4,14,31,0.15), rgba(4,14,31,0.72)); }
+    .val-item--teal { background: var(--dark-teal); }
+    .val-item--wide { grid-column: 1 / -1; min-height: 340px; background: #0d2b2b; border: none; }
+    .val-item--wide::after { content: ""; position: absolute; inset: 0; z-index: 0; background: rgba(4,14,31,0.18); }
+    .val-item__ph { position: absolute; z-index: 1; right: 24px; bottom: 20px; font-size: 12px; font-style: italic; color: rgba(255,255,255,0.6); text-align: right; max-width: 320px; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 1000px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+      .cinfo__lead { max-width: none; }
+    }
+    @media (max-width: 760px) {
+      .chero-wrap { padding-top: calc(34px + 14px + 18px); }
+      .chero-media { aspect-ratio: 4 / 3; }
+      .cform__row { grid-template-columns: 1fr; gap: 18px; }
+      .vals__grid { grid-template-columns: 1fr; }
+      .val-item--wide { grid-column: auto; }
+    }
+  </style>
 </head>
-<body>
-  <!-- PAGE: Contact -->
-  <!-- SECTIONS: nav | header (Gratis intakegesprek) | wat te verwachten (3 bullets) | formulier of Calendly-embed | directe contactinfo | footer -->
-  <!-- EMAIL: talyndcontact@gmail.com -->
+<body class="cpage">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar--boxed" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><img src="assets/logos/talynd-white.png" alt="Talynd" /></a>
+      <div class="navbar__nav">
+        <a href="diensten.html">Diensten</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div class="navbar__spacer"></div>
+      <a href="contact.html" class="navbar__cta-btn">Gratis intake</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="navbar__mobile" id="navMobile">
+        <a href="diensten.html">Diensten</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO (white) ============ -->
+  <div class="chero-wrap">
+    <header class="chero">
+      <div class="chero__inner">
+        <span class="eyebrow fade-in-up">Contact</span>
+        <h1 class="chero__title fade-in-up" data-delay="1">Laten we kennismaken</h1>
+        <p class="chero__sub fade-in-up" data-delay="2">Plan een gratis intake of stuur ons een bericht. Geen verkooppraat, gewoon een eerlijk gesprek over wat we voor je kunnen bouwen.</p>
+      </div>
+    </header>
+  </div>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact-sec">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- FORM -->
+        <div class="cform-card fade-in-up" data-delay="1">
+          <form class="cform" id="contactForm" novalidate>
+            <div class="cform-card__head">
+              <h2 class="cform-card__title">Plan een gratis intake</h2>
+              <p class="cform-card__sub">Vertel kort waar je tegenaan loopt. We nemen snel contact met je op.</p>
+            </div>
+            <div class="cform__row">
+              <div class="cfield">
+                <label for="cf-name">Naam</label>
+                <input type="text" id="cf-name" name="name" placeholder="Voor- en achternaam" required />
+              </div>
+              <div class="cfield">
+                <label for="cf-company">Bedrijf</label>
+                <input type="text" id="cf-company" name="company" placeholder="Bedrijfsnaam" />
+              </div>
+            </div>
+            <div class="cform__row">
+              <div class="cfield">
+                <label for="cf-email">E-mail</label>
+                <input type="email" id="cf-email" name="email" placeholder="naam@bedrijf.nl" required />
+              </div>
+              <div class="cfield">
+                <label for="cf-phone">Telefoon</label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="06 12 34 56 78" />
+              </div>
+            </div>
+            <div class="cfield">
+              <label for="cf-subject">Waar kunnen we mee helpen?</label>
+              <select id="cf-subject" name="subject">
+                <option value="">Kies een onderwerp…</option>
+                <option>Gratis intake plannen</option>
+                <option>Mailautomatisering &amp; nurture</option>
+                <option>Systeem- &amp; procesautomatisering</option>
+                <option>PipeDrive / CRM-integratie</option>
+                <option>Maatwerk of website</option>
+                <option>Iets anders</option>
+              </select>
+            </div>
+            <div class="cfield">
+              <label for="cf-message">Bericht</label>
+              <textarea id="cf-message" name="message" placeholder="Vertel kort over je proces en waar je tijd op verliest…" required></textarea>
+            </div>
+            <div class="cform__foot">
+              <p class="cform__note">Door te versturen ga je akkoord met ons <a href="privacybeleid.html" style="color:var(--dark-teal);">privacybeleid</a>.</p>
+              <button type="submit" class="cform__submit">
+                Verstuur bericht
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </form>
+          <div class="cform-success" id="contactSuccess">
+            <span class="cform-success__ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <h3>Bedankt, bericht ontvangen</h3>
+            <p>We hebben je bericht binnen. Een van de oprichters neemt zo snel mogelijk persoonlijk contact met je op.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALUES (identiek aan Over ons) ============ -->
+  <section class="section" style="padding-top: clamp(44px, 4.6vw, 64px);">
+    <div class="container">
+      <div class="vals__head fade-in-up">
+        <span class="eyebrow">Waar we voor staan</span>
+        <h2>De principes die ons werk sturen</h2>
+      </div>
+      <div class="vals__grid">
+        <div class="val-item val-item--video fade-in-up">
+          <video src="assets/hero-video.mp4" autoplay muted loop playsinline preload="auto"></video>
+          <div class="val-item__body">
+            <h3>We maken automatisering tastbaar</h3>
+            <p>Geen abstracte AI-praat. We laten zien wat een systeem concreet oplevert, in tijd, in leads en in rust, en bouwen het binnen weken in plaats van maanden.</p>
+          </div>
+        </div>
+        <div class="val-item val-item--teal fade-in-up" data-delay="1">
+          <div class="val-item__body">
+            <h3>We werken als verlengstuk van je team</h3>
+            <p>Tijdens een traject zitten we naast je, niet tegenover je. We denken mee over het proces en passen aan wat in de praktijk beter werkt.</p>
+          </div>
+        </div>
+        <div class="val-item val-item--wide fade-in-up">
+          <div class="val-item__body">
+            <h3>We bouwen om over te dragen</h3>
+            <p>Succes is voor ons niet een klant die afhankelijk blijft, maar een team dat het systeem zelf beheert. Daarom documenteren we alles en trainen we je mensen, zodat je verder kunt zonder ons.</p>
+          </div>
+          <img src="assets/building-sky.jpg" alt="Modern kantoorgebouw met lucht" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:20% 10%;display:block;border-radius:inherit;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <p class="footer__tagline">Hands-on AI consulting voor vastgoed. Wij bouwen het systeem. Jij houdt de controle.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Portfolio</h4>
+          <a href="cases/via-vastgoed.html">VIA Vastgoed</a>
+          <a href="cases/yns.html">YNS Spain</a>
+        </div>
+        <div class="footer__col">
+          <h4>Bedrijf</h4>
+          <a href="over-ons.html">Over ons</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:info@talynd.com">info@talynd.com</a>
+          <a href="tel:+31850043927">+31 85 004 3927</a>
+          <a href="https://www.linkedin.com/company/talynd/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__legal-wrap">
+          <p class="footer__legal">© 2026 Talynd · KVK: 99836882 · H.J.E. Wenckebachweg 6, 1096 AN Amsterdam</p>
+          <nav class="footer__legal-links">
+            <a href="beveiliging.html">Beveiliging</a>
+            <a href="voorwaarden.html">Voorwaarden</a>
+            <a href="privacybeleid.html">Privacybeleid</a>
+          </nav>
+        </div>
+        <a href="https://www.linkedin.com/company/talynd/" target="_blank" rel="noopener" class="footer__social">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="footer__wm" aria-hidden="true"><span>Talynd</span></div>
+  </footer>
+
   <script src="js/main.js"></script>
+  <script>
+    /* ---------- Values video: ensure autoplay loop ---------- */
+    (function () {
+      var v = document.querySelector(".val-item--video video");
+      if (!v) return;
+      v.muted = true;
+      var tryPlay = function () { var p = v.play(); if (p && p.catch) p.catch(function(){}); };
+      tryPlay();
+      v.addEventListener("loadeddata", tryPlay);
+      v.addEventListener("canplay", tryPlay);
+      document.addEventListener("visibilitychange", function () { if (!document.hidden) tryPlay(); });
+    })();
+
+    /* ---------- Contact form: client-side success state ---------- */
+    (function () {
+      var form = document.getElementById("contactForm");
+      var success = document.getElementById("contactSuccess");
+      if (!form || !success) return;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        form.style.display = "none";
+        success.classList.add("show");
+      });
+    })();
+  </script>
 </body>
 </html>

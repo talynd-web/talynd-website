@@ -3,13 +3,640 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diensten — Talynd</title>
+  <title>Diensten | Talynd</title>
+  <meta name="description" content="Wat Talynd bouwt voor vastgoedbedrijven: mailautomatisering, nurture programs, AI-calculators, systeemautomatisering, PipeDrive-integratie en consulting. Van intake tot werkend systeem dat je zelf beheert.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ============================================================
+       DIENSTEN — cambio.ai platform-style layout (Talynd tokens)
+       ============================================================ */
+    .dpage { background: var(--white); }
+
+    /* ---- HERO (two separate cards, cambio-style) ---- */
+    .dhero-wrap { max-width: var(--container); margin: 0 auto; padding: calc(34px + 14px - 4px) var(--pad-x) 0; }
+    .dhero { position: relative; background: var(--light-forest); border-radius: var(--radius-section);
+      padding: clamp(40px, 4.6vw, 64px) clamp(28px, 4vw, 56px); text-align: center; overflow: hidden; }
+    .dhero::after { content: ""; position: absolute; inset: 0; z-index: 0; opacity: 0.6;
+      background-image: radial-gradient(circle, rgba(10,73,73,0.05) 1px, transparent 1.4px); background-size: 24px 24px;
+      -webkit-mask-image: radial-gradient(ellipse 70% 80% at 50% 35%, #000, transparent 78%);
+      mask-image: radial-gradient(ellipse 70% 80% at 50% 35%, #000, transparent 78%); }
+    .dhero__inner { position: relative; z-index: 1; max-width: 940px; margin: 0 auto; }
+    .dhero .eyebrow { color: var(--black); justify-content: center; margin-bottom: 20px; }
+    .dhero .eyebrow::before { display: none; }
+    .dhero__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.05; letter-spacing: -0.02em; color: var(--deep-teal); max-width: none; margin: 0 auto 22px; white-space: nowrap; }
+    .dhero__title em { font-style: italic; }
+    .dhero__sub { font-size: 18px; line-height: 1.6; color: var(--gray-6); max-width: 600px; margin: 0 auto; }
+    .dhero__sub em { font-style: italic; font-weight: 600; color: var(--deep-teal); }
+    /* Image card — separate rounded card below the mint card, cambio cinematic ratio */
+    .dhero-media { position: relative; z-index: 1; width: 100%; margin-top: 16px; border-radius: var(--radius-section); overflow: hidden; aspect-ratio: 5 / 2; }
+    .dhero-media video, .dhero-media .placeholder { display: block; width: 100%; height: 100%;
+      object-fit: cover; object-position: center 46%; border-radius: var(--radius-section); min-height: 0; border: none; }
+
+    /* ---- TRUSTED BY ---- */
+    .dtrust { background: var(--white); padding: 44px var(--pad-x) 8px; }
+    .dtrust__label { text-align: center; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-4); margin-bottom: 26px; }
+    .dtrust__logos { display: flex; justify-content: center; align-items: center; gap: clamp(40px, 7vw, 90px); flex-wrap: wrap; }
+    .dtrust__logos img { filter: brightness(0); opacity: 0.42; transition: opacity 0.2s ease; }
+    .dtrust__logos img:hover { opacity: 0.7; }
+    .dtrust__logos .l-via { height: 34px; }
+    .dtrust__logos .l-yns { height: 23px; }
+
+    /* ---- FEATURES (process, alternating) ---- */
+    .dfeat-sec { padding: clamp(36px, 4.5vw, 56px) 0; }
+    .dfeat-intro { text-align: left; max-width: 760px; margin: 0 0 clamp(48px, 6vw, 72px); }
+    .dfeat-intro h2 { color: var(--black); font-weight: 400; }
+    .dfeat { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: center; margin-bottom: clamp(56px, 7vw, 96px); }
+    .dfeat:last-child { margin-bottom: 0; }
+    .dfeat.reverse .dfeat__visual { order: 2; }
+    .dfeat__visual { position: relative; aspect-ratio: 4/3; border-radius: 20px; overflow: hidden;
+      background: linear-gradient(135deg, #b2d8d3, #d6eeed); display: grid; place-items: center; }
+    .dfeat__visual::before { content: ""; position: absolute; inset: 0;
+      background: repeating-radial-gradient(circle at 50% 50%, transparent 0 43px, rgba(10,73,73,0.07) 43px 44px); }
+    .dfeat__visual::after { content: ""; position: absolute; inset: 0;
+      background: radial-gradient(60% 50% at 18% 12%, rgba(252,235,209,0.55), transparent 60%); }
+    .dfeat__glyph { position: relative; z-index: 2; width: 96px; height: 96px; border-radius: 50%; background: #fff; display: grid; place-items: center; color: var(--dark-teal); box-shadow: 0 22px 50px -24px rgba(10,73,73,0.5); }
+    .dfeat__glyph svg { width: 42px; height: 42px; }
+    .dfeat__num { font-family: var(--font-body); font-size: 13px; color: #999; font-weight: 500; margin-bottom: 16px; letter-spacing: 0.05em; }
+    .dfeat__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 2.5vw, 32px); line-height: 1.2; color: #0d1f1e; letter-spacing: -0.01em; margin-bottom: 20px; }
+    .dfeat__list { display: flex; flex-direction: column; gap: 0; }
+    .dfeat__list li { position: relative; padding: 6px 0 6px 28px; font-size: 15px; line-height: 1.6; color: #3a3a3a; }
+    .dfeat__list li::before { content: "✓"; position: absolute; left: 0; top: 6px; color: var(--dark-teal); font-weight: 600; }
+
+    .dfeat__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; display: block; }
+    .dsol { background: var(--gray-0); padding: var(--section-y) 0; }
+    .dsol__head { display: grid; grid-template-columns: 0.8fr 1.6fr; gap: 48px; align-items: start; margin-bottom: 52px; }
+    .dsol__head .eyebrow { color: var(--dark-teal); padding-top: 6px; }
+    .dsol__head .eyebrow::before { background: var(--dark-teal); }
+    .dsol__heading { font-family: var(--font-display); font-weight: 400; font-size: clamp(24px, 2.9vw, 36px); line-height: 1.2; color: var(--black); letter-spacing: -0.015em; }
+    .dsol__heading em { font-style: italic; }
+    .dsol__hint { display: none; align-items: center; gap: 7px; margin-top: 16px; font-size: 13px; font-weight: 500; color: var(--dark-teal); letter-spacing: 0.01em; }
+    .dsol__hint svg { width: 15px; height: 15px; }
+    .dsol__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 24px; }
+    .dsol-card { display: flex; flex-direction: column; text-decoration: none; }
+    .dsol-card__img { position: relative; aspect-ratio: 5/6; border-radius: 16px; overflow: hidden;
+      background: #1C2540; border: 1px dashed rgba(255,255,255,0.22); display: grid; place-items: center; text-align: center; }
+    .dsol-card__img--a { background: linear-gradient(150deg, #0a4949, #0f6b5f); border-style: solid; border-color: transparent; }
+    .dsol-card__img--b { background: linear-gradient(150deg, #cfe9e6, #a9d6d0); border-style: solid; border-color: transparent; }
+    .dsol-card__img--c { background: linear-gradient(150deg, #d7e3f7, #b9ccef); border-style: solid; border-color: transparent; }
+    .dsol-card__img--d { background: linear-gradient(150deg, #0d2b2b, #14524a); border-style: solid; border-color: transparent; }
+    .dsol-card__img--e { background: linear-gradient(150deg, #fce9d0, #f3d2a8); border-style: solid; border-color: transparent; }
+    .dsol-card__img--f { background: linear-gradient(150deg, #e7eaef, #cdd4de); border-style: solid; border-color: transparent; }
+    .dsol-card__plabel { font-size: 12px; line-height: 1.5; font-style: italic; color: rgba(20,40,40,0.62); padding: 18px; max-width: 220px; }
+    .dsol-card__img--a .dsol-card__plabel, .dsol-card__img--d .dsol-card__plabel { color: rgba(255,255,255,0.7); }
+    .dsol-card__num { position: absolute; top: 14px; left: 16px; font-family: var(--font-display); font-size: 15px; color: rgba(20,40,40,0.5); }
+    .dsol-card__img--a .dsol-card__num, .dsol-card__img--d .dsol-card__num { color: rgba(255,255,255,0.55); }
+    .dsol-card__foot { display: flex; align-items: center; gap: 12px; padding: 16px 4px 0; }
+    .dsol-card__label { font-family: var(--font-display); font-weight: 400; font-size: clamp(19px, 1.8vw, 23px); color: var(--black); letter-spacing: -0.01em; }
+    .dsol-card__num { display: none; }
+    .dsol-card__img--a, .dsol-card__img--b, .dsol-card__img--c,
+    .dsol-card__img--d, .dsol-card__img--e, .dsol-card__img--f { border: none; }
+    .dsol-card { cursor: pointer; }
+    .dsol-card__num { z-index: 3; }
+    .dsol-card__hover { position: absolute; bottom: 0; left: 0; right: 0; padding: 18px 16px 14px; background: linear-gradient(to top, rgba(4,14,31,0.88) 0%, rgba(4,14,31,0.2) 80%, transparent 100%); color: rgba(255,255,255,0.92); font-family: var(--font-body); font-size: 13px; line-height: 1.55; transform: translateY(100%); transition: transform 0.3s ease; z-index: 2; }
+    .dsol-card:hover .dsol-card__hover, .dsol-card.dactive .dsol-card__hover { transform: translateY(0); }
+
+    /* ---- TESTIMONIALS ---- */
+    .dquote-sec { background: var(--white); padding: var(--section-y) 0; }
+    .dquote__head { margin-bottom: 32px; }
+    .dquote__head .eyebrow { color: var(--dark-teal); }
+    .dquote__head .eyebrow::before { background: var(--dark-teal); }
+    .dquote__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .dquote-card { background: var(--light-blue); border-radius: 22px; padding: 44px; display: flex; flex-direction: column; justify-content: space-between; min-height: 300px; }
+    .dquote-card:nth-child(2) { background: var(--pale-teal); }
+    .dquote-card__mark { font-family: var(--font-display); font-weight: 700; font-size: 60px; line-height: 0.5; color: var(--black); margin-bottom: 20px; }
+    .dquote-card__text { font-family: var(--font-display); font-weight: 400; font-size: clamp(19px, 1.9vw, 24px); line-height: 1.4; color: var(--black); letter-spacing: -0.01em; margin-bottom: 30px; }
+    .dquote-card__author { font-size: 14px; font-weight: 600; color: var(--black); }
+    .dquote-card__company { font-size: 14px; color: var(--gray-5); }
+    .dquote-card figcaption { display: flex; align-items: center; gap: 14px; }
+    .dquote-card__avatar { flex: 0 0 auto; width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.65); border: 1px dashed var(--gray-3); display: grid; place-items: center; text-align: center; overflow: hidden; }
+    .dquote-card__avatar span { font-size: 8px; line-height: 1.15; color: var(--gray-5); padding: 4px; font-style: italic; }
+
+    /* ---- PROMISE (peach) ---- */
+    .dpromise { background: var(--orange); padding: var(--section-y) 0; }
+    .dpromise__head { text-align: center; max-width: 680px; margin: 0 auto 52px; }
+    .dpromise__head .eyebrow { justify-content: center; color: #b06a26; margin-bottom: 18px; }
+    .dpromise__head .eyebrow::before { background: #b06a26; }
+    .dpromise__head h2 { color: var(--black); font-weight: 400; }
+    .dpromise__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 940px; margin: 0 auto; }
+    .dpromise-card { background: var(--white); border-radius: 18px; padding: 34px 34px 36px; }
+    .dpromise-card__icon { width: 44px; height: 44px; border-radius: 12px; background: var(--orange); color: #b06a26; display: grid; place-items: center; margin-bottom: 18px; }
+    .dpromise-card__icon svg { width: 22px; height: 22px; }
+    .dpromise-card__title { font-family: var(--font-display); font-weight: 400; font-size: 21px; color: var(--deep-teal); margin-bottom: 10px; letter-spacing: -0.01em; }
+    .dpromise-card__text { font-size: 14.5px; line-height: 1.6; color: var(--gray-6); }
+
+    /* ---- FAQ (zelfde ontwerp als portfolio) ---- */
+    .faq { padding: var(--section-y) 0; }
+    .faq__head { text-align: center; margin-bottom: clamp(40px, 5vw, 64px); }
+    .faq__head h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(38px, 5vw, 64px); line-height: 1; color: var(--black); letter-spacing: -0.02em; }
+    .faq__wrap { max-width: 860px; margin: 0 auto; }
+    .faq-block { border-bottom: 1px solid var(--gray-2); padding: 28px 0; cursor: pointer; }
+    .faq-block:first-child { border-top: 1px solid var(--gray-2); }
+    .faq-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .faq-q { font-family: var(--font-body); font-size: clamp(17px, 1.5vw, 20px); font-weight: 500; line-height: 1.3; color: var(--black); }
+    .faq-icon { position: relative; width: 22px; height: 22px; flex-shrink: 0; }
+    .faq-icon::before, .faq-icon::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--black); border-radius: 2px; transition: opacity 0.3s ease, transform 0.3s ease; }
+    .faq-icon::before { width: 16px; height: 2px; transform: translate(-50%, -50%); }
+    .faq-icon::after { width: 2px; height: 16px; transform: translate(-50%, -50%); }
+    .faq-block.open .faq-icon::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    .faq-a { overflow: hidden; max-height: 0; transition: max-height 0.4s ease, padding 0.3s ease; }
+    .faq-block.open .faq-a { max-height: 420px; padding-top: 16px; }
+    .faq-a p { font-size: 16px; line-height: 1.7; color: var(--gray-6); max-width: 720px; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 1000px) {
+      .dsol__grid { grid-template-columns: repeat(2, 1fr); }
+      .dsol__head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; }
+    }
+    @media (max-width: 760px) {
+      .dhero-wrap { padding-top: calc(34px + 14px + 18px); }
+      .dhero { padding: clamp(44px, 9vw, 64px) 26px; }
+      .dhero__title { white-space: normal; font-size: clamp(30px, 7.6vw, 42px); }
+      /* Hero video minder hoog op mobiel */
+      .dhero-media { aspect-ratio: 4 / 3; }
+      .dfeat { grid-template-columns: 1fr; gap: 28px; margin-bottom: 56px; }
+      .dfeat.reverse .dfeat__visual { order: 0; }
+      /* Solutions: horizontal swipe carousel to keep height low */
+      .dsol__grid { display: flex; grid-template-columns: none; gap: 14px; overflow-x: auto;
+        scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+        margin: 0 calc(-1 * var(--pad-x)); padding: 0 var(--pad-x) 16px; }
+      .dsol__grid::-webkit-scrollbar { display: none; }
+      .dsol-card { flex: 0 0 72%; scroll-snap-align: start; }
+      .dsol-card__hover { font-size: 12.5px; padding: 14px 14px 12px; }
+      .dsol-card__img { aspect-ratio: 4/5; }
+      .dsol-card__label { font-size: 18px; }
+      .dsol__head .dsol__hint { display: flex; }
+      .dquote__grid { grid-template-columns: 1fr; }
+      .dpromise__grid { grid-template-columns: 1fr; }
+      .dquote-card, .dpromise-card { padding: 32px; }
+      /* dproc staps panel kleiner op mobiel */
+      .dproc .how__panel { aspect-ratio: 4 / 3; }
+      .dproc .tab.active .tab__body { max-height: 280px; }
+      /* FAQ compacter */
+      .faq-block { padding: 20px 0; }
+      .faq-q { font-size: 16px; }
+      /* aival card positie op mobiel */
+      .aival__card { padding: 28px; }
+      .aival__card-title { font-size: clamp(22px, 5.5vw, 30px); }
+    }
+
+    /* ---- AI VALUE (PwC-style: white, two photos, cream card) ---- */
+    .aival-sec { padding: var(--section-y) 0; background: var(--white); }
+    .aival__top { display: grid; grid-template-columns: repeat(12, 1fr); align-items: end; margin-bottom: clamp(60px, 7vw, 110px); }
+    .aival__photo--hero { grid-column: 4 / 13; grid-row: 1; }
+    .aival__photo .placeholder { min-height: 0; border: none; border-radius: 6px; background: var(--gray-1); }
+    .aival__photo--hero .placeholder { aspect-ratio: 16 / 11; }
+    .aival__card { grid-column: 1 / 7; grid-row: 1; align-self: center; z-index: 2; background: var(--orange); padding: clamp(30px, 3.4vw, 52px); border-radius: 6px; }
+    .aival__card-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(25px, 2.5vw, 38px); line-height: 1.08; letter-spacing: -0.02em; color: var(--black); margin-bottom: 18px; text-wrap: pretty; }
+    .aival__card-text { font-size: 16px; line-height: 1.65; color: var(--gray-6); }
+    .aival__arrow { display: inline-flex; margin-top: 26px; color: var(--black); }
+    .aival__arrow svg { width: 30px; height: 30px; }
+    .aival__bottom { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 88px); align-items: start; }
+    .aival__photo--board .placeholder { aspect-ratio: 16 / 10; }
+    .aival__heading { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.04; letter-spacing: -0.02em; color: var(--black); margin-bottom: 22px; text-wrap: pretty; }
+    .aival__p { font-size: 16px; line-height: 1.7; color: var(--gray-6); margin-bottom: 16px; }
+    .aival__link { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-family: var(--font-body); font-weight: 600; font-size: 15px; color: var(--black); text-decoration: underline; text-underline-offset: 4px; transition: gap 0.2s ease; }
+    .aival__link svg { width: 17px; height: 17px; }
+    .aival__link:hover { gap: 12px; }
+    .aival__ilink { font-weight: 600; color: var(--black); text-decoration: underline; text-underline-offset: 4px; transition: opacity 0.2s ease; }
+    .aival__ilink:hover { opacity: 0.65; }
+    @media (max-width: 900px) {
+      .aival__top { grid-template-columns: 1fr; margin-bottom: clamp(40px, 6vw, 64px); }
+      .aival__photo--hero { grid-column: 1; }
+      .aival__card { grid-column: 1; transform: none; margin: -40px 16px 0; }
+      .aival__bottom { grid-template-columns: 1fr; gap: 30px; }
+      .aival__photo--board .placeholder { aspect-ratio: 16 / 10; }
+    }
+    /* ---- PROC HOW (compact tab+panel, zelfde als homepage) ---- */
+    .dproc { margin-top: 0; grid-template-columns: 1fr 1.1fr; align-items: center; }
+    .dproc .how__intro { display: flex; flex-direction: column; }
+    .dproc .how__intro h2 { font-weight: 400; margin-bottom: 14px; }
+    .dproc .how__intro .lead { margin-bottom: 4px; }
+    .dproc .tabs { margin-top: 0; }
+    .dproc .tab { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 21px 0; border-top: 1px solid var(--gray-2); cursor: pointer; opacity: 1; transition: none; }
+    .dproc .tab:not(.active) { opacity: 1; }
+    .dproc .tab:not(.active):hover .tab__label { color: var(--gray-6); }
+    .dproc .tab.active { border-top: 1px solid var(--gray-2); padding-top: 21px; }
+    .dproc .tab__main { display: flex; flex-direction: column; min-width: 0; }
+    .dproc .tab__num { order: 2; flex-shrink: 0; font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--gray-6); letter-spacing: 0.02em; font-variant-numeric: tabular-nums; margin: 0; }
+    .dproc .tab__label { font-family: var(--font-body); font-size: 15px; font-weight: 400; color: var(--black); letter-spacing: -0.005em; margin: 0; transition: color 0.2s ease; }
+    .dproc .tab__body { font-size: 14.5px; color: var(--gray-5); line-height: 1.55; max-width: 440px; max-height: 0; overflow: hidden; opacity: 0; margin: 0; transition: max-height 0.35s ease, opacity 0.3s ease, margin 0.3s ease; }
+    .dproc .tab.active .tab__body { max-height: 170px; opacity: 1; margin-top: 9px; }
+    .dproc .how__panel { position: relative; aspect-ratio: 1 / 1.1; align-self: center; overflow: hidden; border-radius: var(--radius-card); box-shadow: 0 24px 60px -28px rgba(4,14,31,0.32); }
+    .dproc .how__pane { position: absolute; inset: 0; }
+    .dproc .how__pane img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 1000px) { .dproc { grid-template-columns: 1fr; gap: 36px; } }
+  </style>
 </head>
-<body>
-  <!-- PAGE: Diensten -->
-  <!-- SECTIONS: nav | header | dienst-blokken (6x) | CTA-blok | footer -->
-  <!-- DIENSTEN: Mailautomatisering | Nurture programs | AI-calculator | Systeemautomatisering | PipeDrive-integratie | Consulting -->
+<body class="dpage">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar--boxed" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><img src="assets/logos/talynd-white.png" alt="Talynd" /></a>
+      <div class="navbar__nav">
+        <a href="diensten.html" class="active">Diensten</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="navbar__spacer"></div>
+      <a href="contact.html" class="navbar__cta-btn">Gratis intake</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="navbar__mobile" id="navMobile">
+        <a href="diensten.html">Diensten</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <div class="dhero-wrap">
+    <header class="dhero">
+      <div class="dhero__inner">
+        <span class="eyebrow fade-in-up">Diensten</span>
+        <h1 class="dhero__title fade-in-up" data-delay="1">Alles wat we bouwen, en overdragen.</h1>
+        <p class="dhero__sub fade-in-up" data-delay="2"><em>Geen</em> advies, geen abonnement. Concrete systemen die je leads, data en opvolging automatiseren, en die jij daarna zelf beheert.</p>
+      </div>
+    </header>
+    <div class="dhero-media fade-in-up" data-delay="2">
+      <video src="assets/portfolio-banner.mp4" autoplay muted loop playsinline preload="auto"></video>
+    </div>
+  </div>
+
+  <!-- ============ TRUSTED BY ============ -->
+  <section class="dtrust">
+    <p class="dtrust__label">Vertrouwd door</p>
+    <div class="dtrust__logos">
+      <img class="l-via" src="assets/logos/via-vastgoed-white.png" alt="VIA Vastgoed" />
+      <img class="l-yns" src="assets/logos/yns-spain-white.png" alt="YNS Spain" />
+    </div>
+  </section>
+
+  <!-- ============ AI VALUE (PwC-style) ============ -->
+  <section class="aival-sec">
+    <div class="container">
+
+      <div class="aival__top">
+        <div class="aival__photo aival__photo--hero fade-in-up">
+          <img src="assets/aival-server.jpg" alt="Serverruimte — technische werkruimte met computers en hardware" style="width:100%;aspect-ratio:16/11;object-fit:cover;border-radius:6px;display:block;" />
+        </div>
+        <div class="aival__card fade-in-up" data-delay="1">
+          <h2 class="aival__card-title" style="font-weight: 500">De technologie is niet het probleem. De implementatie wel.</h2>
+          <p class="aival__card-text">Ruim acht op de tien organisaties gebruiken inmiddels AI. Toch vertaalt slechts een kleine groep koplopers het naar meetbaar rendement. Het verschil zit niet in de tools, maar in de uitvoering.</p>
+          <span class="aival__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 13 12 19 18 13"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="aival__bottom">
+        <div class="aival__photo aival__photo--board fade-in-up">
+          <img src="assets/aival-overleg.jpg" alt="Overleg aan tafel — team bespreekt AI-strategie" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px;display:block;" />
+        </div>
+        <div class="aival__col fade-in-up" data-delay="1">
+          <h2 class="aival__heading" style="font-weight: 500">Klaar om bij de koplopers te horen?</h2>
+          <p class="aival__p">Onderzoek van MIT en RAND laat zien dat 70 tot 85% van de AI-initiatieven de verwachte resultaten niet haalt. Bijna twee derde van de organisaties blijft steken in pilots die nooit in productie komen.</p>
+          <p class="aival__p">De koplopers doen het anders. Ze starten bij een concreet probleem, automatiseren alleen wat echt tijd of geld oplevert, en bouwen het in in het dagelijkse proces in plaats van het als los experiment te laten bestaan.</p>
+          <p class="aival__p">Precies zo werken wij, van het eerste gesprek tot een werkend systeem dat jij daarna zelf beheert. Benieuwd wat dat voor jouw organisatie betekent? <a href="contact.html" class="aival__ilink">Neem contact met ons op</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="dfeat-sec">
+    <div class="container">
+      <div class="how dproc fade-in-up">
+        <div class="how__intro">
+          <h2>Van eerste gesprek tot werkend systeem dat jij beheert.</h2>
+          <p class="lead">Concrete stappen, van intake tot volledige overdracht.</p>
+          <div class="tabs" id="dtabs">
+            <div class="tab active" data-tab="0">
+              <div class="tab__main">
+                <div class="tab__label">Intake op locatie</div>
+                <p class="tab__body">We kijken waar tijd verloren gaat voordat we ook maar iets bouwen. Je eerste gesprek is altijd gratis, zonder enige verplichting.</p>
+              </div>
+              <div class="tab__num">01</div>
+            </div>
+            <div class="tab" data-tab="1">
+              <div class="tab__main">
+                <div class="tab__label">Analyse &amp; plan</div>
+                <p class="tab__body">Een helder plan: wat bouwen we, met welke tools, in welke volgorde. Je weet vooraf welk resultaat je kunt verwachten, geen verrassingen.</p>
+              </div>
+              <div class="tab__num">02</div>
+            </div>
+            <div class="tab" data-tab="2">
+              <div class="tab__main">
+                <div class="tab__label">Bouwen &amp; implementeren</div>
+                <p class="tab__body">We bouwen het systeem en koppelen het aan je bestaande tools. Je test mee gedurende het traject en stuurt bij waar nodig.</p>
+              </div>
+              <div class="tab__num">03</div>
+            </div>
+            <div class="tab" data-tab="3">
+              <div class="tab__main">
+                <div class="tab__label">Overdracht &amp; training</div>
+                <p class="tab__body">Je team krijgt training en volledige documentatie van alles. Geen verplicht abonnement: je houdt zelf de controle.</p>
+              </div>
+              <div class="tab__num">04</div>
+            </div>
+          </div>
+        </div>
+        <div class="how__panel fade-in-up">
+          <div class="how__pane" data-pane="0"><img src="assets/how-intake-locatie.jpg" alt="Intake op locatie" /></div>
+          <div class="how__pane" data-pane="1" style="display:none"><img src="assets/how-analyse-plan.jpg" alt="Analyse en plan" /></div>
+          <div class="how__pane" data-pane="2" style="display:none"><img src="assets/how-bouwen.jpg" alt="Bouwen en implementeren" /></div>
+          <div class="how__pane" data-pane="3" style="display:none"><img src="assets/how-overdracht.jpg" alt="Overdracht" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOLUTIONS GRID ============ -->
+  <section class="dsol">
+    <div class="container">
+      <div class="dsol__head fade-in-up">
+        <span class="eyebrow">Wat wij bouwen</span>
+        <h2 class="dsol__heading">Zes bouwstenen waarmee we je commerciële proces automatiseren, los of als <em>één samenhangend systeem.</em></h2>
+        <span class="dsol__hint">Veeg voor meer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+      <div class="dsol__grid">
+
+        <div class="dsol-card fade-in-up">
+          <div class="dsol-card__img dsol-card__img--a">
+            <span class="dsol-card__num">01</span>
+            <img src="assets/diensten-intake.jpg" alt="Consulting en intake" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.85;" />
+            <div class="dsol-card__hover">Persoonlijk gesprek op locatie. We brengen je proces in kaart en adviseren eerlijk of we waarde kunnen toevoegen.</div>
+          </div>
+          <div class="dsol-card__foot">
+            <span class="dsol-card__label">Consulting &amp; intake</span>
+          </div>
+        </div>
+
+        <div class="dsol-card fade-in-up" data-delay="1">
+          <div class="dsol-card__img dsol-card__img--b">
+            <span class="dsol-card__num">02</span>
+            <img src="assets/diensten-mail.jpg" alt="Mailautomatisering" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
+            <div class="dsol-card__hover">Automatische opvolging na elke lead of bezichtiging. Op het juiste moment, zonder handmatig werk.</div>
+          </div>
+          <div class="dsol-card__foot">
+            <span class="dsol-card__label">Mailautomatisering</span>
+          </div>
+        </div>
+
+        <div class="dsol-card fade-in-up" data-delay="2">
+          <div class="dsol-card__img dsol-card__img--c">
+            <span class="dsol-card__num">03</span>
+            <img src="assets/diensten-nurture.jpg" alt="Nurture programs" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
+            <div class="dsol-card__hover">Gestructureerde e-mailreeksen die leads warm houden totdat ze klaar zijn om te beslissen.</div>
+          </div>
+          <div class="dsol-card__foot">
+            <span class="dsol-card__label">Nurture programs</span>
+          </div>
+        </div>
+
+        <div class="dsol-card fade-in-up">
+          <div class="dsol-card__img dsol-card__img--e">
+            <span class="dsol-card__num">04</span>
+            <img src="assets/diensten-calculator.jpg" alt="AI-calculator" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
+            <div class="dsol-card__hover">Maatwerk rekentool op basis van jouw domeinkennis: huurrendement, verkoopprognose of een eigen model.</div>
+          </div>
+          <div class="dsol-card__foot">
+            <span class="dsol-card__label">AI-calculator</span>
+          </div>
+        </div>
+
+        <div class="dsol-card fade-in-up" data-delay="1">
+          <div class="dsol-card__img dsol-card__img--d">
+            <span class="dsol-card__num">05</span>
+            <img src="assets/diensten-systeem.jpg" alt="Systeemautomatisering" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% center;z-index:0;opacity:0.85;" />
+            <div class="dsol-card__hover">Workflows, databases en koppelingen samengevoegd tot één centraal systeem dat je team zelf beheert.</div>
+          </div>
+          <div class="dsol-card__foot">
+            <span class="dsol-card__label">Systeemautomatisering</span>
+          </div>
+        </div>
+
+        <div class="dsol-card fade-in-up" data-delay="2">
+          <div class="dsol-card__img dsol-card__img--f">
+            <span class="dsol-card__num">06</span>
+            <img src="assets/diensten-pipedrive.jpg" alt="PipeDrive-integratie" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
+            <div class="dsol-card__hover">Je CRM volledig ingericht en geautomatiseerd — pipelines, triggers en rapportages die kloppen met jouw proces.</div>
+          </div>
+          <div class="dsol-card__foot">
+            <span class="dsol-card__label">PipeDrive-integratie</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="dquote-sec">
+    <div class="container">
+      <div class="dquote__head fade-in-up">
+        <span class="eyebrow">Wat klanten zeggen</span>
+      </div>
+      <div class="dquote__grid">
+        <figure class="dquote-card fade-in-up">
+          <div>
+            <div class="dquote-card__mark">”</div>
+            <blockquote class="dquote-card__text">Talynd heeft ons salesproces volledig geautomatiseerd. We hoeven er niet meer aan te denken.</blockquote>
+          </div>
+          <figcaption>
+            <div class="dquote-card__avatar" style="background:#0c1f47;border:none;">
+              <img src="assets/logo-via-avatar.png" alt="VIA Vastgoed" style="width:70%;height:70%;object-fit:contain;display:block;margin:auto;" />
+            </div>
+            <div>
+              <p class="dquote-card__author">Kianu</p>
+              <p class="dquote-card__company">VIA Vastgoed</p>
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="dquote-card fade-in-up" data-delay="1">
+          <div>
+            <div class="dquote-card__mark">”</div>
+            <blockquote class="dquote-card__text">Van losse tools naar één systeem dat onze woningdata en leads automatisch bijhoudt. Precies wat we nodig hadden.</blockquote>
+          </div>
+          <figcaption>
+            <div class="dquote-card__avatar" style="background:#fff;border:1px solid var(--gray-2);">
+              <img src="assets/logo-yns-avatar.png" alt="YNS Spain" style="width:65%;height:65%;object-fit:contain;display:block;margin:auto;" />
+            </div>
+            <div>
+              <p class="dquote-card__author">Daan</p>
+              <p class="dquote-card__company">YNS Spain</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq">
+    <div class="container">
+      <div class="faq__head fade-in-up">
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq__wrap fade-in-up">
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Kunnen we één losse dienst afnemen, of moet het een compleet traject zijn?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Allebei kan. Soms bouwen we alleen mailautomatisering of één koppeling, soms een compleet systeem van intake tot CRM. In de gratis intake bepalen we samen de kleinste set die het meeste oplevert, zonder dat je meteen aan een groot traject vastzit.</p>
+          </div>
+        </div>
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Wat kost het om een systeem te laten bouwen?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Dat hangt af van wat je nodig hebt. Omdat we op maat bouwen, krijg je na de intake een vaste prijs voor een afgebakend resultaat, geen uurtje-factuurtje en geen verrassingen achteraf. Je beslist pas als je precies weet wat je krijgt en wat het kost.</p>
+          </div>
+        </div>
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Hoe snel staat een dienst live?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>De meeste systemen bouwen we in vier tot zes weken van intake tot oplevering. Losse automatiseringen vaak sneller. We werken in korte, concrete stappen zodat je onderweg al resultaat ziet in plaats van pas aan het eind.</p>
+          </div>
+        </div>
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Bouwen jullie ook maatwerk dat niet in dit rijtje staat?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Ja. De diensten hierboven zijn de meest gevraagde, maar we bouwen net zo goed maatwerk-koppelingen, interne tools of complete websites. Als het je tijd kost en te automatiseren is, kijken we ernaar tijdens de intake.</p>
+          </div>
+        </div>
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Sluit dit aan op de software die we al gebruiken?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Vrijwel altijd. We koppelen aan bestaande CRM's en tools zoals Pipedrive en ActiveCampaign via maatwerk-API's, en bouwen rond jouw werkwijze in plaats van andersom. Je hoeft dus niet over te stappen op nieuwe software.</p>
+          </div>
+        </div>
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Wat gebeurt er met onderhoud na de oplevering?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Het systeem is van jou en draait zelfstandig. We leveren documentatie en training mee, zodat je team het zelf beheert, en blijven beschikbaar voor onderhoud of doorontwikkeling, zonder verplicht abonnement.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA (dark teal) ============ -->
+  <div class="cta-wrap">
+    <div class="container">
+      <div class="cta fade-in-up">
+        <div class="cta__inner">
+          <h2>Niet zeker wat jij nodig <em>hebt?</em></h2>
+          <p>Plan een gratis intake. We komen langs, kijken naar je proces en vertellen eerlijk wat we voor je kunnen bouwen.</p>
+          <a href="contact.html" class="btn btn--secondary btn--lg">Plan een gratis intake</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <p class="footer__tagline">Hands-on AI consulting voor vastgoed. Wij bouwen het systeem. Jij houdt de controle.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Portfolio</h4>
+          <a href="cases/via-vastgoed.html">VIA Vastgoed</a>
+          <a href="cases/yns.html">YNS Spain</a>
+        </div>
+        <div class="footer__col">
+          <h4>Bedrijf</h4>
+          <a href="over-ons.html">Over ons</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:info@talynd.com">info@talynd.com</a>
+          <a href="tel:+31850043927">+31 85 004 3927</a>
+          <a href="https://www.linkedin.com/company/talynd/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__legal-wrap">
+          <p class="footer__legal">© 2026 Talynd · KVK: 99836882 · H.J.E. Wenckebachweg 6, 1096 AN Amsterdam</p>
+          <nav class="footer__legal-links">
+            <a href="beveiliging.html">Beveiliging</a>
+            <a href="voorwaarden.html">Voorwaarden</a>
+            <a href="privacybeleid.html">Privacybeleid</a>
+          </nav>
+        </div>
+        <a href="https://www.linkedin.com/company/talynd/" target="_blank" rel="noopener" class="footer__social">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="footer__wm" aria-hidden="true"><span>Talynd</span></div>
+  </footer>
+
   <script src="js/main.js"></script>
+  <script>
+    /* ---------- FAQ accordion ---------- */
+    document.querySelectorAll(".faq-block").forEach(function (block) {
+      block.addEventListener("click", function () {
+        var isOpen = block.classList.contains("open");
+        document.querySelectorAll(".faq-block.open").forEach(function (b) { b.classList.remove("open"); });
+        if (!isOpen) block.classList.add("open");
+      });
+    });
+    /* ---------- Process tabs (diensten) ---------- */
+    (function () {
+      var panes = document.querySelectorAll('.dproc .how__pane');
+      document.querySelectorAll('#dtabs .tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          document.querySelectorAll('#dtabs .tab').forEach(function (t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          var idx = parseInt(tab.dataset.tab, 10);
+          panes.forEach(function (p, i) { p.style.display = i === idx ? 'block' : 'none'; });
+        });
+      });
+    })();
+    /* ---------- Solution cards: tap to show overlay on mobile ---------- */
+    document.querySelectorAll('.dsol-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        var isActive = card.classList.contains('dactive');
+        document.querySelectorAll('.dsol-card.dactive').forEach(function(c) { c.classList.remove('dactive'); });
+        if (!isActive) card.classList.add('dactive');
+      });
+    });
+  </script>
 </body>
 </html>

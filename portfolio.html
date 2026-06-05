@@ -3,12 +3,1083 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio — Talynd</title>
+  <title>Portfolio | Talynd</title>
+  <meta name="description" content="Wat Talynd al gebouwd heeft: twee vastgoedklanten, twee volledig verschillende uitdagingen. Van Pipedrive-automatisering en AI-calculators tot live woningdata en een complete SEO-website.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ============================================================
+       PORTFOLIO — Talynd (matches homepage + diensten system)
+       ============================================================ */
+    .ppage { background: var(--white); }
+
+    /* ---- HERO (mint card, same family as diensten) ---- */
+    .phero-wrap { max-width: var(--container); margin: 0 auto; padding: calc(34px + 14px - 4px) var(--pad-x) 0; }
+    .phero { position: relative; background: var(--light-forest); border-radius: var(--radius-section);
+      padding: clamp(48px, 5.4vw, 78px) clamp(28px, 4vw, 56px); text-align: center; overflow: hidden; }
+    .phero::after { content: ""; position: absolute; inset: 0; z-index: 0; opacity: 0.6;
+      background-image: radial-gradient(circle, rgba(10,73,73,0.05) 1px, transparent 1.4px); background-size: 24px 24px;
+      -webkit-mask-image: radial-gradient(ellipse 70% 80% at 50% 35%, #000, transparent 78%);
+      mask-image: radial-gradient(ellipse 70% 80% at 50% 35%, #000, transparent 78%); }
+    .phero__inner { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; }
+    .phero .eyebrow { color: var(--black); justify-content: center; margin-bottom: 20px; }
+    .phero .eyebrow::before { display: none; }
+    .phero__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.05; letter-spacing: -0.02em; color: var(--deep-teal); margin: 0 auto 20px; }
+    .phero__sub { font-size: 18px; line-height: 1.6; color: var(--gray-6); max-width: none; margin: 0 auto; white-space: nowrap; }
+    .phero__sub em { font-style: italic; font-weight: 600; color: var(--deep-teal); }
+
+    /* Image card below the mint hero card — cambio cinematic ratio (same as diensten) */
+    .phero-media { position: relative; z-index: 1; width: 100%; margin-top: 16px; border-radius: var(--radius-section); overflow: hidden; aspect-ratio: 5 / 2; }
+    .phero-media video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; border-radius: var(--radius-section); border: none; }
+
+    /* ---- CASE SECTION ---- */
+    .case { padding: var(--section-y) 0; }
+    .case--alt { background: var(--white); --case-blue: #2f6fd0; border-top: 1px solid var(--gray-2); }
+
+    .case__head { display: flex; align-items: center; gap: 26px; margin-bottom: 38px; flex-wrap: wrap; }
+    .case__logo { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: flex-start; height: 56px; }
+    .case__logo img { max-height: 48px; max-width: 168px; width: auto; display: block; filter: brightness(0); opacity: 0.42; }
+    .case__headtext { display: flex; flex-direction: column; gap: 8px; }
+    .case__index { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dark-teal); }
+    .case--alt .case__index { color: var(--case-blue); }
+    .case__name { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 3.6vw, 46px); line-height: 1; color: var(--black); letter-spacing: -0.015em; }
+    .case__meta { font-size: 15px; color: var(--gray-5); }
+    .case__meta a { color: var(--dark-teal); text-decoration: none; border-bottom: 1px solid currentColor; }
+    .case--alt .case__meta a { color: var(--case-blue); }
+    .case__badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .case__badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 500; color: var(--black);
+      background: var(--white); border: 1px solid var(--gray-2); border-radius: 100px; padding: 5px 12px; }
+    .case--alt .case__badge { background: #fff; }
+    .case__badge svg { width: 13px; height: 13px; color: var(--case-blue); }
+
+    /* challenge */
+    .case__challenge { display: grid; grid-template-columns: 0.5fr 2fr; gap: 40px; align-items: start;
+      border-top: 1px solid var(--gray-2); padding-top: 28px; margin-bottom: 48px; }
+    .case__challenge-label { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-4); }
+    .case__challenge p { font-family: var(--font-display); font-weight: 400; font-size: clamp(19px, 2.1vw, 26px); line-height: 1.42; color: var(--black); letter-spacing: -0.01em; }
+
+    /* build (interactive tabs + swapping panel) */
+    .case__buildhead { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-4); margin-bottom: 22px; }
+    .case__build { display: grid; grid-template-columns: 1fr 1.12fr; gap: 56px; align-items: center; }
+    .case--alt .case__build { direction: rtl; }
+    .case--alt .case__build > * { direction: ltr; }
+
+    .case-tabs { display: flex; flex-direction: column; }
+    .case-tab { padding: 20px 0; border-top: 1px solid var(--gray-2); cursor: pointer; transition: opacity 0.25s ease; }
+    .case-tab:not(.active) { opacity: 0.5; }
+    .case-tab:not(.active):hover { opacity: 0.78; }
+    .case-tab.active { border-top: 2px solid var(--black); padding-top: 19px; }
+    .case--alt .case-tab.active { border-top-color: var(--case-blue); }
+    .case-tab__num { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: var(--dark-teal); margin-bottom: 6px; }
+    .case--alt .case-tab__num { color: var(--case-blue); }
+    .case-tab__label { font-family: var(--font-display); font-size: clamp(19px, 2vw, 24px); font-weight: 400; color: var(--black); letter-spacing: -0.01em; margin-bottom: 4px; }
+    .case-tab__body { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.35s ease, opacity 0.3s ease, margin 0.3s ease; }
+    .case-tab.active .case-tab__body { max-height: 340px; opacity: 1; margin-top: 12px; }
+    .case-tab__body ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .case-tab__body li { position: relative; padding-left: 26px; font-size: 14.5px; line-height: 1.55; color: var(--gray-6); }
+    .case-tab__body li::before { content: "✓"; position: absolute; left: 0; top: 1px; color: var(--dark-teal); font-weight: 600; }
+    .case--alt .case-tab__body li::before { color: var(--case-blue); }
+
+    .case__panel { position: relative; aspect-ratio: 4 / 3.1; border-radius: var(--radius-card); min-height: 0;
+      background: linear-gradient(150deg, #cfe9e6, #a9d6d0); border: 1px dashed rgba(10,73,73,0.28);
+      box-shadow: 0 28px 64px -32px rgba(4,14,31,0.28); display: grid; place-items: center; overflow: hidden; transition: background 0.3s ease; }
+    .case--alt .case__panel { background: linear-gradient(150deg, #d7e3f7, #b3c9ee); border-color: rgba(47,111,208,0.3); }
+    .case__panel::before { content: ""; position: absolute; inset: 0; opacity: 0.5;
+      background-image: radial-gradient(circle, rgba(10,73,73,0.10) 1px, transparent 1.4px); background-size: 22px 22px; }
+    .case--alt .case__panel::before { background-image: radial-gradient(circle, rgba(47,111,208,0.12) 1px, transparent 1.4px); }
+    .case__panel-label { position: relative; z-index: 1; font-size: 13px; font-style: italic; line-height: 1.5; color: rgba(13,31,30,0.66); text-align: center; padding: 24px; max-width: 320px; }
+    .case--alt .case__panel-label { color: rgba(20,40,70,0.7); }
+
+    /* tools */
+    .case__tools { border-top: 1px solid var(--gray-2); margin-top: 52px; padding-top: 26px; display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; }
+    .case__tools-label { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-4); flex: 0 0 auto; }
+    .case__pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill { font-size: 13px; font-weight: 500; color: var(--deep-teal); background: var(--light-forest); border-radius: 100px; padding: 6px 14px; }
+    .case--alt .pill { color: #234e8c; background: var(--light-blue); }
+
+    /* ---- PROCESS TIMELINE (cambio get-started style) ---- */
+    .proc { background: var(--gray-0); padding: var(--section-y) 0; }
+    .proc__top { text-align: center; max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .proc__eyebrow { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-6); white-space: nowrap; }
+    .proc__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.1; color: var(--black); letter-spacing: -0.018em; }
+    .proc__cards2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: 720px; margin: 14px auto 0; }
+    .proc__card2 { background: var(--gray-1); border: 1px solid var(--gray-2); border-radius: 16px; padding: 24px 26px; font-size: 17px; line-height: 1.5; color: var(--black); }
+
+    /* timeline rail (cambio-exact, animated draw L→R) */
+    .proc__rail { position: relative; max-width: 1080px; margin: clamp(56px, 6vw, 80px) auto clamp(28px, 3vw, 40px); }
+    .proc__labels { position: relative; height: 30px; margin-bottom: 14px; }
+    .proc__lbl { position: absolute; top: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark-teal); background: #fff; padding: 5px 11px; border-radius: 6px; white-space: nowrap; opacity: 0; transition: opacity 0.5s ease; }
+    .proc__lbl--1 { left: 0; }
+    .proc__lbl--2 { left: 50%; transform: translateX(-50%); }
+    .proc__lbl--3 { right: 0; }
+    .proc__rail.in .proc__lbl { opacity: 1; }
+    .proc__rail.in .proc__lbl--2 { transition-delay: 0.45s; }
+    .proc__rail.in .proc__lbl--3 { transition-delay: 0.9s; }
+    .proc__track-wrap { position: relative; height: 12px; }
+    .proc__track { position: absolute; top: 50%; left: 0; width: 0; height: 1.5px; background: #9aa6b6; transform: translateY(-50%); transition: width 1.15s cubic-bezier(0.4, 0, 0.2, 1); }
+    .proc__rail.in .proc__track { width: 100%; }
+    .proc__dot { position: absolute; top: 50%; width: 11px; height: 11px; border-radius: 50%; background: #fff; border: 1.5px solid #9aa6b6; transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.4s ease; }
+    .proc__dot--1 { left: 0; }
+    .proc__dot--2 { left: 50%; transition-delay: 0.5s; }
+    .proc__dot--3 { left: 100%; transition-delay: 1s; }
+    .proc__rail.in .proc__dot { opacity: 1; }
+    @media (prefers-reduced-motion: reduce) {
+      .proc__track { width: 100%; transition: none; }
+      .proc__dot, .proc__lbl { opacity: 1; transition: none; }
+    }
+
+    .proc__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .proc-step { background: rgba(255,255,255,0.92); border-radius: 16px; padding: 30px 28px; display: flex; flex-direction: column; gap: 16px; }
+    .proc-step__phase { display: none; align-self: flex-start; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark-teal); background: var(--light-forest); padding: 5px 12px; border-radius: 7px; }
+    .proc-step h3 { font-family: var(--font-display); font-weight: 400; font-size: 22px; line-height: 1.2; color: var(--black); letter-spacing: -0.01em; }
+    .proc-step ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .proc-step li { display: flex; align-items: flex-start; gap: 10px; }
+    .proc-step li svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--dark-teal); margin-top: 3px; }
+    .proc-step li span { font-size: 14px; line-height: 1.5; color: var(--gray-6); }
+
+    /* ---- FAQ ---- */
+    .faq { padding: var(--section-y) 0; }
+    .faq__head { text-align: center; margin-bottom: clamp(40px, 5vw, 64px); }
+    .faq__head h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(38px, 5vw, 64px); line-height: 1; color: var(--black); letter-spacing: -0.02em; }
+    .faq__wrap { max-width: 860px; margin: 0 auto; }
+    .faq-block { border-bottom: 1px solid var(--gray-2); padding: 28px 0; cursor: pointer; }
+    .faq-block:first-child { border-top: 1px solid var(--gray-2); }
+    .faq-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .faq-q { font-family: var(--font-body); font-size: clamp(17px, 1.5vw, 20px); font-weight: 500; line-height: 1.3; color: var(--black); }
+    .faq-icon { position: relative; width: 22px; height: 22px; flex-shrink: 0; }
+    .faq-icon::before, .faq-icon::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--black); border-radius: 2px; transition: opacity 0.3s ease, transform 0.3s ease; }
+    .faq-icon::before { width: 16px; height: 2px; transform: translate(-50%, -50%); }
+    .faq-icon::after { width: 2px; height: 16px; transform: translate(-50%, -50%); }
+    .faq-block.open .faq-icon::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    .faq-a { overflow: hidden; max-height: 0; transition: max-height 0.4s ease, padding 0.3s ease; }
+    .faq-block.open .faq-a { max-height: 320px; padding-top: 16px; }
+    .faq-a p { font-size: 16px; line-height: 1.7; color: var(--gray-6); max-width: 720px; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 1000px) {
+      .case__build { grid-template-columns: 1fr; gap: 36px; }
+      .case--alt .case__build { direction: ltr; }
+      .case__panel { order: -1; }
+      .case__challenge { grid-template-columns: 1fr; gap: 14px; }
+    }
+    @media (max-width: 760px) {
+      .phero-wrap { padding-top: calc(34px + 14px + 18px); }
+      .phero__sub { white-space: normal; max-width: 460px; font-size: 16px; }
+      .case__head { gap: 18px; }
+      .case__logo { width: 120px; height: 60px; }
+      .proc__cards2 { grid-template-columns: 1fr; }
+      .proc__rail { display: none; }
+      .proc__grid { grid-template-columns: 1fr; }
+      .proc-step__phase { display: inline-block; }
+      /* Tab labels kleiner op mobiel */
+      .case-tab__label { font-size: 17px; }
+      .case-tab { padding: 14px 0; }
+      .case-tab.active { padding-top: 13px; }
+      /* Tab body meer ruimte voor wrapping tekst */
+      .case-tab.active .case-tab__body { max-height: 560px; }
+      .case-tab__body li { font-size: 13.5px; }
+      /* Build grid minder gap */
+      .case__build { gap: 28px; }
+      /* Panels op mobiel */
+      .case__panel { aspect-ratio: 4 / 3.4; }
+      .case__panel.calc-active { aspect-ratio: 3 / 4; }
+      .calc-slide img { border-radius: 4px; }
+      .calc-controls { padding: 8px 12px; }
+      .calc-counter { font-size: 10px; min-width: 28px; }
+      /* Pipeline mobile */
+      .case__panel.pipe-active { aspect-ratio: 1 / 1.15; }
+      .pipe-board { grid-template-columns: repeat(2, 1fr); gap: 6px; padding: 8px; }
+      .pipe-topbar { padding: 8px 10px; }
+      .pipe-crm-name { font-size: 10px; }
+      .pipe-stages-tag { display: none; }
+      .pipe-col-name { font-size: 7.5px; }
+      .pipe-card { padding: 5px 7px 5px; }
+      .pipe-card__name { font-size: 9px; }
+      .pipe-card__val { font-size: 8.5px; }
+      .pipe-card__detail { font-size: 7.5px; }
+      .pipe-toast { font-size: 9px; padding: 6px 10px 6px 8px; bottom: 8px; white-space: normal; max-width: 220px; line-height: 1.3; top: auto; right: auto; left: 50%; transform: translateX(-50%) translateY(10px); }
+      .pipe-toast.visible { transform: translateX(-50%) translateY(0); }
+      /* Screenshot mobile */
+      .case__panel.screenshot-active { aspect-ratio: 3 / 4; }
+      .screenshot-panel { padding: 10px; }
+      /* SEO animation mobile */
+      .case__panel.seo-active { aspect-ratio: 4 / 3.6; }
+      /* Buildhead tekst */
+      .case__buildhead { font-size: 11px; margin-bottom: 14px; }
+      /* FAQ padding */
+      .faq-block { padding: 20px 0; }
+      .faq-q { font-size: 16px; }
+    }
+    /* ---- Calculator slideshow ---- */
+    /* ---- Pipeline CRM animation ---- */
+    .case__panel.pipe-active { background: #f5f0e8; border: 1px solid rgba(160,140,110,0.2); overflow: hidden; box-shadow: 0 28px 64px -32px rgba(4,14,31,0.28); }
+    .case__panel.pipe-active::before { display: none; }
+    .pipe-anim { position: absolute; inset: 0; background: transparent; display: flex; flex-direction: column; border-radius: inherit; overflow: hidden; font-family: var(--font-body); }
+    .pipe-topbar { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px 9px; border-bottom: 1px solid rgba(0,0,0,0.07); flex-shrink: 0; }
+    .pipe-topbar-left { display: flex; align-items: center; gap: 8px; }
+    .pipe-crm-name { font-size: 11px; font-weight: 600; color: rgba(13,30,45,0.65); letter-spacing: 0.02em; }
+    .pipe-stages-tag { font-size: 9px; font-weight: 500; background: rgba(0,0,0,0.07); color: rgba(13,30,45,0.45); padding: 2px 7px; border-radius: 10px; }
+    .pipe-live-badge { display: flex; align-items: center; gap: 5px; font-size: 9.5px; color: #1a7a5a; font-weight: 500; }
+    .pipe-live-dot { width: 5px; height: 5px; background: #1a7a5a; border-radius: 50%; animation: pipeBlink 2s ease-in-out infinite; flex-shrink: 0; }
+    @keyframes pipeBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .pipe-board { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 12px 12px 10px; overflow: hidden; min-height: 0; }
+    .pipe-col { display: flex; flex-direction: column; min-width: 0; }
+    .pipe-col-head-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .pipe-col-name { font-size: 8px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(13,30,45,0.4); }
+    .pipe-col--won .pipe-col-name { color: #1a7a5a; }
+    .pipe-col-cnt { font-size: 9px; font-weight: 600; background: rgba(0,0,0,0.07); color: rgba(13,30,45,0.5); padding: 1px 5px; border-radius: 8px; min-width: 16px; text-align: center; }
+    .pipe-col--won .pipe-col-cnt { background: rgba(26,122,90,0.12); color: #1a7a5a; }
+    .pipe-col-line { height: 1px; background: rgba(0,0,0,0.1); border-radius: 1px; margin-bottom: 7px; }
+    .pipe-col--won .pipe-col-line { background: rgba(26,122,90,0.3); }
+    .pipe-cards { display: flex; flex-direction: column; gap: 5px; }
+    .pipe-card { background: #fff; border-radius: 5px; padding: 7px 8px 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.04); }
+    .pipe-card--won { background: #f0fdf8; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    .pipe-card__name { font-size: 10px; font-weight: 600; color: #0d1f2d; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
+    .pipe-card--won .pipe-card__name { color: #0a4a35; }
+    .pipe-card__val { font-size: 9.5px; font-weight: 600; color: #1a3a7a; }
+    .pipe-card--won .pipe-card__val { color: #1a7a5a; }
+    .pipe-card__detail { font-size: 8.5px; color: #9ca3af; margin-top: 1px; }
+    @keyframes pipeCardIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pipeCardOut { to { opacity: 0; transform: translateX(8px) scale(0.95); } }
+    .pipe-card-entering { animation: pipeCardIn 0.35s ease forwards; }
+    .pipe-card-leaving { animation: pipeCardOut 0.28s ease forwards; pointer-events: none; }
+    .pipe-toast { position: absolute; top: 9px; right: 10px; background: #fff; color: #0d1f2d; font-size: 9.5px; font-weight: 500; padding: 5px 9px; border-radius: 5px; display: flex; align-items: center; gap: 6px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s ease, transform 0.25s ease; border: 1px solid rgba(0,0,0,0.09); box-shadow: 0 2px 10px rgba(0,0,0,0.1); transform: translateY(-3px); z-index: 10; }
+    .pipe-toast.visible { opacity: 1; transform: translateY(0); }
+    .pipe-toast-dot { width: 5px; height: 5px; background: #0d7a5a; border-radius: 50%; flex-shrink: 0; }
+
+    /* ---- Screenshot panel ---- */
+    .case__panel.screenshot-active { background: #f3ede3; border: 1px solid rgba(160,140,110,0.2); overflow: hidden; box-shadow: 0 28px 64px -32px rgba(4,14,31,0.28); }
+    .case__panel.screenshot-active::before { display: none; }
+    .screenshot-panel { position: absolute; inset: 0; display: flex; align-items: flex-start; justify-content: center; padding: 14px; overflow: hidden; z-index: 1; }
+    .screenshot-panel img { width: 100%; height: 100%; object-fit: contain; object-position: top center; border-radius: 6px; box-shadow: 0 4px 20px rgba(40,25,10,0.12); display: block; }
+
+    /* ---- YNS slideshow ---- */
+    .case__panel.yns-ss-active { aspect-ratio: 2836 / 1546; background: #fff; border: none; overflow: hidden; box-shadow: 0 28px 64px -32px rgba(4,14,31,0.28); }
+    .case__panel.yns-ss-active::before { display: none; }
+    .yns-slideshow { position: absolute; inset: 0; display: flex; flex-direction: column; z-index: 2; }
+    .yns-slides { flex: 1; position: relative; overflow: hidden; }
+    .yns-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; }
+    .yns-slide.active { opacity: 1; pointer-events: auto; }
+    .yns-slide img { width: 100%; height: 100%; object-fit: contain; object-position: top center; display: block; }
+
+    /* ---- YNS calculator panel ---- */
+    .case__panel.yns-calc-active { aspect-ratio: 1844 / 2042; background: #fff; border: none; overflow: hidden; box-shadow: 0 28px 64px -32px rgba(4,14,31,0.28); }
+    .case__panel.yns-calc-active::before { display: none; }
+    .yns-calc-panel { position: absolute; inset: 0; z-index: 2; }
+    .yns-calc-panel img { width: 100%; height: 100%; object-fit: contain; object-position: top center; display: block; }
+
+    /* ---- YNS SEO panel ---- */
+    .case__panel.yns-seo-active { background: #f8fafb; border: 1px solid rgba(160,140,110,0.2); overflow: hidden; box-shadow: 0 28px 64px -32px rgba(4,14,31,0.28); }
+    .case__panel.yns-seo-active::before { display: none; }
+    .yns-seo-panel { position: absolute; inset: 0; z-index: 2; flex-direction: column; gap: 14px; padding: 20px 22px; justify-content: center; overflow: hidden; }
+    .seo-serp { background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.09); }
+    .seo-search-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; padding: 7px 12px; background: #f1f3f4; border-radius: 20px; border: 1px solid #e0e0e0; }
+    .seo-google-g { font-family: sans-serif; font-size: 13px; font-weight: 700; background: linear-gradient(135deg,#4285f4,#34a853,#fbbc05,#ea4335); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .seo-query { font-size: 11.5px; color: #202124; font-family: var(--font-body); }
+    .seo-result-meta { font-size: 10.5px; color: #4d5156; margin-bottom: 3px; display: flex; align-items: center; gap: 6px; }
+    .seo-pos-badge { background: #0c1f47; color: #fff; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 3px; letter-spacing: 0.04em; }
+    .seo-result-title { font-size: 14px; color: #1a0dab; font-weight: 500; line-height: 1.3; margin-bottom: 4px; font-family: var(--font-body); }
+    .seo-result-desc { font-size: 10.5px; color: #4d5156; line-height: 1.55; font-family: var(--font-body); }
+    .seo-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .seo-metric { background: #fff; border-radius: 8px; padding: 11px 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .seo-metric-val { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: #0c1f47; line-height: 1; margin-bottom: 4px; letter-spacing: -0.02em; }
+    .seo-metric-label { font-size: 9.5px; color: #6b7280; line-height: 1.4; font-family: var(--font-body); }
+    .seo-schema-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .seo-schema-label { font-size: 9.5px; color: #9ca3af; margin-bottom: 5px; font-family: var(--font-body); }
+    .seo-schema-tag { font-size: 9.5px; font-weight: 500; color: #0c1f47; background: rgba(12,31,71,0.07); padding: 4px 9px; border-radius: 20px; font-family: var(--font-body); }
+
+    .case__panel.calc-active { aspect-ratio: 1 / 1.35; background: #f3ede3; border: 1px solid rgba(160,140,110,0.2); overflow: hidden; }
+    .case__panel.calc-active::before { display: none; }
+    .calc-slideshow { position: absolute; inset: 0; display: flex; flex-direction: column; z-index: 2; background: #f3ede3; }
+    .calc-slides { flex: 1; position: relative; overflow: hidden; }
+    .calc-slide { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px 16px 6px; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+    .calc-slide.active { opacity: 1; pointer-events: auto; }
+    .calc-slide__label { font-family: var(--font-body); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(80,55,30,0.55); margin-bottom: 10px; }
+    .calc-slide img { max-width: 100%; max-height: calc(100% - 32px); object-fit: contain; border-radius: 8px; box-shadow: 0 6px 28px rgba(40,25,10,0.14); display: block; }
+    .calc-controls { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; background: rgba(243,237,227,0.95); border-top: 1px solid rgba(160,140,110,0.18); flex-shrink: 0; }
+    .calc-ctrl-btn { background: none; border: 1px solid rgba(80,55,30,0.22); cursor: pointer; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(60,40,20,0.65); transition: background 0.2s, color 0.2s; font-size: 14px; }
+    .calc-ctrl-btn:hover { background: rgba(60,40,20,0.1); color: rgba(60,40,20,1); border-color: rgba(80,55,30,0.5); }
+    .calc-ctrl-btn svg { width: 14px; height: 14px; }
+    .calc-dots { display: flex; gap: 6px; align-items: center; }
+    .calc-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(60,40,20,0.18); transition: background 0.25s, transform 0.25s; cursor: pointer; }
+    .calc-dot.active { background: rgba(60,40,20,0.6); transform: scale(1.25); }
+    .calc-counter { font-family: var(--font-body); font-size: 11px; font-weight: 500; color: rgba(60,40,20,0.5); letter-spacing: 0.06em; min-width: 36px; text-align: center; }
+  </style>
 </head>
-<body>
-  <!-- PAGE: Portfolio -->
-  <!-- SECTIONS: nav | header | case-grid (VIA Vastgoed + YNS Spain) | meer-cases-teaser | footer -->
+<body class="ppage">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar--boxed" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><img src="assets/logos/talynd-white.png" alt="Talynd" /></a>
+      <div class="navbar__nav">
+        <a href="diensten.html">Diensten</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="navbar__spacer"></div>
+      <a href="contact.html" class="navbar__cta-btn">Gratis intake</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="navbar__mobile" id="navMobile">
+        <a href="diensten.html">Diensten</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <div class="phero-wrap">
+    <header class="phero">
+      <div class="phero__inner">
+        <span class="eyebrow fade-in-up">Portfolio</span>
+        <h1 class="phero__title fade-in-up" data-delay="1">Wat we al gebouwd hebben.</h1>
+        <p class="phero__sub fade-in-up" data-delay="2">Twee klanten, twee verschillende uitdagingen. <em>Beide</em> opgelost met een werkend systeem.</p>
+      </div>
+    </header>
+    <div class="phero-media fade-in-up" data-delay="2">
+      <video src="assets/hero-video.mp4" autoplay muted loop playsinline preload="auto"></video>
+    </div>
+  </div>
+
+  <!-- ============ CASE 1: VIA VASTGOED ============ -->
+  <section class="case" id="via-vastgoed" style="scroll-margin-top:90px">
+    <div class="container">
+      <div class="case__head fade-in-up">
+        <div class="case__logo"><img src="assets/logos/via-vastgoed-white.png" alt="VIA Vastgoed" /></div>
+        <div class="case__headtext">
+          <span class="case__index">Case 01</span>
+          <h2 class="case__name">VIA Vastgoed</h2>
+          <p class="case__meta">Spaans vastgoed · bemiddeling voor Nederlandse kopers · <a href="https://viavastgoed.nl" target="_blank" rel="noopener">viavastgoed.nl</a></p>
+        </div>
+      </div>
+
+      <div class="case__challenge fade-in-up">
+        <span class="case__challenge-label">De uitdaging</span>
+        <p>VIA Vastgoed werkte met een verouderd salesproces. Leads kwamen binnen via meerdere kanalen, werden handmatig opgevolgd en vielen weg. Geen CRM-structuur, geen automatische opvolging, en geen manier om het woningaanbod live op de website te tonen.</p>
+      </div>
+
+      <div class="case__buildhead fade-in-up">Wat we bouwden</div>
+      <div class="case__build fade-in-up">
+        <div class="case-tabs" data-case="via">
+          <div class="case-tab active" data-panel="[SCREENSHOT: Pipedrive pipeline met 8 fasen van Nieuwe Lead tot Deal Gesloten, plus ActiveCampaign nurture flows]" data-panel-type="pipeline">
+            <div class="case-tab__num">01</div>
+            <div class="case-tab__label">Van lead tot deal gesloten</div>
+            <div class="case-tab__body"><ul>
+              <li>8-fasen Pipedrive pipeline ingericht: van Nieuwe Lead tot Deal Gesloten.</li>
+              <li>4 automatiserings-flows: beltaak binnen 24u bij nieuwe lead, folder verzenden na Google Meet, follow-up bij 3 dagen stilte, onboarding bij gewonnen deal.</li>
+              <li>7-mail nurture campagne in ActiveCampaign: van eerste interesse tot Google Meet-uitnodiging.</li>
+              <li>Leads via elk kanaal worden automatisch gevolgd. Geen handmatig werk meer.</li>
+            </ul></div>
+          </div>
+          <div class="case-tab" data-panel="[SCREENSHOT: Woningoverzicht met filterbalk en detailpagina's, live vanuit Inmobalia CRM]" data-panel-type="screenshot" data-screenshot-src="assets/via-woningen.png">
+            <div class="case-tab__num">02</div>
+            <div class="case-tab__label">17.611+ woningen live op de website</div>
+            <div class="case-tab__body"><ul>
+              <li>Cloudflare Worker gebouwd als beveiligde API-proxy tussen de website en Inmobalia CRM.</li>
+              <li>Toegang tot het volledige Spaanse MLS: live, met caching, foutafhandeling en token-authenticatie.</li>
+              <li>Woningoverzicht met filterbalk (regio, type, slaapkamers, prijs) plus een detailpagina per woning.</li>
+              <li>Zelfde infrastructuur herbruikbaar voor elke nieuwe klant. Geen dubbel werk.</li>
+            </ul></div>
+          </div>
+          <div class="case-tab" data-panel="[SCREENSHOT: AI Rendementscalculator in browser met invoervelden, belastingopties en gematchte brochures]" data-panel-type="calc-grid">
+            <div class="case-tab__num">03</div>
+            <div class="case-tab__label">AI Rendementscalculator</div>
+            <div class="case-tab__body"><ul>
+              <li>Maatwerk rekentool gebouwd op Spaanse vastgoedlogica: regio-specifieke belastingtarieven (Andalusie 7%, Valencia 10%, Canarische Eilanden 6,5%).</li>
+              <li>Klant vult eigen budget en optionele hypotheek in. Calculator berekent direct maximale koopprijs, aankoopkosten en netto rendement.</li>
+              <li>Verhuurmodule: vakantie of langdurig, bezettingsgraad, IRNR-belasting. Output is bruto/netto rendement plus maandelijkse cashflow.</li>
+              <li>Matcht automatisch de juiste brochures op basis van berekende koopprijs.</li>
+              <li>Live op eigen URL, inzetbaar als salestool tijdens en na het intakegesprek.</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="case__panel" data-case-panel="via">
+          <div class="calc-slideshow" style="display:none">
+            <div class="calc-slides">
+              <div class="calc-slide active">
+                <span class="calc-slide__label">01 &mdash; Invoer &amp; instellingen</span>
+                <img src="assets/calc-slide-1.png" alt="Calculator stap 1: invoer" />
+              </div>
+              <div class="calc-slide">
+                <span class="calc-slide__label">02 &mdash; Budget &amp; rendement</span>
+                <img src="assets/calc-slide-2.png" alt="Calculator stap 2: berekening" />
+              </div>
+              <div class="calc-slide">
+                <span class="calc-slide__label">03 &mdash; Passende projecten</span>
+                <img src="assets/calc-slide-3.png" alt="Calculator stap 3: passende projecten" />
+              </div>
+            </div>
+            <div class="calc-controls" style="position:relative;z-index:10">
+              <button class="calc-ctrl-btn" id="calcPrev" aria-label="Vorige">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <div class="calc-dots">
+                <span class="calc-dot active"></span>
+                <span class="calc-dot"></span>
+                <span class="calc-dot"></span>
+              </div>
+              <span class="calc-counter" id="calcCounter">1 / 3</span>
+              <button class="calc-ctrl-btn" id="calcNext" aria-label="Volgende">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="pipe-anim" id="pipeAnim">
+            <div class="pipe-topbar">
+              <div class="pipe-topbar-left"><span class="pipe-crm-name">VIA Vastgoed Pipeline</span><span class="pipe-stages-tag">8 fasen</span></div>
+            </div>
+            <div class="pipe-board">
+              <div class="pipe-col">
+                <div class="pipe-col-head-row"><span class="pipe-col-name">Nieuwe Lead</span><span class="pipe-col-cnt" id="pc1">2</span></div>
+                <div class="pipe-col-line"></div>
+                <div class="pipe-cards" id="pb1">
+                  <div class="pipe-card"><div class="pipe-card__name">Erik van Dam</div><div class="pipe-card__val">€ 285.000</div><div class="pipe-card__detail">Andalusie</div></div>
+                  <div class="pipe-card"><div class="pipe-card__name">Sophie de Wit</div><div class="pipe-card__val">€ 340.000</div><div class="pipe-card__detail">Costa del Sol</div></div>
+                </div>
+              </div>
+              <div class="pipe-col">
+                <div class="pipe-col-head-row"><span class="pipe-col-name">Google Meet</span><span class="pipe-col-cnt" id="pc2">1</span></div>
+                <div class="pipe-col-line"></div>
+                <div class="pipe-cards" id="pb2">
+                  <div class="pipe-card"><div class="pipe-card__name">Thomas Bakker</div><div class="pipe-card__val">€ 420.000</div><div class="pipe-card__detail">Valencia</div></div>
+                </div>
+              </div>
+              <div class="pipe-col">
+                <div class="pipe-col-head-row"><span class="pipe-col-name">Folder Verzonden</span><span class="pipe-col-cnt" id="pc3">1</span></div>
+                <div class="pipe-col-line"></div>
+                <div class="pipe-cards" id="pb3">
+                  <div class="pipe-card"><div class="pipe-card__name">Anna Jansen</div><div class="pipe-card__val">€ 295.000</div><div class="pipe-card__detail">Malaga</div></div>
+                </div>
+              </div>
+              <div class="pipe-col pipe-col--won">
+                <div class="pipe-col-head-row"><span class="pipe-col-name">Deal Gesloten</span><span class="pipe-col-cnt" id="pc4">1</span></div>
+                <div class="pipe-col-line"></div>
+                <div class="pipe-cards" id="pb4">
+                  <div class="pipe-card pipe-card--won"><div class="pipe-card__name">Pieter Verhoeven</div><div class="pipe-card__val">€ 375.000</div><div class="pipe-card__detail">✓ Koopakte getekend</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="pipe-toast" id="pipeToast"><div class="pipe-toast-dot"></div><span id="pipeToastTxt"></span></div>
+          </div>
+          <div class="screenshot-panel" id="viaScreenshot" style="display:none">
+            <img src="assets/via-woningen.png" alt="17.611+ woningen live op de VIA website" />
+          </div>
+          <span class="case__panel-label" style="display:none">[SCREENSHOT: AI Rendementscalculator]</span>
+        </div>
+      </div>
+
+      <div class="case__tools fade-in-up">
+        <span class="case__tools-label">Gebruikte tools</span>
+        <div class="case__pills">
+          <span class="pill">Pipedrive</span>
+          <span class="pill">ActiveCampaign</span>
+          <span class="pill">Cloudflare Workers</span>
+          <span class="pill">Inmobalia API</span>
+          <span class="pill">ManyChat</span>
+          <span class="pill">Calendly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASE 2: YNS SPAIN ============ -->
+  <section class="case case--alt" id="yns" style="scroll-margin-top:90px">
+    <div class="container">
+      <div class="case__head fade-in-up">
+        <div class="case__logo"><img src="assets/logos/yns-spain-white.png" alt="YNS Spain" /></div>
+        <div class="case__headtext">
+          <span class="case__index">Case 02</span>
+          <h2 class="case__name">YNS Spain</h2>
+          <p class="case__meta">Spaans vastgoed · Engelstalige markt (UK &amp; Ierland) · <a href="https://ynsspain.com" target="_blank" rel="noopener">ynsspain.com</a></p>
+          <div class="case__badges">
+            <span class="case__badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z"/></svg>5.0 score</span>
+            <span class="case__badge">163 reviews</span>
+            <span class="case__badge">50.000+ volgers</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case__challenge fade-in-up">
+        <span class="case__challenge-label">De uitdaging</span>
+        <p>YNS Spain had een sterk merk en een bewezen track record, maar geen website die dat weerspiegelde. De bestaande site was technisch zwak, niet organisch vindbaar en toonde het aanbod niet live. Leads konden woningen niet zelf bekijken of filteren.</p>
+      </div>
+
+      <div class="case__buildhead fade-in-up">Wat we bouwden</div>
+      <div class="case__build fade-in-up">
+        <div class="case-tabs" data-case="yns">
+          <div class="case-tab active" data-panel="[SCREENSHOT: YNS Spain homepage met hero, sociale proof, live woningstrip en FAQ]" data-panel-type="yns-ss">
+            <div class="case-tab__num">01</div>
+            <div class="case-tab__label">Website van nul opgebouwd</div>
+            <div class="case-tab__body"><ul>
+              <li>Website van nul opgebouwd in Next.js 15: 10 pagina's live op Vercel.</li>
+              <li>Salesgerichte opbouw: hero met sociale proof, live woningstrip, team, testimonials en FAQ.</li>
+              <li>9 individuele projectpagina's. Elke woning heeft een eigen URL, foto's en content.</li>
+              <li>Gebouwd voor een Engelstalige markt (UK en Ierland) met 5.0-rating en 163 reviews als vertrekpunt.</li>
+            </ul></div>
+          </div>
+          <div class="case-tab" data-panel="[SCREENSHOT: Google Search Console met sitemap, 15 URLs geindexeerd en URL-structuur]" data-panel-type="yns-seo">
+            <div class="case-tab__num">02</div>
+            <div class="case-tab__label">SEO-fundament van nul opgebouwd</div>
+            <div class="case-tab__body"><ul>
+              <li>Alle pagina's omgezet naar server-side rendering zodat Google de content kan indexeren.</li>
+              <li>Schema markup geimplementeerd op elke pagina: RealEstateAgent, FAQPage, BreadcrumbList en Product per woning.</li>
+              <li>URL-structuur geoptimaliseerd op zoekvolume: /properties-for-sale-costa-del-sol (2.400 zoekopdrachten per maand).</li>
+              <li>Afbeeldingen gecomprimeerd van 28,5 MB naar 552 KB. Directe laadtijdverbetering.</li>
+              <li>Google Search Console gekoppeld, sitemap ingediend: 15 URLs geindexeerd.</li>
+            </ul></div>
+          </div>
+          <div class="case-tab" data-panel="[SCREENSHOT: Investment calculator met live property matching op basis van ingevuld budget]" data-panel-type="yns-calc">
+            <div class="case-tab__num">03</div>
+            <div class="case-tab__label">Investment calculator met live matching</div>
+            <div class="case-tab__body"><ul>
+              <li>Klant vult budget in. Calculator toont direct passende live woningen vanuit het CRM.</li>
+              <li>Filtert automatisch op koopprijs: alleen woningen die financieel haalbaar zijn worden getoond.</li>
+              <li>Gecombineerd met de hypotheek/aankoopkosten berekening. Een tool die orientatie en concrete opties samenvoegt.</li>
+              <li>Elke woning in de resultaten is klikbaar naar de volledige projectpagina.</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="case__panel" data-case-panel="yns">
+          <div class="yns-slideshow" id="ynsSlideshow">
+            <div class="yns-slides">
+              <div class="yns-slide active"><img src="assets/yns-slide-1.png" alt="YNS Spain homepage" /></div>
+            </div>
+          </div>
+          <div class="yns-seo-panel" id="ynsSeoPanel" style="display:none">
+            <div class="seo-serp">
+              <div class="seo-search-bar">
+                <span class="seo-google-g">G</span>
+                <span class="seo-query">properties for sale costa del sol</span>
+              </div>
+              <div class="seo-result-meta"><img src="assets/logo-yns-avatar.png" alt="YNS" style="width:14px;height:14px;border-radius:3px;object-fit:cover;flex-shrink:0;" /><span class="seo-result-url">ynsspain.com › properties-for-sale-costa-del-sol</span></div>
+              <div class="seo-result-title">Properties for Sale on the Costa del Sol | YNS Spain</div>
+              <div class="seo-result-desc">Browse 31+ properties for sale on the Costa del Sol. Apartments, villas and new builds — live pricing direct from our CRM, updated in real time.</div>
+            </div>
+            <div class="seo-metrics">
+              <div class="seo-metric"><div class="seo-metric-val" id="seoUrlCount">0</div><div class="seo-metric-label">URLs geïndexeerd</div></div>
+              <div class="seo-metric"><div class="seo-metric-val">2.400</div><div class="seo-metric-label">zoekvolume per maand</div></div>
+              <div class="seo-metric"><div class="seo-metric-val">552 KB</div><div class="seo-metric-label">afbeeldingen (was 28 MB)</div></div>
+            </div>
+            <div>
+              <div class="seo-schema-label">Schema markup</div>
+              <div class="seo-schema-row">
+                <span class="seo-schema-tag">RealEstateAgent</span>
+                <span class="seo-schema-tag">FAQPage</span>
+                <span class="seo-schema-tag">BreadcrumbList</span>
+                <span class="seo-schema-tag">Product</span>
+              </div>
+            </div>
+          </div>
+          <div class="yns-calc-panel" id="ynsCalcPanel" style="display:none">
+            <img src="assets/yns-calc.png" alt="YNS Spain investment calculator" />
+          </div>
+        </div>
+      </div>
+
+      <div class="case__tools fade-in-up">
+        <span class="case__tools-label">Gebruikte tools</span>
+        <div class="case__pills">
+          <span class="pill">Next.js 15</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">Tailwind CSS</span>
+          <span class="pill">Cloudflare Workers</span>
+          <span class="pill">Inmobalia API</span>
+          <span class="pill">Vercel</span>
+          <span class="pill">Google Search Console</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS TIMELINE ============ -->
+  <section class="proc">
+    <div class="container">
+      <div class="proc__top fade-in-up">
+        <span class="proc__eyebrow">Zo verliep het</span>
+        <h2 class="proc__title">Van eerste gesprek tot werkend systeem, en daarna.</h2>
+        <div class="proc__cards2">
+          <div class="proc__card2">We bouwen op locatie en op maat, afgestemd op jouw proces en domeinkennis.</div>
+          <div class="proc__card2">Na de overdracht beheer je het systeem zelf. We blijven beschikbaar voor doorontwikkeling.</div>
+        </div>
+      </div>
+
+      <div class="proc__rail" aria-hidden="true">
+        <div class="proc__labels">
+          <span class="proc__lbl proc__lbl--1">Week 1</span>
+          <span class="proc__lbl proc__lbl--2">Week 2 – 4</span>
+          <span class="proc__lbl proc__lbl--3">Na livegang</span>
+        </div>
+        <div class="proc__track-wrap">
+          <div class="proc__track"></div>
+          <span class="proc__dot proc__dot--1"></span>
+          <span class="proc__dot proc__dot--2"></span>
+          <span class="proc__dot proc__dot--3"></span>
+        </div>
+      </div>
+
+      <div class="proc__grid">
+        <div class="proc-step fade-in-up">
+          <span class="proc-step__phase">Week 1</span>
+          <h3>De intake &amp; het plan</h3>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>We komen langs op locatie en brengen het proces in kaart</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>We bepalen wat we bouwen, met welke tools en welk resultaat</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Je krijgt een heldere offerte op maat, altijd na een gratis intake</span></li>
+          </ul>
+        </div>
+        <div class="proc-step fade-in-up" data-delay="1">
+          <span class="proc-step__phase">Week 2 – 4</span>
+          <h3>Bouwen &amp; implementeren</h3>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rayco bouwt de systemen, van Pipedrive-pipelines tot API-koppelingen</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dimas begeleidt, test mee en documenteert alles wat we opleveren</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Je ziet tussentijds wat er staat en stuurt mee waar nodig</span></li>
+          </ul>
+        </div>
+        <div class="proc-step fade-in-up" data-delay="2">
+          <span class="proc-step__phase">Na livegang</span>
+          <h3>Overdracht &amp; doorlopend</h3>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Systeem staat live, je team krijgt training en documentatie</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Je beheert het systeem zelfstandig, zonder afhankelijkheid</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>We blijven langskomen voor onderhoud en doorontwikkeling</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq">
+    <div class="container">
+      <div class="faq__head fade-in-up">
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq__wrap fade-in-up">
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Werken jullie alleen voor vastgoed?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Onze eerste klanten komen uit het vastgoed, dus daar zit onze diepste ervaring. Maar de systemen die we bouwen, denk aan leadopvolging, data-integratie en CRM-automatisering, werken net zo goed in andere sectoren. In de intake bepalen we samen of het past.</p>
+          </div>
+        </div>
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Hoe lang duurt een traject?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>De meeste trajecten lopen van intake tot werkend systeem in vier tot zes weken. De exacte planning hangt af van de omvang en de beschikbare data, maar we werken in korte, concrete stappen zodat je snel resultaat ziet.</p>
+          </div>
+        </div>
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Wat als wij al met bepaalde tools werken?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Geen probleem. We sluiten aan op wat je al gebruikt. Bij onze klanten koppelden we onder andere Pipedrive, ActiveCampaign en bestaande CRM's via maatwerk API's. We bouwen rond jouw bestaande werkwijze, niet andersom.</p>
+          </div>
+        </div>
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Moeten wij technische kennis hebben?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Nee. Wij bouwen de techniek en zorgen dat je team het daarna zelf kan beheren. Bij de overdracht krijg je heldere documentatie en training, in gewone taal, zodat je niet afhankelijk blijft van een technische specialist.</p>
+          </div>
+        </div>
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Wat gebeurt er na de oplevering?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Het systeem is van jou en je beheert het zelfstandig. We blijven beschikbaar voor onderhoud en doorontwikkeling, en komen graag langs als er iets nieuws nodig is. Geen verplicht abonnement, wel een vast aanspreekpunt.</p>
+          </div>
+        </div>
+
+        <div class="faq-block">
+          <div class="faq-header">
+            <h3 class="faq-q">Is onze data veilig?</h3>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">
+            <p>Ja. We bouwen volgens het principe van security by design, werken met versleutelde verbindingen en gerenommeerde infrastructuur, en verwerken niet meer data dan nodig. Meer hierover lees je op onze <a href="beveiliging.html" style="color:var(--dark-teal);border-bottom:1px solid currentColor;text-decoration:none;">beveiligingspagina</a>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA (dark teal) ============ -->
+  <div class="cta-wrap">
+    <div class="container">
+      <div class="cta fade-in-up">
+        <div class="cta__inner">
+          <h2>Wordt jouw bedrijf de <em>volgende case?</em></h2>
+          <p>Plan een gratis intake. We komen langs, kijken naar je proces en vertellen eerlijk wat we voor je kunnen bouwen.</p>
+          <a href="contact.html" class="btn btn--secondary btn--lg">Plan een gratis intake</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <p class="footer__tagline">Hands-on AI consulting voor vastgoed. Wij bouwen het systeem. Jij houdt de controle.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Portfolio</h4>
+          <a href="cases/via-vastgoed.html">VIA Vastgoed</a>
+          <a href="cases/yns.html">YNS Spain</a>
+        </div>
+        <div class="footer__col">
+          <h4>Bedrijf</h4>
+          <a href="over-ons.html">Over ons</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:info@talynd.com">info@talynd.com</a>
+          <a href="tel:+31850043927">+31 85 004 3927</a>
+          <a href="https://www.linkedin.com/company/talynd/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__legal-wrap">
+          <p class="footer__legal">© 2026 Talynd · KVK: 99836882 · H.J.E. Wenckebachweg 6, 1096 AN Amsterdam</p>
+          <nav class="footer__legal-links">
+            <a href="beveiliging.html">Beveiliging</a>
+            <a href="voorwaarden.html">Voorwaarden</a>
+            <a href="privacybeleid.html">Privacybeleid</a>
+          </nav>
+        </div>
+        <a href="https://www.linkedin.com/company/talynd/" target="_blank" rel="noopener" class="footer__social">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="footer__wm" aria-hidden="true"><span>Talynd</span></div>
+  </footer>
+
   <script src="js/main.js"></script>
+  <script>
+    /* ---------- Hero video: ensure autoplay loop ---------- */
+    (function () {
+      var v = document.querySelector(".phero-media video");
+      if (!v) return;
+      v.muted = true;
+      var tryPlay = function () { var p = v.play(); if (p && p.catch) p.catch(function(){}); };
+      tryPlay();
+      v.addEventListener("loadeddata", tryPlay);
+      v.addEventListener("canplay", tryPlay);
+      document.addEventListener("visibilitychange", function () { if (!document.hidden) tryPlay(); });
+    })();
+  </script>
+  <script>
+    /* ---------- Case deliverable tabs (per case) ---------- */
+    document.querySelectorAll(".case-tabs").forEach(function (group) {
+      var build = group.closest(".case__build");
+      var panel = build.querySelector(".case__panel");
+      var label = panel.querySelector(".case__panel-label");
+      var tabs = group.querySelectorAll(".case-tab");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) { t.classList.remove("active"); });
+          tab.classList.add("active");
+          var txt = tab.getAttribute("data-panel");
+          var ptype = tab.getAttribute("data-panel-type");
+          var ss = panel.querySelector(".calc-slideshow");
+          var pa = panel.querySelector(".pipe-anim");
+          if (ptype === "calc-grid" && ss) {
+            ss.style.display = "flex";
+            if (pa) pa.style.display = "none";
+            if (label) label.style.display = "none";
+            panel.classList.add("calc-active");
+            panel.classList.remove("pipe-active");
+            if (typeof window.pipelineStop === "function") window.pipelineStop();
+          } else if (ptype === "pipeline" && pa) {
+            if (ss) ss.style.display = "none";
+            pa.style.display = "flex";
+            var scr2 = panel.querySelector(".screenshot-panel"); if (scr2) scr2.style.display = "none";
+            if (label) label.style.display = "none";
+            panel.classList.remove("calc-active"); panel.classList.remove("screenshot-active");
+            panel.classList.add("pipe-active");
+            if (typeof window.pipelineStart === "function") window.pipelineStart();
+          } else if (ptype === "screenshot") {
+            var scr = panel.querySelector(".screenshot-panel");
+            if (ss) ss.style.display = "none";
+            if (pa) pa.style.display = "none";
+            if (scr) scr.style.display = "flex";
+            if (label) label.style.display = "none";
+            panel.classList.remove("calc-active"); panel.classList.remove("pipe-active");
+            panel.classList.add("screenshot-active");
+            if (typeof window.pipelineStop === "function") window.pipelineStop();
+          } else if (ptype === "yns-ss") {
+            var yss = panel.querySelector(".yns-slideshow");
+            var yseoH = panel.querySelector(".yns-seo-panel"); if (yseoH) yseoH.style.display = "none";
+            var ycpH = panel.querySelector(".yns-calc-panel"); if (ycpH) ycpH.style.display = "none";
+            if (ss) ss.style.display = "none"; if (pa) pa.style.display = "none";
+            var scrY = panel.querySelector(".screenshot-panel"); if (scrY) scrY.style.display = "none";
+            if (yss) yss.style.display = "flex";
+            if (label) label.style.display = "none";
+            panel.classList.remove("calc-active"); panel.classList.remove("pipe-active"); panel.classList.remove("screenshot-active"); panel.classList.remove("yns-seo-active"); panel.classList.remove("yns-calc-active");
+            panel.classList.add("yns-ss-active");
+            if (typeof window.ynsSSStart === "function") window.ynsSSStart();
+          } else if (ptype === "yns-calc") {
+            var yss2 = panel.querySelector(".yns-slideshow"); if (yss2) yss2.style.display = "none";
+            var yseo = panel.querySelector(".yns-seo-panel"); if (yseo) yseo.style.display = "none";
+            var ycp = panel.querySelector(".yns-calc-panel");
+            if (ss) ss.style.display = "none"; if (pa) pa.style.display = "none";
+            if (ycp) ycp.style.display = "block";
+            if (label) label.style.display = "none";
+            panel.classList.remove("calc-active"); panel.classList.remove("pipe-active"); panel.classList.remove("screenshot-active"); panel.classList.remove("yns-ss-active"); panel.classList.remove("yns-seo-active");
+            panel.classList.add("yns-calc-active");
+            if (typeof window.ynsSSStop === "function") window.ynsSSStop();
+          } else if (ptype === "yns-seo") {
+            var yss3 = panel.querySelector(".yns-slideshow"); if (yss3) yss3.style.display = "none";
+            var ycp2 = panel.querySelector(".yns-calc-panel"); if (ycp2) ycp2.style.display = "none";
+            var yseo2 = panel.querySelector(".yns-seo-panel");
+            if (ss) ss.style.display = "none"; if (pa) pa.style.display = "none";
+            if (yseo2) { yseo2.style.display = "flex"; if (typeof window.ynsSeoAnimate === "function") window.ynsSeoAnimate(); }
+            if (label) label.style.display = "none";
+            panel.classList.remove("calc-active"); panel.classList.remove("pipe-active"); panel.classList.remove("screenshot-active"); panel.classList.remove("yns-ss-active"); panel.classList.remove("yns-calc-active");
+            panel.classList.add("yns-seo-active");
+            if (typeof window.ynsSSStop === "function") window.ynsSSStop();
+          } else {
+            if (ss) ss.style.display = "none";
+            if (pa) pa.style.display = "none";
+            var scr3 = panel.querySelector(".screenshot-panel"); if (scr3) scr3.style.display = "none";
+            var yss4 = panel.querySelector(".yns-slideshow"); if (yss4) yss4.style.display = "none";
+            var ycp3 = panel.querySelector(".yns-calc-panel"); if (ycp3) ycp3.style.display = "none";
+            var yseo3 = panel.querySelector(".yns-seo-panel"); if (yseo3) yseo3.style.display = "none";
+            panel.classList.remove("calc-active"); panel.classList.remove("pipe-active"); panel.classList.remove("screenshot-active"); panel.classList.remove("yns-ss-active"); panel.classList.remove("yns-calc-active"); panel.classList.remove("yns-seo-active");
+            if (typeof window.pipelineStop === "function") window.pipelineStop();
+            if (typeof window.ynsSSStop === "function") window.ynsSSStop();
+            if (label) { label.style.display = ""; if (txt) label.textContent = txt; }
+          }
+        });
+      });
+    });
+  </script>
+  <script>
+    /* ---------- Pipeline animation ---------- */
+    (function () {
+      var timers = [];
+      function after(ms, fn) { var t = setTimeout(fn, ms); timers.push(t); }
+      function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+      function cnt(id, n) { var el = document.getElementById(id); if (el) el.textContent = n; }
+      function showToast(msg) {
+        var t = document.getElementById('pipeToast'), tx = document.getElementById('pipeToastTxt');
+        if (!t) return; if (tx) tx.textContent = msg; t.classList.add('visible');
+      }
+      function hideToast() { var t = document.getElementById('pipeToast'); if (t) t.classList.remove('visible'); }
+      function makeCard(d, entering) {
+        var c = document.createElement('div');
+        c.className = 'pipe-card' + (d.won ? ' pipe-card--won' : '') + (entering ? ' pipe-card-entering' : '');
+        c.innerHTML = '<div class="pipe-card__name">' + d.name + '</div><div class="pipe-card__val">' + d.val + '</div><div class="pipe-card__detail">' + d.tag + '</div>';
+        return c;
+      }
+      function resetBoard() {
+        var pb1 = document.getElementById('pb1'), pb2 = document.getElementById('pb2'),
+            pb3 = document.getElementById('pb3'), pb4 = document.getElementById('pb4');
+        if (!pb1) return;
+        pb1.innerHTML = '';
+        [{ name: 'Erik van Dam', val: '\u20ac\u00a0285.000', tag: 'Andalusie' }, { name: 'Sophie de Wit', val: '\u20ac\u00a0340.000', tag: 'Costa del Sol' }].forEach(function (d) { pb1.appendChild(makeCard(d, false)); });
+        pb2.innerHTML = ''; pb2.appendChild(makeCard({ name: 'Thomas Bakker', val: '\u20ac\u00a0420.000', tag: 'Valencia' }, false));
+        pb3.innerHTML = ''; pb3.appendChild(makeCard({ name: 'Anna Jansen', val: '\u20ac\u00a0295.000', tag: 'Malaga' }, false));
+        pb4.innerHTML = ''; pb4.appendChild(makeCard({ name: 'Pieter Verhoeven', val: '\u20ac\u00a0375.000', tag: '\u2713 Koopakte getekend', won: true }, false));
+        cnt('pc1', 2); cnt('pc2', 1); cnt('pc3', 1); cnt('pc4', 1); hideToast();
+      }
+      function runSequence() {
+        resetBoard();
+        after(1400, function () {
+          var pb1 = document.getElementById('pb1'); if (!pb1) return;
+          pb1.insertBefore(makeCard({ name: 'James Morrison', val: '\u20ac\u00a0310.000', tag: 'Via Instagram' }, true), pb1.firstChild);
+          cnt('pc1', 3);
+        });
+        after(2100, function () { showToast('Beltaak aangemaakt \u2014 James Morrison'); });
+        after(4200, function () { hideToast(); });
+        after(5800, function () {
+          var pb2 = document.getElementById('pb2'), pb3 = document.getElementById('pb3'); if (!pb2 || !pb3) return;
+          var card = pb2.querySelector('.pipe-card'); if (!card) return;
+          card.classList.add('pipe-card-leaving');
+          setTimeout(function () {
+            card.remove(); cnt('pc2', 0);
+            pb3.insertBefore(makeCard({ name: 'Thomas Bakker', val: '\u20ac\u00a0420.000', tag: 'Folder ontvangen' }, true), pb3.firstChild);
+            cnt('pc3', 2);
+            showToast('Folder verzonden \u2014 automatisch');
+          }, 300);
+        });
+        after(8200, function () { hideToast(); });
+        after(9800, function () {
+          var pb3 = document.getElementById('pb3'), pb4 = document.getElementById('pb4'); if (!pb3 || !pb4) return;
+          var cards = Array.from(pb3.querySelectorAll('.pipe-card')).filter(function (c) {
+            var n = c.querySelector('.pipe-card__name'); return n && n.textContent.indexOf('Anna') !== -1;
+          });
+          if (!cards.length) return;
+          cards[0].classList.add('pipe-card-leaving');
+          setTimeout(function () {
+            cards[0].remove(); cnt('pc3', 1);
+            pb4.insertBefore(makeCard({ name: 'Anna Jansen', val: '\u20ac\u00a0295.000', tag: '\u2713 Koopakte getekend', won: true }, true), pb4.firstChild);
+            cnt('pc4', 2); showToast('Deal gesloten \u2014 Anna Jansen');
+          }, 300);
+        });
+        after(12500, function () { hideToast(); });
+        after(15500, function () { runSequence(); });
+      }
+      window.pipelineStart = function () { clearTimers(); runSequence(); };
+      window.pipelineStop = function () { clearTimers(); hideToast(); };
+      /* Auto-start when scrolled into view */
+      var pipePanel = document.querySelector('[data-case-panel="via"]');
+      if (pipePanel && 'IntersectionObserver' in window) {
+        var pipeObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { window.pipelineStart(); }
+            else { window.pipelineStop(); }
+          });
+        }, { threshold: 0.3 });
+        pipeObs.observe(pipePanel);
+      }
+    })();
+  </script>
+  <script>
+    /* ---------- Calculator slideshow ---------- */
+    (function () {
+      var panel = document.querySelector('[data-case-panel="via"]');
+      if (!panel) return;
+      panel.classList.add('pipe-active');
+      var pipeEl = panel.querySelector('.pipe-anim');
+      if (pipeEl) pipeEl.style.display = 'flex';
+      if (typeof window.pipelineStart === 'function') window.pipelineStart();
+      var slides = panel.querySelectorAll('.calc-slide');
+      var dots = panel.querySelectorAll('.calc-dot');
+      var counter = document.getElementById('calcCounter');
+      var current = 0;
+      var timer;
+      function go(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = ((n % slides.length) + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+        if (counter) counter.textContent = (current + 1) + ' / ' + slides.length;
+        resetTimer();
+      }
+      function resetTimer() { /* auto-advance disabled */ }
+      var prev = document.getElementById('calcPrev');
+      var next = document.getElementById('calcNext');
+      if (prev) prev.addEventListener('click', function () { go(current - 1); });
+      if (next) next.addEventListener('click', function () { go(current + 1); });
+      dots.forEach(function (dot, i) { dot.addEventListener('click', function () { go(i); }); });
+      resetTimer();
+    })();
+  </script>
+  <script>
+    /* ---------- FAQ accordion ---------- */
+    document.querySelectorAll(".faq-block").forEach(function (block) {
+      block.addEventListener("click", function () {
+        var isOpen = block.classList.contains("open");
+        document.querySelectorAll(".faq-block.open").forEach(function (b) { b.classList.remove("open"); });
+        if (!isOpen) block.classList.add("open");
+      });
+    });
+  </script>
+  <script>
+    /* ---------- Timeline draw animation on scroll ---------- */
+    (function () {
+      var rail = document.querySelector(".proc__rail");
+      if (!rail) return;
+      if (!("IntersectionObserver" in window)) { rail.classList.add("in"); return; }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { rail.classList.add("in"); obs.unobserve(rail); }
+        });
+      }, { threshold: 0.4 });
+      obs.observe(rail);
+    })();
+  </script>
+  <script>
+    /* ---------- YNS SEO counter animation ---------- */
+    (function () {
+      var animated = false;
+      window.ynsSeoAnimate = function () {
+        animated = false;
+        var el = document.getElementById('seoUrlCount');
+        if (!el) return;
+        el.textContent = '0';
+        clearTimeout(window._seoTimer);
+        var start = null, duration = 1200, target = 15;
+        function step(ts) {
+          if (!start) start = ts;
+          var pct = Math.min((ts - start) / duration, 1);
+          el.textContent = Math.round(pct * target);
+          if (pct < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      };
+    })();
+  </script>
+  <script>
+    /* ---------- YNS Spain slideshow (auto-advance) ---------- */
+    (function () {
+      var panel = document.querySelector('[data-case-panel="yns"]');
+      if (!panel) return;
+      var slides, dots, current = 0, timer;
+      function initEls() {
+        slides = panel.querySelectorAll('.yns-slide');
+        dots   = panel.querySelectorAll('.yns-dot');
+      }
+      function go(n) {
+        if (!slides || !slides.length) return;
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = ((n % slides.length) + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+      function startTimer() { clearInterval(timer); timer = setInterval(function () { go(current + 1); }, 4000); }
+      function stopTimer()  { clearInterval(timer); }
+      window.ynsSSStart = function () {
+        var yss = panel.querySelector('.yns-slideshow');
+        if (yss) yss.style.display = 'flex';
+        panel.classList.add('yns-ss-active');
+        initEls();
+        if (slides && slides.length) { slides.forEach(function (s) { s.classList.remove('active'); }); slides[0].classList.add('active'); current = 0; }
+        if (dots && dots.length) { dots.forEach(function (d) { d.classList.remove('active'); }); dots[0].classList.add('active'); }
+        if (slides && slides.length > 1) startTimer();
+      };
+      window.ynsSSStop = function () { stopTimer(); };
+      panel.addEventListener('click', function (e) {
+        var dot = e.target.closest('.yns-dot');
+        if (!dot) return;
+        var idx = Array.from(dots).indexOf(dot);
+        if (idx !== -1) { go(idx); clearInterval(timer); startTimer(); }
+      });
+      /* Init on load */
+      window.ynsSSStart();
+    })();
+  </script>
 </body>
 </html>
