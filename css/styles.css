@@ -488,7 +488,7 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
   .tiers { grid-template-columns: 1fr; }
   .stats__grid { grid-template-columns: 1fr 1fr; gap: 28px; }
   .how { gap: 16px; }
-  .how__panel { aspect-ratio: 16 / 9; }
+  .how__panel { aspect-ratio: 4 / 3; }
   .tmnl-card { padding: 36px 26px; }
   .cta { padding: 56px 26px; }
   .svc-block { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
