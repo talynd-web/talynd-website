@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina niet gevonden | Talynd</title>
+  <meta name="description" content="Deze pagina bestaat niet of is verplaatst.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .e404 {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 48px 24px;
+      background: var(--white);
+    }
+    .e404__num {
+      font-family: var(--font-display);
+      font-size: clamp(96px, 20vw, 180px);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--gray-2);
+      margin-bottom: 0;
+      user-select: none;
+    }
+    .e404__title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(22px, 3vw, 32px);
+      color: var(--black);
+      letter-spacing: -0.015em;
+      margin: 8px 0 16px;
+    }
+    .e404__sub {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-5);
+      max-width: 420px;
+      margin: 0 auto 36px;
+    }
+    .e404__actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .e404__links {
+      margin-top: 52px;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .e404__link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark-teal);
+      text-decoration: none;
+      transition: opacity 0.18s ease;
+    }
+    .e404__link:hover { opacity: 0.7; }
+  </style>
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar--boxed" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><img src="assets/logos/talynd-white.png" alt="Talynd" /></a>
+      <div class="navbar__nav">
+        <a href="diensten.html">Diensten</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="navbar__spacer"></div>
+      <a href="contact.html" class="navbar__cta-btn">Gratis intake</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="navbar__mobile" id="navMobile">
+        <a href="diensten.html">Diensten</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ 404 ============ -->
+  <main class="e404">
+    <p class="e404__num">404</p>
+    <h1 class="e404__title">Pagina niet gevonden</h1>
+    <p class="e404__sub">Deze pagina bestaat niet of is verplaatst. Ga terug naar de homepage of bekijk wat we voor je kunnen betekenen.</p>
+    <div class="e404__actions">
+      <a href="/" class="btn btn--primary">Terug naar home</a>
+      <a href="contact.html" class="btn btn--outline">Neem contact op</a>
+    </div>
+    <nav class="e404__links" aria-label="Snelle links">
+      <a href="diensten.html" class="e404__link">Diensten</a>
+      <a href="portfolio.html" class="e404__link">Portfolio</a>
+      <a href="over-ons.html" class="e404__link">Over ons</a>
+    </nav>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
