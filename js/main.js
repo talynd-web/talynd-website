@@ -147,3 +147,65 @@ function animateCount(el) {
   }
   requestAnimationFrame(frame);
 }
+
+/* ---------- Cookie notice ---------- */
+(function () {
+  if (localStorage.getItem("talynd_cookie_ok") === "1") return;
+
+  // Inject CSS
+  var style = document.createElement("style");
+  style.textContent = [
+    ".ck-bar{position:fixed;bottom:0;left:0;right:0;z-index:9999;",
+    "background:var(--black,#040e1f);color:rgba(255,255,255,0.88);",
+    "padding:16px 24px;display:flex;align-items:center;justify-content:space-between;",
+    "gap:16px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:13.5px;",
+    "line-height:1.5;border-top:1px solid rgba(255,255,255,0.08);",
+    "transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.22,1,0.36,1);}",
+    ".ck-bar.ck-visible{transform:translateY(0);}",
+    ".ck-bar__text{flex:1;min-width:0;}",
+    ".ck-bar__text a{color:var(--teal,#00beb1);text-decoration:underline;text-underline-offset:3px;}",
+    ".ck-bar__actions{display:flex;gap:10px;flex-shrink:0;}",
+    ".ck-btn{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;",
+    "padding:8px 18px;border-radius:20px;border:none;cursor:pointer;transition:opacity 0.18s ease;}",
+    ".ck-btn--accept{background:var(--teal,#00beb1);color:#040e1f;}",
+    ".ck-btn--accept:hover{opacity:0.85;}",
+    ".ck-btn--info{background:transparent;color:rgba(255,255,255,0.55);",
+    "border:1px solid rgba(255,255,255,0.18);}",
+    ".ck-btn--info:hover{color:#fff;border-color:rgba(255,255,255,0.5);}"
+  ].join("");
+  document.head.appendChild(style);
+
+  // Inject HTML
+  var bar = document.createElement("div");
+  bar.className = "ck-bar";
+  bar.setAttribute("role", "region");
+  bar.setAttribute("aria-label", "Cookiemelding");
+  bar.innerHTML = [
+    '<p class="ck-bar__text">',
+    "Wij gebruiken geen tracking cookies. Onze website verzamelt geanonimiseerde bezoekersstatistieken ",
+    "zonder persoonlijke gegevens op te slaan. ",
+    '<a href="/privacybeleid.html">Meer informatie</a>.',
+    "</p>",
+    '<div class="ck-bar__actions">',
+    '<button class="ck-btn ck-btn--info" id="ckDecline">Weigeren</button>',
+    '<button class="ck-btn ck-btn--accept" id="ckAccept">Begrepen</button>',
+    "</div>"
+  ].join("");
+  document.body.appendChild(bar);
+
+  // Animate in after short delay
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      bar.classList.add("ck-visible");
+    });
+  });
+
+  function dismiss() {
+    bar.classList.remove("ck-visible");
+    localStorage.setItem("talynd_cookie_ok", "1");
+    setTimeout(function () { bar.remove(); }, 400);
+  }
+
+  document.getElementById("ckAccept").addEventListener("click", dismiss);
+  document.getElementById("ckDecline").addEventListener("click", dismiss);
+})();
