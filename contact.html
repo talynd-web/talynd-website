@@ -321,16 +321,40 @@
       document.addEventListener("visibilitychange", function () { if (!document.hidden) tryPlay(); });
     })();
 
-    /* ---------- Contact form: client-side success state ---------- */
+    /* ---------- Contact form: Formspree ---------- */
     (function () {
       var form = document.getElementById("contactForm");
       var success = document.getElementById("contactSuccess");
-      if (!form || !success) return;
+      var btn = form ? form.querySelector(".cform__submit") : null;
+      if (!form || !success || !btn) return;
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (!form.checkValidity()) { form.reportValidity(); return; }
-        form.style.display = "none";
-        success.classList.add("show");
+
+        btn.disabled = true;
+        btn.textContent = "Verzenden…";
+
+        fetch("https://formspree.io/f/mbdedboa", {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        })
+        .then(function (res) {
+          if (res.ok) {
+            form.style.display = "none";
+            success.classList.add("show");
+          } else {
+            btn.disabled = false;
+            btn.textContent = "Verstuur bericht";
+            alert("Er ging iets mis. Probeer het opnieuw of mail ons direct op info@talynd.com.");
+          }
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = "Verstuur bericht";
+          alert("Geen verbinding. Probeer het opnieuw of mail ons op info@talynd.com.");
+        });
       });
     })();
   </script>
