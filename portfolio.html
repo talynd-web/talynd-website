@@ -324,6 +324,28 @@
     .calc-dot.active { background: rgba(60,40,20,0.6); transform: scale(1.25); }
     .calc-counter { font-family: var(--font-body); font-size: 11px; font-weight: 500; color: rgba(60,40,20,0.5); letter-spacing: 0.06em; min-width: 36px; text-align: center; }
   </style>
+  <!-- Schema Markup — CollectionPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Portfolio AI Automatisering | Talynd",
+    "description": "Overzicht van AI automatisering projecten gerealiseerd door Talynd: VIA Vastgoed en YNS Spain.",
+    "url": "https://talynd.com/portfolio",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Talynd",
+      "url": "https://talynd.com"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://talynd.com" },
+        { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://talynd.com/portfolio" }
+      ]
+    }
+  }
+  </script>
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

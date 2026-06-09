@@ -241,6 +241,32 @@
     .dproc .how__pane img { width: 100%; height: 100%; object-fit: cover; display: block; }
     @media (max-width: 1000px) { .dproc { grid-template-columns: 1fr; gap: 36px; } }
   </style>
+  <!-- Schema Markup — Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI Automatisering voor Bedrijven",
+    "description": "Talynd bouwt AI-systemen voor bedrijven: procesautomatisering, workflow automatisering, CRM-koppelingen en chatbots. Hands-on van idee tot werkend systeem.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Talynd",
+      "url": "https://talynd.com"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Netherlands"
+    },
+    "url": "https://talynd.com/diensten",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://talynd.com" },
+        { "@type": "ListItem", "position": 2, "name": "Diensten", "item": "https://talynd.com/diensten" }
+      ]
+    }
+  }
+  </script>
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

@@ -122,6 +122,44 @@
     .dproc .how__pane img { width: 100%; height: 100%; object-fit: cover; display: block; }
     @media (max-width: 760px) { .dproc .tab.active .tab__body { max-height: 280px; } }
   </style>
+  <!-- Schema Markup — LocalBusiness + ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "name": "Talynd",
+    "description": "AI automatisering bureau voor bedrijven. Wij bouwen AI-systemen, implementeren ze en dragen ze volledig over.",
+    "url": "https://talynd.com",
+    "email": "talyndcontact@gmail.com",
+    "telephone": "+31850043927",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "H.J.E. Wenckebachweg 6",
+      "addressLocality": "Amsterdam",
+      "postalCode": "1096 AN",
+      "addressCountry": "NL"
+    },
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Dimas Smit",
+        "jobTitle": "Co-founder"
+      },
+      {
+        "@type": "Person",
+        "name": "Rayco Bruijn",
+        "jobTitle": "Co-founder"
+      }
+    ],
+    "sameAs": ["https://www.linkedin.com/company/talynd/"],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Netherlands"
+    },
+    "serviceType": "AI Automatisering",
+    "priceRange": "€€€"
+  }
+  </script>
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

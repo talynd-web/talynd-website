@@ -146,6 +146,39 @@
       .sec { padding: clamp(40px, 8vw, 64px) 0; }
     }
   </style>
+  <!-- Schema Markup — AboutPage + Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Over Talynd",
+    "description": "Talynd is een AI automatisering bureau opgericht door Dimas Smit en Rayco Bruijn. Wij bouwen, implementeren en dragen AI-systemen over aan bedrijven.",
+    "url": "https://talynd.com/over-ons",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://talynd.com" },
+        { "@type": "ListItem", "position": 2, "name": "Over ons", "item": "https://talynd.com/over-ons" }
+      ]
+    },
+    "mentions": [
+      {
+        "@type": "Person",
+        "name": "Dimas Smit",
+        "jobTitle": "Co-founder",
+        "worksFor": { "@type": "Organization", "name": "Talynd" },
+        "url": "https://talynd.com/over-ons"
+      },
+      {
+        "@type": "Person",
+        "name": "Rayco Bruijn",
+        "jobTitle": "Co-founder",
+        "worksFor": { "@type": "Organization", "name": "Talynd" },
+        "url": "https://talynd.com/over-ons"
+      }
+    ]
+  }
+  </script>
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
