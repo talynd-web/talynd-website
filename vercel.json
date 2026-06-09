@@ -1,4 +1,10 @@
 {
+  "redirects": [
+    { "source": "/cases/via-vastgoed", "destination": "/portfolio#via-vastgoed", "permanent": true },
+    { "source": "/cases/via-vastgoed.html", "destination": "/portfolio#via-vastgoed", "permanent": true },
+    { "source": "/cases/yns", "destination": "/portfolio#yns", "permanent": true },
+    { "source": "/cases/yns.html", "destination": "/portfolio#yns", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
