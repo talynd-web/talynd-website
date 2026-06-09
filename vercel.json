@@ -1,4 +1,5 @@
 {
+  "cleanUrls": true,
   "redirects": [
     { "source": "/cases/via-vastgoed", "destination": "/portfolio#via-vastgoed", "permanent": true },
     { "source": "/cases/via-vastgoed.html", "destination": "/portfolio#via-vastgoed", "permanent": true },
