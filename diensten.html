@@ -103,7 +103,7 @@
     .dsol-card__num { position: absolute; top: 14px; left: 16px; font-family: var(--font-display); font-size: 15px; color: rgba(20,40,40,0.5); }
     .dsol-card__img--a .dsol-card__num, .dsol-card__img--d .dsol-card__num { color: rgba(255,255,255,0.55); }
     .dsol-card__foot { display: flex; align-items: center; gap: 12px; padding: 16px 4px 0; }
-    .dsol-card__label { font-family: var(--font-display); font-weight: 400; font-size: clamp(19px, 1.8vw, 23px); color: var(--black); letter-spacing: -0.01em; }
+    .dsol-card__label { font-family: var(--font-display); font-weight: 400; font-size: clamp(19px, 1.8vw, 23px); color: var(--black); letter-spacing: -0.01em; margin: 0; line-height: 1.2; }
     .dsol-card__num { display: none; }
     .dsol-card__img--a, .dsol-card__img--b, .dsol-card__img--c,
     .dsol-card__img--d, .dsol-card__img--e, .dsol-card__img--f { border: none; }
@@ -267,6 +267,63 @@
     }
   }
   </script>
+  <!-- Schema Markup — FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Kunnen we één losse dienst afnemen, of moet het een compleet traject zijn?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Allebei kan. Soms bouwen we alleen mailautomatisering of één koppeling, soms een compleet systeem van intake tot CRM. In de gratis intake bepalen we samen de kleinste set die het meeste oplevert, zonder dat je meteen aan een groot traject vastzit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat kost het om een systeem te laten bouwen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dat hangt af van wat je nodig hebt. Omdat we op maat bouwen, krijg je na de intake een vaste prijs voor een afgebakend resultaat, geen uurtje-factuurtje en geen verrassingen achteraf. Je beslist pas als je precies weet wat je krijgt en wat het kost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe snel staat een dienst live?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "De meeste systemen bouwen we in vier tot zes weken van intake tot oplevering. Losse automatiseringen vaak sneller. We werken in korte, concrete stappen zodat je onderweg al resultaat ziet in plaats van pas aan het eind."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bouwen jullie ook maatwerk dat niet in dit rijtje staat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. De diensten hierboven zijn de meest gevraagde, maar we bouwen net zo goed maatwerk-koppelingen, interne tools of complete websites. Als het je tijd kost en te automatiseren is, kijken we ernaar tijdens de intake."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sluit dit aan op de software die we al gebruiken?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vrijwel altijd. We koppelen aan bestaande CRM's en tools zoals Pipedrive en ActiveCampaign via maatwerk-API's, en bouwen rond jouw werkwijze in plaats van andersom. Je hoeft dus niet over te stappen op nieuwe software."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat gebeurt er met onderhoud na de oplevering?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Het systeem is van jou en draait zelfstandig. We leveren documentatie en training mee, zodat je team het zelf beheert, en blijven beschikbaar voor onderhoud of doorontwikkeling, zonder verplicht abonnement."
+        }
+      }
+    ]
+  }
+  </script>
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -419,7 +476,7 @@
             <div class="dsol-card__hover">Persoonlijk gesprek op locatie. We brengen je proces in kaart en adviseren eerlijk of we waarde kunnen toevoegen.</div>
           </div>
           <div class="dsol-card__foot">
-            <span class="dsol-card__label">Consulting &amp; intake</span>
+            <h3 class="dsol-card__label">Consulting &amp; intake</h3>
           </div>
         </div>
 
@@ -430,7 +487,7 @@
             <div class="dsol-card__hover">Automatische opvolging na elke lead of bezichtiging. Op het juiste moment, zonder handmatig werk.</div>
           </div>
           <div class="dsol-card__foot">
-            <span class="dsol-card__label">Mailautomatisering</span>
+            <h3 class="dsol-card__label">Mailautomatisering</h3>
           </div>
         </div>
 
@@ -441,7 +498,7 @@
             <div class="dsol-card__hover">Gestructureerde e-mailreeksen die leads warm houden totdat ze klaar zijn om te beslissen.</div>
           </div>
           <div class="dsol-card__foot">
-            <span class="dsol-card__label">Nurture programs</span>
+            <h3 class="dsol-card__label">Nurture programs</h3>
           </div>
         </div>
 
@@ -452,7 +509,7 @@
             <div class="dsol-card__hover">Maatwerk rekentool op basis van jouw domeinkennis: huurrendement, verkoopprognose of een eigen model.</div>
           </div>
           <div class="dsol-card__foot">
-            <span class="dsol-card__label">AI-calculator</span>
+            <h3 class="dsol-card__label">AI-calculator</h3>
           </div>
         </div>
 
@@ -463,7 +520,7 @@
             <div class="dsol-card__hover">Workflows, databases en koppelingen samengevoegd tot één centraal systeem dat je team zelf beheert.</div>
           </div>
           <div class="dsol-card__foot">
-            <span class="dsol-card__label">Systeemautomatisering</span>
+            <h3 class="dsol-card__label">Systeemautomatisering</h3>
           </div>
         </div>
 
@@ -474,7 +531,7 @@
             <div class="dsol-card__hover">Je CRM volledig ingericht en geautomatiseerd: pipelines, triggers en rapportages die kloppen met jouw proces.</div>
           </div>
           <div class="dsol-card__foot">
-            <span class="dsol-card__label">PipeDrive-integratie</span>
+            <h3 class="dsol-card__label">PipeDrive-integratie</h3>
           </div>
         </div>
 
@@ -500,7 +557,7 @@
             </div>
             <div>
               <p class="dquote-card__author">Keanu</p>
-              <p class="dquote-card__company">VIA Vastgoed</p>
+              <p class="dquote-card__company"><a href="cases/via-vastgoed.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">VIA Vastgoed — bekijk de case</a></p>
             </div>
           </figcaption>
         </figure>
@@ -515,7 +572,7 @@
             </div>
             <div>
               <p class="dquote-card__author">Daan</p>
-              <p class="dquote-card__company">YNS Spain</p>
+              <p class="dquote-card__company"><a href="cases/yns.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">YNS Spain — bekijk de case</a></p>
             </div>
           </figcaption>
         </figure>
