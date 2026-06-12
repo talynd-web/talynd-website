@@ -217,7 +217,7 @@ h3 { font-family: var(--font-body); font-weight: 600; }
   transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
 .video-widget:hover { background: rgba(8,16,30,0.16); border-color: rgba(255,255,255,0.12); transform: translateY(-2px); }
-.vw__thumb { position: relative; flex: 0 0 auto; width: 124px; height: 88px; border-radius: 9px; overflow: hidden; background: #06121f; }
+.vw__thumb { position: relative; flex: 0 0 auto; width: 124px; height: 88px; border-radius: 9px; overflow: hidden; background: #06121f url('../assets/poster-portfolio.webp') center/cover no-repeat; }
 .vw__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .vw__info { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
 .vw__text { font-size: 13.5px; font-weight: 500; line-height: 1.34; color: #fff; max-width: 160px; }
