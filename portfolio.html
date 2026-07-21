@@ -349,8 +349,8 @@
     .rc-app-panel { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 18px; }
     .rc-phone { position: relative; width: 214px; aspect-ratio: 359 / 782; background: #141212; border-radius: 34px; padding: 7px; box-shadow: 0 26px 56px -20px rgba(30,15,8,0.5), inset 0 0 0 2px rgba(255,255,255,0.06); }
     .rc-phone__screen { position: relative; width: 100%; height: 100%; border-radius: 26px; overflow: hidden; background: #000; }
-    .rc-app-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity 0.5s ease; }
-    .rc-app-slide.active { opacity: 1; }
+    .rc-app-track { display: flex; width: 100%; height: 100%; transition: transform 0.55s cubic-bezier(0.5, 0, 0.2, 1); will-change: transform; }
+    .rc-app-slide { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; display: block; }
     .rc-app-dots { display: flex; gap: 7px; }
     .rc-app-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(90,50,30,0.28); cursor: pointer; transition: background 0.3s ease, width 0.3s ease; }
     .rc-app-dot.active { background: #a24b32; width: 18px; border-radius: 4px; }
@@ -764,10 +764,12 @@
           <div class="rc-app-panel" style="display:none">
             <div class="rc-phone">
               <div class="rc-phone__screen">
-                <img class="rc-app-slide active" src="assets/rc-app-1.webp" alt="Reformed Collective app: word lid of inloggen" />
-                <img class="rc-app-slide" src="assets/rc-app-2.webp" alt="Reformed Collective app: home met credits en studio" />
-                <img class="rc-app-slide" src="assets/rc-app-3.webp" alt="Reformed Collective app: planning en rooster" />
-                <img class="rc-app-slide" src="assets/rc-app-4.webp" alt="Reformed Collective app: shop met abonnementen" />
+                <div class="rc-app-track">
+                  <img class="rc-app-slide" src="assets/rc-app-1.webp" alt="Reformed Collective app: word lid of inloggen" />
+                  <img class="rc-app-slide" src="assets/rc-app-2.webp" alt="Reformed Collective app: home met credits en studio" />
+                  <img class="rc-app-slide" src="assets/rc-app-3.webp" alt="Reformed Collective app: planning en rooster" />
+                  <img class="rc-app-slide" src="assets/rc-app-4.webp" alt="Reformed Collective app: shop met abonnementen" />
+                </div>
               </div>
             </div>
             <div class="rc-app-dots">
@@ -1097,13 +1099,14 @@
     (function () {
       var panel = document.querySelector('[data-case-panel="reformed"]');
       if (!panel) return;
+      var track = panel.querySelector(".rc-app-track");
       var slides = panel.querySelectorAll(".rc-app-slide");
       var dots = panel.querySelectorAll(".rc-app-dot");
-      if (!slides.length) return;
+      if (!slides.length || !track) return;
       var idx = 0, timer = null;
       function go(i) {
         idx = (i + slides.length) % slides.length;
-        slides.forEach(function (s, n) { s.classList.toggle("active", n === idx); });
+        track.style.transform = "translateX(-" + (idx * 100) + "%)";
         dots.forEach(function (d, n) { d.classList.toggle("active", n === idx); });
       }
       dots.forEach(function (d, n) { d.addEventListener("click", function () { go(n); }); });
