@@ -228,8 +228,8 @@
       .yns-seo-panel { justify-content: flex-start; padding: 16px 18px; gap: 11px; }
       /* RC panels mobile */
       .case__panel.rc-web-active, .case__panel.rc-checkout-active { aspect-ratio: 16 / 10; }
-      .case__panel.rc-app-active { aspect-ratio: 3 / 4.3; }
-      .rc-phone { width: 172px; }
+      .case__panel.rc-app-active { aspect-ratio: auto; }
+      .rc-phone { width: 200px; }
       /* Buildhead tekst */
       .case__buildhead { font-size: 11px; margin-bottom: 14px; }
       /* FAQ padding */
@@ -344,10 +344,10 @@
     .rc-web-cta svg { width: 14px; height: 14px; }
 
     /* App phone mockup */
-    .case__panel.rc-app-active { aspect-ratio: 4 / 3.6; background: linear-gradient(150deg, #f4e8df, #e6cebf); border: 1px solid rgba(160,110,80,0.22); box-shadow: 0 28px 64px -32px rgba(4,14,31,0.28); overflow: hidden; display: grid; place-items: center; }
-    .case__panel.rc-app-active::before { background-image: radial-gradient(circle, rgba(140,80,55,0.10) 1px, transparent 1.4px); }
-    .rc-app-panel { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 16px; }
-    .rc-phone { position: relative; width: 190px; aspect-ratio: 359 / 782; background: #141212; border-radius: 32px; padding: 7px; box-shadow: 0 24px 52px -20px rgba(30,15,8,0.55), inset 0 0 0 2px rgba(255,255,255,0.06); }
+    .case__panel.rc-app-active { aspect-ratio: auto; background: none; border: none; box-shadow: none; overflow: visible; display: grid; place-items: center; padding: 8px 0; }
+    .case__panel.rc-app-active::before { display: none; }
+    .rc-app-panel { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .rc-phone { position: relative; width: 214px; aspect-ratio: 359 / 782; background: #141212; border-radius: 34px; padding: 7px; box-shadow: 0 26px 56px -20px rgba(30,15,8,0.5), inset 0 0 0 2px rgba(255,255,255,0.06); }
     .rc-phone__screen { position: relative; width: 100%; height: 100%; border-radius: 26px; overflow: hidden; background: #000; }
     .rc-app-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity 0.5s ease; }
     .rc-app-slide.active { opacity: 1; }
