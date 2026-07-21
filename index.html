@@ -110,6 +110,28 @@
     .portfolio-sec .pcard { box-shadow: 0 1px 0 rgba(4,14,31,0.04); }
     .pcard .chip { background: transparent; border: 1px solid var(--gray-2); color: var(--gray-6); font-size: 12px; padding: 5px 12px; white-space: nowrap; }
 
+    /* ---- PORTFOLIO SLIDER (VIA + YNS blijven 2-up op ware grootte, RC bereikbaar naar rechts) ---- */
+    .pcarousel { position: relative; }
+    .portfolio-sec .cards-grid { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x proximity; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -6px; padding: 0 6px 6px; }
+    .portfolio-sec .cards-grid::-webkit-scrollbar { display: none; }
+    .portfolio-sec .cards-grid > .pcard { flex: 0 0 calc((100% - 24px) / 2); scroll-snap-align: start; }
+    /* subtiele rand-fade rechts = hint dat er meer is */
+    .pcarousel::after { content: ""; position: absolute; top: 0; right: -6px; bottom: 6px; width: 78px; background: linear-gradient(90deg, rgba(0,0,0,0), var(--orange)); pointer-events: none; opacity: 1; transition: opacity 0.35s ease; z-index: 1; }
+    .pcarousel.is-end::after { opacity: 0; }
+    /* discrete volgende-knop */
+    .pcarousel__nav { position: absolute; top: 42%; right: 6px; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--gray-2); background: var(--white); color: var(--black); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 26px -12px rgba(4,14,31,0.3); transition: opacity 0.35s ease, transform 0.2s ease; z-index: 2; }
+    .pcarousel__nav:hover { transform: translateY(-50%) scale(1.06); }
+    .pcarousel.is-end .pcarousel__nav { opacity: 0; pointer-events: none; }
+    .pcarousel__nav svg { width: 20px; height: 20px; }
+    /* lege placeholder-kaart (foto volgt) */
+    .pcard__ph { position: relative; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; background: var(--gray-1); color: var(--gray-5); font-size: 13px; letter-spacing: 0.01em; }
+    .pcard__ph::before { content: ""; position: absolute; inset: 0; opacity: 0.6; background-image: linear-gradient(rgba(4,14,31,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(4,14,31,0.035) 1px, transparent 1px); background-size: 22px 22px; }
+    .pcard__ph span { position: relative; z-index: 1; }
+    @media (max-width: 760px) {
+      .portfolio-sec .cards-grid > .pcard { flex: 0 0 86%; }
+      .pcarousel__nav { display: none; }
+    }
+
 
     /* ---- DPROC (exact copy from diensten) ---- */
     .dproc .tab { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 21px 0; border-top: 1px solid var(--gray-2); cursor: pointer; transition: none; }
@@ -364,7 +386,8 @@
         <span class="eyebrow">Portfolio</span>
         <h2 style="font-weight:400">Wat we al gebouwd hebben</h2>
       </div>
-      <div class="cards-grid">
+      <div class="pcarousel" id="portfolioCarousel">
+      <div class="cards-grid" id="portfolioTrack">
         <article class="pcard fade-in-up">
           <div class="pcard__media">
             <img src="assets/portfolio-via.webp" alt="VIA Vastgoed website — Investeer slim in Spanje" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;" />
@@ -403,6 +426,29 @@
             </div>
           </div>
         </article>
+        <article class="pcard fade-in-up" data-delay="2">
+          <div class="pcard__media">
+            <img src="assets/portfolio-reformed.webp" alt="Reformed Collective — Reformer Pilates studio Beverwijk" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;" />
+          </div>
+          <div class="pcard__body">
+            <h3 class="pcard__title">Reformed Collective</h3>
+            <div class="chips">
+              <span class="chip">Website</span>
+              <span class="chip">Boekingsapp</span>
+              <span class="chip">Mollie-betalingen</span>
+              <span class="chip">iOS-app</span>
+            </div>
+            <div class="pcard__foot">
+              <a href="portfolio#reformed-collective" class="link-arrow">Bekijk case
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <button class="pcarousel__nav" id="portfolioNext" type="button" aria-label="Volgende project">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
       </div>
     </div>
   </section>
@@ -514,6 +560,27 @@
           panes.forEach(function (p, i) { p.style.display = i === idx ? 'block' : 'none'; });
         });
       });
+    })();
+    /* ---------- Portfolio slider ---------- */
+    (function () {
+      var track = document.getElementById('portfolioTrack');
+      var wrap = document.getElementById('portfolioCarousel');
+      var next = document.getElementById('portfolioNext');
+      if (!track || !wrap) return;
+      function update() {
+        var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+        wrap.classList.toggle('is-end', atEnd);
+      }
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      if (next) {
+        next.addEventListener('click', function () {
+          var card = track.querySelector('.pcard');
+          var step = card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.6;
+          track.scrollBy({ left: step, behavior: 'smooth' });
+        });
+      }
+      update();
     })();
     (function () {
       var el = document.getElementById("howRotator");
