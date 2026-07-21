@@ -226,6 +226,10 @@
       /* YNS SEO panel mobile — content is taller than default 4/3.4 */
       .case__panel.yns-seo-active { aspect-ratio: 4 / 5.2; }
       .yns-seo-panel { justify-content: flex-start; padding: 16px 18px; gap: 11px; }
+      /* RC panels mobile */
+      .case__panel.rc-web-active, .case__panel.rc-checkout-active { aspect-ratio: 16 / 10; }
+      .case__panel.rc-app-active { aspect-ratio: 3 / 4.3; }
+      .rc-phone { width: 172px; }
       /* Buildhead tekst */
       .case__buildhead { font-size: 11px; margin-bottom: 14px; }
       /* FAQ padding */
@@ -326,6 +330,30 @@
     .calc-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(60,40,20,0.18); transition: background 0.25s, transform 0.25s; cursor: pointer; }
     .calc-dot.active { background: rgba(60,40,20,0.6); transform: scale(1.25); }
     .calc-counter { font-family: var(--font-body); font-size: 11px; font-weight: 500; color: rgba(60,40,20,0.5); letter-spacing: 0.06em; min-width: 36px; text-align: center; }
+
+    /* ---- CASE 3: REFORMED COLLECTIVE panels ---- */
+    .case__panel.rc-web-active, .case__panel.rc-checkout-active { background: #fff; border: 1px solid rgba(160,140,110,0.2); overflow: hidden; box-shadow: 0 28px 64px -32px rgba(4,14,31,0.28); display: block; }
+    .case__panel.rc-web-active::before, .case__panel.rc-checkout-active::before { display: none; }
+    .case__panel.rc-web-active { aspect-ratio: 1200 / 653; }
+    .case__panel.rc-checkout-active { aspect-ratio: 1200 / 651; }
+    .rc-web-panel { position: relative; display: block; width: 100%; height: 100%; }
+    .rc-web-panel img, .rc-checkout-panel img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .rc-checkout-panel { width: 100%; height: 100%; }
+    .rc-web-cta { position: absolute; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-body); font-size: 13px; font-weight: 600; color: #fff; background: rgba(13,31,30,0.82); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); padding: 9px 15px; border-radius: 100px; letter-spacing: 0.01em; opacity: 0; transform: translateY(6px); transition: opacity 0.25s ease, transform 0.25s ease; }
+    .rc-web-panel:hover .rc-web-cta, .rc-web-panel:focus-visible .rc-web-cta { opacity: 1; transform: translateY(0); }
+    .rc-web-cta svg { width: 14px; height: 14px; }
+
+    /* App phone mockup */
+    .case__panel.rc-app-active { aspect-ratio: 4 / 3.6; background: linear-gradient(150deg, #f4e8df, #e6cebf); border: 1px solid rgba(160,110,80,0.22); box-shadow: 0 28px 64px -32px rgba(4,14,31,0.28); overflow: hidden; display: grid; place-items: center; }
+    .case__panel.rc-app-active::before { background-image: radial-gradient(circle, rgba(140,80,55,0.10) 1px, transparent 1.4px); }
+    .rc-app-panel { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .rc-phone { position: relative; width: 190px; aspect-ratio: 359 / 782; background: #141212; border-radius: 32px; padding: 7px; box-shadow: 0 24px 52px -20px rgba(30,15,8,0.55), inset 0 0 0 2px rgba(255,255,255,0.06); }
+    .rc-phone__screen { position: relative; width: 100%; height: 100%; border-radius: 26px; overflow: hidden; background: #000; }
+    .rc-app-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity 0.5s ease; }
+    .rc-app-slide.active { opacity: 1; }
+    .rc-app-dots { display: flex; gap: 7px; }
+    .rc-app-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(90,50,30,0.28); cursor: pointer; transition: background 0.3s ease, width 0.3s ease; }
+    .rc-app-dot.active { background: #a24b32; width: 18px; border-radius: 4px; }
   </style>
   <!-- Schema Markup — CollectionPage -->
   <script type="application/ld+json">
@@ -692,7 +720,7 @@
       <div class="case__buildhead fade-in-up">Wat we bouwden</div>
       <div class="case__build fade-in-up">
         <div class="case-tabs" data-case="reformed">
-          <div class="case-tab active" data-panel="Screenshot: Reformed Collective website — hero, live rooster en boekingsflow (NL/EN)" data-panel-type="placeholder">
+          <div class="case-tab active" data-panel="Reformed Collective website" data-panel-type="rc-web">
             <div class="case-tab__num">01</div>
             <div class="case-tab__label">Website + live boekingssysteem</div>
             <div class="case-tab__body"><ul>
@@ -702,29 +730,50 @@
               <li>Wachtlijst met automatische melding zodra er een plek vrijkomt.</li>
             </ul></div>
           </div>
-          <div class="case-tab" data-panel="Screenshot: checkout met Mollie — abonnementen, credits en de bevestigingsmail" data-panel-type="placeholder">
+          <div class="case-tab" data-panel="Checkout met Mollie" data-panel-type="rc-checkout">
             <div class="case-tab__num">02</div>
             <div class="case-tab__label">Betalen, credits &amp; abonnementen</div>
             <div class="case-tab__body"><ul>
               <li>Volledige betaalintegratie met Mollie: losse lessen, rittenkaarten én terugkerende abonnementen.</li>
               <li>Creditsysteem: leden kopen tegoed en boeken daarmee lessen. Bij annulering wordt de credit automatisch teruggestort.</li>
-              <li>Idempotente webhooks en beveiligde edge-functions — elke betaling komt exact één keer aan.</li>
+              <li>Idempotente webhooks en beveiligde edge-functions. Elke betaling komt exact één keer aan.</li>
               <li>Transactionele e-mails (welkom, aankoop, boeking, annulering) vanaf het eigen domein.</li>
             </ul></div>
           </div>
-          <div class="case-tab" data-panel="Screenshot: iOS-app + beheerportaal — boeken op mobiel en het studio-dashboard" data-panel-type="placeholder">
+          <div class="case-tab" data-panel="iOS-app" data-panel-type="rc-app">
             <div class="case-tab__num">03</div>
             <div class="case-tab__label">iOS-app + beheerportaal</div>
             <div class="case-tab__body"><ul>
               <li>Native iOS-app in de App Store, zodat leden ook vanaf hun telefoon boeken en betalen.</li>
               <li>Beheerportaal voor de studio: rooster, lessen, capaciteit, deelnemers en leden beheren.</li>
               <li>Rechtenstructuur: de studio beheert alles, leden zien alleen hun eigen gegevens.</li>
-              <li>Volledig getest en overgedragen — de studio draait er zelfstandig op verder.</li>
+              <li>Volledig getest en overgedragen. De studio draait er zelfstandig op verder.</li>
             </ul></div>
           </div>
         </div>
-        <div class="case__panel" data-case-panel="reformed">
-          <span class="case__panel-label">Screenshot: Reformed Collective website — hero, live rooster en boekingsflow (NL/EN)</span>
+        <div class="case__panel rc-web-active" data-case-panel="reformed">
+          <a class="rc-web-panel" href="https://reformedcollective.nl" target="_blank" rel="noopener" aria-label="Open reformedcollective.nl in een nieuw tabblad">
+            <img src="assets/portfolio-reformed.webp" alt="Reformed Collective website: reformer pilates studio Beverwijk" />
+            <span class="rc-web-cta">Bekijk de live site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+          </a>
+          <div class="rc-checkout-panel" style="display:none">
+            <img src="assets/rc-checkout.webp" alt="Checkout met Mollie: abonnementen en credits" />
+          </div>
+          <div class="rc-app-panel" style="display:none">
+            <div class="rc-phone">
+              <div class="rc-phone__screen">
+                <img class="rc-app-slide active" src="assets/rc-app-1.webp" alt="Reformed Collective app: word lid of inloggen" />
+                <img class="rc-app-slide" src="assets/rc-app-2.webp" alt="Reformed Collective app: home met credits en studio" />
+                <img class="rc-app-slide" src="assets/rc-app-3.webp" alt="Reformed Collective app: planning en rooster" />
+                <img class="rc-app-slide" src="assets/rc-app-4.webp" alt="Reformed Collective app: shop met abonnementen" />
+              </div>
+            </div>
+            <div class="rc-app-dots">
+              <span class="rc-app-dot active"></span><span class="rc-app-dot"></span><span class="rc-app-dot"></span><span class="rc-app-dot"></span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -898,6 +947,7 @@
           <h4>Portfolio</h4>
           <a href="portfolio#via-vastgoed">VIA Vastgoed</a>
           <a href="portfolio#yns">YNS Spain</a>
+          <a href="portfolio#reformed-collective">Reformed Collective</a>
         </div>
         <div class="footer__col">
           <h4>Bedrijf</h4>
@@ -1013,6 +1063,21 @@
             panel.classList.remove("calc-active"); panel.classList.remove("pipe-active"); panel.classList.remove("screenshot-active"); panel.classList.remove("yns-ss-active"); panel.classList.remove("yns-calc-active");
             panel.classList.add("yns-seo-active");
             if (typeof window.ynsSSStop === "function") window.ynsSSStop();
+          } else if (ptype === "rc-web" || ptype === "rc-checkout" || ptype === "rc-app") {
+            var rcWeb = panel.querySelector(".rc-web-panel");
+            var rcCo = panel.querySelector(".rc-checkout-panel");
+            var rcApp = panel.querySelector(".rc-app-panel");
+            if (ss) ss.style.display = "none"; if (pa) pa.style.display = "none";
+            if (label) label.style.display = "none";
+            panel.classList.remove("calc-active", "pipe-active", "screenshot-active", "yns-ss-active", "yns-calc-active", "yns-seo-active", "rc-web-active", "rc-checkout-active", "rc-app-active");
+            if (rcWeb) rcWeb.style.display = (ptype === "rc-web") ? "block" : "none";
+            if (rcCo) rcCo.style.display = (ptype === "rc-checkout") ? "block" : "none";
+            if (rcApp) rcApp.style.display = (ptype === "rc-app") ? "flex" : "none";
+            panel.classList.add(ptype + "-active");
+            if (typeof window.pipelineStop === "function") window.pipelineStop();
+            if (typeof window.ynsSSStop === "function") window.ynsSSStop();
+            if (ptype === "rc-app") { if (typeof window.rcAppStart === "function") window.rcAppStart(); }
+            else { if (typeof window.rcAppStop === "function") window.rcAppStop(); }
           } else {
             if (ss) ss.style.display = "none";
             if (pa) pa.style.display = "none";
@@ -1028,6 +1093,23 @@
         });
       });
     });
+    /* ---------- RC app phone slideshow ---------- */
+    (function () {
+      var panel = document.querySelector('[data-case-panel="reformed"]');
+      if (!panel) return;
+      var slides = panel.querySelectorAll(".rc-app-slide");
+      var dots = panel.querySelectorAll(".rc-app-dot");
+      if (!slides.length) return;
+      var idx = 0, timer = null;
+      function go(i) {
+        idx = (i + slides.length) % slides.length;
+        slides.forEach(function (s, n) { s.classList.toggle("active", n === idx); });
+        dots.forEach(function (d, n) { d.classList.toggle("active", n === idx); });
+      }
+      dots.forEach(function (d, n) { d.addEventListener("click", function () { go(n); }); });
+      window.rcAppStart = function () { if (timer) return; timer = setInterval(function () { go(idx + 1); }, 2600); };
+      window.rcAppStop = function () { if (timer) { clearInterval(timer); timer = null; } };
+    })();
   </script>
   <script>
     /* ---------- Pipeline animation ---------- */
