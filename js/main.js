@@ -87,21 +87,46 @@ if (track && prevBtn && nextBtn) {
   // De pijlen verschuiven precies een kaart plus de tussenruimte.
   const EIND_MARGE_PX = 2;
 
-  const stapBreedte = () => {
-    const eerste = track.children[0];
-    if (!eerste) return track.clientWidth;
-    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-    return eerste.getBoundingClientRect().width + gap;
-  };
-
   const maxScroll = () => Math.max(0, track.scrollWidth - track.clientWidth);
 
-  const syncKnoppen = () => {
-    prevBtn.disabled = track.scrollLeft <= EIND_MARGE_PX;
-    nextBtn.disabled = track.scrollLeft >= maxScroll() - EIND_MARGE_PX;
+  // Positie van elke kaart binnen de baan, los van offsetParent.
+  const kaartPosities = () => {
+    const basis = track.getBoundingClientRect().left - track.scrollLeft;
+    return Array.from(track.children, (k) => Math.round(k.getBoundingClientRect().left - basis));
   };
 
-  const stap = (richting) => track.scrollBy({ left: richting * stapBreedte(), behavior: "smooth" });
+  const syncKnoppen = () => {
+    const max = maxScroll();
+    // Terugval: mocht een browser toch voorbij het einde komen, zet hem terug.
+    if (track.scrollLeft > max + EIND_MARGE_PX) track.scrollLeft = max;
+    prevBtn.disabled = track.scrollLeft <= EIND_MARGE_PX;
+    nextBtn.disabled = track.scrollLeft >= max - EIND_MARGE_PX;
+  };
+
+  // Absoluut doel per kaart in plaats van een optelling bij de huidige positie,
+  // zodat snel klikken tijdens een lopende animatie niet kan doorschieten.
+  // Tijdens een lopende animatie rekenen we vanaf het doel en niet vanaf de
+  // positie van dat moment, anders wordt een tweede klik ingeslikt.
+  const ANIMATIE_MS = 600;
+  let lopendDoel = null;
+  let doelTimer = null;
+
+  const stap = (richting) => {
+    const posities = kaartPosities();
+    const max = maxScroll();
+    const vanaf = lopendDoel === null ? track.scrollLeft : lopendDoel;
+    const gevonden = richting > 0
+      ? posities.find((p) => p > vanaf + EIND_MARGE_PX)
+      : [...posities].reverse().find((p) => p < vanaf - EIND_MARGE_PX);
+    const doel = gevonden === undefined ? (richting > 0 ? max : 0) : gevonden;
+    const veilig = Math.max(0, Math.min(doel, max));
+
+    lopendDoel = veilig;
+    clearTimeout(doelTimer);
+    doelTimer = setTimeout(() => { lopendDoel = null; }, ANIMATIE_MS);
+
+    track.scrollTo({ left: veilig, behavior: "smooth" });
+  };
   prevBtn.addEventListener("click", () => stap(-1));
   nextBtn.addEventListener("click", () => stap(1));
   track.addEventListener("scroll", syncKnoppen, { passive: true });
