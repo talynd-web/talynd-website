@@ -71,7 +71,9 @@
       scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
     .tmnl__track::-webkit-scrollbar { display: none; }
     .tmnl__slide { flex: 0 0 calc(50% - 12px - (var(--peek) / 2)); scroll-snap-align: start; display: flex; }
-    .tmnl__slide > .dquote-card { flex: 1; background: var(--orange); }
+    .tmnl__slide > .dquote-card { flex: 1; }
+    .tmnl__slide:nth-child(even) .dquote-card { background: var(--pale-teal); }
+    .dquote-card--orange { background: var(--orange); }
     /* Hairline om het bolletje, anders vallen zand en wit weg tegen het oranje. */
     .tmnl__slide .dquote-card__avatar { box-shadow: 0 0 0 1px rgba(4,14,31,0.10); }
     .tmnl__btn:disabled { opacity: 0.35; cursor: default; }
@@ -514,7 +516,7 @@
             </figure>
           </div>
           <div class="tmnl__slide">
-            <figure class="dquote-card">
+            <figure class="dquote-card dquote-card--orange">
               <div>
                 <div class="dquote-card__mark">”</div>
                 <blockquote class="dquote-card__text">We hadden een harde deadline voor onze launch. Talynd heeft de website en de app op tijd staan gekregen, en alles wat ik doorgaf was meteen gefixt. Ik hoefde niet op een algemeen boekingsplatform, ik heb nu gewoon mijn eigen app.</blockquote>
