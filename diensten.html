@@ -123,12 +123,17 @@
     .dquote__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .dquote-card { background: var(--light-blue); border-radius: 22px; padding: 44px; display: flex; flex-direction: column; justify-content: space-between; min-height: 300px; }
     /* slider: twee kaarten zichtbaar op desktop, een op mobiel */
-    .tmnl__viewport { overflow: hidden; }
-    .tmnl__track { display: flex; gap: 24px; position: relative; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+    /* Zelfde native scroll-snap als de portfoliorij hierboven: swipen en
+       trackpad werken vanzelf en voorbij het einde schuiven kan niet. */
     .dquote-sec { --peek: 56px; }
-    .tmnl__slide { flex: 0 0 calc(50% - 12px - (var(--peek) / 2)); display: flex; }
-    .tmnl__slide > .dquote-card { flex: 1; }
-    .tmnl__slide:nth-child(even) .dquote-card { background: var(--pale-teal); }
+    .tmnl__viewport { overflow: visible; }
+    .tmnl__track { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x proximity;
+      scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .tmnl__track::-webkit-scrollbar { display: none; }
+    .tmnl__slide { flex: 0 0 calc(50% - 12px - (var(--peek) / 2)); scroll-snap-align: start; display: flex; }
+    .tmnl__slide > .dquote-card { flex: 1; background: var(--orange); }
+    /* Hairline om het bolletje, anders vallen zand en wit weg tegen het oranje. */
+    .tmnl__slide .dquote-card__avatar { box-shadow: 0 0 0 1px rgba(4,14,31,0.10); }
     .tmnl__btn:disabled { opacity: 0.35; cursor: default; }
     .tmnl__btn:disabled:hover { background: var(--white); border-color: var(--gray-2); }
     @media (max-width: 900px) { .dquote-sec { --peek: 40px; } .tmnl__slide { flex: 0 0 calc(100% - var(--peek)); } }

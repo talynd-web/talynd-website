@@ -82,58 +82,37 @@ const track = document.getElementById("tmnlTrack");
 const prevBtn = document.getElementById("tmnlPrev");
 const nextBtn = document.getElementById("tmnlNext");
 if (track && prevBtn && nextBtn) {
-  const slides = Array.from(track.children);
-  const viewport = track.parentElement;
-  let pos = 0;
+  // De baan is een echte scroll-container met scroll-snap. Swipen en trackpad
+  // werken daardoor native, en de browser laat niet voorbij het einde scrollen.
+  // De pijlen verschuiven precies een kaart plus de tussenruimte.
+  const EIND_MARGE_PX = 2;
 
-  // Hoever de baan maximaal mag opschuiven: tot zijn rechterrand gelijkligt met
-  // die van het venster. Verder schuiven zou rechts een wit vlak opleveren.
-  const maxShift = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
-
-  // De laatste bruikbare positie is de eerste kaart die voorbij dat maximum ligt.
-  // Die wordt afgekapt op maxShift, waardoor de baan netjes rechts uitlijnt.
-  const maxPos = () => {
-    const limit = maxShift();
-    for (let i = 0; i < slides.length; i++) {
-      if (slides[i].offsetLeft >= limit - 0.5) return i;
-    }
-    return slides.length - 1;
+  const stapBreedte = () => {
+    const eerste = track.children[0];
+    if (!eerste) return track.clientWidth;
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    return eerste.getBoundingClientRect().width + gap;
   };
 
-  const render = () => {
-    pos = Math.min(Math.max(pos, 0), maxPos());
-    // offsetLeft rekent de gap mee, dus geen losse marge-berekening nodig.
-    const shift = Math.min(slides[pos].offsetLeft, maxShift());
-    track.style.transform = `translateX(-${shift}px)`;
-    prevBtn.disabled = pos === 0;
-    nextBtn.disabled = shift >= maxShift() - 0.5;
+  const maxScroll = () => Math.max(0, track.scrollWidth - track.clientWidth);
+
+  const syncKnoppen = () => {
+    prevBtn.disabled = track.scrollLeft <= EIND_MARGE_PX;
+    nextBtn.disabled = track.scrollLeft >= maxScroll() - EIND_MARGE_PX;
   };
 
-  const step = (delta) => { pos += delta; render(); };
-  prevBtn.addEventListener("click", () => step(-1));
-  nextBtn.addEventListener("click", () => step(1));
-
-  // Swipen op touch.
-  const SWIPE_THRESHOLD_PX = 45;
-  let startX = null;
-  // Alleen op touch, zodat tekst selecteren met de muis niet per ongeluk doorschuift.
-  track.addEventListener("pointerdown", (e) => { startX = e.pointerType === "touch" ? e.clientX : null; });
-  track.addEventListener("pointerup", (e) => {
-    if (startX === null) return;
-    const delta = e.clientX - startX;
-    startX = null;
-    if (Math.abs(delta) < SWIPE_THRESHOLD_PX) return;
-    step(delta < 0 ? 1 : -1);
-  });
-  track.addEventListener("pointercancel", () => { startX = null; });
+  const stap = (richting) => track.scrollBy({ left: richting * stapBreedte(), behavior: "smooth" });
+  prevBtn.addEventListener("click", () => stap(-1));
+  nextBtn.addEventListener("click", () => stap(1));
+  track.addEventListener("scroll", syncKnoppen, { passive: true });
 
   let resizeTimer = null;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(render, 120);
+    resizeTimer = setTimeout(syncKnoppen, 120);
   });
 
-  render();
+  syncKnoppen();
 }
 
 /* ---------- Fade-in-up on scroll ---------- */
