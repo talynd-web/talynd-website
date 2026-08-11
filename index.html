@@ -65,7 +65,8 @@
     /* slider: twee kaarten zichtbaar op desktop, een op mobiel */
     .tmnl__viewport { overflow: hidden; }
     .tmnl__track { display: flex; gap: 24px; position: relative; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
-    .tmnl__slide { flex: 0 0 calc(50% - 12px); display: flex; }
+    .dquote-sec { --peek: 56px; }
+    .tmnl__slide { flex: 0 0 calc(50% - 12px - (var(--peek) / 2)); display: flex; }
     .tmnl__slide > .dquote-card { flex: 1; }
     .tmnl__slide:nth-child(even) .dquote-card { background: var(--pale-teal); }
     .tmnl__btn:disabled { opacity: 0.35; cursor: default; }
@@ -78,7 +79,8 @@
     .dquote-card__avatar { flex: 0 0 auto; width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.65); border: 1px dashed var(--gray-3); display: grid; place-items: center; text-align: center; overflow: hidden; }
     .dquote-card__avatar span { font-size: 8px; line-height: 1.15; color: var(--gray-5); padding: 4px; font-style: italic; }
     @media (max-width: 900px) {
-      .tmnl__slide { flex: 0 0 100%; }
+      .dquote-sec { --peek: 40px; }
+      .tmnl__slide { flex: 0 0 calc(100% - var(--peek)); }
     }
     @media (max-width: 760px) {
       .dquote__grid { grid-template-columns: 1fr; }
@@ -470,10 +472,10 @@
       <div class="dquote__head fade-in-up">
         <span class="eyebrow">Wat klanten zeggen</span>
       </div>
-      <div class="tmnl__viewport">
+      <div class="tmnl__viewport fade-in-up">
         <div class="tmnl__track" id="tmnlTrack">
           <div class="tmnl__slide">
-            <figure class="dquote-card fade-in-up">
+            <figure class="dquote-card">
               <div>
                 <div class="dquote-card__mark">”</div>
                 <blockquote class="dquote-card__text">Voorheen was een nieuwe lead gelijk handmatig werk. Nu staat er een heel nurture-traject klaar. Van de eerste mail tot aan een deal, alles gaat automatisch. Dat neemt ons echt een hoop uit handen.</blockquote>
@@ -490,7 +492,7 @@
             </figure>
           </div>
           <div class="tmnl__slide">
-            <figure class="dquote-card fade-in-up" data-delay="1">
+            <figure class="dquote-card">
               <div>
                 <div class="dquote-card__mark">”</div>
                 <blockquote class="dquote-card__text">Ze hebben ons geholpen bij het opbouwen van de website. Met onder andere de AI-calculator kunnen klanten meteen zien wat er voor hen mogelijk is. Daarmee komen ze al goed geïnformeerd het gesprek in.</blockquote>
@@ -507,7 +509,7 @@
             </figure>
           </div>
           <div class="tmnl__slide">
-            <figure class="dquote-card fade-in-up" data-delay="2">
+            <figure class="dquote-card">
               <div>
                 <div class="dquote-card__mark">”</div>
                 <blockquote class="dquote-card__text">We hadden een harde deadline voor onze launch. Talynd heeft de website en de app op tijd staan gekregen, en alles wat ik doorgaf was meteen gefixt. Ik hoefde niet op een algemeen boekingsplatform, ik heb nu gewoon mijn eigen app.</blockquote>

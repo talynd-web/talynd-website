@@ -83,18 +83,30 @@ const prevBtn = document.getElementById("tmnlPrev");
 const nextBtn = document.getElementById("tmnlNext");
 if (track && prevBtn && nextBtn) {
   const slides = Array.from(track.children);
+  const viewport = track.parentElement;
   let pos = 0;
 
-  // Aantal zichtbare kaarten volgt de CSS: 1 onder 900px, anders 2.
-  const visibleCount = () => (window.matchMedia("(max-width: 900px)").matches ? 1 : 2);
-  const maxPos = () => Math.max(0, slides.length - visibleCount());
+  // Hoever de baan maximaal mag opschuiven: tot zijn rechterrand gelijkligt met
+  // die van het venster. Verder schuiven zou rechts een wit vlak opleveren.
+  const maxShift = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
+
+  // De laatste bruikbare positie is de eerste kaart die voorbij dat maximum ligt.
+  // Die wordt afgekapt op maxShift, waardoor de baan netjes rechts uitlijnt.
+  const maxPos = () => {
+    const limit = maxShift();
+    for (let i = 0; i < slides.length; i++) {
+      if (slides[i].offsetLeft >= limit - 0.5) return i;
+    }
+    return slides.length - 1;
+  };
 
   const render = () => {
     pos = Math.min(Math.max(pos, 0), maxPos());
     // offsetLeft rekent de gap mee, dus geen losse marge-berekening nodig.
-    track.style.transform = `translateX(-${slides[pos].offsetLeft}px)`;
+    const shift = Math.min(slides[pos].offsetLeft, maxShift());
+    track.style.transform = `translateX(-${shift}px)`;
     prevBtn.disabled = pos === 0;
-    nextBtn.disabled = pos >= maxPos();
+    nextBtn.disabled = shift >= maxShift() - 0.5;
   };
 
   const step = (delta) => { pos += delta; render(); };
