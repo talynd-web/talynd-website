@@ -82,11 +82,46 @@ const track = document.getElementById("tmnlTrack");
 const prevBtn = document.getElementById("tmnlPrev");
 const nextBtn = document.getElementById("tmnlNext");
 if (track && prevBtn && nextBtn) {
-  const slides = track.children.length;
+  const slides = Array.from(track.children);
   let pos = 0;
-  const render = () => { track.style.transform = `translateX(-${pos * 100}%)`; };
-  prevBtn.addEventListener("click", () => { pos = (pos - 1 + slides) % slides; render(); });
-  nextBtn.addEventListener("click", () => { pos = (pos + 1) % slides; render(); });
+
+  // Aantal zichtbare kaarten volgt de CSS: 1 onder 900px, anders 2.
+  const visibleCount = () => (window.matchMedia("(max-width: 900px)").matches ? 1 : 2);
+  const maxPos = () => Math.max(0, slides.length - visibleCount());
+
+  const render = () => {
+    pos = Math.min(Math.max(pos, 0), maxPos());
+    // offsetLeft rekent de gap mee, dus geen losse marge-berekening nodig.
+    track.style.transform = `translateX(-${slides[pos].offsetLeft}px)`;
+    prevBtn.disabled = pos === 0;
+    nextBtn.disabled = pos >= maxPos();
+  };
+
+  const step = (delta) => { pos += delta; render(); };
+  prevBtn.addEventListener("click", () => step(-1));
+  nextBtn.addEventListener("click", () => step(1));
+
+  // Swipen op touch.
+  const SWIPE_THRESHOLD_PX = 45;
+  let startX = null;
+  // Alleen op touch, zodat tekst selecteren met de muis niet per ongeluk doorschuift.
+  track.addEventListener("pointerdown", (e) => { startX = e.pointerType === "touch" ? e.clientX : null; });
+  track.addEventListener("pointerup", (e) => {
+    if (startX === null) return;
+    const delta = e.clientX - startX;
+    startX = null;
+    if (Math.abs(delta) < SWIPE_THRESHOLD_PX) return;
+    step(delta < 0 ? 1 : -1);
+  });
+  track.addEventListener("pointercancel", () => { startX = null; });
+
+  let resizeTimer = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(render, 120);
+  });
+
+  render();
 }
 
 /* ---------- Fade-in-up on scroll ---------- */
