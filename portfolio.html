@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | AI-automatisering &amp; Implementatie Cases — Talynd</title>
-  <meta name="description" content="Bekijk hoe Talynd voor VIA Vastgoed en YNS Spain complete AI-systemen bouwde: Pipedrive CRM, mailautomatisering en live woningdata. Werkende systemen, geen loze beloftes.">
+  <meta name="description" content="Bekijk hoe Talynd voor VIA Vastgoed, YNS Spain en Reformed Collective complete systemen bouwde: CRM-automatisering, websites, een boekingsplatform met betalingen en een iOS-app. Werkende systemen, geen loze beloftes.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://talynd.com/portfolio">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://talynd.com/portfolio">
   <meta property="og:title" content="Portfolio | AI-automatisering &amp; Implementatie Cases — Talynd">
-  <meta property="og:description" content="Bekijk hoe Talynd voor VIA Vastgoed en YNS Spain complete AI-systemen bouwde: Pipedrive CRM, mailautomatisering en live woningdata. Werkende systemen, geen loze beloftes.">
+  <meta property="og:description" content="Bekijk hoe Talynd voor VIA Vastgoed, YNS Spain en Reformed Collective complete systemen bouwde: CRM-automatisering, websites, een boekingsplatform met betalingen en een iOS-app. Werkende systemen, geen loze beloftes.">
   <meta property="og:image" content="https://talynd.com/assets/hero-mountains.webp">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:site_name" content="Talynd">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -226,6 +226,10 @@
       /* YNS SEO panel mobile — content is taller than default 4/3.4 */
       .case__panel.yns-seo-active { aspect-ratio: 4 / 5.2; }
       .yns-seo-panel { justify-content: flex-start; padding: 16px 18px; gap: 11px; }
+      /* RC panels mobile */
+      .case__panel.rc-web-active, .case__panel.rc-checkout-active { aspect-ratio: 16 / 10; }
+      .case__panel.rc-app-active { aspect-ratio: auto; }
+      .rc-phone { width: 200px; }
       /* Buildhead tekst */
       .case__buildhead { font-size: 11px; margin-bottom: 14px; }
       /* FAQ padding */
@@ -326,6 +330,32 @@
     .calc-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(60,40,20,0.18); transition: background 0.25s, transform 0.25s; cursor: pointer; }
     .calc-dot.active { background: rgba(60,40,20,0.6); transform: scale(1.25); }
     .calc-counter { font-family: var(--font-body); font-size: 11px; font-weight: 500; color: rgba(60,40,20,0.5); letter-spacing: 0.06em; min-width: 36px; text-align: center; }
+
+    /* ---- CASE 3: REFORMED COLLECTIVE panels ---- */
+    .case__panel.rc-web-active, .case__panel.rc-checkout-active { background: #fff; border: 1px solid rgba(160,140,110,0.2); overflow: hidden; box-shadow: 0 28px 64px -32px rgba(4,14,31,0.28); display: block; }
+    .case__panel.rc-web-active::before, .case__panel.rc-checkout-active::before { display: none; }
+    .case__panel.rc-web-active { aspect-ratio: 1200 / 653; }
+    .case__panel.rc-checkout-active { aspect-ratio: 1200 / 651; }
+    .rc-web-panel { position: relative; display: block; width: 100%; height: 100%; }
+    .rc-web-panel img, .rc-checkout-panel img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .rc-checkout-panel { width: 100%; height: 100%; }
+    .rc-web-cta { position: absolute; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-body); font-size: 13px; font-weight: 600; color: #fff; background: rgba(13,31,30,0.82); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); padding: 9px 15px; border-radius: 100px; letter-spacing: 0.01em; opacity: 0; transform: translateY(6px); transition: opacity 0.25s ease, transform 0.25s ease; }
+    .rc-web-panel:hover .rc-web-cta, .rc-web-panel:focus-visible .rc-web-cta { opacity: 1; transform: translateY(0); }
+    /* Touch-apparaten kennen geen hover: toon de klik-knop altijd, gecentreerd zodat hij nooit tegen de rand clipt */
+    @media (hover: none) { .rc-web-cta { opacity: 1; left: 50%; right: auto; transform: translateX(-50%); } }
+    .rc-web-cta svg { width: 14px; height: 14px; }
+
+    /* App phone mockup */
+    .case__panel.rc-app-active { aspect-ratio: auto; background: none; border: none; box-shadow: none; overflow: visible; display: grid; place-items: center; padding: 8px 0; }
+    .case__panel.rc-app-active::before { display: none; }
+    .rc-app-panel { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .rc-phone { position: relative; width: 214px; aspect-ratio: 359 / 782; background: #141212; border-radius: 34px; padding: 7px; box-shadow: 0 26px 56px -20px rgba(30,15,8,0.5), inset 0 0 0 2px rgba(255,255,255,0.06); }
+    .rc-phone__screen { position: relative; width: 100%; height: 100%; border-radius: 26px; overflow: hidden; background: #000; }
+    .rc-app-track { display: flex; width: 100%; height: 100%; transition: transform 0.55s cubic-bezier(0.5, 0, 0.2, 1); will-change: transform; }
+    .rc-app-slide { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .rc-app-dots { display: flex; gap: 7px; }
+    .rc-app-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(90,50,30,0.28); cursor: pointer; transition: background 0.3s ease, width 0.3s ease; }
+    .rc-app-dot.active { background: #a24b32; width: 18px; border-radius: 4px; }
   </style>
   <!-- Schema Markup — CollectionPage -->
   <script type="application/ld+json">
@@ -333,12 +363,13 @@
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Portfolio AI Automatisering | Talynd",
-    "description": "Overzicht van AI automatisering projecten gerealiseerd door Talynd: VIA Vastgoed en YNS Spain.",
+    "description": "Overzicht van AI automatisering projecten gerealiseerd door Talynd: VIA Vastgoed, YNS Spain en Reformed Collective.",
     "url": "https://talynd.com/portfolio",
     "publisher": {
       "@type": "Organization",
       "name": "Talynd",
-      "url": "https://talynd.com"
+      "url": "https://talynd.com",
+      "logo": "https://talynd.com/icon-512.png"
     },
     "breadcrumb": {
       "@type": "BreadcrumbList",
@@ -361,6 +392,14 @@
         "headline": "Case YNS Spain | Website, SEO & Pipedrive-automatisering",
         "description": "Hoe Talynd voor YNS Spain een complete website, SEO-implementatie en Pipedrive-automatisering realiseerde — gebouwd en volledig overgedragen.",
         "url": "https://talynd.com/portfolio#yns",
+        "author": { "@type": "Organization", "name": "Talynd" },
+        "publisher": { "@type": "Organization", "name": "Talynd", "url": "https://talynd.com" }
+      },
+      {
+        "@type": "Article",
+        "headline": "Case Reformed Collective | Website, boekingsapp & betaalsysteem",
+        "description": "Hoe Talynd voor Reformed Collective een complete website, boekingsplatform met Mollie-betalingen, iOS-app en beheerportaal bouwde — gebouwd en volledig overgedragen.",
+        "url": "https://talynd.com/portfolio#reformed-collective",
         "author": { "@type": "Organization", "name": "Talynd" },
         "publisher": { "@type": "Organization", "name": "Talynd", "url": "https://talynd.com" }
       }
@@ -421,7 +460,7 @@
         <div class="case__headtext">
           <span class="case__index">Case 01</span>
           <h2 class="case__name">VIA Vastgoed</h2>
-          <p class="case__meta">Spaans vastgoed · bemiddeling voor Nederlandse kopers · <a href="https://viavastgoed.nl" target="_blank" rel="noopener">viavastgoed.nl</a></p>
+          <p class="case__meta">Spaans vastgoed · bemiddeling voor Nederlandse kopers · <a href="https://viavastgoed.com" target="_blank" rel="noopener">viavastgoed.com</a></p>
         </div>
       </div>
 
@@ -562,7 +601,7 @@
         <div class="case__headtext">
           <span class="case__index">Case 02</span>
           <h2 class="case__name">YNS Spain</h2>
-          <p class="case__meta">Spaans vastgoed · Engelstalige markt (UK &amp; Ierland) · <a href="https://ynsspain.com" target="_blank" rel="noopener">ynsspain.com</a></p>
+          <p class="case__meta">Spaans vastgoed · <a href="https://ynsspain.com" target="_blank" rel="noopener">ynsspain.com</a></p>
           <div class="case__badges">
             <span class="case__badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z"/></svg>5.0 score</span>
             <span class="case__badge">163 reviews</span>
@@ -586,7 +625,7 @@
               <li>Website van nul opgebouwd in Next.js 15: 10 pagina's live op Vercel.</li>
               <li>Salesgerichte opbouw: hero met sociale proof, live woningstrip, team, testimonials en FAQ.</li>
               <li>9 individuele projectpagina's. Elke woning heeft een eigen URL, foto's en content.</li>
-              <li>Gebouwd voor een Engelstalige markt (UK en Ierland) met 5.0-rating en 163 reviews als vertrekpunt.</li>
+              <li>Gebouwd met een 5.0-rating en 163 reviews als vertrekpunt.</li>
             </ul></div>
           </div>
           <div class="case-tab" data-panel="[SCREENSHOT: Google Search Console met sitemap, 15 URLs geindexeerd en URL-structuur]" data-panel-type="yns-seo">
@@ -658,6 +697,101 @@
           <span class="pill">Inmobalia API</span>
           <span class="pill">Vercel</span>
           <span class="pill">Google Search Console</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASE 3: REFORMED COLLECTIVE ============ -->
+  <section class="case" id="reformed-collective" style="scroll-margin-top:90px">
+    <div class="container">
+      <div class="case__head fade-in-up">
+        <div class="case__logo"><img src="assets/logos/reformed-collective-white.png" alt="Reformed Collective" /></div>
+        <div class="case__headtext">
+          <span class="case__index">Case 03</span>
+          <h2 class="case__name">Reformed Collective</h2>
+          <p class="case__meta">Reformer Pilates studio · Beverwijk · <a href="https://reformedcollective.nl" target="_blank" rel="noopener">reformedcollective.nl</a></p>
+        </div>
+      </div>
+
+      <div class="case__challenge fade-in-up">
+        <span class="case__challenge-label">De uitdaging</span>
+        <p>Reformed Collective opende een nieuwe reformer-pilatesstudio, maar had nog niets digitaals. Geen website, geen manier om lessen te boeken of te betalen, en geen systeem om leden, roosters en abonnementen te beheren. Alles moest van de grond af: een merk-website, een boekingsplatform met betalingen, én een beheeromgeving waarmee de studio zelfstandig verder kan.</p>
+      </div>
+
+      <div class="case__buildhead fade-in-up">Wat we bouwden</div>
+      <div class="case__build fade-in-up">
+        <div class="case-tabs" data-case="reformed">
+          <div class="case-tab active" data-panel="Reformed Collective website" data-panel-type="rc-web">
+            <div class="case-tab__num">01</div>
+            <div class="case-tab__label">Website + live boekingssysteem</div>
+            <div class="case-tab__body"><ul>
+              <li>Tweetalige website (NL/EN) van nul gebouwd in de huisstijl van de studio.</li>
+              <li>Live rooster gekoppeld aan de database: lessen die de studio toevoegt verschijnen direct online.</li>
+              <li>Leden maken een account, boeken en annuleren lessen en beheren hun eigen planning.</li>
+              <li>Wachtlijst met automatische melding zodra er een plek vrijkomt.</li>
+            </ul></div>
+          </div>
+          <div class="case-tab" data-panel="Checkout met Mollie" data-panel-type="rc-checkout">
+            <div class="case-tab__num">02</div>
+            <div class="case-tab__label">Betalen, credits &amp; abonnementen</div>
+            <div class="case-tab__body"><ul>
+              <li>Volledige betaalintegratie met Mollie: losse lessen, rittenkaarten én terugkerende abonnementen.</li>
+              <li>Creditsysteem: leden kopen tegoed en boeken daarmee lessen. Bij annulering wordt de credit automatisch teruggestort.</li>
+              <li>Idempotente webhooks en beveiligde edge-functions. Elke betaling komt exact één keer aan.</li>
+              <li>Transactionele e-mails (welkom, aankoop, boeking, annulering) vanaf het eigen domein.</li>
+            </ul></div>
+          </div>
+          <div class="case-tab" data-panel="iOS-app" data-panel-type="rc-app">
+            <div class="case-tab__num">03</div>
+            <div class="case-tab__label">iOS-app + beheerportaal</div>
+            <div class="case-tab__body"><ul>
+              <li>Native iOS-app in de App Store, zodat leden ook vanaf hun telefoon boeken en betalen.</li>
+              <li>Beheerportaal voor de studio: rooster, lessen, capaciteit, deelnemers en leden beheren.</li>
+              <li>Rechtenstructuur: de studio beheert alles, leden zien alleen hun eigen gegevens.</li>
+              <li>Volledig getest en overgedragen. De studio draait er zelfstandig op verder.</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="case__panel rc-web-active" data-case-panel="reformed">
+          <a class="rc-web-panel" href="https://reformedcollective.nl" target="_blank" rel="noopener" aria-label="Open reformedcollective.nl in een nieuw tabblad">
+            <img src="assets/portfolio-reformed.webp" alt="Reformed Collective website: reformer pilates studio Beverwijk" />
+            <span class="rc-web-cta">Bekijk de live site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+          </a>
+          <div class="rc-checkout-panel" style="display:none">
+            <img src="assets/rc-checkout.webp" alt="Checkout met Mollie: abonnementen en credits" />
+          </div>
+          <div class="rc-app-panel" style="display:none">
+            <div class="rc-phone">
+              <div class="rc-phone__screen">
+                <div class="rc-app-track">
+                  <img class="rc-app-slide" src="assets/rc-app-1-hd.webp" alt="Reformed Collective app: word lid of inloggen" />
+                  <img class="rc-app-slide" src="assets/rc-app-2-hd.webp" alt="Reformed Collective app: home met credits en studio" />
+                  <img class="rc-app-slide" src="assets/rc-app-3-hd.webp" alt="Reformed Collective app: planning en rooster" />
+                  <img class="rc-app-slide" src="assets/rc-app-4-hd.webp" alt="Reformed Collective app: shop met abonnementen" />
+                </div>
+              </div>
+            </div>
+            <div class="rc-app-dots">
+              <span class="rc-app-dot active"></span><span class="rc-app-dot"></span><span class="rc-app-dot"></span><span class="rc-app-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case__tools fade-in-up">
+        <span class="case__tools-label">Gebruikte tools</span>
+        <div class="case__pills">
+          <span class="pill">Nuxt</span>
+          <span class="pill">Vue 3</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">Supabase</span>
+          <span class="pill">Mollie</span>
+          <span class="pill">Resend</span>
+          <span class="pill">Vercel</span>
+          <span class="pill">App Store</span>
         </div>
       </div>
     </div>
@@ -817,6 +951,7 @@
           <h4>Portfolio</h4>
           <a href="portfolio#via-vastgoed">VIA Vastgoed</a>
           <a href="portfolio#yns">YNS Spain</a>
+          <a href="portfolio#reformed-collective">Reformed Collective</a>
         </div>
         <div class="footer__col">
           <h4>Bedrijf</h4>
@@ -932,6 +1067,21 @@
             panel.classList.remove("calc-active"); panel.classList.remove("pipe-active"); panel.classList.remove("screenshot-active"); panel.classList.remove("yns-ss-active"); panel.classList.remove("yns-calc-active");
             panel.classList.add("yns-seo-active");
             if (typeof window.ynsSSStop === "function") window.ynsSSStop();
+          } else if (ptype === "rc-web" || ptype === "rc-checkout" || ptype === "rc-app") {
+            var rcWeb = panel.querySelector(".rc-web-panel");
+            var rcCo = panel.querySelector(".rc-checkout-panel");
+            var rcApp = panel.querySelector(".rc-app-panel");
+            if (ss) ss.style.display = "none"; if (pa) pa.style.display = "none";
+            if (label) label.style.display = "none";
+            panel.classList.remove("calc-active", "pipe-active", "screenshot-active", "yns-ss-active", "yns-calc-active", "yns-seo-active", "rc-web-active", "rc-checkout-active", "rc-app-active");
+            if (rcWeb) rcWeb.style.display = (ptype === "rc-web") ? "block" : "none";
+            if (rcCo) rcCo.style.display = (ptype === "rc-checkout") ? "block" : "none";
+            if (rcApp) rcApp.style.display = (ptype === "rc-app") ? "flex" : "none";
+            panel.classList.add(ptype + "-active");
+            if (typeof window.pipelineStop === "function") window.pipelineStop();
+            if (typeof window.ynsSSStop === "function") window.ynsSSStop();
+            if (ptype === "rc-app") { if (typeof window.rcAppStart === "function") window.rcAppStart(); }
+            else { if (typeof window.rcAppStop === "function") window.rcAppStop(); }
           } else {
             if (ss) ss.style.display = "none";
             if (pa) pa.style.display = "none";
@@ -947,6 +1097,24 @@
         });
       });
     });
+    /* ---------- RC app phone slideshow ---------- */
+    (function () {
+      var panel = document.querySelector('[data-case-panel="reformed"]');
+      if (!panel) return;
+      var track = panel.querySelector(".rc-app-track");
+      var slides = panel.querySelectorAll(".rc-app-slide");
+      var dots = panel.querySelectorAll(".rc-app-dot");
+      if (!slides.length || !track) return;
+      var idx = 0, timer = null;
+      function go(i) {
+        idx = (i + slides.length) % slides.length;
+        track.style.transform = "translateX(-" + (idx * 100) + "%)";
+        dots.forEach(function (d, n) { d.classList.toggle("active", n === idx); });
+      }
+      dots.forEach(function (d, n) { d.addEventListener("click", function () { go(n); }); });
+      window.rcAppStart = function () { if (timer) return; timer = setInterval(function () { go(idx + 1); }, 2600); };
+      window.rcAppStop = function () { if (timer) { clearInterval(timer); timer = null; } };
+    })();
   </script>
   <script>
     /* ---------- Pipeline animation ---------- */
