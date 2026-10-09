@@ -132,13 +132,10 @@
        op touch mag je vegen. ---- */
     .pcarousel { position: relative; }
     .portfolio-sec .cards-grid { display: flex; gap: 24px; overflow: hidden; margin: 0 -6px; padding: 0 6px 6px; }
-    /* twee kaarten plus 56px van de derde onder de fade, zodat je ziet dat er meer is */
-    .portfolio-sec .cards-grid > .pcard { flex: 0 0 calc((100% - 48px - 56px) / 2); transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); }
-    /* rand-fade rechts = er is meer */
-    .pcarousel::after { content: ""; position: absolute; top: 0; right: -6px; bottom: 6px; width: 78px; background: linear-gradient(90deg, rgba(0,0,0,0), var(--orange)); pointer-events: none; opacity: 1; transition: opacity 0.35s ease; z-index: 1; }
-    .pcarousel.is-end::after { opacity: 0; }
+    /* twee kaarten plus 120px van de derde duidelijk in beeld, zodat je ziet dat er meer is */
+    .portfolio-sec .cards-grid > .pcard { flex: 0 0 calc((100% - 48px - 120px) / 2); transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); }
     .pcarousel__nav { position: absolute; top: 42%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--gray-2); background: var(--white); color: var(--black); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 26px -12px rgba(4,14,31,0.3); transition: opacity 0.35s ease, transform 0.2s ease; z-index: 2; }
-    .pcarousel__nav--next { right: 6px; }
+    .pcarousel__nav--next { right: 18px; }
     .pcarousel__nav--prev { left: 6px; }
     .pcarousel__nav:hover { transform: translateY(-50%) scale(1.06); }
     .pcarousel.is-end .pcarousel__nav--next, .pcarousel.is-start .pcarousel__nav--prev { opacity: 0; pointer-events: none; }
