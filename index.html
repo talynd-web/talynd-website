@@ -128,12 +128,12 @@
     .pcard .chip { background: transparent; border: 1px solid var(--gray-2); color: var(--gray-6); font-size: 12px; padding: 5px 12px; white-space: nowrap; }
 
     /* ---- PORTFOLIO SLIDER: twee kaarten op ware grootte, de derde steekt rechts uit.
-       Geen scrollstrook (die ving het verticale scrollen af): op pc schuift de track met de pijlknoppen,
-       op touch mag je vegen. ---- */
+       De strook scrollt horizontaal via script (trackpad zijwaarts, muis slepen, knoppen), maar vangt verticaal
+       scrollen niet af: dat gaat naar de pagina. Op touch native vegen. ---- */
     .pcarousel { position: relative; }
     .portfolio-sec .cards-grid { display: flex; gap: 24px; overflow: hidden; margin: 0 -6px; padding: 0 6px 6px; }
     /* twee kaarten plus 120px van de derde duidelijk in beeld, zodat je ziet dat er meer is */
-    .portfolio-sec .cards-grid > .pcard { flex: 0 0 calc((100% - 48px - 120px) / 2); transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); }
+    .portfolio-sec .cards-grid > .pcard { flex: 0 0 calc((100% - 48px - 120px) / 2); }
     .pcarousel__nav { position: absolute; top: 42%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--gray-2); background: var(--white); color: var(--black); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 26px -12px rgba(4,14,31,0.3); transition: opacity 0.35s ease, transform 0.2s ease; z-index: 2; }
     .pcarousel__nav--next { right: 18px; }
     .portfolio-sec .cards-grid { cursor: grab; }
@@ -145,7 +145,7 @@
     @media (max-width: 760px) {
       .portfolio-sec .cards-grid { overflow-x: auto; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
       .portfolio-sec .cards-grid::-webkit-scrollbar { display: none; }
-      .portfolio-sec .cards-grid > .pcard { flex: 0 0 86%; scroll-snap-align: start; transform: none !important; }
+      .portfolio-sec .cards-grid > .pcard { flex: 0 0 86%; scroll-snap-align: start; }
       .pcarousel__nav { display: none; }
     }
 
@@ -704,64 +704,50 @@
         });
       });
     })();
-    /* ---------- Portfolio slider: schuift met de knoppen, geen scrollstrook ---------- */
+    /* ---------- Portfolio slider: vrij horizontaal scrollen (trackpad, muis, knoppen), verticaal blijft van de pagina ---------- */
     (function () {
       var track = document.getElementById('portfolioTrack');
       var wrap = document.getElementById('portfolioCarousel');
       var prev = document.getElementById('portfolioPrev');
       var next = document.getElementById('portfolioNext');
       if (!track || !wrap) return;
-      var cards = Array.prototype.slice.call(track.querySelectorAll('.pcard'));
-      var idx = 0;
-      function stepSize() {
-        var r = cards[0].getBoundingClientRect();
-        return r.width + 24;
+      var card = track.querySelector('.pcard');
+      function step() { return card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.5; }
+      function state() {
+        var max = track.scrollWidth - track.clientWidth;
+        wrap.classList.toggle('is-start', track.scrollLeft <= 2);
+        wrap.classList.toggle('is-end', track.scrollLeft >= max - 2);
       }
-      function maxIdx() {
-        var visible = Math.max(1, Math.round(track.clientWidth / stepSize()));
-        return Math.max(0, cards.length - visible);
-      }
-      function render() {
-        if (window.innerWidth <= 760) { idx = 0; cards.forEach(function (c) { c.style.transform = ''; }); wrap.classList.add('is-start'); wrap.classList.remove('is-end'); return; }
-        idx = Math.min(Math.max(idx, 0), maxIdx());
-        var x = -idx * stepSize();
-        cards.forEach(function (c) { c.style.transform = 'translateX(' + x + 'px)'; });
-        wrap.classList.toggle('is-start', idx === 0);
-        wrap.classList.toggle('is-end', idx >= maxIdx());
-      }
-      if (next) next.addEventListener('click', function () { idx += 1; render(); });
-      if (prev) prev.addEventListener('click', function () { idx -= 1; render(); });
-      /* Vegen op de trackpad: alleen een duidelijk horizontale beweging schuift, verticaal scrollen blijft van de pagina. */
-      var wheelAcc = 0, wheelLock = false;
+      track.addEventListener('scroll', state, { passive: true });
+      window.addEventListener('resize', state);
+      if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+      if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      /* Trackpad: een zijwaartse beweging scrollt de strook, een verticale laten we met rust zodat de pagina gewoon scrollt. */
       track.addEventListener('wheel', function (e) {
         if (window.innerWidth <= 760) return;
-        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 4) return;
+        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
         e.preventDefault();
-        if (wheelLock) return;
-        wheelAcc += e.deltaX;
-        if (Math.abs(wheelAcc) < 60) return;
-        idx += wheelAcc > 0 ? 1 : -1; wheelAcc = 0; render();
-        wheelLock = true; setTimeout(function () { wheelLock = false; wheelAcc = 0; }, 550);
+        track.scrollLeft += e.deltaX;
       }, { passive: false });
-      /* Slepen met de muis */
-      var dragX = null, dragged = false;
+      /* Muis: slepen volgt de cursor */
+      var dragX = null, dragStart = 0, dragged = false;
       track.addEventListener('pointerdown', function (e) {
         if (window.innerWidth <= 760 || e.pointerType !== 'mouse' || e.button !== 0) return;
-        dragX = e.clientX; dragged = false; track.classList.add('is-dragging');
+        dragX = e.clientX; dragStart = track.scrollLeft; dragged = false; track.classList.add('is-dragging');
       });
       window.addEventListener('pointermove', function (e) {
         if (dragX === null) return;
-        if (Math.abs(e.clientX - dragX) > 6) dragged = true;
+        var dx = e.clientX - dragX;
+        if (Math.abs(dx) > 6) dragged = true;
+        track.scrollLeft = dragStart - dx;
       });
-      window.addEventListener('pointerup', function (e) {
+      window.addEventListener('pointerup', function () {
         if (dragX === null) return;
-        var dx = e.clientX - dragX; dragX = null; track.classList.remove('is-dragging');
-        if (dx < -50) { idx += 1; render(); } else if (dx > 50) { idx -= 1; render(); }
+        dragX = null; track.classList.remove('is-dragging');
       });
       track.addEventListener('click', function (e) { if (dragged) { e.preventDefault(); e.stopPropagation(); dragged = false; } }, true);
       track.addEventListener('dragstart', function (e) { e.preventDefault(); });
-      window.addEventListener('resize', render);
-      render();
+      state();
     })();
     (function () {
       var el = document.getElementById("howRotator");
