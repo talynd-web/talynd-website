@@ -122,6 +122,13 @@ h3 { font-family: var(--font-body); font-weight: 600; }
 .btn--teal { background: var(--teal); color: var(--black); padding: 12px 22px; border-radius: 44px; }
 .btn--teal:hover { background: var(--dark-teal); color: var(--white); transform: translateY(-1px); }
 .btn--lg { padding: 14px 28px; font-size: 16px; }
+/* store-knop (App Store / Google Play), gedeeld door home en portfolio */
+.store-btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px 9px 13px; border-radius: 30px; background: var(--black); color: var(--white); font-family: var(--font-body); font-size: 13.5px; font-weight: 500; line-height: 1; white-space: nowrap; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; }
+.store-btn svg { width: 16px; height: 16px; flex: 0 0 16px; }
+.store-btn:hover { background: #15233d; transform: translateY(-1px); }
+.store-btn--light { background: var(--white); color: var(--black); box-shadow: inset 0 0 0 1px var(--gray-2); }
+.store-btn--light:hover { background: var(--pale-teal); }
+
 .btn--ghost { background: transparent; color: var(--black); padding: 8px 14px; border-radius: 8px; }
 .btn--ghost:hover { background: var(--gray-1); }
 

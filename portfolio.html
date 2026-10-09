@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=20260811b">
+  <link rel="stylesheet" href="css/styles.css?v=20261009">
   <style>
     /* ============================================================
        PORTFOLIO — Talynd (matches homepage + diensten system)
@@ -228,7 +228,7 @@
       .yns-seo-panel { justify-content: flex-start; padding: 16px 18px; gap: 11px; }
       /* RC panels mobile */
       .case__panel.rc-web-active, .case__panel.rc-checkout-active { aspect-ratio: 16 / 10; }
-      .case__panel.rc-app-active { aspect-ratio: auto; }
+      .case__panel.rc-app-active, .case__panel.via-app-active { aspect-ratio: auto; }
       .rc-phone { width: 200px; }
       /* Buildhead tekst */
       .case__buildhead { font-size: 11px; margin-bottom: 14px; }
@@ -346,8 +346,11 @@
     .rc-web-cta svg { width: 14px; height: 14px; }
 
     /* App phone mockup */
-    .case__panel.rc-app-active { aspect-ratio: auto; background: none; border: none; box-shadow: none; overflow: visible; display: grid; place-items: center; padding: 8px 0; }
-    .case__panel.rc-app-active::before { display: none; }
+    .case__panel.rc-app-active, .case__panel.via-app-active { aspect-ratio: auto; background: none; border: none; box-shadow: none; overflow: visible; display: grid; place-items: center; padding: 8px 0; }
+    .case__panel.rc-app-active::before, .case__panel.via-app-active::before { display: none; }
+    .app-stores { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 2px; }
+    .via-app-panel .rc-app-dot { background: rgba(4,14,31,0.2); }
+    .via-app-panel .rc-app-dot.active { background: var(--black); }
     .rc-app-panel { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 18px; }
     .rc-phone { position: relative; width: 214px; aspect-ratio: 359 / 782; background: #141212; border-radius: 34px; padding: 7px; box-shadow: 0 26px 56px -20px rgba(30,15,8,0.5), inset 0 0 0 2px rgba(255,255,255,0.06); }
     .rc-phone__screen { position: relative; width: 100%; height: 100%; border-radius: 26px; overflow: hidden; background: #000; }
@@ -503,6 +506,17 @@
               <li>Live op eigen URL, inzetbaar als salestool tijdens en na het intakegesprek.</li>
             </ul></div>
           </div>
+          <div class="case-tab" data-panel="VIA Vastgoed app" data-panel-type="via-app">
+            <div class="case-tab__num">04</div>
+            <div class="case-tab__label">App in de App Store en op Google Play</div>
+            <div class="case-tab__body"><ul>
+              <li>Eigen app voor iPhone en Android, gebouwd op dezelfde data als de website. E&eacute;n bron, geen dubbel beheer.</li>
+              <li>Live aanbod met prijs, betaalschema en verwacht rendement per project.</li>
+              <li>Digitale adviseur: kopers stellen hun vraag en zien direct welke woningen bij hun budget passen.</li>
+              <li>Budgetcalculator en zoeken op de kaart met prijsspelden.</li>
+              <li>Inloggen met Google of Apple. Door Apple en Google goedgekeurd en live in beide stores.</li>
+            </ul></div>
+          </div>
         </div>
         <div class="case__panel" data-case-panel="via">
           <div class="calc-slideshow" style="display:none">
@@ -575,6 +589,25 @@
           <div class="screenshot-panel" id="viaScreenshot" style="display:none">
             <img src="assets/via-woningen.webp" alt="17.611+ woningen live op de VIA website" />
           </div>
+          <div class="rc-app-panel via-app-panel" style="display:none">
+            <div class="rc-phone">
+              <div class="rc-phone__screen">
+                <div class="rc-app-track">
+                  <img class="rc-app-slide" src="assets/via-app-1-hd.webp" alt="VIA Vastgoed app: aanbod met prijs en rendement" loading="lazy" />
+                  <img class="rc-app-slide" src="assets/via-app-2-hd.webp" alt="VIA Vastgoed app: digitale adviseur" loading="lazy" />
+                  <img class="rc-app-slide" src="assets/via-app-3-hd.webp" alt="VIA Vastgoed app: zoeken op de kaart" loading="lazy" />
+                  <img class="rc-app-slide" src="assets/via-app-4-hd.webp" alt="VIA Vastgoed app: budgetcalculator" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="rc-app-dots">
+              <span class="rc-app-dot active"></span><span class="rc-app-dot"></span><span class="rc-app-dot"></span><span class="rc-app-dot"></span>
+            </div>
+            <div class="app-stores">
+              <a class="store-btn" href="https://apps.apple.com/nl/app/via-vastgoed/id6803245255" target="_blank" rel="noopener" aria-label="VIA Vastgoed in de App Store"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span>App Store</span></a>
+              <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.viavastgoed.app" target="_blank" rel="noopener" aria-label="VIA Vastgoed op Google Play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg><span>Google Play</span></a>
+            </div>
+          </div>
           <span class="case__panel-label" style="display:none">[SCREENSHOT: AI Rendementscalculator]</span>
         </div>
       </div>
@@ -588,6 +621,9 @@
           <span class="pill">Inmobalia API</span>
           <span class="pill">ManyChat</span>
           <span class="pill">Calendly</span>
+          <span class="pill">Capacitor</span>
+          <span class="pill">App Store</span>
+          <span class="pill">Google Play</span>
         </div>
       </div>
     </div>
@@ -776,6 +812,9 @@
             </div>
             <div class="rc-app-dots">
               <span class="rc-app-dot active"></span><span class="rc-app-dot"></span><span class="rc-app-dot"></span><span class="rc-app-dot"></span>
+            </div>
+            <div class="app-stores">
+              <a class="store-btn" href="https://apps.apple.com/nl/app/reformed-collective/id6790157228" target="_blank" rel="noopener" aria-label="Reformed Collective in de App Store"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span>App Store</span></a>
             </div>
           </div>
         </div>
@@ -1012,7 +1051,18 @@
           var ptype = tab.getAttribute("data-panel-type");
           var ss = panel.querySelector(".calc-slideshow");
           var pa = panel.querySelector(".pipe-anim");
-          if (ptype === "calc-grid" && ss) {
+          var vap = panel.querySelector(".via-app-panel");
+          if (vap && ptype !== "via-app") { vap.style.display = "none"; panel.classList.remove("via-app-active"); if (typeof window.viaAppStop === "function") window.viaAppStop(); }
+          if (ptype === "via-app" && vap) {
+            if (ss) ss.style.display = "none"; if (pa) pa.style.display = "none";
+            var scrV = panel.querySelector(".screenshot-panel"); if (scrV) scrV.style.display = "none";
+            if (label) label.style.display = "none";
+            panel.classList.remove("calc-active", "pipe-active", "screenshot-active");
+            panel.classList.add("via-app-active");
+            vap.style.display = "flex";
+            if (typeof window.pipelineStop === "function") window.pipelineStop();
+            if (typeof window.viaAppStart === "function") window.viaAppStart();
+          } else if (ptype === "calc-grid" && ss) {
             ss.style.display = "flex";
             if (pa) pa.style.display = "none";
             if (label) label.style.display = "none";
@@ -1097,14 +1147,15 @@
         });
       });
     });
-    /* ---------- RC app phone slideshow ---------- */
-    (function () {
-      var panel = document.querySelector('[data-case-panel="reformed"]');
-      if (!panel) return;
+    /* ---------- Telefoon-slideshows (RC-app en VIA-app) ---------- */
+    function phoneSlideshow(selector) {
+      var panel = document.querySelector(selector);
+      var none = { start: function () {}, stop: function () {} };
+      if (!panel) return none;
       var track = panel.querySelector(".rc-app-track");
       var slides = panel.querySelectorAll(".rc-app-slide");
       var dots = panel.querySelectorAll(".rc-app-dot");
-      if (!slides.length || !track) return;
+      if (!slides.length || !track) return none;
       var idx = 0, timer = null;
       function go(i) {
         idx = (i + slides.length) % slides.length;
@@ -1112,8 +1163,16 @@
         dots.forEach(function (d, n) { d.classList.toggle("active", n === idx); });
       }
       dots.forEach(function (d, n) { d.addEventListener("click", function () { go(n); }); });
-      window.rcAppStart = function () { if (timer) return; timer = setInterval(function () { go(idx + 1); }, 2600); };
-      window.rcAppStop = function () { if (timer) { clearInterval(timer); timer = null; } };
+      return {
+        start: function () { if (timer) return; timer = setInterval(function () { go(idx + 1); }, 2600); },
+        stop: function () { if (timer) { clearInterval(timer); timer = null; } }
+      };
+    }
+    (function () {
+      var rc = phoneSlideshow('[data-case-panel="reformed"] .rc-app-panel');
+      window.rcAppStart = rc.start; window.rcAppStop = rc.stop;
+      var via = phoneSlideshow('[data-case-panel="via"] .via-app-panel');
+      window.viaAppStart = via.start; window.viaAppStop = via.stop;
     })();
   </script>
   <script>

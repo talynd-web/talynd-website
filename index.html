@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=20260811b">
+  <link rel="stylesheet" href="css/styles.css?v=20261009">
   <style>
     /* ---- WAT WIJ BOUWEN (cambio-style split: intro + feature grid) ---- */
     .build { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(40px, 5vw, 96px); align-items: start; }
@@ -151,6 +151,40 @@
       .pcarousel__nav { display: none; }
     }
 
+
+    /* ---- APPS (twee apps in de stores) ---- */
+    .apps-sec { background: var(--gray-0); }
+    .apps-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 40px; }
+    .apps-head .section-head { max-width: 620px; }
+    .apps-head .section-head h2 { font-weight: 400; margin-bottom: 14px; }
+    .apps-head .section-head p { color: var(--gray-6); font-size: 16px; line-height: 1.6; }
+    .apps-head .link-arrow { flex: 0 0 auto; margin-bottom: 6px; }
+    .apps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .appcard { position: relative; display: block; background: var(--white); border: 1px solid var(--gray-2); border-radius: var(--radius-section); padding: 36px 36px 40px; min-height: 352px; overflow: hidden; transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .appcard:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(4,14,31,0.1); }
+    .appcard__main { position: relative; z-index: 1; max-width: calc(100% - 210px); display: flex; flex-direction: column; gap: 16px; }
+    .appcard__id { display: flex; align-items: center; gap: 16px; }
+    .appcard__icon { width: 72px; height: 72px; border-radius: 18px; flex: 0 0 72px; display: block; box-shadow: 0 10px 22px -10px rgba(4,14,31,0.35), 0 0 0 1px rgba(4,14,31,0.06); }
+    .appcard__name { font-family: var(--font-display); font-weight: 400; font-size: 26px; line-height: 1.15; color: var(--black); letter-spacing: -0.01em; }
+    .appcard__sub { font-size: 13px; color: var(--gray-5); margin-top: 4px; }
+    .appcard__text { font-size: 15px; line-height: 1.6; color: var(--gray-6); }
+    .appcard__stores { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+    .appcard__case { margin-top: 2px; font-size: 14px; }
+    .appcard__phone { position: absolute; right: 36px; bottom: -118px; width: 176px; aspect-ratio: 359 / 782; background: #141212; border-radius: 30px; padding: 6px; box-shadow: 0 26px 56px -20px rgba(4,14,31,0.45), inset 0 0 0 2px rgba(255,255,255,0.06); transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
+    .appcard:hover .appcard__phone { transform: translateY(-14px); }
+    .appcard__screen { width: 100%; height: 100%; border-radius: 24px; overflow: hidden; background: #000; }
+    .appcard__screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    @media (max-width: 900px) {
+      .apps-grid { grid-template-columns: 1fr; }
+      .appcard__phone { right: 32px; }
+    }
+    @media (max-width: 760px) {
+      .apps-head { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 28px; }
+      .appcard { padding: 28px 24px 0; min-height: 0; }
+      .appcard__main { max-width: none; }
+      .appcard__phone { position: relative; right: auto; bottom: auto; width: 168px; margin: 28px auto -132px; }
+      .appcard:hover .appcard__phone { transform: none; }
+    }
 
     /* ---- DPROC (exact copy from diensten) ---- */
     .dproc .tab { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 21px 0; border-top: 1px solid var(--gray-2); cursor: pointer; transition: none; }
@@ -418,6 +452,7 @@
               <span class="chip">Pipedrive pipeline</span>
               <span class="chip">E-mail nurture</span>
               <span class="chip">Cloudflare Worker API</span>
+              <span class="chip">iOS- en Android-app</span>
             </div>
             <div class="pcard__foot">
               <a href="portfolio#via-vastgoed" class="link-arrow">Bekijk case
@@ -469,6 +504,63 @@
       <button class="pcarousel__nav" id="portfolioNext" type="button" aria-label="Volgende project">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPS IN DE STORES ============ -->
+  <section class="section apps-sec">
+    <div class="container">
+      <div class="apps-head fade-in-up">
+        <div class="section-head">
+          <span class="eyebrow">Apps in de stores</span>
+          <h2>Ook als app, op de telefoon van hun klanten</h2>
+          <p>Voor twee klanten bouwden we naast de website een eigen app. Allebei goedgekeurd en live in de App Store, VIA Vastgoed ook op Google Play.</p>
+        </div>
+        <a href="portfolio" class="link-arrow">Alle cases bekijken
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <div class="apps-grid">
+        <article class="appcard fade-in-up">
+          <div class="appcard__main">
+            <div class="appcard__id">
+              <img class="appcard__icon" src="assets/app-icon-via.png" alt="App-icoon VIA Vastgoed" width="72" height="72" />
+              <div>
+                <h3 class="appcard__name">VIA Vastgoed</h3>
+                <p class="appcard__sub">Spaans vastgoed, iOS en Android</p>
+              </div>
+            </div>
+            <p class="appcard__text">Live aanbod met prijs en verwacht rendement, een digitale adviseur die direct passende woningen toont, een budgetcalculator en zoeken op de kaart.</p>
+            <div class="appcard__stores">
+              <a class="store-btn" href="https://apps.apple.com/nl/app/via-vastgoed/id6803245255" target="_blank" rel="noopener" aria-label="VIA Vastgoed in de App Store"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span>App Store</span></a>
+              <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.viavastgoed.app" target="_blank" rel="noopener" aria-label="VIA Vastgoed op Google Play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg><span>Google Play</span></a>
+            </div>
+            <a href="portfolio#via-vastgoed" class="link-arrow appcard__case">Bekijk case
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <div class="appcard__phone" aria-hidden="true"><div class="appcard__screen"><img src="assets/via-app-1-hd.webp" alt="" loading="lazy" /></div></div>
+        </article>
+        <article class="appcard fade-in-up" data-delay="1">
+          <div class="appcard__main">
+            <div class="appcard__id">
+              <img class="appcard__icon" src="assets/app-icon-rc.png" alt="App-icoon Reformed Collective" width="72" height="72" />
+              <div>
+                <h3 class="appcard__name">Reformed Collective</h3>
+                <p class="appcard__sub">Reformer pilates, iOS</p>
+              </div>
+            </div>
+            <p class="appcard__text">Leden boeken en annuleren lessen, kopen credits of een abonnement en zien hun planning. De studio beheert alles vanuit het eigen portaal.</p>
+            <div class="appcard__stores">
+              <a class="store-btn" href="https://apps.apple.com/nl/app/reformed-collective/id6790157228" target="_blank" rel="noopener" aria-label="Reformed Collective in de App Store"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span>App Store</span></a>
+            </div>
+            <a href="portfolio#reformed-collective" class="link-arrow appcard__case">Bekijk case
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <div class="appcard__phone" aria-hidden="true"><div class="appcard__screen"><img src="assets/rc-app-3-hd.webp" alt="" loading="lazy" /></div></div>
+        </article>
       </div>
     </div>
   </section>
