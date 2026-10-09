@@ -103,24 +103,22 @@
     }
 
     /* ---- TALYND ADVANTAGE (white, Cambio-style) ---- */
-    .adv { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 120px); align-items: start; }
+    /* ---- TALYND-VOORDEEL: compact, beeld links op tekst-hoogte, rechts titel + drie bewijspunten ---- */
+    .adv { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
     .adv .eyebrow { white-space: nowrap; }
-    .adv__left { display: flex; flex-direction: column; align-items: flex-start; }
-    .adv__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(34px, 4.2vw, 56px); line-height: 1.04; letter-spacing: -0.022em; color: var(--black); margin: 18px 0 22px; text-wrap: pretty; }
-    .adv__title em { font-style: italic; }
-    .adv__sub { font-size: 17px; line-height: 1.5; color: var(--gray-5); margin-bottom: 30px; }
-    .adv__right { padding-top: 36px; }
-    .adv__lead { font-family: var(--font-body); font-size: clamp(18px, 1.45vw, 21px); line-height: 1.5; color: var(--black); margin-bottom: 24px; }
-    .adv__text { font-size: 16px; line-height: 1.72; color: var(--gray-5); margin-bottom: 18px; }
-    .adv__text:last-child { margin-bottom: 0; }
-    .adv__media { margin-top: clamp(48px, 6vw, 86px); display: flex; justify-content: flex-end; }
-    .adv__media .placeholder { width: 60%; aspect-ratio: 1 / 1.02; min-height: 0; border-radius: var(--radius-section); }
+    .adv__media { position: relative; border-radius: var(--radius-section); overflow: hidden; aspect-ratio: 4 / 4.6; max-height: 520px; }
+    .adv__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .adv__right { display: flex; flex-direction: column; align-items: flex-start; }
+    .adv__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.06; letter-spacing: -0.02em; color: var(--black); margin: 16px 0 16px; text-wrap: pretty; max-width: 18ch; }
+    .adv__lead { font-family: var(--font-body); font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; color: var(--gray-6); margin-bottom: 26px; max-width: 54ch; }
+    .adv__points { list-style: none; width: 100%; max-width: 560px; margin: 0 0 28px; padding: 0; border-top: 1px solid var(--gray-2); }
+    .adv__points li { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--gray-2); font-size: 15px; line-height: 1.5; color: var(--gray-6); }
+    .adv__points b { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark-teal); padding-top: 4px; }
     @media (max-width: 1000px) {
-      .adv { grid-template-columns: 1fr; gap: 30px; }
-      .adv__right { padding-top: 0; }
-      .adv__media { justify-content: stretch; margin-top: 28px; }
-      .adv__media .placeholder { width: 100%; aspect-ratio: 16 / 11; }
-      .adv__media img { width: 58% !important; margin-left: auto !important; margin-right: 0 !important; aspect-ratio: 4 / 3; display: block; }
+      .adv { grid-template-columns: 1fr; gap: 28px; }
+      .adv__media { aspect-ratio: 16 / 10; max-height: none; }
+      .adv__title { max-width: none; }
+      .adv__points li { grid-template-columns: 1fr; gap: 3px; }
     }
 
     /* ---- PORTFOLIO (cream, Cambio-rhythm) ---- */
@@ -416,18 +414,20 @@
   <section class="section">
     <div class="container">
       <div class="adv">
-        <div class="adv__left fade-in-up">
-          <span class="eyebrow">Het Talynd-voordeel</span>
-          <h2 class="adv__title">Gebouwd om over te dragen, niet om je vast te zetten</h2>
-          <a href="over-ons" class="btn btn--primary">Leer ons kennen</a>
+        <div class="adv__media fade-in-up">
+          <img src="assets/adv-building.webp" alt="Modern kantoorgebouw, glasgevel tegen blauwe lucht" loading="lazy" />
         </div>
         <div class="adv__right fade-in-up" data-delay="1">
-          <p class="adv__lead">We komen langs, leren je proces van binnenuit kennen en bouwen automatisering die past bij hoe jij werkt, niet andersom.</p>
-          <p class="adv__text">We combineren moderne AI-tooling met de dagelijkse praktijk van vastgoed. Alles wat we bouwen documenteren we en dragen we over, zodat je team het zelfstandig beheert. Geen black box, geen lock-in.</p>
+          <span class="eyebrow">Het Talynd-voordeel</span>
+          <h2 class="adv__title">Gebouwd om over te dragen, niet om je vast te zetten</h2>
+          <p class="adv__lead">We combineren moderne AI-tooling met de dagelijkse praktijk van vastgoed en bouwen automatisering die past bij hoe jij werkt, niet andersom.</p>
+          <ul class="adv__points">
+            <li><b>Op locatie</b><span>We komen langs en leren je proces van binnenuit kennen voordat we iets bouwen.</span></li>
+            <li><b>Overdraagbaar</b><span>Alles wat we bouwen documenteren we en dragen we over aan je team.</span></li>
+            <li><b>Geen lock-in</b><span>Je team beheert het systeem zelfstandig. Geen black box, geen abonnement op ons.</span></li>
+          </ul>
+          <a href="over-ons" class="btn btn--primary">Leer ons kennen</a>
         </div>
-      </div>
-      <div class="adv__media fade-in-up" data-delay="1">
-        <img src="assets/adv-building.webp" alt="Modern kantoorgebouw — glasgevel tegen blauwe lucht" style="width:50%; margin-left:auto; display:block; border-radius:var(--radius-section); object-fit:cover; aspect-ratio:1/1.02;" />
       </div>
     </div>
   </section>
