@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=b7e6c5d2">
+  <link rel="stylesheet" href="css/styles.css?v=930c6cc9">
   <style>
     /* ============================================================
        DIENSTEN — cambio.ai platform-style layout (Talynd tokens)
@@ -57,11 +57,6 @@
     /* ---- TRUSTED BY ---- */
     .dtrust { background: var(--white); padding: 44px var(--pad-x) 8px; }
     .dtrust__label { text-align: center; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-4); margin-bottom: 26px; }
-    .dtrust__logos { display: flex; justify-content: center; align-items: center; gap: clamp(40px, 7vw, 90px); flex-wrap: wrap; }
-    .dtrust__logos img { filter: brightness(0); opacity: 0.42; transition: opacity 0.2s ease; }
-    .dtrust__logos img:hover { opacity: 0.7; }
-    .dtrust__logos .l-via { height: 34px; }
-    .dtrust__logos .l-yns { height: 23px; }
 
     /* ---- FEATURES (process, alternating) ---- */
     .dfeat-sec { padding: clamp(36px, 4.5vw, 56px) 0; }
@@ -395,9 +390,29 @@
   <!-- ============ TRUSTED BY ============ -->
   <section class="dtrust">
     <p class="dtrust__label">Vertrouwd door</p>
-    <div class="dtrust__logos">
-      <img class="l-via" src="assets/logos/via-vastgoed-white.png" alt="VIA Vastgoed" />
-      <img class="l-yns" src="assets/logos/yns-spain-white.png" alt="YNS Spain" />
+    <div class="logostrip logostrip--licht">
+      <div class="logostrip__track">
+        <ul class="logostrip__set">
+          <li><img src="assets/logos/via-vastgoed-white.png" alt="VIA Vastgoed" height="34" width="87"></li>
+          <li><img src="assets/logos/yns-spain-white.png" alt="YNS Spain" height="34" width="118"></li>
+          <li><img src="assets/logos/klanten/zeker-wonen-wit.svg" alt="Zeker Wonen Fondsen" height="34" width="157"></li>
+          <li><img src="assets/logos/klanten/reformed-rc-woordmerk-wit.png" class="logo--stapel" alt="Reformed Collective" height="46" width="159"></li>
+          <li><img src="assets/logos/klanten/cs-hospitality-mono.png" class="logo--hoog" alt="CS Hospitality" height="40" width="57"></li>
+          <li><img src="assets/logos/klanten/cs-cleaning-wit.png" class="logo--hoog" alt="CS Cleaning Service" height="40" width="69"></li>
+          <li><img src="assets/logos/klanten/matchable-wit.svg" class="logo--laag" alt="Matchable" height="22" width="169"></li>
+          <li><img src="assets/logos/klanten/yns-agency-wit.png" alt="YNS Agency" height="34" width="119"></li>
+        </ul>
+        <ul class="logostrip__set" aria-hidden="true">
+          <li><img src="assets/logos/via-vastgoed-white.png" alt="" height="34" width="87"></li>
+          <li><img src="assets/logos/yns-spain-white.png" alt="" height="34" width="118"></li>
+          <li><img src="assets/logos/klanten/zeker-wonen-wit.svg" alt="" height="34" width="157"></li>
+          <li><img src="assets/logos/klanten/reformed-rc-woordmerk-wit.png" class="logo--stapel" alt="" height="46" width="159"></li>
+          <li><img src="assets/logos/klanten/cs-hospitality-mono.png" class="logo--hoog" alt="" height="40" width="57"></li>
+          <li><img src="assets/logos/klanten/cs-cleaning-wit.png" class="logo--hoog" alt="" height="40" width="69"></li>
+          <li><img src="assets/logos/klanten/matchable-wit.svg" class="logo--laag" alt="" height="22" width="169"></li>
+          <li><img src="assets/logos/klanten/yns-agency-wit.png" alt="" height="34" width="119"></li>
+        </ul>
+      </div>
     </div>
   </section>
 
