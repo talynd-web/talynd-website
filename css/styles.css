@@ -615,3 +615,9 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .pcard__pijl svg { width: 18px; height: 18px; }
 .pcard:hover .pcard__pijl { transform: translate(-50%, calc(50% + 3px)); box-shadow: 0 12px 22px rgba(4,14,31,0.2); }
 @media (prefers-reduced-motion: reduce) { .pcard__pijl { transition: none; } }
+
+/* Hero plus logostrook vullen samen het eerste scherm, zodat de logo's meteen in beeld staan */
+@media (min-width: 761px) {
+  .hero { min-height: calc(100vh - 110px); min-height: calc(100svh - 110px); }
+  body:has(.logoband) .ck-bar { bottom: 124px !important; }
+}

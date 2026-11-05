@@ -279,3 +279,32 @@ function animateCount(el) {
   dialog.addEventListener("click", (e) => { if (e.target === dialog) sluit(); });
   dialog.addEventListener("close", () => video.pause());
 })();
+
+/* ---------- V2: het filmpje in de hero speelt altijd, ook na terugkomen ---------- */
+(function () {
+  const clip = document.querySelector(".vw__video");
+  if (!clip) return;
+  const speel = () => {
+    const p = clip.play();
+    if (!p || !p.catch) return;
+    p.catch((fout) => {
+      /* iOS in spaarstand weigert autoplay: Safari speelt de MP4 dan wel als img */
+      if (fout.name !== "NotAllowedError" || !/Apple/.test(navigator.vendor) || !clip.currentSrc) return;
+      const beeld = document.createElement("img");
+      beeld.className = clip.className; beeld.alt = ""; beeld.src = clip.currentSrc;
+      clip.replaceWith(beeld);
+    });
+  };
+  const herstart = () => {
+    if (document.hidden) return;
+    if (clip.error || clip.readyState === 0) clip.load();
+    speel();
+  };
+  clip.addEventListener("error", () => setTimeout(() => { clip.load(); speel(); }, 400));
+  clip.addEventListener("pause", () => { if (!document.hidden) speel(); });
+  clip.addEventListener("canplay", speel);
+  window.addEventListener("pageshow", herstart);
+  document.addEventListener("visibilitychange", herstart);
+  window.addEventListener("focus", herstart);
+  herstart();
+})();
