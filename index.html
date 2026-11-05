@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=3782c3a6">
+  <link rel="stylesheet" href="css/styles.css?v=4256919e">
   <style>
     /* ---- WAT WIJ BOUWEN (cambio-style split: intro + feature grid) ---- */
     .build { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(40px, 5vw, 96px); align-items: start; }
@@ -293,7 +293,7 @@
         </div>
         <div class="hero__cell hero__cell--center fade-in-up" data-delay="1">
           <p class="hero__lead">Eén gesprek is genoeg om te zien waar het vastloopt. Daarna bouwen wij de tools die het werk overnemen.</p>
-          <a href="contact" class="btn hero__btn">Plan een gesprek</a>
+          <div class="hero__actie"><a href="contact" class="btn hero__btn">Plan een gesprek</a><span class="hero__dienst">Tot uw dienst.</span></div>
         </div>
         <div class="hero__cell hero__cell--right fade-in-up" data-delay="2">
         </div>
@@ -352,91 +352,193 @@
     </video>
   </dialog>
 
-  <!-- ============ HERHAALWERK (live sectie, butler met dienblad) ============ -->
-  <section class="section herhaal" id="herhaalwerk">
-    <div class="wm wm--omtrek" aria-hidden="true">
-  <!-- include:mark -->
-<svg class="wm__svg" viewBox="100 100 312 312" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="wm__omtrek" d="M154 154 L256 154 L256 102 A154 154 0 0 1 410 256 L358 256 L358 358 L256 358 L256 410 A154 154 0 0 1 102 256 L154 256 Z"/><path class="wm__binnen" d="M256 154 L256 358 M154 256 L358 256 M154 154 L358 154 M358 256 L358 358 M154 256 L154 358 M154 358 L256 358"/></svg>
-  <!-- /include:mark -->
-    </div>
+  <!-- ============ HOW IT WORKS (feature tabs) ============ -->
+  <section class="section" style="padding-bottom: clamp(36px, 4vw, 48px);">
     <div class="container">
-      <div class="herhaal__grid">
-        <div class="herhaal__tekst">
-          <h2 class="herhaal__titel">Waar zit bij jou het herhaalwerk?</h2>
-          <p class="lead herhaal__lead">Kies een woord en zie wat we daarvoor al gebouwd hebben.</p>
-          <div class="herhaal__tabs" role="tablist" aria-label="Soorten herhaalwerk">
-            <button class="herhaal__tab is-active" role="tab" aria-selected="true" aria-controls="hw-0" id="hwtab-0" data-i="0">Binnenkomen</button>
-            <button class="herhaal__tab" role="tab" aria-selected="false" aria-controls="hw-1" id="hwtab-1" data-i="1" tabindex="-1">Uitzoeken</button>
-            <button class="herhaal__tab" role="tab" aria-selected="false" aria-controls="hw-2" id="hwtab-2" data-i="2" tabindex="-1">Overtypen</button>
-            <button class="herhaal__tab" role="tab" aria-selected="false" aria-controls="hw-3" id="hwtab-3" data-i="3" tabindex="-1">Opvolgen</button>
-            <button class="herhaal__tab" role="tab" aria-selected="false" aria-controls="hw-4" id="hwtab-4" data-i="4" tabindex="-1">Rapporteren</button>
+      <div class="how dproc">
+        <div class="how__intro">
+          <span class="eyebrow">Hoe het werkt</span>
+          <h2 class="how__title">Intelligentie die je helpt <span class="how__rotate"><span class="how__rotate__word" id="howRotator">schalen</span></span></h2>
+          <p class="lead">Van handmatig werk naar een systeem dat voor je werkt.</p>
+          <a href="diensten" class="btn btn--primary how__cta">Ontdek onze aanpak</a>
+          <div class="tabs" id="tabs">
+            <div class="tab active" data-tab="0">
+              <div class="tab__main">
+                <div class="tab__label">Intake op locatie</div>
+                <p class="tab__body">We kijken waar tijd verloren gaat voordat we ook maar iets bouwen. Je eerste gesprek is altijd gratis, zonder enige verplichting.</p>
+              </div>
+              <div class="tab__num">01</div>
+            </div>
+            <div class="tab" data-tab="1">
+              <div class="tab__main">
+                <div class="tab__label">Analyse &amp; plan</div>
+                <p class="tab__body">Een helder plan: wat bouwen we, met welke tools, in welke volgorde. Je weet vooraf welk resultaat je kunt verwachten, geen verrassingen.</p>
+              </div>
+              <div class="tab__num">02</div>
+            </div>
+            <div class="tab" data-tab="2">
+              <div class="tab__main">
+                <div class="tab__label">Bouwen &amp; implementeren</div>
+                <p class="tab__body">We bouwen het systeem en koppelen het aan je bestaande tools. Je test mee gedurende het traject en stuurt bij waar nodig.</p>
+              </div>
+              <div class="tab__num">03</div>
+            </div>
+            <div class="tab" data-tab="3">
+              <div class="tab__main">
+                <div class="tab__label">Overdracht &amp; training</div>
+                <p class="tab__body">Je team krijgt training en volledige documentatie van alles. Geen verplicht abonnement: je houdt zelf de controle.</p>
+              </div>
+              <div class="tab__num">04</div>
+            </div>
           </div>
-          <div class="herhaal__uitleg">
-            <p class="herhaal__zin" id="hw-0" role="tabpanel" aria-labelledby="hwtab-0">Een aanvraag staat in je CRM zonder dat iemand hem overtypt. Met de gegevens erbij, als deal, met een label.</p>
-            <p class="herhaal__zin" id="hw-1" role="tabpanel" aria-labelledby="hwtab-1" hidden>Elke ochtend staat klaar wat je anders zelf bij elkaar zoekt. Eén mail, alleen wat past.</p>
-            <p class="herhaal__zin" id="hw-2" role="tabpanel" aria-labelledby="hwtab-2" hidden>Eén keer invoeren, overal zichtbaar. Op de site, in de app en in het systeem erachter.</p>
-            <p class="herhaal__zin" id="hw-3" role="tabpanel" aria-labelledby="hwtab-3" hidden>De opvolging loopt terwijl jij iets anders doet. Mail, WhatsApp-bericht en een beltaak voor de eerstvolgende werkdag.</p>
-            <p class="herhaal__zin" id="hw-4" role="tabpanel" aria-labelledby="hwtab-4" hidden>De cijfers staan klaar, niemand hoeft ze op te halen. Van eerste contact tot betaalde klant, in één overzicht.</p>
-          </div>
-          <p class="herhaal__systemen">Werkt met wat je al gebruikt: Pipedrive, WhatsApp, Meta, Mollie, Supabase, n8n en je eigen website of app.</p>
         </div>
-        <div class="herhaal__beeld" id="herhaalBeeld">
-          <div class="herhaal__scherm" data-ui aria-hidden="true">
-            <div class="hs hs--0">
-              <div class="hs__bar"><span>Deals</span><span class="hs__teal">nieuw</span></div>
-              <div class="hs__rij"><b>J. Verbeek</b><span>Aanvraag via formulier</span><i class="hs__label">Website</i></div>
-              <div class="hs__rij"><b>M. de Groot</b><span>Aanvraag via advertentie</span><i class="hs__label">Meta</i></div>
-              <div class="hs__rij hs__rij--nieuw"><b>S. Jansen</b><span>Zojuist binnengekomen</span><i class="hs__label">Meta</i></div>
-            </div>
-            <div class="hs hs--1" hidden>
-              <div class="hs__bar"><span>Ochtendmail</span><span class="hs__teal">07:30</span></div>
-              <div class="hs__rij"><b>3 nieuwe</b><span>die passen bij het profiel</span></div>
-              <div class="hs__rij"><b>1 prijswijziging</b><span>in de lopende selectie</span></div>
-              <div class="hs__rij"><b>0 om te zoeken</b><span>dat deed het systeem al</span></div>
-            </div>
-            <div class="hs hs--2" hidden>
-              <div class="hs__bar"><span>Ingevoerd</span><span class="hs__teal">1 keer</span></div>
-              <div class="hs__rij"><b>Website</b><span>bijgewerkt</span><i class="hs__vink"></i></div>
-              <div class="hs__rij"><b>App</b><span>bijgewerkt</span><i class="hs__vink"></i></div>
-              <div class="hs__rij"><b>CRM</b><span>bijgewerkt</span><i class="hs__vink"></i></div>
-            </div>
-            <div class="hs hs--3" hidden>
-              <div class="hs__bar"><span>Opvolging</span><span class="hs__teal">loopt</span></div>
-              <div class="hs__rij"><b>Mail</b><span>verstuurd, met brochure</span><i class="hs__vink"></i></div>
-              <div class="hs__rij"><b>WhatsApp</b><span>bericht verstuurd</span><i class="hs__vink"></i></div>
-              <div class="hs__rij"><b>Beltaak</b><span>morgen 09:00</span><i class="hs__label">gepland</i></div>
-            </div>
-            <div class="hs hs--4" hidden>
-              <div class="hs__bar"><span>Deze maand</span><span class="hs__teal">klaar</span></div>
-              <div class="hs__rij"><b>Aanvragen</b><span>per bron</span><i class="hs__staaf" style="--w:86%"></i></div>
-              <div class="hs__rij"><b>Gesprekken</b><span>gepland</span><i class="hs__staaf" style="--w:54%"></i></div>
-              <div class="hs__rij"><b>Betaald</b><span>deze maand</span><i class="hs__staaf" style="--w:31%"></i></div>
-            </div>
-          </div>
-          <p class="herhaal__voorbeeld">Voorbeeld, met verzonnen namen.</p>
+        <div class="how__panel fade-in-up" data-delay="1">
+          <div class="how__pane" data-pane="0"><img src="assets/how-intake-locatie.webp" alt="Intake op locatie" /></div>
+          <div class="how__pane" data-pane="1" style="display:none"><img src="assets/how-analyse-plan.webp" alt="Analyse en plan" /></div>
+          <div class="how__pane" data-pane="2" style="display:none"><img src="assets/how-bouwen.webp" alt="Bouwen en implementeren" /></div>
+          <div class="how__pane" data-pane="3" style="display:none"><img src="assets/how-overdracht.webp" alt="Overdracht" /></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ WERK (mozaïek met hairlines) ============ -->
-  <section class="section werk" id="werk">
+  <!-- ============ SERVICES (pale teal panel) ============ -->
+  <section class="section" style="padding-top: clamp(36px, 4vw, 48px);">
     <div class="container">
-      <div class="werk__kop">
-        <h2 class="werk__titel">Wat we al gebouwd hebben</h2>
-        <a href="portfolio" class="link-arrow">Alle cases
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+      <div class="panel panel--teal">
+        <div class="build">
+          <div class="build__intro fade-in-up">
+            <span class="eyebrow">Stroomlijn je processen</span>
+            <h2>Concrete systemen, geen losse adviezen</h2>
+            <p class="build__sub">Van leadopvolging tot een volledig ingericht CRM. Vier bouwstenen die we combineren tot één werkend systeem.</p>
+            <a href="diensten" class="build__link">Alle diensten bekijken
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <div class="build__grid">
+            <article class="build-item fade-in-up">
+              <div class="build-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.5l2.5-6 4 12 2.5-6H21"/></svg></div>
+              <h3>Nurture programs</h3>
+              <p>Gestructureerde e-mailreeksen die leads en klanten warm houden tot ze klaar zijn om te tekenen.</p>
+            </article>
+            <article class="build-item fade-in-up" data-delay="2">
+              <div class="build-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><line x1="8" y1="6.5" x2="16" y2="6.5"/><line x1="8.5" y1="11" x2="9.5" y2="11"/><line x1="14.5" y1="11" x2="15.5" y2="11"/><line x1="8.5" y1="15" x2="9.5" y2="15"/><line x1="14.5" y1="15" x2="15.5" y2="15"/></svg></div>
+              <h3>AI-calculator</h3>
+              <p>Maatwerk rekentool op basis van jouw domeinkennis: huurrendement, verkoopprognose of meer.</p>
+            </article>
+            <article class="build-item fade-in-up">
+              <div class="build-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6.5" height="6.5" rx="1.6"/><rect x="14.5" y="14.5" width="6.5" height="6.5" rx="1.6"/><path d="M9.5 6.25h4.25a2 2 0 0 1 2 2v6.25"/></svg></div>
+              <h3>Systeemautomatisering</h3>
+              <p>Workflows, databases en koppelingen gecentraliseerd, zodat alles op één plek samenkomt.</p>
+            </article>
+            <article class="build-item fade-in-up" data-delay="1">
+              <div class="build-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="18" rx="1.6"/><rect x="9.5" y="3" width="5" height="12" rx="1.6"/><rect x="16" y="3" width="5" height="15" rx="1.6"/></svg></div>
+              <h3>Pipedrive-integratie</h3>
+              <p>Je CRM volledig ingericht en geautomatiseerd, met pipelines, triggers en rapportages die kloppen.</p>
+            </article>
+          </div>
+        </div>
       </div>
-      <div class="muur">
-        <a class="muur__tegel muur__tegel--7 muur__tegel--hoog" href="portfolio"><img src="assets/werk/zeker-wonen-site.webp" alt="Homepage van zekerwonenfondsen.nl" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>Zeker Wonen Fondsen</b><span>website in vijf talen, met beheerportaal</span></span></a>
-        <a class="muur__tegel muur__tegel--5 muur__tegel--hoog" href="portfolio#via-vastgoed"><img class="muur__telefoon" src="assets/via-app-1-v2.webp" alt="VIA Vastgoed-app, aanbod met prijs en rendement" width="780" height="1688" loading="lazy"><span class="muur__bijschrift"><b>VIA Vastgoed</b><span>app in de App Store en Google Play</span></span></a>
-        <a class="muur__tegel muur__tegel--4" href="portfolio#yns"><img src="assets/werk/yns-site.webp" alt="Homepage van ynsspain.com" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>YNS Spain</b><span>website met woningzoeker</span></span></a>
-        <a class="muur__tegel muur__tegel--4" href="portfolio"><img src="assets/werk/cs-cleaning-site.webp" alt="Homepage van cs-cleaningservice.nl" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>CS Cleaning</b><span>website, van Strato naar Vercel</span></span></a>
-        <a class="muur__tegel muur__tegel--4" href="portfolio#via-vastgoed"><img src="assets/via-kaart-web.webp" alt="Woningen zoeken op de kaart bij VIA Vastgoed" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>VIA Vastgoed</b><span>zoeken op de kaart, site en app</span></span></a>
-        <a class="muur__tegel muur__tegel--3 muur__tegel--hoog" href="portfolio#reformed-collective"><img class="muur__telefoon" src="assets/rc-store-planning.webp" alt="Reformed Collective-app, rooster van de dag met lessen om aan te melden" width="1000" height="2164" loading="lazy"><span class="muur__bijschrift"><b>Reformed Collective</b><span>ledenapp met betalen via Mollie</span></span></a>
-        <a class="muur__tegel muur__tegel--5 muur__tegel--hoog" href="portfolio#reformed-collective"><img src="assets/werk/reformed-site.webp" alt="Homepage van reformedcollective.nl" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>Reformed Collective</b><span>website met live rooster en prijzen</span></span></a>
-        <a class="muur__tegel muur__tegel--4 muur__tegel--hoog" href="portfolio#yns"><img src="assets/yns-calc.webp" alt="Rekentool van YNS Spain" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>YNS Spain</b><span>rekentool voor kopers</span></span></a>
+    </div>
+  </section>
+
+  <!-- ============ TALYND ADVANTAGE (white, Cambio-style) ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="adv">
+        <div class="adv__media fade-in-up">
+          <img src="assets/adv-building.webp" alt="Modern kantoorgebouw, glasgevel tegen blauwe lucht" loading="lazy" />
+        </div>
+        <div class="adv__right fade-in-up" data-delay="1">
+          <h2 class="adv__title">Gebouwd om over te dragen, niet om je vast te zetten</h2>
+          <p class="adv__lead">We combineren moderne AI-tooling met de dagelijkse praktijk van vastgoed en bouwen automatisering die past bij hoe jij werkt, niet andersom.</p>
+          <ul class="adv__points">
+            <li><b>Op locatie</b><span>We komen langs en leren je proces van binnenuit kennen voordat we iets bouwen.</span></li>
+            <li><b>Overdraagbaar</b><span>Alles wat we bouwen documenteren we en dragen we over aan je team.</span></li>
+            <li><b>Geen lock-in</b><span>Je team beheert het systeem zelfstandig. Geen black box, geen abonnement op ons.</span></li>
+          </ul>
+          <a href="over-ons" class="btn btn--primary">Leer ons kennen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO (cream) ============ -->
+  <section class="section portfolio-sec">
+    <div class="container">
+      <div class="section-head section-head--center fade-in-up" style="margin-bottom:40px">
+        <span class="eyebrow">Portfolio</span>
+        <h2 style="font-weight:400">Wat we al gebouwd hebben</h2>
+      </div>
+      <div class="pcarousel is-start" id="portfolioCarousel">
+      <div class="cards-grid" id="portfolioTrack">
+        <article class="pcard fade-in-up">
+          <div class="pcard__media">
+            <img src="assets/portfolio-via-v2.webp" alt="VIA Vastgoed website: nieuwe homepage met kaart van Spanje in de hero" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;" />
+          </div>
+          <div class="pcard__body">
+            <h3 class="pcard__title">VIA Vastgoed</h3>
+            <div class="chips">
+              <span class="chip">Inmobalia CRM-integratie</span>
+              <span class="chip">Pipedrive pipeline</span>
+              <span class="chip">E-mail nurture</span>
+              <span class="chip">Cloudflare Worker API</span>
+              <span class="chip">iOS- en Android-app</span>
+              <span class="chip">Interactieve kaart</span>
+            </div>
+            <div class="pcard__foot">
+              <a href="portfolio#via-vastgoed" class="link-arrow">Bekijk case
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="pcard fade-in-up" data-delay="1">
+          <div class="pcard__media">
+            <img src="assets/portfolio-yns.webp" alt="YNS Spain website, vastgoed op de Costa del Sol" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;" />
+          </div>
+          <div class="pcard__body">
+            <h3 class="pcard__title">YNS Spain</h3>
+            <div class="chips">
+              <span class="chip">Salesgerichte website</span>
+              <span class="chip">Live woningdata</span>
+              <span class="chip">Pipedrive pipeline</span>
+              <span class="chip">E-mail automatisering</span>
+            </div>
+            <div class="pcard__foot">
+              <a href="portfolio#yns" class="link-arrow">Bekijk case
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="pcard fade-in-up" data-delay="2">
+          <div class="pcard__media">
+            <img src="assets/portfolio-reformed.webp" alt="Reformed Collective, Reformer Pilates-studio in Beverwijk" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;" />
+          </div>
+          <div class="pcard__body">
+            <h3 class="pcard__title">Reformed Collective</h3>
+            <div class="chips">
+              <span class="chip">Website (NL/EN)</span>
+              <span class="chip">Boekingsplatform</span>
+              <span class="chip">Mollie-abonnementen</span>
+              <span class="chip">iOS-app (App Store)</span>
+              <span class="chip">Beheerportaal</span>
+            </div>
+            <div class="pcard__foot">
+              <a href="portfolio#reformed-collective" class="link-arrow">Bekijk case
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <button class="pcarousel__nav pcarousel__nav--prev" id="portfolioPrev" type="button" aria-label="Vorig project">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      </button>
+      <button class="pcarousel__nav pcarousel__nav--next" id="portfolioNext" type="button" aria-label="Volgende project">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
       </div>
     </div>
   </section>
@@ -496,54 +598,74 @@
     </div>
   </section>
 
-  <!-- ============ HOE HET WERKT (platte lijst met hairlines) ============ -->
-  <section class="section hoe" id="hoe-het-werkt">
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="dquote-sec">
     <div class="container">
-      <div class="hoe__grid">
-        <div class="hoe__beeld">
-          <img src="assets/how-intake-locatie.webp" alt="" width="1200" height="900" loading="lazy" data-stap="0" class="is-aan">
-          <img src="assets/how-analyse-plan.webp" alt="" width="1200" height="900" loading="lazy" data-stap="1">
-          <img src="assets/how-bouwen.webp" alt="" width="1200" height="900" loading="lazy" data-stap="2">
-          <img src="assets/how-overdracht.webp" alt="" width="1200" height="900" loading="lazy" data-stap="3">
-        </div>
-        <div class="hoe__tekst">
-          <h2 class="hoe__titel">Zo werkt het</h2>
-          <ol class="hoe__lijst">
-            <li class="hoe__stap is-aan" data-stap="0"><button type="button"><b>Gesprek</b><span>We komen langs en kijken waar tijd verloren gaat. Het eerste gesprek kost niets.</span></button></li>
-            <li class="hoe__stap" data-stap="1"><button type="button"><b>Bouwen</b><span>We bouwen de tools die het herhaalwerk overnemen, op jouw eigen data en in je eigen systemen.</span></button></li>
-            <li class="hoe__stap" data-stap="2"><button type="button"><b>Overdragen</b><span>Je team krijgt training en documentatie. Het systeem is van jou.</span></button></li>
-            <li class="hoe__stap" data-stap="3"><button type="button"><b>Draaiend houden</b><span>Wil je dat wij het onderhouden, dan doen we dat. Geen abonnement, gewoon een afspraak.</span></button></li>
-          </ol>
+      <div class="dquote__head fade-in-up">
+        <span class="eyebrow">Wat klanten zeggen</span>
+      </div>
+      <div class="tmnl__viewport fade-in-up">
+        <div class="tmnl__track" id="tmnlTrack">
+          <div class="tmnl__slide">
+            <figure class="dquote-card">
+              <div>
+                <div class="dquote-card__mark">”</div>
+                <blockquote class="dquote-card__text">Voorheen was een nieuwe lead gelijk handmatig werk. Nu staat er een heel nurture-traject klaar. Van de eerste mail tot aan een deal, alles gaat automatisch. Dat neemt ons echt een hoop uit handen.</blockquote>
+              </div>
+              <figcaption>
+                <div class="dquote-card__avatar" style="border:none;">
+                  <img src="assets/logo-via-avatar-2026.png" alt="VIA Vastgoed" style="width:100%;height:100%;object-fit:cover;display:block;" />
+                </div>
+                <div>
+                  <p class="dquote-card__author">Keanu</p>
+                  <p class="dquote-card__company">VIA Vastgoed</p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="tmnl__slide">
+            <figure class="dquote-card">
+              <div>
+                <div class="dquote-card__mark">”</div>
+                <blockquote class="dquote-card__text">Ze hebben ons geholpen bij het opbouwen van de website. Met onder andere de AI-calculator kunnen klanten meteen zien wat er voor hen mogelijk is. Daarmee komen ze al goed geïnformeerd het gesprek in.</blockquote>
+              </div>
+              <figcaption>
+                <div class="dquote-card__avatar" style="background:#fff;border:1px solid var(--gray-2);">
+                  <img src="assets/logo-yns-avatar.png" alt="YNS Spain" style="width:65%;height:65%;object-fit:contain;display:block;margin:auto;" />
+                </div>
+                <div>
+                  <p class="dquote-card__author">Daan</p>
+                  <p class="dquote-card__company">YNS Spain</p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="tmnl__slide">
+            <figure class="dquote-card dquote-card--orange">
+              <div>
+                <div class="dquote-card__mark">”</div>
+                <blockquote class="dquote-card__text">We hadden een harde deadline voor onze launch. Talynd heeft de website en de app op tijd staan gekregen en alles wat ik doorgaf was meteen gefixt. Ik hoefde niet op een algemeen boekingsplatform, ik heb nu gewoon mijn eigen app.</blockquote>
+              </div>
+              <figcaption>
+                <div class="dquote-card__avatar" style="border:none;">
+                  <img src="assets/logo-rc-avatar.png" alt="Reformed Collective app-icoon" style="width:100%;height:100%;object-fit:cover;display:block;" />
+                </div>
+                <div>
+                  <p class="dquote-card__author">Saar</p>
+                  <p class="dquote-card__company">Reformed Collective</p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ KLANT AAN HET WOORD ============ -->
-  <section class="quote2" aria-label="Wat een klant zegt">
-    <div class="container">
-      <figure class="quote2__blok">
-        <blockquote class="quote2__tekst">“Ik verwachtte dat we niet op tijd onze launch up and running hadden, maar jullie hebben echt de verwachting overtroffen.”</blockquote>
-        <figcaption class="quote2__wie"><img src="assets/app-icon-rc.png" alt="" width="44" height="44" loading="lazy"><span><b>Saar</b><span>Reformed Collective, Beverwijk</span></span></figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ============ TWEE MENSEN ============ -->
-  <section class="section mensen">
-    <div class="container">
-      <div class="mensen__grid">
-        <div class="mensen__fotos">
-          <figure><img src="assets/team-rayco.webp" alt="Rayco de Bruijn" width="780" height="975" loading="lazy"><figcaption><b>Rayco de Bruijn</b><span>Techniek en sales</span></figcaption></figure>
-          <figure><img src="assets/team-dimas.webp" alt="Dimas Smit" width="780" height="975" loading="lazy"><figcaption><b>Dimas Smit</b><span>Websites en apps</span></figcaption></figure>
-        </div>
-        <div class="mensen__tekst">
-          <h2 class="mensen__titel">Twee mensen, geen bureau</h2>
-          <p>Rayco zet de techniek neer die het salesproces automatiseert. Dimas bouwt de websites en apps en brengt het klantproces in kaart. Het eerste gesprek doen we samen, bij jou op locatie.</p>
-          <a href="over-ons" class="link-arrow">Leer ons kennen
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
+      <div class="tmnl__nav">
+        <button class="tmnl__btn" id="tmnlPrev" type="button" aria-label="Vorige review" aria-controls="tmnlTrack">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        </button>
+        <button class="tmnl__btn" id="tmnlNext" type="button" aria-label="Volgende review" aria-controls="tmnlTrack">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -558,9 +680,9 @@
   <!-- /include:mark -->
         </div>
         <div class="cta__inner">
-          <h2>Jij beslist. Wij houden het draaiend.</h2>
-          <p>Eén gesprek is genoeg om te zien waar het vastloopt. We komen langs en zeggen eerlijk of we iets voor je kunnen doen.</p>
-          <a href="contact" class="btn btn--secondary btn--lg">Plan een gesprek</a>
+          <h2>Klaar om je proces te <em>automatiseren?</em></h2>
+          <p>Plan een gratis intakegesprek. We komen langs, kijken naar je proces en vertellen eerlijk of we waarde kunnen toevoegen.</p>
+          <a href="contact" class="btn btn--secondary btn--lg">Plan een gratis intakegesprek</a>
         </div>
       </div>
     </div>
@@ -617,7 +739,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=5c3b5d37"></script>
+  <script src="js/main.js?v=fc2953d3"></script>
   <script>
     /* ---------- How panes show/hide ---------- */
     (function () {

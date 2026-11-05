@@ -279,35 +279,3 @@ function animateCount(el) {
   dialog.addEventListener("click", (e) => { if (e.target === dialog) sluit(); });
   dialog.addEventListener("close", () => video.pause());
 })();
-
-/* ---------- V2: herhaalwerk, vijf woorden, één scherm ---------- */
-(function () {
-  const tabs = Array.from(document.querySelectorAll(".herhaal__tab"));
-  if (!tabs.length) return;
-  const zinnen = Array.from(document.querySelectorAll(".herhaal__zin"));
-  const schermen = Array.from(document.querySelectorAll(".herhaal__scherm .hs"));
-  const kies = (i) => {
-    tabs.forEach((t, j) => { const aan = j === i; t.classList.toggle("is-active", aan); t.setAttribute("aria-selected", String(aan)); t.tabIndex = aan ? 0 : -1; });
-    zinnen.forEach((z, j) => { z.hidden = j !== i; });
-    schermen.forEach((s, j) => { s.hidden = j !== i; });
-  };
-  tabs.forEach((t) => {
-    t.addEventListener("click", () => kies(Number(t.dataset.i)));
-    t.addEventListener("keydown", (e) => {
-      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-      e.preventDefault();
-      const i = Number(t.dataset.i), n = tabs.length, naar = (i + (e.key === "ArrowRight" ? 1 : n - 1)) % n;
-      tabs[naar].focus(); kies(naar);
-    });
-  });
-  kies(0);
-})();
-
-/* ---------- V2: hoe het werkt, stap kiezen wisselt het beeld ---------- */
-(function () {
-  const stappen = Array.from(document.querySelectorAll(".hoe__stap"));
-  const beelden = Array.from(document.querySelectorAll(".hoe__beeld img"));
-  if (!stappen.length) return;
-  const kies = (i) => { stappen.forEach((s) => s.classList.toggle("is-aan", Number(s.dataset.stap) === i)); beelden.forEach((b) => b.classList.toggle("is-aan", Number(b.dataset.stap) === i)); };
-  stappen.forEach((s) => s.querySelector("button").addEventListener("click", () => kies(Number(s.dataset.stap))));
-})();
