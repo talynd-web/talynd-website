@@ -140,7 +140,7 @@
     .portfolio-sec .cards-grid.is-dragging { cursor: grabbing; user-select: none; }
     .pcarousel__nav--prev { left: 6px; }
     .pcarousel__nav:hover { transform: translateY(-50%) scale(1.06); }
-    .pcarousel.is-end .pcarousel__nav--next, .pcarousel.is-start .pcarousel__nav--prev { opacity: 0; pointer-events: none; }
+    .pcarousel.is-start .pcarousel__nav--prev { opacity: 0; pointer-events: none; }
     .pcarousel__nav svg { width: 20px; height: 20px; }
     @media (max-width: 760px) {
       .portfolio-sec .cards-grid { overflow-x: auto; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
@@ -807,22 +807,56 @@
       var next = document.getElementById('portfolioNext');
       if (!track || !wrap) return;
       var card = track.querySelector('.pcard');
-      function step() { return card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.5; }
-      function state() {
-        var max = track.scrollWidth - track.clientWidth;
-        wrap.classList.toggle('is-start', track.scrollLeft <= 2);
-        wrap.classList.toggle('is-end', track.scrollLeft >= max - 2);
+      var originelen = Array.prototype.slice.call(track.children);
+      /* Oneindig rondlopen: een kopie van alle kaarten links en rechts, alleen zichtbaar als beeld */
+      function kopie(kaart) {
+        var k = kaart.cloneNode(true);
+        k.classList.remove('fade-in-up'); k.removeAttribute('data-delay');
+        k.setAttribute('aria-hidden', 'true');
+        k.querySelectorAll('a').forEach(function (a) { a.tabIndex = -1; });
+        return k;
       }
-      track.addEventListener('scroll', state, { passive: true });
-      window.addEventListener('resize', state);
-      if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
-      if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      var eersteRechts = null;
+      originelen.forEach(function (k) { var c = kopie(k); if (!eersteRechts) eersteRechts = c; track.appendChild(c); });
+      originelen.slice().reverse().forEach(function (k) { track.insertBefore(kopie(k), track.firstChild); });
+      var thuis = 0, ronde = 0, wacht = null;
+      function meet() {
+        var r = track.getBoundingClientRect(), a = card.getBoundingClientRect();
+        var pad = parseFloat(getComputedStyle(track).paddingLeft) || 0;
+        thuis = a.left - r.left + track.scrollLeft - pad;
+        ronde = eersteRechts.getBoundingClientRect().left - a.left;
+      }
+      function step() { return card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.5; }
+      /* Terug naar de middelste set zonder dat je het ziet: het beeld is precies gelijk */
+      function normaliseer() {
+        if (!ronde) return 0;
+        var verschil = 0;
+        if (track.scrollLeft >= thuis + ronde) verschil = -ronde;
+        else if (track.scrollLeft < thuis) verschil = ronde;
+        if (verschil) track.scrollLeft += verschil;
+        return verschil;
+      }
+      function state() {
+        var plek = ronde ? (((track.scrollLeft - thuis) % ronde) + ronde) % ronde : 0;
+        wrap.classList.toggle('is-start', plek < 3 || ronde - plek < 3);
+      }
+      function zet() { meet(); track.scrollLeft = thuis; state(); }
+      track.addEventListener('scroll', function () {
+        state();
+        clearTimeout(wacht);
+        wacht = setTimeout(function () { if (dragX === null) normaliseer(); state(); }, 140);
+      }, { passive: true });
+      window.addEventListener('resize', zet);
+      window.addEventListener('load', zet);
+      if (next) next.addEventListener('click', function () { normaliseer(); track.scrollBy({ left: step(), behavior: 'smooth' }); });
+      if (prev) prev.addEventListener('click', function () { normaliseer(); track.scrollBy({ left: -step(), behavior: 'smooth' }); });
       /* Trackpad: een zijwaartse beweging scrollt de strook, een verticale laten we met rust zodat de pagina gewoon scrollt. */
       track.addEventListener('wheel', function (e) {
         if (window.innerWidth <= 760) return;
         if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
         e.preventDefault();
         track.scrollLeft += e.deltaX;
+        normaliseer();
       }, { passive: false });
       /* Muis: slepen volgt de cursor */
       var dragX = null, dragStart = 0, dragged = false;
@@ -835,6 +869,7 @@
         var dx = e.clientX - dragX;
         if (Math.abs(dx) > 6) dragged = true;
         track.scrollLeft = dragStart - dx;
+        dragStart += normaliseer();
       });
       window.addEventListener('pointerup', function () {
         if (dragX === null) return;
@@ -842,7 +877,7 @@
       });
       track.addEventListener('click', function (e) { if (dragged) { e.preventDefault(); e.stopPropagation(); dragged = false; } }, true);
       track.addEventListener('dragstart', function (e) { e.preventDefault(); });
-      state();
+      zet();
     })();
     (function () {
       var el = document.getElementById("howRotator");
