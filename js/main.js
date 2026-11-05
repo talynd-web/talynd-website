@@ -264,67 +264,41 @@ function animateCount(el) {
   document.getElementById("ckDecline").addEventListener("click", dismiss);
 })();
 
-/* ---------- V2: hero-reel, geluid aan/uit, iOS-vangnet ---------- */
+/* ---------- V2: filmwidget opent de reel in een lightbox ---------- */
 (function () {
-  const video = document.getElementById("heroVideo");
-  const sound = document.getElementById("heroSound");
-  const fallback = document.querySelector(".phone__fallback");
-  if (!video) return;
-  const p = video.play();
-  if (p && typeof p.catch === "function") {
-    p.catch(() => { if (fallback) { fallback.hidden = false; video.hidden = true; if (sound) sound.hidden = true; } });
-  }
-  if (sound) {
-    sound.addEventListener("click", () => {
-      const aan = video.muted;
-      video.muted = !aan;
-      sound.setAttribute("aria-pressed", String(aan));
-      sound.setAttribute("aria-label", aan ? "Geluid uitzetten" : "Geluid aanzetten");
-      if (aan) { video.currentTime = 0; video.play(); }
-    });
-  }
+  const open = document.getElementById("reelOpen"), dialog = document.getElementById("reelDialog");
+  const video = document.getElementById("reelVideo"), close = document.getElementById("reelClose");
+  if (!open || !dialog || !video) return;
+  const sluit = () => { video.pause(); if (dialog.open) dialog.close(); };
+  open.addEventListener("click", () => {
+    if (typeof dialog.showModal !== "function") { video.scrollIntoView(); return; }
+    dialog.showModal(); video.currentTime = 0; video.muted = false;
+    const p = video.play(); if (p && p.catch) p.catch(() => {});
+  });
+  close.addEventListener("click", sluit);
+  dialog.addEventListener("click", (e) => { if (e.target === dialog) sluit(); });
+  dialog.addEventListener("close", () => video.pause());
 })();
 
-/* ---------- V2: herhaalwerk, de deksel gaat open op het gekozen woord ---------- */
+/* ---------- V2: herhaalwerk, vijf woorden, één scherm ---------- */
 (function () {
-  const beeld = document.getElementById("herhaalBeeld");
   const tabs = Array.from(document.querySelectorAll(".herhaal__tab"));
-  if (!beeld || !tabs.length) return;
+  if (!tabs.length) return;
   const zinnen = Array.from(document.querySelectorAll(".herhaal__zin"));
   const schermen = Array.from(document.querySelectorAll(".herhaal__scherm .hs"));
-  const kies = (i, metDeksel) => {
+  const kies = (i) => {
     tabs.forEach((t, j) => { const aan = j === i; t.classList.toggle("is-active", aan); t.setAttribute("aria-selected", String(aan)); t.tabIndex = aan ? 0 : -1; });
     zinnen.forEach((z, j) => { z.hidden = j !== i; });
-    const wissel = () => schermen.forEach((s, j) => { s.hidden = j !== i; });
-    if (metDeksel && beeld.classList.contains("is-open")) {
-      beeld.classList.remove("is-open");
-      setTimeout(() => { wissel(); beeld.classList.add("is-open"); }, 380);
-    } else { wissel(); }
+    schermen.forEach((s, j) => { s.hidden = j !== i; });
   };
   tabs.forEach((t) => {
-    t.addEventListener("click", () => kies(Number(t.dataset.i), true));
+    t.addEventListener("click", () => kies(Number(t.dataset.i)));
     t.addEventListener("keydown", (e) => {
       if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
       e.preventDefault();
       const i = Number(t.dataset.i), n = tabs.length, naar = (i + (e.key === "ArrowRight" ? 1 : n - 1)) % n;
-      tabs[naar].focus(); kies(naar, true);
+      tabs[naar].focus(); kies(naar);
     });
   });
-  kies(0, false);
-  const open = () => beeld.classList.add("is-open");
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { setTimeout(open, 250); io.disconnect(); } }, { threshold: 0.45 });
-    io.observe(beeld);
-  } else { open(); }
-})();
-
-/* ---------- V2: footer, de butler buigt één keer ---------- */
-(function () {
-  const footer = document.querySelector(".footer");
-  if (!footer || !footer.querySelector(".footer__butler .butler")) return;
-  const buig = () => { footer.classList.add("is-seen"); setTimeout(() => footer.classList.add("is-done"), 1100); };
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { buig(); io.disconnect(); } }, { threshold: 0.3 });
-    io.observe(footer.querySelector(".footer__close"));
-  } else { buig(); }
+  kies(0);
 })();

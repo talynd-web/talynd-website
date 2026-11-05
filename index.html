@@ -7,7 +7,7 @@
   <meta name="description" content="Talynd bouwt AI-automatisering voor je backoffice: van procesautomatisering tot CRM-koppelingen. Wij bouwen het systeem, implementeren het en dragen het volledig over. Geen advies, geen abonnement.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://talynd.com/">
-  <link rel="preload" as="image" href="assets/video/butler-poster.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-mountains.webp" fetchpriority="high">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://talynd.com/">
   <meta property="og:title" content="AI-automatisering &amp; Implementatie voor Bedrijven | Talynd">
@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=0e0ef173">
+  <link rel="stylesheet" href="css/styles.css?v=ab2e9d8c">
   <style>
     /* ---- WAT WIJ BOUWEN (cambio-style split: intro + feature grid) ---- */
     .build { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(40px, 5vw, 96px); align-items: start; }
@@ -270,62 +270,98 @@
   </nav>
 
   <!-- ============ HERO ============ -->
-  <header class="hero2">
-    <div class="container">
-      <div class="hero2__card">
-        <div class="hero2__grid">
-          <div class="hero2__text">
-            <h1 class="hero2__title">Meer winst zonder extra personeel.</h1>
-            <p class="hero2__sub">Wij nemen het herhaalwerk in je bedrijf over.</p>
-            <a href="contact" class="btn btn--primary btn--hero">Plan een gesprek</a>
-          </div>
-          <div class="hero2__media">
-            <div class="phone" id="heroPhone">
-              <video class="phone__video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/video/butler-poster.jpg" width="720" height="1280" aria-label="Korte film: wat Talynd doet">
-                <source src="assets/video/butler.webm" type="video/webm">
-                <source src="assets/video/butler.mp4" type="video/mp4">
-              </video>
-              <img class="phone__fallback" src="assets/video/butler-poster.jpg" alt="De butler van Talynd met een dienblad" width="720" height="1280" hidden>
-              <button class="phone__sound" id="heroSound" type="button" aria-pressed="false" aria-label="Geluid aanzetten">
-                <svg class="phone__sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
-                <svg class="phone__sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5.5a9 9 0 0 1 0 13"/></svg>
-              </button>
-            </div>
-          </div>
+  <header class="hero">
+    <div class="hero__bg">
+      <img class="hero__img" src="assets/hero-mountains.webp" alt="Besneeuwde bergtoppen onder een diepblauwe lucht" fetchpriority="high" width="1600" height="1066" />
+    </div>
+    <div class="hero__overlay"></div>
+
+    <div class="container hero__inner">
+      <div class="hero__topgrid">
+        <div class="htg htg--left fade-in-up">
+          <h2 class="hero__kicker">Bouwen. <br>Implementeren. <br>Overdragen.</h2>
         </div>
-        <div class="logostrip" aria-label="Bedrijven waar we voor bouwden">
-          <div class="logostrip__track">
-            <ul class="logostrip__set">
-              <li><img src="assets/logos/via-vastgoed-white.png" alt="VIA Vastgoed" height="34" width="87"></li>
-              <li><img src="assets/logos/yns-spain-white.png" alt="YNS Spain" height="34" width="118"></li>
-              <li><img src="assets/logos/klanten/zeker-wonen-wit.svg" alt="Zeker Wonen Fondsen" height="34" width="157"></li>
-              <li><img src="assets/logos/reformed-collective-white.png" alt="Reformed Collective" height="34" width="71"></li>
-              <li><img src="assets/logos/klanten/cs-hospitality-wit.png" alt="CS Hospitality" height="40" width="57"></li>
-              <li><img src="assets/logos/klanten/cs-cleaning-wit.png" alt="CS Cleaning Service" height="40" width="69"></li>
-              <li><img src="assets/logos/klanten/matchable-wit.svg" alt="Matchable" height="22" width="169"></li>
-            </ul>
-            <ul class="logostrip__set" aria-hidden="true">
-              <li><img src="assets/logos/via-vastgoed-white.png" alt="" height="34" width="87"></li>
-              <li><img src="assets/logos/yns-spain-white.png" alt="" height="34" width="118"></li>
-              <li><img src="assets/logos/klanten/zeker-wonen-wit.svg" alt="" height="34" width="157"></li>
-              <li><img src="assets/logos/reformed-collective-white.png" alt="" height="34" width="71"></li>
-              <li><img src="assets/logos/klanten/cs-hospitality-wit.png" alt="" height="40" width="57"></li>
-              <li><img src="assets/logos/klanten/cs-cleaning-wit.png" alt="" height="40" width="69"></li>
-              <li><img src="assets/logos/klanten/matchable-wit.svg" alt="" height="22" width="169"></li>
-            </ul>
-          </div>
+        <div class="htg htg--center fade-in-up" data-delay="1">
+          <h1 class="hero__title">Meer winst zonder<br>extra personeel.</h1>
+        </div>
+        <div class="htg htg--right fade-in-up" data-delay="2"></div>
+      </div>
+
+      <div class="hero__row">
+        <div class="hero__cell hero__cell--left fade-in-up">
+          <p class="hero__tag">Wij nemen het herhaalwerk in je bedrijf over.</p>
+        </div>
+        <div class="hero__cell hero__cell--center fade-in-up" data-delay="1">
+          <p class="hero__lead">Eén gesprek is genoeg om te zien waar het vastloopt. Daarna bouwen wij de tools die het werk overnemen.</p>
+          <a href="contact" class="btn hero__btn">Plan een gesprek</a>
+        </div>
+        <div class="hero__cell hero__cell--right fade-in-up" data-delay="2">
         </div>
       </div>
     </div>
+
+    <!-- Filmwidget rechtsonder: de reel, speelt stil in het klein, opent met geluid -->
+    <button class="video-widget" type="button" id="reelOpen" aria-haspopup="dialog" aria-controls="reelDialog">
+      <span class="vw__thumb">
+        <video class="vw__video" autoplay muted loop playsinline preload="metadata" poster="assets/video/butler-poster.jpg" width="720" height="1280" aria-hidden="true">
+          <source src="assets/video/butler.webm" type="video/webm">
+          <source src="assets/video/butler.mp4" type="video/mp4">
+        </video>
+      </span>
+      <span class="vw__info">
+        <span class="vw__text">Wat doen we bij Talynd?</span>
+        <span class="vw__meta">Bekijk het filmpje, 33 s</span>
+      </span>
+    </button>
   </header>
+
+  <!-- ============ LOGOSTROOK ============ -->
+  <div class="logoband" aria-label="Bedrijven waar we voor bouwden">
+    <div class="logostrip">
+      <div class="logostrip__track">
+        <ul class="logostrip__set">
+          <li><img src="assets/logos/via-vastgoed-white.png" alt="VIA Vastgoed" height="34" width="87"></li>
+          <li><img src="assets/logos/yns-spain-white.png" alt="YNS Spain" height="34" width="118"></li>
+          <li><img src="assets/logos/klanten/zeker-wonen-wit.svg" alt="Zeker Wonen Fondsen" height="34" width="157"></li>
+          <li><img src="assets/logos/reformed-collective-white.png" alt="Reformed Collective" height="34" width="71"></li>
+          <li><img src="assets/logos/klanten/cs-hospitality-wit.png" alt="CS Hospitality" height="40" width="57"></li>
+          <li><img src="assets/logos/klanten/cs-cleaning-wit.png" alt="CS Cleaning Service" height="40" width="69"></li>
+          <li><img src="assets/logos/klanten/matchable-wit.svg" alt="Matchable" height="22" width="169"></li>
+        </ul>
+        <ul class="logostrip__set" aria-hidden="true">
+          <li><img src="assets/logos/via-vastgoed-white.png" alt="" height="34" width="87"></li>
+          <li><img src="assets/logos/yns-spain-white.png" alt="" height="34" width="118"></li>
+          <li><img src="assets/logos/klanten/zeker-wonen-wit.svg" alt="" height="34" width="157"></li>
+          <li><img src="assets/logos/reformed-collective-white.png" alt="" height="34" width="71"></li>
+          <li><img src="assets/logos/klanten/cs-hospitality-wit.png" alt="" height="40" width="57"></li>
+          <li><img src="assets/logos/klanten/cs-cleaning-wit.png" alt="" height="40" width="69"></li>
+          <li><img src="assets/logos/klanten/matchable-wit.svg" alt="" height="22" width="169"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox voor de reel -->
+  <dialog class="reel" id="reelDialog" aria-label="Filmpje: wat doen we bij Talynd">
+    <button class="reel__close" type="button" id="reelClose" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+    <video class="reel__video" id="reelVideo" controls playsinline preload="metadata" poster="assets/video/butler-poster.jpg" width="720" height="1280">
+      <source src="assets/video/butler.webm" type="video/webm">
+      <source src="assets/video/butler.mp4" type="video/mp4">
+    </video>
+  </dialog>
 
   <!-- ============ HERHAALWERK (live sectie, butler met dienblad) ============ -->
   <section class="section herhaal" id="herhaalwerk">
+    <div class="wm wm--omtrek" aria-hidden="true">
+  <!-- include:mark -->
+<svg class="wm__svg" viewBox="100 100 312 312" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="wm__omtrek" d="M154 154 L256 154 L256 102 A154 154 0 0 1 410 256 L358 256 L358 358 L256 358 L256 410 A154 154 0 0 1 102 256 L154 256 Z"/><path class="wm__binnen" d="M256 154 L256 358 M154 256 L358 256 M154 154 L358 154 M358 256 L358 358 M154 256 L154 358 M154 358 L256 358"/></svg>
+  <!-- /include:mark -->
+    </div>
     <div class="container">
       <div class="herhaal__grid">
         <div class="herhaal__tekst">
           <h2 class="herhaal__titel">Waar zit bij jou het herhaalwerk?</h2>
-          <p class="lead herhaal__lead">Kies een woord. Onder de deksel ligt wat we daarvoor al gebouwd hebben.</p>
+          <p class="lead herhaal__lead">Kies een woord en zie wat we daarvoor al gebouwd hebben.</p>
           <div class="herhaal__tabs" role="tablist" aria-label="Soorten herhaalwerk">
             <button class="herhaal__tab is-active" role="tab" aria-selected="true" aria-controls="hw-0" id="hwtab-0" data-i="0">Binnenkomen</button>
             <button class="herhaal__tab" role="tab" aria-selected="false" aria-controls="hw-1" id="hwtab-1" data-i="1" tabindex="-1">Uitzoeken</button>
@@ -343,61 +379,6 @@
           <p class="herhaal__systemen">Werkt met wat je al gebruikt: Pipedrive, WhatsApp, Meta, Mollie, Supabase, n8n en je eigen website of app.</p>
         </div>
         <div class="herhaal__beeld" id="herhaalBeeld">
-          <!-- include:butler -->
-<svg class="butler" viewBox="290 500 720 1330" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-<g class="butler__benen"><ellipse cx="540" cy="1812" rx="200" ry="18" fill="rgba(4,14,31,.14)"/>
-  <path d="M392 1196 L366 1478 L468 1446 L500 1250 Z" fill="#040e1f"/><path d="M688 1196 L714 1478 L612 1446 L580 1250 Z" fill="#040e1f"/>
-  <path d="M404 1252 L676 1252 L662 1766 L556 1766 L546 1446 L534 1446 L524 1766 L418 1766 Z" fill="#0E1A33"/>
-  <path d="M540 1300 L540 1446" stroke="#070F22" stroke-width="5"/>
-  <path d="M412 1268 L425 1760" stroke="#2A3A5C" stroke-width="7" stroke-linecap="round"/><path d="M668 1268 L655 1760" stroke="#2A3A5C" stroke-width="7" stroke-linecap="round"/>
-  <path d="M418 1762 L526 1762 Q534 1800 516 1808 L398 1808 Q372 1808 378 1790 Q388 1768 418 1762 Z" fill="#05070C"/>
-  <path d="M662 1762 L554 1762 Q546 1800 564 1808 L682 1808 Q708 1808 702 1790 Q692 1768 662 1762 Z" fill="#05070C"/>
-  <path d="M396 1784 Q410 1776 432 1776" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".45"/><path d="M684 1784 Q670 1776 648 1776" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".45"/></g>
-<g class="butler__boven">
-
-  <path d="M330 1012 Q330 924 420 902 L486 884 L594 884 L660 902 Q750 924 750 1012 L742 1150 Q728 1228 692 1264 L388 1264 Q352 1228 338 1150 Z" fill="#040e1f"/>
-  <path d="M446 958 L540 1030 L634 958 L646 1252 L594 1296 L540 1266 L486 1296 L434 1252 Z" fill="#C9D1DB"/>
-  <path d="M540 1030 L540 1266" stroke="#AEB8C6" stroke-width="3"/>
-  <circle cx="540" cy="1072" r="8" fill="#8C97A6"/><circle cx="540" cy="1128" r="8" fill="#8C97A6"/><circle cx="540" cy="1184" r="8" fill="#8C97A6"/><circle cx="540" cy="1238" r="8" fill="#8C97A6"/>
-  <path d="M600 1080 L632 1080" stroke="#AEB8C6" stroke-width="4" stroke-linecap="round"/>
-  <path d="M476 884 L540 1032 L604 884 Z" fill="#FFFFFF"/>
-  <path d="M476 884 L446 958 L432 1256 L412 1248 L420 956 L454 892 Z" fill="#16254A"/>
-  <path d="M604 884 L634 958 L648 1256 L668 1248 L660 956 L626 892 Z" fill="#16254A"/>
-  <rect x="666" y="1000" width="58" height="12" rx="2" fill="#FFFFFF"/><rect x="660" y="1010" width="70" height="6" rx="3" fill="#16254A"/>
-  <rect x="494" y="796" width="92" height="96" fill="#DDB596"/>
-  <path d="M488 866 Q540 890 592 866 L600 896 Q540 920 480 896 Z" fill="#FFFFFF" stroke="#DDE3E8" stroke-width="4" stroke-linejoin="round"/>
-  <ellipse cx="436" cy="713" rx="17" ry="27" fill="#DDB596"/><ellipse cx="644" cy="713" rx="17" ry="27" fill="#DDB596"/>
-  <ellipse cx="540" cy="705" rx="108" ry="128" fill="#EFCFB6"/>
-  <path d="M434 718 C424 606 478 574 548 574 C620 574 656 612 646 718 C640 668 612 640 566 640 C520 640 470 654 434 718 Z" fill="#2B1E18"/>
-  <path d="M500 600 C520 590 548 588 566 592" fill="none" stroke="#4A382E" stroke-width="5" stroke-linecap="round"/>
-  <path d="M478 688 Q498 680 518 688" fill="none" stroke="#2B1E18" stroke-width="7" stroke-linecap="round"/>
-  <path d="M562 688 Q582 680 602 688" fill="none" stroke="#2B1E18" stroke-width="7" stroke-linecap="round"/>
-  <path d="M482 714 Q498 724 514 714" fill="none" stroke="#3A2A22" stroke-width="6" stroke-linecap="round"/>
-  <path d="M566 714 Q582 724 598 714" fill="none" stroke="#3A2A22" stroke-width="6" stroke-linecap="round"/>
-  <path d="M542 718 Q530 750 546 756" fill="none" stroke="#DDB596" stroke-width="6" stroke-linecap="round"/>
-  <path transform="translate(540 784) scale(0.82) translate(-540 -112)" d="M540 99 C516 90 472 94 452 117 C447 123 439 125 430 121 C438 137 470 140 496 129 C516 122 530 118 540 116 C550 118 564 122 584 129 C610 140 642 137 650 121 C641 125 633 123 628 117 C608 94 564 90 540 99 Z" fill="#3A2A22"/><image href="assets/butler/talynd-mark.png" x="451.5" y="801.5" width="177" height="177" transform="rotate(45 540 890)"/>
-<g class="butler__armL"><path d="M378 948 L330 1150 L432 1284" fill="none" stroke="#22314F" stroke-width="84" stroke-linecap="round" stroke-linejoin="round"/><path d="M378 948 L330 1150 L432 1284" fill="none" stroke="#040e1f" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/>
-  <g transform="translate(432 1284) rotate(-4)"><rect x="-12" y="-30" width="26" height="60" rx="8" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4"/>
-  <path d="M12 -26 L84 -22 Q104 -20 104 0 Q104 22 84 24 L12 28 Z" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M40 -24 L40 26 M62 -23 L62 25" stroke="#E3E8ED" stroke-width="4"/></g></g>
-<g class="butler__blad"><ellipse cx="540" cy="1263.3" rx="230" ry="38" fill="#B9C1CA"/><ellipse cx="540" cy="1250" rx="230" ry="38" fill="#E3E7EB" stroke="#AEB7C1" stroke-width="4"/><ellipse cx="540" cy="1250" rx="204" ry="26" fill="#EEF1F4"/></g>
-<g class="butler__mouw butler__mouw--dicht"><path d="M702.0 948.0 L721.7 1137.0 L578.7 1019.7" fill="none" stroke="#22314F" stroke-width="84" stroke-linecap="round" stroke-linejoin="round"/><path d="M702.0 948.0 L721.7 1137.0 L578.7 1019.7" fill="none" stroke="#040e1f" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></g><g class="butler__mouw butler__mouw--open"><path d="M702.0 948.0 L882.1 1008.4 L900.0 824.3" fill="none" stroke="#22314F" stroke-width="84" stroke-linecap="round" stroke-linejoin="round"/><path d="M702.0 948.0 L882.1 1008.4 L900.0 824.3" fill="none" stroke="#040e1f" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></g>
-<g class="butler__deksel" data-dicht="translate(540.0 1250.0) rotate(0.00)" data-open="translate(790.0 1010.0) rotate(26.00)" transform="translate(540.0 1250.0) rotate(0.00)"><path d="M-212 0 C-212 -180.39999999999998 -118.72000000000001 -220 0 -220 C118.72000000000001 -220 212 -180.39999999999998 212 0 Z" fill="#E6EAEE" stroke="#AEB7C1" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M-152.64 -79.2 C-131.44 -158.4 -63.599999999999994 -198 -25.439999999999998 -202.4" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity=".9"/>
-    <rect x="-212" y="-6" width="424" height="12" rx="6" fill="#C7CED6"/>
-    <rect x="-10" y="-250" width="20" height="34" rx="6" fill="#AEB7C1"/><circle cx="0" cy="-262" r="24" fill="#00beb1"/></g>
-<g class="butler__hand butler__hand--dicht"><g transform="translate(578.7 1019.7) rotate(-140.66)"><rect x="-12" y="-30" width="26" height="60" rx="8" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4"/>
-  <path d="M12 -28 Q70 -40 82 -6 Q90 20 62 30 L12 28 Z" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M30 -30 Q34 -52 52 -50 Q64 -46 56 -28" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M44 -14 Q62 -10 70 4" fill="none" stroke="#E3E8ED" stroke-width="4" stroke-linecap="round"/>
-  <path d="M40 4 Q58 8 64 20" fill="none" stroke="#E3E8ED" stroke-width="4" stroke-linecap="round"/></g></g><g class="butler__hand butler__hand--open"><g transform="translate(900.0 824.3) rotate(-84.45)"><rect x="-12" y="-30" width="26" height="60" rx="8" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4"/>
-  <path d="M12 -28 Q70 -40 82 -6 Q90 20 62 30 L12 28 Z" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M30 -30 Q34 -52 52 -50 Q64 -46 56 -28" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M44 -14 Q62 -10 70 4" fill="none" stroke="#E3E8ED" stroke-width="4" stroke-linecap="round"/>
-  <path d="M40 4 Q58 8 64 20" fill="none" stroke="#E3E8ED" stroke-width="4" stroke-linecap="round"/></g></g>
-</g>
-</svg>
-  <!-- /include:butler -->
           <div class="herhaal__scherm" data-ui aria-hidden="true">
             <div class="hs hs--0">
               <div class="hs__bar"><span>Deals</span><span class="hs__teal">nieuw</span></div>
@@ -708,6 +689,11 @@
   <div class="cta-wrap">
     <div class="container">
       <div class="cta fade-in-up">
+        <div class="wm wm--vul wm--cta" aria-hidden="true">
+  <!-- include:mark -->
+<svg class="wm__svg" viewBox="100 100 312 312" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="wm__omtrek" d="M154 154 L256 154 L256 102 A154 154 0 0 1 410 256 L358 256 L358 358 L256 358 L256 410 A154 154 0 0 1 102 256 L154 256 Z"/><path class="wm__binnen" d="M256 154 L256 358 M154 256 L358 256 M154 154 L358 154 M358 256 L358 358 M154 256 L154 358 M154 358 L256 358"/></svg>
+  <!-- /include:mark -->
+        </div>
         <div class="cta__inner">
           <h2>Klaar om je proces te <em>automatiseren?</em></h2>
           <p>Plan een gratis intakegesprek. We komen langs, kijken naar je proces en vertellen eerlijk of we waarde kunnen toevoegen.</p>
@@ -719,6 +705,11 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
+    <div class="wm wm--vul wm--footer" aria-hidden="true">
+  <!-- include:mark -->
+<svg class="wm__svg" viewBox="100 100 312 312" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="wm__omtrek" d="M154 154 L256 154 L256 102 A154 154 0 0 1 410 256 L358 256 L358 358 L256 358 L256 410 A154 154 0 0 1 102 256 L154 256 Z"/><path class="wm__binnen" d="M256 154 L256 358 M154 256 L358 256 M154 154 L358 154 M358 256 L358 358 M154 256 L154 358 M154 358 L256 358"/></svg>
+  <!-- /include:mark -->
+    </div>
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
@@ -758,69 +749,12 @@
       </div>
     </div>
     <div class="footer__close" aria-hidden="true">
-      <div class="footer__butler" id="footerButler">
-  <!-- include:butler -->
-<svg class="butler" viewBox="290 500 720 1330" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-<g class="butler__benen"><ellipse cx="540" cy="1812" rx="200" ry="18" fill="rgba(4,14,31,.14)"/>
-  <path d="M392 1196 L366 1478 L468 1446 L500 1250 Z" fill="#040e1f"/><path d="M688 1196 L714 1478 L612 1446 L580 1250 Z" fill="#040e1f"/>
-  <path d="M404 1252 L676 1252 L662 1766 L556 1766 L546 1446 L534 1446 L524 1766 L418 1766 Z" fill="#0E1A33"/>
-  <path d="M540 1300 L540 1446" stroke="#070F22" stroke-width="5"/>
-  <path d="M412 1268 L425 1760" stroke="#2A3A5C" stroke-width="7" stroke-linecap="round"/><path d="M668 1268 L655 1760" stroke="#2A3A5C" stroke-width="7" stroke-linecap="round"/>
-  <path d="M418 1762 L526 1762 Q534 1800 516 1808 L398 1808 Q372 1808 378 1790 Q388 1768 418 1762 Z" fill="#05070C"/>
-  <path d="M662 1762 L554 1762 Q546 1800 564 1808 L682 1808 Q708 1808 702 1790 Q692 1768 662 1762 Z" fill="#05070C"/>
-  <path d="M396 1784 Q410 1776 432 1776" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".45"/><path d="M684 1784 Q670 1776 648 1776" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".45"/></g>
-<g class="butler__boven">
-
-  <path d="M330 1012 Q330 924 420 902 L486 884 L594 884 L660 902 Q750 924 750 1012 L742 1150 Q728 1228 692 1264 L388 1264 Q352 1228 338 1150 Z" fill="#040e1f"/>
-  <path d="M446 958 L540 1030 L634 958 L646 1252 L594 1296 L540 1266 L486 1296 L434 1252 Z" fill="#C9D1DB"/>
-  <path d="M540 1030 L540 1266" stroke="#AEB8C6" stroke-width="3"/>
-  <circle cx="540" cy="1072" r="8" fill="#8C97A6"/><circle cx="540" cy="1128" r="8" fill="#8C97A6"/><circle cx="540" cy="1184" r="8" fill="#8C97A6"/><circle cx="540" cy="1238" r="8" fill="#8C97A6"/>
-  <path d="M600 1080 L632 1080" stroke="#AEB8C6" stroke-width="4" stroke-linecap="round"/>
-  <path d="M476 884 L540 1032 L604 884 Z" fill="#FFFFFF"/>
-  <path d="M476 884 L446 958 L432 1256 L412 1248 L420 956 L454 892 Z" fill="#16254A"/>
-  <path d="M604 884 L634 958 L648 1256 L668 1248 L660 956 L626 892 Z" fill="#16254A"/>
-  <rect x="666" y="1000" width="58" height="12" rx="2" fill="#FFFFFF"/><rect x="660" y="1010" width="70" height="6" rx="3" fill="#16254A"/>
-  <rect x="494" y="796" width="92" height="96" fill="#DDB596"/>
-  <path d="M488 866 Q540 890 592 866 L600 896 Q540 920 480 896 Z" fill="#FFFFFF" stroke="#DDE3E8" stroke-width="4" stroke-linejoin="round"/>
-  <ellipse cx="436" cy="713" rx="17" ry="27" fill="#DDB596"/><ellipse cx="644" cy="713" rx="17" ry="27" fill="#DDB596"/>
-  <ellipse cx="540" cy="705" rx="108" ry="128" fill="#EFCFB6"/>
-  <path d="M434 718 C424 606 478 574 548 574 C620 574 656 612 646 718 C640 668 612 640 566 640 C520 640 470 654 434 718 Z" fill="#2B1E18"/>
-  <path d="M500 600 C520 590 548 588 566 592" fill="none" stroke="#4A382E" stroke-width="5" stroke-linecap="round"/>
-  <path d="M478 688 Q498 680 518 688" fill="none" stroke="#2B1E18" stroke-width="7" stroke-linecap="round"/>
-  <path d="M562 688 Q582 680 602 688" fill="none" stroke="#2B1E18" stroke-width="7" stroke-linecap="round"/>
-  <path d="M482 714 Q498 724 514 714" fill="none" stroke="#3A2A22" stroke-width="6" stroke-linecap="round"/>
-  <path d="M566 714 Q582 724 598 714" fill="none" stroke="#3A2A22" stroke-width="6" stroke-linecap="round"/>
-  <path d="M542 718 Q530 750 546 756" fill="none" stroke="#DDB596" stroke-width="6" stroke-linecap="round"/>
-  <path transform="translate(540 784) scale(0.82) translate(-540 -112)" d="M540 99 C516 90 472 94 452 117 C447 123 439 125 430 121 C438 137 470 140 496 129 C516 122 530 118 540 116 C550 118 564 122 584 129 C610 140 642 137 650 121 C641 125 633 123 628 117 C608 94 564 90 540 99 Z" fill="#3A2A22"/><image href="assets/butler/talynd-mark.png" x="451.5" y="801.5" width="177" height="177" transform="rotate(45 540 890)"/>
-<g class="butler__armL"><path d="M378 948 L330 1150 L432 1284" fill="none" stroke="#22314F" stroke-width="84" stroke-linecap="round" stroke-linejoin="round"/><path d="M378 948 L330 1150 L432 1284" fill="none" stroke="#040e1f" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/>
-  <g transform="translate(432 1284) rotate(-4)"><rect x="-12" y="-30" width="26" height="60" rx="8" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4"/>
-  <path d="M12 -26 L84 -22 Q104 -20 104 0 Q104 22 84 24 L12 28 Z" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M40 -24 L40 26 M62 -23 L62 25" stroke="#E3E8ED" stroke-width="4"/></g></g>
-<g class="butler__blad"><ellipse cx="540" cy="1263.3" rx="230" ry="38" fill="#B9C1CA"/><ellipse cx="540" cy="1250" rx="230" ry="38" fill="#E3E7EB" stroke="#AEB7C1" stroke-width="4"/><ellipse cx="540" cy="1250" rx="204" ry="26" fill="#EEF1F4"/></g>
-<g class="butler__mouw butler__mouw--dicht"><path d="M702.0 948.0 L721.7 1137.0 L578.7 1019.7" fill="none" stroke="#22314F" stroke-width="84" stroke-linecap="round" stroke-linejoin="round"/><path d="M702.0 948.0 L721.7 1137.0 L578.7 1019.7" fill="none" stroke="#040e1f" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></g><g class="butler__mouw butler__mouw--open"><path d="M702.0 948.0 L882.1 1008.4 L900.0 824.3" fill="none" stroke="#22314F" stroke-width="84" stroke-linecap="round" stroke-linejoin="round"/><path d="M702.0 948.0 L882.1 1008.4 L900.0 824.3" fill="none" stroke="#040e1f" stroke-width="74" stroke-linecap="round" stroke-linejoin="round"/></g>
-<g class="butler__deksel" data-dicht="translate(540.0 1250.0) rotate(0.00)" data-open="translate(790.0 1010.0) rotate(26.00)" transform="translate(540.0 1250.0) rotate(0.00)"><path d="M-212 0 C-212 -180.39999999999998 -118.72000000000001 -220 0 -220 C118.72000000000001 -220 212 -180.39999999999998 212 0 Z" fill="#E6EAEE" stroke="#AEB7C1" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M-152.64 -79.2 C-131.44 -158.4 -63.599999999999994 -198 -25.439999999999998 -202.4" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity=".9"/>
-    <rect x="-212" y="-6" width="424" height="12" rx="6" fill="#C7CED6"/>
-    <rect x="-10" y="-250" width="20" height="34" rx="6" fill="#AEB7C1"/><circle cx="0" cy="-262" r="24" fill="#00beb1"/></g>
-<g class="butler__hand butler__hand--dicht"><g transform="translate(578.7 1019.7) rotate(-140.66)"><rect x="-12" y="-30" width="26" height="60" rx="8" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4"/>
-  <path d="M12 -28 Q70 -40 82 -6 Q90 20 62 30 L12 28 Z" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M30 -30 Q34 -52 52 -50 Q64 -46 56 -28" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M44 -14 Q62 -10 70 4" fill="none" stroke="#E3E8ED" stroke-width="4" stroke-linecap="round"/>
-  <path d="M40 4 Q58 8 64 20" fill="none" stroke="#E3E8ED" stroke-width="4" stroke-linecap="round"/></g></g><g class="butler__hand butler__hand--open"><g transform="translate(900.0 824.3) rotate(-84.45)"><rect x="-12" y="-30" width="26" height="60" rx="8" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4"/>
-  <path d="M12 -28 Q70 -40 82 -6 Q90 20 62 30 L12 28 Z" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M30 -30 Q34 -52 52 -50 Q64 -46 56 -28" fill="#FFFFFF" stroke="#C9D1D9" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M44 -14 Q62 -10 70 4" fill="none" stroke="#E3E8ED" stroke-width="4" stroke-linecap="round"/>
-  <path d="M40 4 Q58 8 64 20" fill="none" stroke="#E3E8ED" stroke-width="4" stroke-linecap="round"/></g></g>
-</g>
-</svg>
-  <!-- /include:butler -->
-      </div>
-      <div class="footer__wm"><span class="footer__mark" id="footerMark"><img src="assets/butler/talynd-mark.png" alt="" width="512" height="512"></span><span class="footer__name">Talynd</span></div>
+      <div class="footer__wm"><span class="footer__name">Talynd</span></div>
       <p class="footer__slot">Tot uw dienst.</p>
     </div>
   </footer>
 
-  <script src="js/main.js?v=da2ec886"></script>
+  <script src="js/main.js?v=9b75c5a6"></script>
   <script>
     /* ---------- How panes show/hide ---------- */
     (function () {
