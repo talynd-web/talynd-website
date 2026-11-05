@@ -621,3 +621,7 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
   .hero { min-height: calc(100vh - 110px); min-height: calc(100svh - 110px); }
   body:has(.logoband) .ck-bar { bottom: 124px !important; }
 }
+
+/* Hoe het werkt: het wisselende woord staat altijd op een eigen regel, recht onder de kop */
+.how__title .how__rotate { display: block; }
+.how__title .how__rotate__word { display: block; text-align: left; }
