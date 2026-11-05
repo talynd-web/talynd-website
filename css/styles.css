@@ -516,10 +516,11 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .logostrip { padding: 30px 0 34px; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
 .logostrip__track { display: flex; width: max-content; animation: logostrip-run 48s linear infinite; will-change: transform; }
 .logostrip__set { display: flex; align-items: center; gap: clamp(44px, 5vw, 80px); list-style: none; padding: 0 clamp(22px, 2.5vw, 40px); }
-.logostrip__set li { display: flex; align-items: center; height: 40px; }
+.logostrip__set li { display: flex; align-items: center; height: 46px; }
 .logostrip__set img { height: 34px; width: auto; opacity: 0.92; }
 .logostrip__set img.logo--hoog { height: 40px; }
 .logostrip__set img.logo--laag { height: 22px; }
+.logostrip__set img.logo--stapel { height: 46px; }
 @keyframes logostrip-run { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .logostrip__track { animation: none; flex-wrap: wrap; width: auto; }
@@ -532,6 +533,7 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
   .logostrip__set img { height: 26px; }
   .logostrip__set img.logo--hoog { height: 32px; }
   .logostrip__set img.logo--laag { height: 18px; }
+  .logostrip__set img.logo--stapel { height: 38px; }
 }
 
 /* Footer v2: Instagram en LinkedIn als woord met icoon, afsluiting met butler en de naam groot */
