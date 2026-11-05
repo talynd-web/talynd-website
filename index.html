@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=ab2e9d8c">
+  <link rel="stylesheet" href="css/styles.css?v=4dde0363">
   <style>
     /* ---- WAT WIJ BOUWEN (cambio-style split: intro + feature grid) ---- */
     .build { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(40px, 5vw, 96px); align-items: start; }
@@ -323,19 +323,21 @@
           <li><img src="assets/logos/via-vastgoed-white.png" alt="VIA Vastgoed" height="34" width="87"></li>
           <li><img src="assets/logos/yns-spain-white.png" alt="YNS Spain" height="34" width="118"></li>
           <li><img src="assets/logos/klanten/zeker-wonen-wit.svg" alt="Zeker Wonen Fondsen" height="34" width="157"></li>
-          <li><img src="assets/logos/reformed-collective-white.png" alt="Reformed Collective" height="34" width="71"></li>
-          <li><img src="assets/logos/klanten/cs-hospitality-wit.png" alt="CS Hospitality" height="40" width="57"></li>
-          <li><img src="assets/logos/klanten/cs-cleaning-wit.png" alt="CS Cleaning Service" height="40" width="69"></li>
-          <li><img src="assets/logos/klanten/matchable-wit.svg" alt="Matchable" height="22" width="169"></li>
+          <li><img src="assets/logos/klanten/reformed-wit.png" alt="Reformed Collective" height="34" width="71"></li>
+          <li><img src="assets/logos/klanten/cs-hospitality-wit.png" class="logo--hoog" alt="CS Hospitality" height="40" width="57"></li>
+          <li><img src="assets/logos/klanten/cs-cleaning-wit.png" class="logo--hoog" alt="CS Cleaning Service" height="40" width="69"></li>
+          <li><img src="assets/logos/klanten/matchable-wit.svg" class="logo--laag" alt="Matchable" height="22" width="169"></li>
+          <li><img src="assets/logos/klanten/yns-agency-wit.png" alt="YNS Agency" height="34" width="119"></li>
         </ul>
         <ul class="logostrip__set" aria-hidden="true">
           <li><img src="assets/logos/via-vastgoed-white.png" alt="" height="34" width="87"></li>
           <li><img src="assets/logos/yns-spain-white.png" alt="" height="34" width="118"></li>
           <li><img src="assets/logos/klanten/zeker-wonen-wit.svg" alt="" height="34" width="157"></li>
-          <li><img src="assets/logos/reformed-collective-white.png" alt="" height="34" width="71"></li>
-          <li><img src="assets/logos/klanten/cs-hospitality-wit.png" alt="" height="40" width="57"></li>
-          <li><img src="assets/logos/klanten/cs-cleaning-wit.png" alt="" height="40" width="69"></li>
-          <li><img src="assets/logos/klanten/matchable-wit.svg" alt="" height="22" width="169"></li>
+          <li><img src="assets/logos/klanten/reformed-wit.png" alt="" height="34" width="71"></li>
+          <li><img src="assets/logos/klanten/cs-hospitality-wit.png" class="logo--hoog" alt="" height="40" width="57"></li>
+          <li><img src="assets/logos/klanten/cs-cleaning-wit.png" class="logo--hoog" alt="" height="40" width="69"></li>
+          <li><img src="assets/logos/klanten/matchable-wit.svg" class="logo--laag" alt="" height="22" width="169"></li>
+          <li><img src="assets/logos/klanten/yns-agency-wit.png" alt="" height="34" width="119"></li>
         </ul>
       </div>
     </div>
@@ -417,143 +419,24 @@
     </div>
   </section>
 
-  <!-- ============ SERVICES (pale teal panel) ============ -->
-  <section class="section" style="padding-top: clamp(36px, 4vw, 48px);">
+  <!-- ============ WERK (mozaïek met hairlines) ============ -->
+  <section class="section werk" id="werk">
     <div class="container">
-      <div class="panel panel--teal">
-        <div class="build">
-          <div class="build__intro fade-in-up">
-            <span class="eyebrow">Stroomlijn je processen</span>
-            <h2>Concrete systemen, geen losse adviezen</h2>
-            <p class="build__sub">Van leadopvolging tot een volledig ingericht CRM. Vier bouwstenen die we combineren tot één werkend systeem.</p>
-            <a href="diensten" class="build__link">Alle diensten bekijken
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-          <div class="build__grid">
-            <article class="build-item fade-in-up">
-              <div class="build-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.5l2.5-6 4 12 2.5-6H21"/></svg></div>
-              <h3>Nurture programs</h3>
-              <p>Gestructureerde e-mailreeksen die leads en klanten warm houden tot ze klaar zijn om te tekenen.</p>
-            </article>
-            <article class="build-item fade-in-up" data-delay="2">
-              <div class="build-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><line x1="8" y1="6.5" x2="16" y2="6.5"/><line x1="8.5" y1="11" x2="9.5" y2="11"/><line x1="14.5" y1="11" x2="15.5" y2="11"/><line x1="8.5" y1="15" x2="9.5" y2="15"/><line x1="14.5" y1="15" x2="15.5" y2="15"/></svg></div>
-              <h3>AI-calculator</h3>
-              <p>Maatwerk rekentool op basis van jouw domeinkennis: huurrendement, verkoopprognose of meer.</p>
-            </article>
-            <article class="build-item fade-in-up">
-              <div class="build-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6.5" height="6.5" rx="1.6"/><rect x="14.5" y="14.5" width="6.5" height="6.5" rx="1.6"/><path d="M9.5 6.25h4.25a2 2 0 0 1 2 2v6.25"/></svg></div>
-              <h3>Systeemautomatisering</h3>
-              <p>Workflows, databases en koppelingen gecentraliseerd, zodat alles op één plek samenkomt.</p>
-            </article>
-            <article class="build-item fade-in-up" data-delay="1">
-              <div class="build-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="18" rx="1.6"/><rect x="9.5" y="3" width="5" height="12" rx="1.6"/><rect x="16" y="3" width="5" height="15" rx="1.6"/></svg></div>
-              <h3>PipeDrive-integratie</h3>
-              <p>Je CRM volledig ingericht en geautomatiseerd, met pipelines, triggers en rapportages die kloppen.</p>
-            </article>
-          </div>
-        </div>
+      <div class="werk__kop">
+        <h2 class="werk__titel">Wat we al gebouwd hebben</h2>
+        <a href="portfolio" class="link-arrow">Alle cases
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ TALYND ADVANTAGE (white, Cambio-style) ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="adv">
-        <div class="adv__media fade-in-up">
-          <img src="assets/adv-building.webp" alt="Modern kantoorgebouw, glasgevel tegen blauwe lucht" loading="lazy" />
-        </div>
-        <div class="adv__right fade-in-up" data-delay="1">
-          <h2 class="adv__title">Gebouwd om over te dragen, niet om je vast te zetten</h2>
-          <p class="adv__lead">We combineren moderne AI-tooling met de dagelijkse praktijk van vastgoed en bouwen automatisering die past bij hoe jij werkt, niet andersom.</p>
-          <ul class="adv__points">
-            <li><b>Op locatie</b><span>We komen langs en leren je proces van binnenuit kennen voordat we iets bouwen.</span></li>
-            <li><b>Overdraagbaar</b><span>Alles wat we bouwen documenteren we en dragen we over aan je team.</span></li>
-            <li><b>Geen lock-in</b><span>Je team beheert het systeem zelfstandig. Geen black box, geen abonnement op ons.</span></li>
-          </ul>
-          <a href="over-ons" class="btn btn--primary">Leer ons kennen</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PORTFOLIO (cream) ============ -->
-  <section class="section portfolio-sec">
-    <div class="container">
-      <div class="section-head section-head--center fade-in-up" style="margin-bottom:40px">
-        <span class="eyebrow">Portfolio</span>
-        <h2 style="font-weight:400">Wat we al gebouwd hebben</h2>
-      </div>
-      <div class="pcarousel is-start" id="portfolioCarousel">
-      <div class="cards-grid" id="portfolioTrack">
-        <article class="pcard fade-in-up">
-          <div class="pcard__media">
-            <img src="assets/portfolio-via-v2.webp" alt="VIA Vastgoed website: nieuwe homepage met kaart van Spanje in de hero" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;" />
-          </div>
-          <div class="pcard__body">
-            <h3 class="pcard__title">VIA Vastgoed</h3>
-            <div class="chips">
-              <span class="chip">Inmobalia CRM-integratie</span>
-              <span class="chip">Pipedrive pipeline</span>
-              <span class="chip">E-mail nurture</span>
-              <span class="chip">Cloudflare Worker API</span>
-              <span class="chip">iOS- en Android-app</span>
-              <span class="chip">Interactieve kaart</span>
-            </div>
-            <div class="pcard__foot">
-              <a href="portfolio#via-vastgoed" class="link-arrow">Bekijk case
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-        <article class="pcard fade-in-up" data-delay="1">
-          <div class="pcard__media">
-            <img src="assets/portfolio-yns.webp" alt="YNS Spain website — vastgoed op de Costa del Sol" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;" />
-          </div>
-          <div class="pcard__body">
-            <h3 class="pcard__title">YNS Spain</h3>
-            <div class="chips">
-              <span class="chip">Salesgerichte website</span>
-              <span class="chip">Live woningdata</span>
-              <span class="chip">Pipedrive pipeline</span>
-              <span class="chip">E-mail automatisering</span>
-            </div>
-            <div class="pcard__foot">
-              <a href="portfolio#yns" class="link-arrow">Bekijk case
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-        <article class="pcard fade-in-up" data-delay="2">
-          <div class="pcard__media">
-            <img src="assets/portfolio-reformed.webp" alt="Reformed Collective — Reformer Pilates studio Beverwijk" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;" />
-          </div>
-          <div class="pcard__body">
-            <h3 class="pcard__title">Reformed Collective</h3>
-            <div class="chips">
-              <span class="chip">Website (NL/EN)</span>
-              <span class="chip">Boekingsplatform</span>
-              <span class="chip">Mollie-abonnementen</span>
-              <span class="chip">iOS-app (App Store)</span>
-              <span class="chip">Beheerportaal</span>
-            </div>
-            <div class="pcard__foot">
-              <a href="portfolio#reformed-collective" class="link-arrow">Bekijk case
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-      <button class="pcarousel__nav pcarousel__nav--prev" id="portfolioPrev" type="button" aria-label="Vorig project">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      </button>
-      <button class="pcarousel__nav pcarousel__nav--next" id="portfolioNext" type="button" aria-label="Volgende project">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
+      <div class="muur">
+        <a class="muur__tegel muur__tegel--7 muur__tegel--hoog" href="portfolio"><img src="assets/werk/zeker-wonen-site.webp" alt="Homepage van zekerwonenfondsen.nl" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>Zeker Wonen Fondsen</b><span>website in vijf talen, met beheerportaal</span></span></a>
+        <a class="muur__tegel muur__tegel--5 muur__tegel--hoog" href="portfolio#via-vastgoed"><img class="muur__telefoon" src="assets/via-app-1-v2.webp" alt="VIA Vastgoed-app, aanbod met prijs en rendement" width="780" height="1688" loading="lazy"><span class="muur__bijschrift"><b>VIA Vastgoed</b><span>app in de App Store en Google Play</span></span></a>
+        <a class="muur__tegel muur__tegel--4" href="portfolio#yns"><img src="assets/werk/yns-site.webp" alt="Homepage van ynsspain.com" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>YNS Spain</b><span>website met woningzoeker</span></span></a>
+        <a class="muur__tegel muur__tegel--4" href="portfolio"><img src="assets/werk/cs-cleaning-site.webp" alt="Homepage van cs-cleaningservice.nl" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>CS Cleaning</b><span>website, van Strato naar Vercel</span></span></a>
+        <a class="muur__tegel muur__tegel--4" href="portfolio#via-vastgoed"><img src="assets/via-kaart-web.webp" alt="Woningen zoeken op de kaart bij VIA Vastgoed" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>VIA Vastgoed</b><span>zoeken op de kaart, site en app</span></span></a>
+        <a class="muur__tegel muur__tegel--3 muur__tegel--hoog" href="portfolio#reformed-collective"><img class="muur__telefoon" src="assets/rc-store-planning.webp" alt="Reformed Collective-app, rooster van de dag met lessen om aan te melden" width="1000" height="2164" loading="lazy"><span class="muur__bijschrift"><b>Reformed Collective</b><span>ledenapp met betalen via Mollie</span></span></a>
+        <a class="muur__tegel muur__tegel--5 muur__tegel--hoog" href="portfolio#reformed-collective"><img src="assets/werk/reformed-site.webp" alt="Homepage van reformedcollective.nl" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>Reformed Collective</b><span>website met live rooster en prijzen</span></span></a>
+        <a class="muur__tegel muur__tegel--4 muur__tegel--hoog" href="portfolio#yns"><img src="assets/yns-calc.webp" alt="Rekentool van YNS Spain" width="1440" height="900" loading="lazy"><span class="muur__bijschrift"><b>YNS Spain</b><span>rekentool voor kopers</span></span></a>
       </div>
     </div>
   </section>
@@ -607,80 +490,60 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </div>
-          <div class="appcard__phone" aria-hidden="true"><div class="appcard__screen"><img src="assets/rc-app-3-hd.webp" alt="" loading="lazy" /></div></div>
+          <div class="appcard__phone" aria-hidden="true"><div class="appcard__screen"><img src="assets/rc-store-planning.webp" alt="" loading="lazy" /></div></div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ TESTIMONIALS ============ -->
-  <section class="dquote-sec">
+  <!-- ============ HOE HET WERKT (platte lijst met hairlines) ============ -->
+  <section class="section hoe" id="hoe-het-werkt">
     <div class="container">
-      <div class="dquote__head fade-in-up">
-        <span class="eyebrow">Wat klanten zeggen</span>
-      </div>
-      <div class="tmnl__viewport fade-in-up">
-        <div class="tmnl__track" id="tmnlTrack">
-          <div class="tmnl__slide">
-            <figure class="dquote-card">
-              <div>
-                <div class="dquote-card__mark">”</div>
-                <blockquote class="dquote-card__text">Voorheen was een nieuwe lead gelijk handmatig werk. Nu staat er een heel nurture-traject klaar. Van de eerste mail tot aan een deal, alles gaat automatisch. Dat neemt ons echt een hoop uit handen.</blockquote>
-              </div>
-              <figcaption>
-                <div class="dquote-card__avatar" style="border:none;">
-                  <img src="assets/logo-via-avatar-2026.png" alt="VIA Vastgoed" style="width:100%;height:100%;object-fit:cover;display:block;" />
-                </div>
-                <div>
-                  <p class="dquote-card__author">Keanu</p>
-                  <p class="dquote-card__company">VIA Vastgoed</p>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="tmnl__slide">
-            <figure class="dquote-card">
-              <div>
-                <div class="dquote-card__mark">”</div>
-                <blockquote class="dquote-card__text">Ze hebben ons geholpen bij het opbouwen van de website. Met onder andere de AI-calculator kunnen klanten meteen zien wat er voor hen mogelijk is. Daarmee komen ze al goed geïnformeerd het gesprek in.</blockquote>
-              </div>
-              <figcaption>
-                <div class="dquote-card__avatar" style="background:#fff;border:1px solid var(--gray-2);">
-                  <img src="assets/logo-yns-avatar.png" alt="YNS Spain" style="width:65%;height:65%;object-fit:contain;display:block;margin:auto;" />
-                </div>
-                <div>
-                  <p class="dquote-card__author">Daan</p>
-                  <p class="dquote-card__company">YNS Spain</p>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="tmnl__slide">
-            <figure class="dquote-card dquote-card--orange">
-              <div>
-                <div class="dquote-card__mark">”</div>
-                <blockquote class="dquote-card__text">We hadden een harde deadline voor onze launch. Talynd heeft de website en de app op tijd staan gekregen en alles wat ik doorgaf was meteen gefixt. Ik hoefde niet op een algemeen boekingsplatform, ik heb nu gewoon mijn eigen app.</blockquote>
-              </div>
-              <figcaption>
-                <div class="dquote-card__avatar" style="border:none;">
-                  <img src="assets/logo-rc-avatar.png" alt="Reformed Collective app-icoon" style="width:100%;height:100%;object-fit:cover;display:block;" />
-                </div>
-                <div>
-                  <p class="dquote-card__author">Saar</p>
-                  <p class="dquote-card__company">Reformed Collective</p>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
+      <div class="hoe__grid">
+        <div class="hoe__beeld">
+          <img src="assets/how-intake-locatie.webp" alt="" width="1200" height="900" loading="lazy" data-stap="0" class="is-aan">
+          <img src="assets/how-analyse-plan.webp" alt="" width="1200" height="900" loading="lazy" data-stap="1">
+          <img src="assets/how-bouwen.webp" alt="" width="1200" height="900" loading="lazy" data-stap="2">
+          <img src="assets/how-overdracht.webp" alt="" width="1200" height="900" loading="lazy" data-stap="3">
+        </div>
+        <div class="hoe__tekst">
+          <h2 class="hoe__titel">Zo werkt het</h2>
+          <ol class="hoe__lijst">
+            <li class="hoe__stap is-aan" data-stap="0"><button type="button"><b>Gesprek</b><span>We komen langs en kijken waar tijd verloren gaat. Het eerste gesprek kost niets.</span></button></li>
+            <li class="hoe__stap" data-stap="1"><button type="button"><b>Bouwen</b><span>We bouwen de tools die het herhaalwerk overnemen, op jouw eigen data en in je eigen systemen.</span></button></li>
+            <li class="hoe__stap" data-stap="2"><button type="button"><b>Overdragen</b><span>Je team krijgt training en documentatie. Het systeem is van jou.</span></button></li>
+            <li class="hoe__stap" data-stap="3"><button type="button"><b>Draaiend houden</b><span>Wil je dat wij het onderhouden, dan doen we dat. Geen abonnement, gewoon een afspraak.</span></button></li>
+          </ol>
         </div>
       </div>
-      <div class="tmnl__nav">
-        <button class="tmnl__btn" id="tmnlPrev" type="button" aria-label="Vorige review" aria-controls="tmnlTrack">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-        </button>
-        <button class="tmnl__btn" id="tmnlNext" type="button" aria-label="Volgende review" aria-controls="tmnlTrack">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
+    </div>
+  </section>
+
+  <!-- ============ KLANT AAN HET WOORD ============ -->
+  <section class="quote2" aria-label="Wat een klant zegt">
+    <div class="container">
+      <figure class="quote2__blok">
+        <blockquote class="quote2__tekst">“Ik verwachtte dat we niet op tijd onze launch up and running hadden, maar jullie hebben echt de verwachting overtroffen.”</blockquote>
+        <figcaption class="quote2__wie"><img src="assets/app-icon-rc.png" alt="" width="44" height="44" loading="lazy"><span><b>Saar</b><span>Reformed Collective, Beverwijk</span></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ TWEE MENSEN ============ -->
+  <section class="section mensen">
+    <div class="container">
+      <div class="mensen__grid">
+        <div class="mensen__fotos">
+          <figure><img src="assets/team-rayco.webp" alt="Rayco de Bruijn" width="780" height="975" loading="lazy"><figcaption><b>Rayco de Bruijn</b><span>Techniek en sales</span></figcaption></figure>
+          <figure><img src="assets/team-dimas.webp" alt="Dimas Smit" width="780" height="975" loading="lazy"><figcaption><b>Dimas Smit</b><span>Websites en apps</span></figcaption></figure>
+        </div>
+        <div class="mensen__tekst">
+          <h2 class="mensen__titel">Twee mensen, geen bureau</h2>
+          <p>Rayco zet de techniek neer die het salesproces automatiseert. Dimas bouwt de websites en apps en brengt het klantproces in kaart. Het eerste gesprek doen we samen, bij jou op locatie.</p>
+          <a href="over-ons" class="link-arrow">Leer ons kennen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -695,9 +558,9 @@
   <!-- /include:mark -->
         </div>
         <div class="cta__inner">
-          <h2>Klaar om je proces te <em>automatiseren?</em></h2>
-          <p>Plan een gratis intakegesprek. We komen langs, kijken naar je proces en vertellen eerlijk of we waarde kunnen toevoegen.</p>
-          <a href="contact" class="btn btn--secondary btn--lg">Plan een gratis intakegesprek</a>
+          <h2>Jij beslist. Wij houden het draaiend.</h2>
+          <p>Eén gesprek is genoeg om te zien waar het vastloopt. We komen langs en zeggen eerlijk of we iets voor je kunnen doen.</p>
+          <a href="contact" class="btn btn--secondary btn--lg">Plan een gesprek</a>
         </div>
       </div>
     </div>
@@ -715,6 +578,7 @@
         <div class="footer__brand">
           <p class="footer__tagline">Bouwen. Implementeren. Overdragen.</p>
           <p class="footer__tagline footer__tagline--sub">Twee mensen uit Amsterdam die het herhaalwerk in je bedrijf overnemen.</p>
+          <p class="footer__slot">Tot uw dienst.</p>
         </div>
         <div class="footer__col">
           <h4>Portfolio</h4>
@@ -748,13 +612,12 @@
         </div>
       </div>
     </div>
-    <div class="footer__close" aria-hidden="true">
-      <div class="footer__wm"><span class="footer__name">Talynd</span></div>
-      <p class="footer__slot">Tot uw dienst.</p>
+    <div class="footer__close">
+      <div class="footer__wm" aria-hidden="true"><span>Talynd</span></div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=9b75c5a6"></script>
+  <script src="js/main.js?v=5c3b5d37"></script>
   <script>
     /* ---------- How panes show/hide ---------- */
     (function () {

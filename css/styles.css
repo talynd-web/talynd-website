@@ -185,7 +185,7 @@ h3 { font-family: var(--font-body); font-weight: 600; }
 .hero__bg .placeholder::after { color: rgba(255,255,255,0.6); }
 .hero__overlay {
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(to bottom, rgba(4,14,31,0.5) 0%, rgba(4,14,31,0.28) 28%, rgba(4,14,31,0.34) 56%, rgba(4,14,31,0.68) 100%);
+  background: linear-gradient(to bottom, rgba(4,14,31,0.5) 0%, rgba(4,14,31,0.28) 28%, rgba(4,14,31,0.34) 52%, rgba(0,0,0,0.62) 76%, rgba(0,0,0,0.9) 92%, #000 100%);
 }
 .hero__inner { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 0; padding: clamp(120px, 17vh, 190px) var(--pad-x) 128px; text-shadow: 0 1px 24px rgba(4,14,31,0.32); }
 
@@ -348,7 +348,7 @@ h3 { font-family: var(--font-body); font-weight: 600; }
 .cta__inner { position: relative; z-index: 1; }
 .cta h2 { color: var(--white); margin-bottom: 16px; font-weight: 400; }
 .cta h2 em { font-style: normal; font-weight: 400; }
-.cta p { color: rgba(255,255,255,0.85); font-size: 18px; max-width: 520px; margin: 0 auto 30px; }
+.cta p { color: rgba(255,255,255,0.85); font-size: 18px; line-height: 1.5; max-width: 520px; margin: 0 auto 30px; }
 .cta .btn { font-size: 15px; font-weight: 500; padding: 12px 26px; }
 
 /* === FOOTER === */
@@ -512,15 +512,14 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
    V2 (05-11): logostrook, filmwidget met lightbox, herhaalwerk, footer-afsluiting
    ============================================ */
 /* Logostrook: één rij, loopt door, witte logo's zoals de klanten ze zelf gebruiken */
-.logoband { background: var(--black); }
-.logostrip { padding: 26px 0; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
-.logostrip__track { display: flex; width: max-content; animation: logostrip-run 42s linear infinite; }
-.logostrip:hover .logostrip__track { animation-play-state: paused; }
+.logoband { background: #000; }
+.logostrip { padding: 30px 0 34px; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
+.logostrip__track { display: flex; width: max-content; animation: logostrip-run 48s linear infinite; will-change: transform; }
 .logostrip__set { display: flex; align-items: center; gap: clamp(44px, 5vw, 80px); list-style: none; padding: 0 clamp(22px, 2.5vw, 40px); }
 .logostrip__set li { display: flex; align-items: center; height: 40px; }
 .logostrip__set img { height: 34px; width: auto; opacity: 0.92; }
-.logostrip__set img[alt="CS Hospitality"], .logostrip__set img[alt="CS Cleaning Service"] { height: 40px; }
-.logostrip__set img[alt="Matchable"] { height: 22px; }
+.logostrip__set img.logo--hoog { height: 40px; }
+.logostrip__set img.logo--laag { height: 22px; }
 @keyframes logostrip-run { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .logostrip__track { animation: none; flex-wrap: wrap; width: auto; }
@@ -531,22 +530,20 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 @media (max-width: 760px) {
   .logostrip { padding: 20px 0; }
   .logostrip__set img { height: 26px; }
-  .logostrip__set img[alt="CS Hospitality"], .logostrip__set img[alt="CS Cleaning Service"] { height: 32px; }
-  .logostrip__set img[alt="Matchable"] { height: 18px; }
+  .logostrip__set img.logo--hoog { height: 32px; }
+  .logostrip__set img.logo--laag { height: 18px; }
 }
 
 /* Footer v2: Instagram en LinkedIn als woord met icoon, afsluiting met butler en de naam groot */
 .footer__tagline--sub { margin-top: 8px; color: var(--gray-4); }
 .footer__soc { display: inline-flex !important; align-items: center; gap: 7px; }
 .footer__soc svg { width: 15px; height: 15px; flex: 0 0 15px; }
-.footer__close { position: relative; overflow: hidden; margin-top: 28px; }
-.footer__wm { display: flex; align-items: center; justify-content: center; gap: 0; height: clamp(110px, 17vw, 330px); overflow: hidden; pointer-events: none; user-select: none; }
-.footer__wm .footer__name { font-family: var(--font-display); font-weight: 400; font-size: clamp(120px, 21vw, 420px); line-height: 1; letter-spacing: -0.04em; color: var(--gray-3); white-space: nowrap; transform: translateY(0.06em); }
-.footer__slot { text-align: center; font-family: var(--font-display); font-size: 18px; color: var(--gray-5); padding: 6px 0 28px; }
+.footer__slot { font-family: var(--font-display); font-size: 17px; color: var(--gray-6); margin-top: 18px; }
 
 /* Herhaalwerk: vijf woorden, de butler met het dienblad, de deksel gaat open op wat we bouwden */
 .herhaal { padding-top: clamp(72px, 9vw, 120px); }
 .herhaal__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
+.herhaal__grid > * { min-width: 0; }
 .herhaal__titel { font-family: var(--font-display); font-weight: 400; font-size: clamp(34px, 3.8vw, 54px); line-height: 1.06; letter-spacing: -0.02em; color: var(--black); margin-bottom: 16px; text-wrap: balance; }
 .herhaal__lead { margin-bottom: 28px; max-width: 480px; }
 .herhaal__tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
@@ -557,7 +554,7 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .herhaal__uitleg { min-height: 72px; }
 .herhaal__zin { font-size: 17px; line-height: 1.6; color: var(--black); max-width: 520px; }
 .herhaal__systemen { margin-top: 28px; font-size: 14px; line-height: 1.6; color: var(--gray-5); max-width: 520px; }
-.herhaal__beeld { position: relative; max-width: 520px; margin: 0 auto; }
+.herhaal__beeld { position: relative; width: 100%; max-width: 520px; margin: 0 auto; }
 .herhaal__scherm { background: var(--gray-0); border-radius: var(--radius-card); padding: clamp(20px, 3vw, 36px); }
 .hs { background: var(--white); border-radius: 12px; padding: 0 0 8px; font-size: 14px; line-height: 1.35; color: var(--black); }
 .hs[hidden] { display: none; }
@@ -587,8 +584,13 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 
 /* Filmwidget (hero, rechtsonder): zelfde blok als eerst, nu de reel, opent in een lightbox */
 .video-widget { border: 1px solid rgba(255,255,255,0.06); font: inherit; color: inherit; }
-.vw__thumb { background: #06121f; }
-.vw__video { object-position: center 30%; }
+.vw__thumb { background: #f6f7f8; width: 74px; height: 112px; border-radius: 10px; }
+.vw__video { object-position: center 58%; }
+.video-widget { padding: 10px 16px 10px 10px; gap: 16px; background: rgba(4,14,31,0.42); border-color: rgba(255,255,255,0.08); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.video-widget:hover { background: rgba(4,14,31,0.6); }
+.vw__text { font-size: 15px; max-width: 190px; }
+.vw__meta { font-size: 12.5px; }
+@media (max-width: 760px) { .vw__thumb { width: 62px; height: 94px; } }
 .reel { position: fixed; inset: 0; margin: auto; width: fit-content; height: fit-content; border: none; padding: 0; background: transparent; max-width: none; max-height: none; }
 .reel::backdrop { background: rgba(4,14,31,0.86); }
 .reel__video { display: block; height: min(86vh, 820px); width: auto; max-width: 92vw; aspect-ratio: 9 / 16; border-radius: 22px; background: #000; object-fit: cover; }
@@ -603,17 +605,79 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .wm { position: absolute; pointer-events: none; z-index: 0; }
 .wm__svg { display: block; width: 100%; height: 100%; }
 .wm--omtrek { right: -6%; bottom: -14%; width: clamp(320px, 38vw, 560px); aspect-ratio: 1; }
-.wm--omtrek .wm__omtrek, .wm--omtrek .wm__binnen { fill: none; stroke: var(--gray-2); stroke-width: 1.5; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
-.wm--vul .wm__omtrek { fill: rgba(4,14,31,0.06); }
-.wm--vul .wm__binnen { fill: none; stroke: none; }
+.wm--omtrek .wm__omtrek, .wm--omtrek .wm__binnen { fill: none; stroke: var(--gray-2); stroke-width: 1.25; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
 .wm--cta { right: -4%; bottom: -22%; width: clamp(260px, 30vw, 420px); aspect-ratio: 1; }
-.wm--cta .wm__omtrek { fill: rgba(4,14,31,0.12); }
-.wm--footer { right: -3%; bottom: -8%; width: clamp(280px, 34vw, 520px); aspect-ratio: 1; }
-.wm--footer .wm__omtrek { fill: rgba(4,14,31,0.035); }
+.wm--cta .wm__omtrek, .wm--cta .wm__binnen { fill: none; stroke: rgba(255,255,255,0.22); stroke-width: 1.25; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.wm--footer .wm__omtrek, .wm--footer .wm__binnen { fill: none; stroke: var(--gray-2); stroke-width: 1.25; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.wm--footer { right: -48px; top: 24px; width: 180px; aspect-ratio: 1; }
+@media (max-width: 1340px) { .wm--footer { display: none; } }
 .herhaal { position: relative; overflow: hidden; }
 .herhaal .container, .cta__inner, .footer .container, .footer__close { position: relative; z-index: 1; }
 @media (max-width: 760px) {
   .wm--omtrek { width: 260px; right: -18%; bottom: -8%; }
   .wm--cta { width: 220px; right: -14%; bottom: -16%; }
-  .wm--footer { width: 240px; right: -12%; bottom: -4%; }
+  .wm--footer { display: block; width: 110px; right: -30px; top: 10px; }
 }
+
+/* Werk: plat mozaïek met hairlines (de lijnen zijn de 1px achtergrond tussen de tegels), geen kaders, geen schaduw */
+.werk__kop { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.werk__titel { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 3.6vw, 50px); line-height: 1.06; letter-spacing: -0.02em; }
+.muur { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1px; background: var(--gray-2); border-top: 1px solid var(--gray-2); border-bottom: 1px solid var(--gray-2); }
+.muur__tegel { display: flex; flex-direction: column; background: var(--white); min-width: 0; color: inherit; }
+.muur__tegel--7 { grid-column: span 7; } .muur__tegel--5 { grid-column: span 5; } .muur__tegel--4 { grid-column: span 4; } .muur__tegel--3 { grid-column: span 3; }
+.muur__tegel img { width: 100%; height: 240px; object-fit: cover; object-position: top; display: block; background: var(--gray-0); }
+.muur__tegel--hoog img { height: 340px; }
+.muur__tegel .muur__telefoon { object-fit: contain; object-position: center; padding: 22px 0 0; background: var(--gray-0); }
+.muur__bijschrift { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px 16px; font-size: 14px; line-height: 1.4; }
+.muur__bijschrift b { font-weight: 600; color: var(--black); }
+.muur__bijschrift span { color: var(--gray-5); }
+.muur__tegel:hover .muur__bijschrift b { color: var(--dark-teal); }
+@media (max-width: 1000px) {
+  .muur__tegel--7, .muur__tegel--5, .muur__tegel--4, .muur__tegel--3 { grid-column: span 6; }
+  .muur__tegel img, .muur__tegel--hoog img { height: 220px; }
+}
+@media (max-width: 760px) {
+  .werk__kop { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .muur__tegel--7, .muur__tegel--5, .muur__tegel--4, .muur__tegel--3 { grid-column: span 12; }
+  .muur__tegel img, .muur__tegel--hoog img { height: 210px; }
+}
+
+/* Hoe het werkt: vier stappen als lijst met hairlines, links één beeld dat meewisselt */
+.hoe { background: var(--gray-0); }
+.hoe__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
+.hoe__beeld { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius-card); overflow: hidden; background: var(--gray-1); }
+.hoe__beeld img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease; }
+.hoe__beeld img.is-aan { opacity: 1; }
+.hoe__titel { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 3.6vw, 50px); line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 18px; }
+.hoe__lijst { list-style: none; border-top: 1px solid var(--gray-2); }
+.hoe__stap { border-bottom: 1px solid var(--gray-2); }
+.hoe__stap button { display: block; width: 100%; text-align: left; background: none; border: none; padding: 18px 0; cursor: pointer; font: inherit; color: inherit; }
+.hoe__stap b { display: block; font-size: 18px; font-weight: 600; color: var(--gray-5); transition: color 0.2s ease; }
+.hoe__stap span { display: block; font-size: 16px; line-height: 1.55; color: var(--gray-6); max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease; }
+.hoe__stap.is-aan b { color: var(--black); }
+.hoe__stap.is-aan span { max-height: 120px; opacity: 1; margin-top: 6px; }
+.hoe__stap button:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
+@media (max-width: 1000px) { .hoe__grid { grid-template-columns: 1fr; gap: 28px; } }
+
+/* Klant aan het woord: twee vlakken, naam links in navy, quote rechts in licht teal */
+.quote2 { padding: var(--section-y) 0; }
+.quote2__blok { margin: 0; max-width: 920px; }
+.quote2__tekst { font-family: var(--font-display); font-weight: 400; font-size: clamp(28px, 3.5vw, 46px); line-height: 1.16; letter-spacing: -0.015em; color: var(--black); text-indent: -0.42em; margin: 0 0 32px; }
+.quote2__wie { display: flex; align-items: center; gap: 14px; }
+.quote2__wie img { width: 44px; height: 44px; border-radius: 11px; display: block; }
+.quote2__wie > span { display: flex; flex-direction: column; gap: 1px; }
+.quote2__wie b { font-size: 16px; font-weight: 500; color: var(--black); }
+.quote2__wie > span > span { font-size: 15px; color: var(--gray-6); }
+@media (max-width: 768px) { .quote2__tekst { text-indent: 0; } }
+
+/* Twee mensen */
+.mensen__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
+.mensen__fotos { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 1.6vw, 20px); }
+.mensen__fotos figure { margin: 0; }
+.mensen__fotos img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 82%; border-radius: var(--radius-card); display: block; }
+.mensen__fotos figcaption { display: flex; flex-direction: column; gap: 1px; margin-top: 12px; }
+.mensen__fotos b { font-size: 15px; font-weight: 500; color: var(--black); }
+.mensen__fotos figcaption span { font-size: 14px; color: var(--gray-6); }
+.mensen__titel { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 3.6vw, 50px); line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 16px; }
+.mensen__tekst p { font-size: 17px; line-height: 1.6; color: var(--black); max-width: 480px; margin-bottom: 22px; }
+@media (max-width: 1000px) { .mensen__grid { grid-template-columns: 1fr; gap: 24px; } }

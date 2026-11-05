@@ -302,3 +302,12 @@ function animateCount(el) {
   });
   kies(0);
 })();
+
+/* ---------- V2: hoe het werkt, stap kiezen wisselt het beeld ---------- */
+(function () {
+  const stappen = Array.from(document.querySelectorAll(".hoe__stap"));
+  const beelden = Array.from(document.querySelectorAll(".hoe__beeld img"));
+  if (!stappen.length) return;
+  const kies = (i) => { stappen.forEach((s) => s.classList.toggle("is-aan", Number(s.dataset.stap) === i)); beelden.forEach((b) => b.classList.toggle("is-aan", Number(b.dataset.stap) === i)); };
+  stappen.forEach((s) => s.querySelector("button").addEventListener("click", () => kies(Number(s.dataset.stap))));
+})();
