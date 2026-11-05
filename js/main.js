@@ -263,3 +263,68 @@ function animateCount(el) {
   document.getElementById("ckAccept").addEventListener("click", dismiss);
   document.getElementById("ckDecline").addEventListener("click", dismiss);
 })();
+
+/* ---------- V2: hero-reel, geluid aan/uit, iOS-vangnet ---------- */
+(function () {
+  const video = document.getElementById("heroVideo");
+  const sound = document.getElementById("heroSound");
+  const fallback = document.querySelector(".phone__fallback");
+  if (!video) return;
+  const p = video.play();
+  if (p && typeof p.catch === "function") {
+    p.catch(() => { if (fallback) { fallback.hidden = false; video.hidden = true; if (sound) sound.hidden = true; } });
+  }
+  if (sound) {
+    sound.addEventListener("click", () => {
+      const aan = video.muted;
+      video.muted = !aan;
+      sound.setAttribute("aria-pressed", String(aan));
+      sound.setAttribute("aria-label", aan ? "Geluid uitzetten" : "Geluid aanzetten");
+      if (aan) { video.currentTime = 0; video.play(); }
+    });
+  }
+})();
+
+/* ---------- V2: herhaalwerk, de deksel gaat open op het gekozen woord ---------- */
+(function () {
+  const beeld = document.getElementById("herhaalBeeld");
+  const tabs = Array.from(document.querySelectorAll(".herhaal__tab"));
+  if (!beeld || !tabs.length) return;
+  const zinnen = Array.from(document.querySelectorAll(".herhaal__zin"));
+  const schermen = Array.from(document.querySelectorAll(".herhaal__scherm .hs"));
+  const kies = (i, metDeksel) => {
+    tabs.forEach((t, j) => { const aan = j === i; t.classList.toggle("is-active", aan); t.setAttribute("aria-selected", String(aan)); t.tabIndex = aan ? 0 : -1; });
+    zinnen.forEach((z, j) => { z.hidden = j !== i; });
+    const wissel = () => schermen.forEach((s, j) => { s.hidden = j !== i; });
+    if (metDeksel && beeld.classList.contains("is-open")) {
+      beeld.classList.remove("is-open");
+      setTimeout(() => { wissel(); beeld.classList.add("is-open"); }, 380);
+    } else { wissel(); }
+  };
+  tabs.forEach((t) => {
+    t.addEventListener("click", () => kies(Number(t.dataset.i), true));
+    t.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      e.preventDefault();
+      const i = Number(t.dataset.i), n = tabs.length, naar = (i + (e.key === "ArrowRight" ? 1 : n - 1)) % n;
+      tabs[naar].focus(); kies(naar, true);
+    });
+  });
+  kies(0, false);
+  const open = () => beeld.classList.add("is-open");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { setTimeout(open, 250); io.disconnect(); } }, { threshold: 0.45 });
+    io.observe(beeld);
+  } else { open(); }
+})();
+
+/* ---------- V2: footer, de butler buigt één keer ---------- */
+(function () {
+  const footer = document.querySelector(".footer");
+  if (!footer || !footer.querySelector(".footer__butler .butler")) return;
+  const buig = () => { footer.classList.add("is-seen"); setTimeout(() => footer.classList.add("is-done"), 1100); };
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { buig(); io.disconnect(); } }, { threshold: 0.3 });
+    io.observe(footer.querySelector(".footer__close"));
+  } else { buig(); }
+})();
