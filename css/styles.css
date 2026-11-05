@@ -656,3 +656,27 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 #yns .case__index, #yns .case__meta a, #yns .case-tab__num, #yns .case-tab__body li::before { color: var(--case-blue); }
 #yns .case-tab.active { border-top-color: var(--case-blue); }
 #yns .pill { color: #234e8c; background: var(--light-blue); }
+
+/* Dienstenblok: dezelfde grid, gedeeld door de dunne lijn van het strikje, elk punt klikbaar */
+.build__grid { gap: 0; margin: -24px -26px; }
+.build-item { position: relative; padding: 24px 26px 26px; border-radius: 16px; color: inherit; transition: background-color 0.25s ease; }
+.build-item:nth-child(odd)::before { content: ""; position: absolute; top: 24px; bottom: 24px; right: 0; width: 1px; background: rgba(0,132,125,0.14); }
+.build-item:nth-child(-n+2)::after { content: ""; position: absolute; left: 26px; right: 26px; bottom: 0; height: 1px; background: rgba(0,132,125,0.14); }
+.build-item__icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: rgba(255,255,255,0.62); box-shadow: inset 0 0 0 1px rgba(0,132,125,0.14); margin-bottom: 10px; transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease; }
+.build-item__icon svg { width: 22px; height: 22px; }
+.build-item__pijl { position: absolute; top: 26px; right: 24px; color: var(--dark-teal); opacity: 0; transform: translate(-4px, 4px); transition: opacity 0.25s ease, transform 0.25s ease; }
+.build-item__pijl svg { width: 16px; height: 16px; display: block; }
+@media (hover: hover) {
+  .build-item:hover { background: rgba(255,255,255,0.42); }
+  .build-item:hover .build-item__icon { background: var(--dark-teal); color: var(--white); transform: translateY(-2px); }
+  .build-item:hover .build-item__pijl { opacity: 1; transform: none; }
+}
+.build-item:focus-visible { outline: 2px solid var(--dark-teal); outline-offset: -2px; }
+@media (max-width: 1000px) {
+  .build__grid { margin: 0 -12px; }
+  .build-item { padding: 22px 12px 24px; }
+  .build-item:nth-child(odd)::before { display: none; }
+  .build-item:nth-child(n)::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 0; height: 1px; background: rgba(0,132,125,0.14); }
+  .build-item:last-child::after { display: none; }
+}
+@media (hover: none) { .build-item__pijl { opacity: 0.55; transform: none; right: 12px; } }
