@@ -309,7 +309,7 @@ function animateCount(el) {
   herstart();
 })();
 
-/* ---------- V2: het woord in de footer komt eenmalig op: T, al, ynd ---------- */
+/* ---------- V2: het woord in de footer komt eenmalig op, letter voor letter ---------- */
 (function () {
   const vak = document.querySelector(".footer__wm");
   const woord = vak && vak.querySelector("span");
@@ -321,18 +321,19 @@ function animateCount(el) {
   /* Plek van elke groep meten in het hele woord, zodat de letterafstand exact gelijk blijft */
   const knoop = woord.firstChild;
   const links = (n) => { const r = document.createRange(); r.setStart(knoop, n); r.setEnd(knoop, n + 1); return r.getBoundingClientRect().left; };
-  const begin = [0, 1, 3].map(links);
+  const begin = Array.from(tekst).map((_, i) => links(i));
   const maat = parseFloat(getComputedStyle(woord).fontSize);
 
   woord.textContent = "";
-  const groepen = ["T", "al", "ynd"].map((deel) => {
+  const letters = Array.from(tekst).map((teken, i) => {
     const g = document.createElement("i");
     g.className = "footer__letters";
-    g.textContent = deel;
+    g.textContent = teken;
+    g.style.animationDelay = (i * 0.11) + "s";
     woord.appendChild(g);
     return g;
   });
-  groepen.forEach((g, i) => {
+  letters.forEach((g, i) => {
     if (!i) return;
     const verschil = begin[i] - g.getBoundingClientRect().left;
     g.style.marginLeft = (verschil / maat) + "em";
