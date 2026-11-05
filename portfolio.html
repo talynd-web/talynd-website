@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=c05a585a">
+  <link rel="stylesheet" href="css/styles.css?v=5c655f6a">
   <style>
     /* ============================================================
        PORTFOLIO — Talynd (matches homepage + diensten system)
@@ -568,8 +568,18 @@
       <div class="case__buildhead fade-in-up">Wat we bouwden</div>
       <div class="case__build fade-in-up">
         <div class="case-tabs" data-case="via">
-          <div class="case-tab active" data-panel="[SCREENSHOT: Pipedrive pipeline met 8 fasen van Nieuwe Lead tot Deal Gesloten, plus ActiveCampaign nurture flows]" data-panel-type="pipeline">
+          <div class="case-tab active" data-panel="Zoeken op de kaart" data-panel-type="via-kaart">
             <div class="case-tab__num">01</div>
+            <div class="case-tab__label">Zoeken op de kaart, op website en app</div>
+            <div class="case-tab__body"><ul>
+              <li>Interactieve kaart van Spanje met elk project als prijsspeld, op de website en in de app dezelfde kaart.</li>
+              <li>Uitgezoomd zie je per regio hoeveel projecten er zijn, ingezoomd de prijs per project. Tik op een speld en je staat op de projectpagina.</li>
+              <li>Zelfde filters als de lijst (plaats, budget, slaapkamers) en met &eacute;&eacute;n knop wisselen tussen lijst en kaart.</li>
+              <li>De kaart is ook de ingang vanaf de homepage-hero, het menu en de footer, zodat bezoekers er vanzelf terechtkomen.</li>
+            </ul></div>
+          </div>
+          <div class="case-tab" data-panel="[SCREENSHOT: Pipedrive pipeline met 8 fasen van Nieuwe Lead tot Deal Gesloten, plus ActiveCampaign nurture flows]" data-panel-type="pipeline">
+            <div class="case-tab__num">02</div>
             <div class="case-tab__label">Van lead tot deal gesloten</div>
             <div class="case-tab__body"><ul>
               <li>8-fasen Pipedrive pipeline ingericht: van Nieuwe Lead tot Deal Gesloten.</li>
@@ -579,7 +589,7 @@
             </ul></div>
           </div>
           <div class="case-tab" data-panel="[SCREENSHOT: Woningoverzicht met filterbalk en detailpagina's, live vanuit Inmobalia CRM]" data-panel-type="screenshot" data-screenshot-src="assets/via-woningen.webp">
-            <div class="case-tab__num">02</div>
+            <div class="case-tab__num">03</div>
             <div class="case-tab__label">17.611+ woningen live op de website</div>
             <div class="case-tab__body"><ul>
               <li>Cloudflare Worker gebouwd als beveiligde API-proxy tussen de website en Inmobalia CRM.</li>
@@ -589,7 +599,7 @@
             </ul></div>
           </div>
           <div class="case-tab" data-panel="[SCREENSHOT: AI Rendementscalculator in browser met invoervelden, belastingopties en gematchte brochures]" data-panel-type="calc-grid">
-            <div class="case-tab__num">03</div>
+            <div class="case-tab__num">04</div>
             <div class="case-tab__label">AI Rendementscalculator</div>
             <div class="case-tab__body"><ul>
               <li>Maatwerk rekentool gebouwd op Spaanse vastgoedlogica: regio-specifieke belastingtarieven (Andalusie 7%, Valencia 10%, Canarische Eilanden 6,5%).</li>
@@ -600,7 +610,7 @@
             </ul></div>
           </div>
           <div class="case-tab" data-panel="VIA Vastgoed app" data-panel-type="via-app">
-            <div class="case-tab__num">04</div>
+            <div class="case-tab__num">05</div>
             <div class="case-tab__label">App in de App Store en op Google Play</div>
             <div class="case-tab__body"><ul>
               <li>Eigen app voor iPhone en Android, gebouwd op dezelfde data als de website. E&eacute;n bron, geen dubbel beheer.</li>
@@ -610,18 +620,8 @@
               <li>Inloggen met Google of Apple. Door Apple en Google goedgekeurd en live in beide stores.</li>
             </ul></div>
           </div>
-          <div class="case-tab" data-panel="Zoeken op de kaart" data-panel-type="via-kaart">
-            <div class="case-tab__num">05</div>
-            <div class="case-tab__label">Zoeken op de kaart, op website en app</div>
-            <div class="case-tab__body"><ul>
-              <li>Interactieve kaart van Spanje met elk project als prijsspeld, op de website en in de app dezelfde kaart.</li>
-              <li>Uitgezoomd zie je per regio hoeveel projecten er zijn, ingezoomd de prijs per project. Tik op een speld en je staat op de projectpagina.</li>
-              <li>Zelfde filters als de lijst (plaats, budget, slaapkamers) en met &eacute;&eacute;n knop wisselen tussen lijst en kaart.</li>
-              <li>De kaart is ook de ingang vanaf de homepage-hero, het menu en de footer, zodat bezoekers er vanzelf terechtkomen.</li>
-            </ul></div>
-          </div>
         </div>
-        <div class="case__panel" data-case-panel="via">
+        <div class="case__panel via-kaart-active" data-case-panel="via">
           <div class="calc-slideshow" style="display:none">
             <div class="calc-slides">
               <div class="calc-slide active">
@@ -652,7 +652,7 @@
               </button>
             </div>
           </div>
-          <div class="pipe-anim" id="pipeAnim">
+          <div class="pipe-anim" id="pipeAnim" style="display:none">
             <div class="pipe-topbar">
               <div class="pipe-topbar-left"><span class="pipe-crm-name">VIA Vastgoed Pipeline</span><span class="pipe-stages-tag">8 fasen</span></div>
             </div>
@@ -712,7 +712,7 @@
               <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.viavastgoed.app" target="_blank" rel="noopener" aria-label="VIA Vastgoed op Google Play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg><span>Google Play</span></a>
             </div>
           </div>
-          <div class="via-kaart-panel" style="display:none">
+          <div class="via-kaart-panel">
             <img class="via-kaart-web" src="assets/via-kaart-web.webp" alt="VIA Vastgoed website: projecten op de kaart van Spanje met prijsspelden" loading="lazy" />
             <a class="rc-web-cta" href="https://viavastgoed.com" target="_blank" rel="noopener" aria-label="Open viavastgoed.com in een nieuw tabblad">Bekijk de live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
             <div class="rc-phone via-kaart-phone" aria-hidden="true">
@@ -1266,6 +1266,8 @@
             if (typeof window.viaAppStart === "function") window.viaAppStart();
           } else if (ptype === "calc-grid" && ss) {
             ss.style.display = "flex";
+            var scrC = panel.querySelector(".screenshot-panel"); if (scrC) scrC.style.display = "none";
+            panel.classList.remove("screenshot-active");
             if (pa) pa.style.display = "none";
             if (label) label.style.display = "none";
             panel.classList.add("calc-active");
@@ -1450,7 +1452,7 @@
       if (pipePanel && 'IntersectionObserver' in window) {
         var pipeObs = new IntersectionObserver(function (entries) {
           entries.forEach(function (e) {
-            if (e.isIntersecting) { window.pipelineStart(); }
+            if (e.isIntersecting && document.querySelector('[data-case="via"] .case-tab.active[data-panel-type="pipeline"]')) { window.pipelineStart(); }
             else { window.pipelineStop(); }
           });
         }, { threshold: 0.3 });
@@ -1463,10 +1465,13 @@
     (function () {
       var panel = document.querySelector('[data-case-panel="via"]');
       if (!panel) return;
-      panel.classList.add('pipe-active');
-      var pipeEl = panel.querySelector('.pipe-anim');
-      if (pipeEl) pipeEl.style.display = 'flex';
-      if (typeof window.pipelineStart === 'function') window.pipelineStart();
+      /* Alleen starten als de pipeline-tab het actieve punt is; de kaart staat nu vooraan */
+      if (document.querySelector('[data-case="via"] .case-tab.active[data-panel-type="pipeline"]')) {
+        panel.classList.add('pipe-active');
+        var pipeEl = panel.querySelector('.pipe-anim');
+        if (pipeEl) pipeEl.style.display = 'flex';
+        if (typeof window.pipelineStart === 'function') window.pipelineStart();
+      }
       var slides = panel.querySelectorAll('.calc-slide');
       var dots = panel.querySelectorAll('.calc-dot');
       var counter = document.getElementById('calcCounter');

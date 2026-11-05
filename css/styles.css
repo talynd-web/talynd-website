@@ -646,3 +646,13 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 /* Logostrook op een lichte pagina: zelfde strook als de homepage, stil in grijs */
 .logostrip--licht { padding: 6px 0 10px; }
 .logostrip--licht .logostrip__set img { filter: brightness(0); opacity: 0.38; }
+
+/* Portfolio: elke case in de kleur van de klant: VIA warm bruin, YNS blauw, Reformed donkerder bruin */
+#via-vastgoed { --case-blue: #8a6a4c; }
+#via-vastgoed .pill { color: #6b4f36; background: #efe7db; }
+#reformed-collective { --case-blue: #5f4330; }
+#reformed-collective .pill { color: #4a3424; background: #e9dfd4; }
+#yns { --case-blue: #2f6fd0; }
+#yns .case__index, #yns .case__meta a, #yns .case-tab__num, #yns .case-tab__body li::before { color: var(--case-blue); }
+#yns .case-tab.active { border-top-color: var(--case-blue); }
+#yns .pill { color: #234e8c; background: var(--light-blue); }
