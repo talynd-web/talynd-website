@@ -572,35 +572,67 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .wm__omtrek, .wm__binnen { fill: none; stroke: var(--wml); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
 
 /* Footer: koel grijs met een vleug teal */
-.wm--footer { right: -48px; top: 24px; width: clamp(180px, 13vw, 260px);
-  --wm1: #f1f4f8; --wm2: #eaf6f6; --wm3: #f4f6f9; --wm4: #edf1f6; --wm5: #e3ecf3; --wm6: #dcf0f0; --wml: #e1e6ec; }
+.wm--footer { right: -48px; top: 24px; width: clamp(180px, 13vw, 260px); }
+.wm--footer, .wm--koel { --wm1: #f1f4f8; --wm2: #eaf6f6; --wm3: #f4f6f9; --wm4: #edf1f6; --wm5: #e3ecf3; --wm6: #dcf0f0; --wml: #e1e6ec; }
 @media (max-width: 1340px) { .wm--footer { display: none; } }
 
 /* Diensten: lichter dan het vlak, teal in de lijn */
 .panel--teal { position: relative; overflow: hidden; }
 .panel--teal .build { position: relative; z-index: 1; }
-.wm--diensten { left: 20.5%; bottom: -1px; width: 232px; aspect-ratio: 400 / 430;
-  --wm1: #eefafa; --wm2: #e4f6f5; --wm3: #c4e6e4; --wm4: #f4fcfc; --wm5: #d1ecea; --wm6: #dbf1f0; --wml: rgba(0,132,125,0.22); }
+.wm--diensten { left: 20.5%; bottom: -1px; width: 232px; aspect-ratio: 400 / 430; }
+.wm--diensten, .wm--groen { --wm1: #eefafa; --wm2: #e4f6f5; --wm3: #c4e6e4; --wm4: #f4fcfc; --wm5: #d1ecea; --wm6: #dbf1f0; --wml: rgba(0,132,125,0.22); }
 
 /* Portfolio: warm op warm */
 .portfolio-sec { position: relative; overflow: hidden; }
 .portfolio-sec .container { position: relative; z-index: 1; }
-.wm--portfolio { right: -90px; top: -80px; width: clamp(300px, 27vw, 460px);
-  --wm1: rgba(255,255,255,0.32); --wm2: rgba(255,255,255,0.2); --wm3: rgba(214,150,70,0.09); --wm4: rgba(214,150,70,0.13);
+.wm--portfolio { right: -90px; top: -80px; width: clamp(300px, 27vw, 460px); }
+.wm--portfolio, .wm--warm { --wm1: rgba(255,255,255,0.32); --wm2: rgba(255,255,255,0.2); --wm3: rgba(214,150,70,0.09); --wm4: rgba(214,150,70,0.13);
   --wm5: rgba(214,150,70,0.16); --wm6: rgba(214,150,70,0.1); --wml: rgba(170,110,40,0.16); }
 
 /* Afsluiter: wit in lagen op teal */
-.wm--cta { left: -12%; bottom: -22%; width: clamp(260px, 30vw, 420px);
-  --wm1: rgba(255,255,255,0.07); --wm2: rgba(255,255,255,0.045); --wm3: rgba(255,255,255,0.03); --wm4: rgba(255,255,255,0.09);
+.wm--cta { left: -12%; bottom: -22%; width: clamp(260px, 30vw, 420px); }
+.wm--cta, .wm--wit { --wm1: rgba(255,255,255,0.07); --wm2: rgba(255,255,255,0.045); --wm3: rgba(255,255,255,0.03); --wm4: rgba(255,255,255,0.09);
   --wm5: rgba(255,255,255,0.12); --wm6: rgba(255,255,255,0.08); --wml: rgba(255,255,255,0.2); }
 
 .cta__inner, .footer .container, .footer__close { position: relative; z-index: 1; }
+
+/* Subpagina's: zelfde beeldmerk, afgesneden door de rand van het vlak waar het in staat, per vlak een eigen kleurfamilie */
+.wm--blauw { --wm1: #eef8fd; --wm2: #e5f4fb; --wm3: #bfdff0; --wm4: #f4fbfe; --wm5: #cde6f4; --wm6: #d8edf8; --wml: rgba(30,110,160,0.2); }
+.wm--tealton { --wm1: #2f9e98; --wm2: #27968f; --wm3: #006f69; --wm4: #3aa7a1; --wm5: #148a84; --wm6: #1c8f89; --wml: rgba(255,255,255,0.2); --wmo: rgba(255,255,255,0.4); }
+.wm--hero { right: -110px; bottom: -100px; width: 230px; }
+.wm--kaartje { right: -64px; bottom: -96px; width: 200px; }
+.wm--missie { left: -60px; bottom: -70px; width: clamp(200px, 21vw, 300px); }
+.wm--proc { right: -70px; top: -60px; width: clamp(220px, 22vw, 340px); }
+.wm--zij { left: -80px; bottom: 40px; width: clamp(240px, 24vw, 380px); }
+.wm--tealkaart { right: -56px; bottom: -60px; width: clamp(180px, 17vw, 240px); }
+.wm--tealbutler { right: 34px; bottom: -1px; width: 176px; aspect-ratio: 400 / 430; }
+.wm--cta-sub { left: -17.5%; }
+.sierrand { position: absolute; top: 0; left: 0; width: 100%; height: 460px; overflow: hidden; pointer-events: none; }
+.wm--legal { right: -70px; top: 96px; width: clamp(200px, 20vw, 300px); }
+.wm--404 { right: clamp(32px, 9vw, 140px); bottom: -1px; width: 220px; aspect-ratio: 400 / 430; }
+.e404 { position: relative; overflow: hidden; }
+.e404 > :not(.wm) { position: relative; z-index: 1; }
+.aival__card, .mission, .proc, .contact-sec { position: relative; overflow: hidden; }
+.aival__card > :not(.wm), .mission > .container, .proc > .container, .contact-sec > .container { position: relative; z-index: 1; }
+@media (max-width: 1100px) {
+  .wm--hero, .wm--cta-sub { width: 84px; left: auto; right: -32px; top: -34px; bottom: auto; }
+  .wm--cta-sub { left: -32px; right: auto; }
+  .wm--proc { width: 104px; right: -36px; top: -40px; }
+  .wm--tealbutler { right: 16px; width: 104px; }
+  .wm--legal { width: 84px; right: -32px; top: 74px; }
+}
 @media (max-width: 760px) {
   .wm--cta { width: 84px; left: -32px; top: -34px; bottom: auto; }
   .wm--footer { display: block; width: 120px; right: -34px; top: 10px; }
   .wm--diensten { left: auto; right: 16px; bottom: -1px; width: 112px; }
   .panel--teal { padding-bottom: 124px; }
   .wm--portfolio { width: 104px; right: -36px; top: -40px; }
+  .wm--kaartje { width: 84px; right: -30px; bottom: -30px; }
+  .wm--missie { width: 104px; left: auto; right: -36px; top: -40px; bottom: auto; }
+  .wm--zij { width: 84px; left: auto; right: -32px; top: -6px; bottom: auto; }
+  .wm--tealkaart { width: 84px; right: -30px; bottom: -30px; }
+  .val-item--teal:has(.wm--tealbutler) { padding-bottom: 124px; }
+  .wm--404 { right: 16px; width: 112px; }
 }
 
 /* Dienstenblok: Tot uw dienst als slot onder de butlerzin, zelfde letter als in de footer */
@@ -693,4 +725,4 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 
 /* Butler in het dienstenblok: tone-on-tone, zelfde vlakken en lijn als het strikje */
 .wm__lijn { stroke: var(--wml); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
-.wm__oog { fill: none; stroke-linecap: round; stroke: rgba(0,132,125,0.34); }
+.wm__oog { fill: none; stroke-linecap: round; stroke: var(--wmo, rgba(0,132,125,0.34)); }
