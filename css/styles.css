@@ -591,13 +591,13 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
   --wm5: rgba(214,150,70,0.16); --wm6: rgba(214,150,70,0.1); --wml: rgba(170,110,40,0.16); }
 
 /* Afsluiter: wit in lagen op teal */
-.wm--cta { right: -4%; bottom: -22%; width: clamp(260px, 30vw, 420px);
+.wm--cta { left: -12%; bottom: -22%; width: clamp(260px, 30vw, 420px);
   --wm1: rgba(255,255,255,0.07); --wm2: rgba(255,255,255,0.045); --wm3: rgba(255,255,255,0.03); --wm4: rgba(255,255,255,0.09);
   --wm5: rgba(255,255,255,0.12); --wm6: rgba(255,255,255,0.08); --wml: rgba(255,255,255,0.2); }
 
 .cta__inner, .footer .container, .footer__close { position: relative; z-index: 1; }
 @media (max-width: 760px) {
-  .wm--cta { width: 220px; right: -14%; bottom: -16%; }
+  .wm--cta { width: 110px; left: -44px; top: -44px; bottom: auto; }
   .wm--footer { display: block; width: 120px; right: -34px; top: 10px; }
   .wm--diensten { left: auto; right: -56px; top: -56px; bottom: auto; width: 170px; }
   .wm--portfolio { width: 200px; right: -64px; top: -56px; }
