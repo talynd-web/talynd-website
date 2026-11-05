@@ -579,9 +579,8 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 /* Diensten: lichter dan het vlak, teal in de lijn */
 .panel--teal { position: relative; overflow: hidden; }
 .panel--teal .build { position: relative; z-index: 1; }
-.wm--diensten { left: 17%; bottom: -150px; width: 320px;
-  --wm1: rgba(255,255,255,0.5); --wm2: rgba(255,255,255,0.28); --wm3: rgba(255,255,255,0.34); --wm4: rgba(255,255,255,0.42);
-  --wm5: rgba(0,132,125,0.07); --wm6: rgba(0,132,125,0.05); --wml: rgba(0,132,125,0.16); }
+.wm--diensten { left: 20.5%; bottom: -1px; width: 232px; aspect-ratio: 400 / 430;
+  --wm1: #eefafa; --wm2: #e4f6f5; --wm3: #c4e6e4; --wm4: #f4fcfc; --wm5: #d1ecea; --wm6: #dbf1f0; --wml: rgba(0,132,125,0.22); }
 
 /* Portfolio: warm op warm */
 .portfolio-sec { position: relative; overflow: hidden; }
@@ -599,7 +598,8 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 @media (max-width: 760px) {
   .wm--cta { width: 84px; left: -32px; top: -34px; bottom: auto; }
   .wm--footer { display: block; width: 120px; right: -34px; top: 10px; }
-  .wm--diensten { left: auto; right: -34px; top: -38px; bottom: auto; width: 96px; }
+  .wm--diensten { left: auto; right: 16px; bottom: -1px; width: 112px; }
+  .panel--teal { padding-bottom: 124px; }
   .wm--portfolio { width: 104px; right: -36px; top: -40px; }
 }
 
@@ -690,3 +690,7 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 #wat-wij-bouwen, .dsol-card[id] { scroll-margin-top: 110px; }
 .dsol-card:target { outline: 2px solid var(--dark-teal); outline-offset: 4px; border-radius: var(--radius-card); }
 .dsol-card:target .dsol-card__hover { transform: translateY(0); }
+
+/* Butler in het dienstenblok: tone-on-tone, zelfde vlakken en lijn als het strikje */
+.wm__lijn { stroke: var(--wml); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.wm__oog { fill: none; stroke-linecap: round; stroke: rgba(0,132,125,0.34); }
