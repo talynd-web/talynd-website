@@ -308,3 +308,41 @@ function animateCount(el) {
   window.addEventListener("focus", herstart);
   herstart();
 })();
+
+/* ---------- V2: het woord in de footer komt eenmalig op: T, al, ynd ---------- */
+(function () {
+  const vak = document.querySelector(".footer__wm");
+  const woord = vak && vak.querySelector("span");
+  if (!woord || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const tekst = woord.textContent;
+  if (tekst !== "Talynd") return;
+
+  /* Plek van elke groep meten in het hele woord, zodat de letterafstand exact gelijk blijft */
+  const knoop = woord.firstChild;
+  const links = (n) => { const r = document.createRange(); r.setStart(knoop, n); r.setEnd(knoop, n + 1); return r.getBoundingClientRect().left; };
+  const begin = [0, 1, 3].map(links);
+  const maat = parseFloat(getComputedStyle(woord).fontSize);
+
+  woord.textContent = "";
+  const groepen = ["T", "al", "ynd"].map((deel) => {
+    const g = document.createElement("i");
+    g.className = "footer__letters";
+    g.textContent = deel;
+    woord.appendChild(g);
+    return g;
+  });
+  groepen.forEach((g, i) => {
+    if (!i) return;
+    const verschil = begin[i] - g.getBoundingClientRect().left;
+    g.style.marginLeft = (verschil / maat) + "em";
+  });
+
+  vak.classList.add("footer__wm--wacht");
+  new IntersectionObserver((items, kijker) => {
+    if (!items.some((x) => x.isIntersecting)) return;
+    vak.classList.remove("footer__wm--wacht");
+    vak.classList.add("footer__wm--op");
+    kijker.disconnect();
+  }, { threshold: 0.25 }).observe(vak);
+})();
