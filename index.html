@@ -104,28 +104,6 @@
       .build__grid { grid-template-columns: 1fr; gap: 30px; }
     }
 
-    /* ---- TALYND ADVANTAGE (white, Cambio-style) ---- */
-    /* ---- TALYND-VOORDEEL: compact, beeld links op tekst-hoogte, rechts titel + drie bewijspunten ---- */
-    .adv { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
-    .adv .eyebrow { white-space: nowrap; }
-    .adv__media { position: relative; border-radius: var(--radius-section); overflow: hidden; aspect-ratio: 4 / 4.6; max-height: 520px; }
-    .adv__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .adv--team { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-    .adv__duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 1.2vw, 16px); }
-    .adv__duo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-card); display: block; }
-    .adv__right { display: flex; flex-direction: column; align-items: flex-start; }
-    .adv__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.06; letter-spacing: -0.02em; color: var(--black); margin: 0 0 16px; text-wrap: pretty; max-width: 18ch; }
-    .adv__lead { font-family: var(--font-body); font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; color: var(--gray-6); margin-bottom: 26px; max-width: 54ch; }
-    .adv__points { list-style: none; width: 100%; max-width: 560px; margin: 0 0 28px; padding: 0; border-top: 1px solid var(--gray-2); }
-    .adv__points li { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--gray-2); font-size: 15px; line-height: 1.5; color: var(--gray-6); }
-    .adv__points b { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark-teal); padding-top: 4px; }
-    @media (max-width: 1000px) {
-      .adv { grid-template-columns: 1fr; gap: 28px; }
-      .adv__media { aspect-ratio: 16 / 10; max-height: none; }
-      .adv__title { max-width: none; }
-      .adv__points li { grid-template-columns: 1fr; gap: 3px; }
-    }
-
     /* ---- PORTFOLIO (cream, Cambio-rhythm) ---- */
     .portfolio-sec { background: var(--orange); }
     .dquote-sec { padding-bottom: clamp(36px, 4vw, 52px); }
@@ -698,28 +676,6 @@
         <button class="tmnl__btn" id="tmnlNext" type="button" aria-label="Volgende review" aria-controls="tmnlTrack">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TWEE MENSEN (zelfde opbouw als de voordeel-sectie) ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="adv adv--team">
-        <div class="adv__duo fade-in-up">
-          <img src="assets/team-rayco.webp" alt="Rayco de Bruijn" width="780" height="975" loading="lazy" />
-          <img src="assets/team-dimas.webp" alt="Dimas Smit" width="780" height="975" loading="lazy" />
-        </div>
-        <div class="adv__right fade-in-up" data-delay="1">
-          <h2 class="adv__title">Twee mensen, geen bureau</h2>
-          <p class="adv__lead">Je werkt direct met de mensen die het bouwen. Geen accountmanager ertussen.</p>
-          <ul class="adv__points">
-            <li><b>Rayco</b><span>Zet de techniek neer die je salesproces automatiseert.</span></li>
-            <li><b>Dimas</b><span>Bouwt de websites en apps en brengt je klantproces in kaart.</span></li>
-            <li><b>Samen</b><span>Het eerste gesprek doen we samen, bij jou op locatie.</span></li>
-          </ul>
-          <a href="over-ons" class="btn btn--primary">Leer ons kennen</a>
-        </div>
       </div>
     </div>
   </section>
