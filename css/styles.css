@@ -710,7 +710,8 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .wm__oog { fill: none; stroke-linecap: round; stroke: var(--wmo, rgba(0,132,125,0.34)); }
 
 /* Subpagina's: merkteken grotendeels in beeld. Pc: hoek met kleine afsnijding. Tablet en mobiel: op de onderrand of boven de kop, volledig zichtbaar */
-.wm--hero { width: clamp(110px, 9vw, 140px); right: 12px; bottom: -18px; }
+.wm--hero { width: clamp(110px, 9vw, 140px); right: 12px; top: -18px; }
+@media (min-width: 1101px) { .dhero .wm--hero { width: 112px; right: 10px; top: -26px; } }
 .wm--kaartje { width: 120px; right: 16px; bottom: -22px; }
 .wm--missie { left: -34px; bottom: -44px; width: clamp(200px, 21vw, 300px); }
 .wm--proc { right: -44px; top: -44px; width: clamp(220px, 22vw, 340px); }
@@ -720,7 +721,7 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .wm--legal { right: -50px; top: 96px; width: clamp(200px, 20vw, 300px); }
 @media (max-width: 1100px) {
   .dhero-wrap .dhero, .phero-wrap .phero, .ahero-wrap .ahero { padding-bottom: 108px; }
-  .wm--hero { width: 84px; left: 50%; right: auto; transform: translateX(-50%); bottom: -12px; }
+  .wm--hero { width: 84px; left: 50%; right: auto; top: auto; transform: translateX(-50%); bottom: -12px; }
   .proc:has(.wm--proc) { padding-top: 124px; }
   .wm--proc { width: 60px; left: 50%; right: auto; transform: translateX(-50%); top: 30px; }
   .contact-sec:has(.wm--zij) { padding-top: 112px; }
