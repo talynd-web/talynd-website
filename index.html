@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI-automatisering &amp; Implementatie voor Bedrijven | Talynd</title>
-  <meta name="description" content="Talynd bouwt AI-automatisering voor je backoffice: van procesautomatisering tot CRM-koppelingen. Wij bouwen het systeem, implementeren het en dragen het volledig over. Geen advies, geen abonnement.">
+  <meta name="description" content="Talynd neemt het herhaalwerk in je bedrijf over: van marketing en leadopvolging tot Pipedrive, websites en apps. Wij bouwen het, jij gaat er zelf mee verder.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://talynd.com/">
   <link rel="preload" as="image" href="assets/hero-mountains.webp" fetchpriority="high">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://talynd.com/">
   <meta property="og:title" content="AI-automatisering &amp; Implementatie voor Bedrijven | Talynd">
-  <meta property="og:description" content="Talynd bouwt AI-automatisering voor je backoffice: van procesautomatisering tot CRM-koppelingen. Wij bouwen het systeem, implementeren het en dragen het volledig over. Geen advies, geen abonnement.">
-  <meta property="og:image" content="https://talynd.com/assets/hero-mountains.webp">
+  <meta property="og:description" content="Talynd neemt het herhaalwerk in je bedrijf over: van marketing en leadopvolging tot Pipedrive, websites en apps. Wij bouwen het, jij gaat er zelf mee verder.">
+  <meta property="og:image" content="https://talynd.com/assets/og-talynd.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:site_name" content="Talynd">
   <meta name="twitter:card" content="summary_large_image">
@@ -108,6 +110,9 @@
     .adv .eyebrow { white-space: nowrap; }
     .adv__media { position: relative; border-radius: var(--radius-section); overflow: hidden; aspect-ratio: 4 / 4.6; max-height: 520px; }
     .adv__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .adv--team { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .adv__duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 1.2vw, 16px); }
+    .adv__duo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-card); display: block; }
     .adv__right { display: flex; flex-direction: column; align-items: flex-start; }
     .adv__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.06; letter-spacing: -0.02em; color: var(--black); margin: 0 0 16px; text-wrap: pretty; max-width: 18ch; }
     .adv__lead { font-family: var(--font-body); font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; color: var(--gray-6); margin-bottom: 26px; max-width: 54ch; }
@@ -203,7 +208,7 @@
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ProfessionalService"],
     "name": "Talynd",
-    "description": "AI automatisering bureau voor bedrijven. Wij bouwen AI-systemen, implementeren ze en dragen ze volledig over.",
+    "description": "AI-bureau dat het herhaalwerk in bedrijven overneemt. Wij bouwen systemen, implementeren ze en dragen ze volledig over.",
     "url": "https://talynd.com",
     "logo": "https://talynd.com/icon-512.png",
     "image": "https://talynd.com/icon-512.png",
@@ -224,7 +229,7 @@
       },
       {
         "@type": "Person",
-        "name": "Rayco Bruijn",
+        "name": "Rayco de Bruijn",
         "jobTitle": "Co-founder"
       }
     ],
@@ -304,7 +309,7 @@
     <button class="video-widget" type="button" id="reelOpen" aria-haspopup="dialog" aria-controls="reelDialog">
       <span class="vw__thumb">
         <video class="vw__video" autoplay muted loop playsinline preload="metadata" poster="assets/video/butler-poster.jpg" width="720" height="1280" aria-hidden="true">
-          <source src="assets/video/butler.mp4" type="video/mp4">
+          <source src="assets/video/butler-klein.mp4" type="video/mp4">
         </video>
       </span>
       <span class="vw__info">
@@ -345,62 +350,13 @@
   <!-- Lightbox voor de reel -->
   <dialog class="reel" id="reelDialog" aria-label="Filmpje: wat doen we bij Talynd">
     <button class="reel__close" type="button" id="reelClose" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
-    <video class="reel__video" id="reelVideo" controls playsinline preload="metadata" poster="assets/video/butler-poster.jpg" width="720" height="1280">
+    <video class="reel__video" id="reelVideo" controls playsinline preload="none" poster="assets/video/butler-poster.jpg" width="720" height="1280">
       <source src="assets/video/butler.mp4" type="video/mp4">
     </video>
   </dialog>
 
-  <!-- ============ HOW IT WORKS (feature tabs) ============ -->
-  <section class="section" style="padding-bottom: clamp(36px, 4vw, 48px);">
-    <div class="container">
-      <div class="how dproc">
-        <div class="how__intro">
-          <span class="eyebrow">Hoe het werkt</span>
-          <h2 class="how__title">Intelligentie die je helpt <span class="how__rotate"><span class="how__rotate__word" id="howRotator">schalen</span></span></h2>
-          <a href="diensten" class="btn btn--primary how__cta">Ontdek onze aanpak</a>
-          <div class="tabs" id="tabs">
-            <div class="tab active" data-tab="0">
-              <div class="tab__main">
-                <div class="tab__label">Intake op locatie</div>
-                <p class="tab__body">We kijken waar tijd verloren gaat voordat we ook maar iets bouwen. Je eerste gesprek is altijd gratis, zonder enige verplichting.</p>
-              </div>
-              <div class="tab__num">01</div>
-            </div>
-            <div class="tab" data-tab="1">
-              <div class="tab__main">
-                <div class="tab__label">Analyse &amp; plan</div>
-                <p class="tab__body">Een helder plan: wat bouwen we, met welke tools, in welke volgorde. Je weet vooraf welk resultaat je kunt verwachten, geen verrassingen.</p>
-              </div>
-              <div class="tab__num">02</div>
-            </div>
-            <div class="tab" data-tab="2">
-              <div class="tab__main">
-                <div class="tab__label">Bouwen &amp; implementeren</div>
-                <p class="tab__body">We bouwen het systeem en koppelen het aan je bestaande tools. Je test mee gedurende het traject en stuurt bij waar nodig.</p>
-              </div>
-              <div class="tab__num">03</div>
-            </div>
-            <div class="tab" data-tab="3">
-              <div class="tab__main">
-                <div class="tab__label">Overdracht &amp; training</div>
-                <p class="tab__body">Je team krijgt training en volledige documentatie van alles. Geen verplicht abonnement: je houdt zelf de controle.</p>
-              </div>
-              <div class="tab__num">04</div>
-            </div>
-          </div>
-        </div>
-        <div class="how__panel fade-in-up" data-delay="1">
-          <div class="how__pane" data-pane="0"><img src="assets/how-intake-locatie.webp" alt="Intake op locatie" /></div>
-          <div class="how__pane" data-pane="1" style="display:none"><img src="assets/how-analyse-plan.webp" alt="Analyse en plan" /></div>
-          <div class="how__pane" data-pane="2" style="display:none"><img src="assets/how-bouwen.webp" alt="Bouwen en implementeren" /></div>
-          <div class="how__pane" data-pane="3" style="display:none"><img src="assets/how-overdracht.webp" alt="Overdracht" /></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ SERVICES (pale teal panel) ============ -->
-  <section class="section" style="padding-top: clamp(36px, 4vw, 48px);">
+  <section class="section" style="padding-bottom: clamp(36px, 4vw, 48px);">
     <div class="container">
       <div class="panel panel--teal">
         <div class="wm wm--diensten" aria-hidden="true">
@@ -444,22 +400,50 @@
     </div>
   </section>
 
-  <!-- ============ TALYND ADVANTAGE (white, Cambio-style) ============ -->
-  <section class="section">
+  <!-- ============ HOW IT WORKS (feature tabs) ============ -->
+  <section class="section" style="padding-top: clamp(36px, 4vw, 48px);">
     <div class="container">
-      <div class="adv">
-        <div class="adv__media fade-in-up">
-          <img src="assets/adv-building.webp" alt="Modern kantoorgebouw, glasgevel tegen blauwe lucht" loading="lazy" />
+      <div class="how dproc">
+        <div class="how__intro">
+          <span class="eyebrow">Hoe het werkt</span>
+          <h2 class="how__title">Minder handwerk in je <span class="how__rotate"><span class="how__rotate__word" id="howRotator">sales</span></span></h2>
+          <a href="diensten" class="btn btn--primary how__cta">Ontdek onze aanpak</a>
+          <div class="tabs" id="tabs">
+            <div class="tab active" data-tab="0">
+              <div class="tab__main">
+                <div class="tab__label">Gesprek op locatie</div>
+                <p class="tab__body">We komen langs en kijken waar tijd verloren gaat. Het eerste gesprek is gratis en zonder verplichting.</p>
+              </div>
+              <div class="tab__num">01</div>
+            </div>
+            <div class="tab" data-tab="1">
+              <div class="tab__main">
+                <div class="tab__label">Plan</div>
+                <p class="tab__body">Je krijgt een helder plan: wat we bouwen, wat het koppelt en in welke volgorde. Zo weet je vooraf wat je krijgt.</p>
+              </div>
+              <div class="tab__num">02</div>
+            </div>
+            <div class="tab" data-tab="2">
+              <div class="tab__main">
+                <div class="tab__label">Bouwen en koppelen</div>
+                <p class="tab__body">We bouwen het systeem en koppelen het aan wat je al gebruikt. Je test mee en stuurt bij waar nodig.</p>
+              </div>
+              <div class="tab__num">03</div>
+            </div>
+            <div class="tab" data-tab="3">
+              <div class="tab__main">
+                <div class="tab__label">Overdragen</div>
+                <p class="tab__body">Je team krijgt training en alles op papier. Daarna werken jullie zelf verder, zonder verplicht abonnement.</p>
+              </div>
+              <div class="tab__num">04</div>
+            </div>
+          </div>
         </div>
-        <div class="adv__right fade-in-up" data-delay="1">
-          <h2 class="adv__title">Gebouwd om over te dragen, niet om je vast te zetten</h2>
-          <p class="adv__lead">We combineren moderne AI-tooling met de dagelijkse praktijk van vastgoed en bouwen automatisering die past bij hoe jij werkt, niet andersom.</p>
-          <ul class="adv__points">
-            <li><b>Op locatie</b><span>We komen langs en leren je proces van binnenuit kennen voordat we iets bouwen.</span></li>
-            <li><b>Overdraagbaar</b><span>Alles wat we bouwen documenteren we en dragen we over aan je team.</span></li>
-            <li><b>Geen lock-in</b><span>Je team beheert het systeem zelfstandig. Geen black box, geen abonnement op ons.</span></li>
-          </ul>
-          <a href="over-ons" class="btn btn--primary">Leer ons kennen</a>
+        <div class="how__panel fade-in-up" data-delay="1">
+          <div class="how__pane" data-pane="0"><img src="assets/how-intake-locatie.webp" alt="Gesprek op locatie" /></div>
+          <div class="how__pane" data-pane="1" style="display:none"><img src="assets/how-analyse-plan.webp" alt="Plan" /></div>
+          <div class="how__pane" data-pane="2" style="display:none"><img src="assets/how-bouwen.webp" alt="Bouwen en koppelen" /></div>
+          <div class="how__pane" data-pane="3" style="display:none"><img src="assets/how-overdracht.webp" alt="Overdragen" /></div>
         </div>
       </div>
     </div>
@@ -718,6 +702,28 @@
     </div>
   </section>
 
+  <!-- ============ TWEE MENSEN (zelfde opbouw als de voordeel-sectie) ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="adv adv--team">
+        <div class="adv__duo fade-in-up">
+          <img src="assets/team-rayco.webp" alt="Rayco de Bruijn" width="780" height="975" loading="lazy" />
+          <img src="assets/team-dimas.webp" alt="Dimas Smit" width="780" height="975" loading="lazy" />
+        </div>
+        <div class="adv__right fade-in-up" data-delay="1">
+          <h2 class="adv__title">Twee mensen, geen bureau</h2>
+          <p class="adv__lead">Je werkt direct met de mensen die het bouwen. Geen accountmanager ertussen.</p>
+          <ul class="adv__points">
+            <li><b>Rayco</b><span>Zet de techniek neer die je salesproces automatiseert.</span></li>
+            <li><b>Dimas</b><span>Bouwt de websites en apps en brengt je klantproces in kaart.</span></li>
+            <li><b>Samen</b><span>Het eerste gesprek doen we samen, bij jou op locatie.</span></li>
+          </ul>
+          <a href="over-ons" class="btn btn--primary">Leer ons kennen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CTA (dark teal) ============ -->
   <div class="cta-wrap">
     <div class="container">
@@ -728,9 +734,9 @@
   <!-- /include:mark -->
         </div>
         <div class="cta__inner">
-          <h2>Klaar om je proces te <em>automatiseren?</em></h2>
-          <p>Plan een gratis intakegesprek. We komen langs, kijken naar je proces en vertellen eerlijk of we waarde kunnen toevoegen.</p>
-          <a href="contact" class="btn btn--secondary btn--lg">Plan een gratis intakegesprek</a>
+          <h2>Waar zit bij jou het herhaalwerk?</h2>
+          <p>In één gesprek zie je wat we kunnen overnemen. We komen langs en zeggen eerlijk of we iets voor je kunnen doen.</p>
+          <a href="contact" class="btn btn--secondary btn--lg">Plan een gratis gesprek</a>
         </div>
       </div>
     </div>
@@ -787,7 +793,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=ed58bd5e"></script>
+  <script src="js/main.js?v=ac38cee0"></script>
   <script>
     /* ---------- How panes show/hide ---------- */
     (function () {
@@ -882,7 +888,7 @@
     (function () {
       var el = document.getElementById("howRotator");
       if (!el) return;
-      var words = ["schalen", "groeien", "versnellen", "winnen"];
+      var words = ["sales", "marketing", "planning", "administratie"];
       var i = 0;
       setInterval(function () {
         i = (i + 1) % words.length;

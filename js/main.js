@@ -12,7 +12,7 @@ if (announce && announceClose) {
 }
 
 /* ---------- Hero video: ensure autoplay loop ---------- */
-document.querySelectorAll("video").forEach((vid) => {
+document.querySelectorAll("video[autoplay]").forEach((vid) => {
   vid.muted = true;
   const tryPlay = () => { const p = vid.play(); if (p && p.catch) p.catch(() => {}); };
   tryPlay();
@@ -297,7 +297,7 @@ function animateCount(el) {
   };
   const herstart = () => {
     if (document.hidden) return;
-    if (clip.error || clip.readyState === 0) clip.load();
+    if (clip.error) clip.load();
     speel();
   };
   clip.addEventListener("error", () => setTimeout(() => { clip.load(); speel(); }, 400));
