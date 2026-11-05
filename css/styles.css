@@ -597,10 +597,10 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 
 .cta__inner, .footer .container, .footer__close { position: relative; z-index: 1; }
 @media (max-width: 760px) {
-  .wm--cta { width: 110px; left: -44px; top: -44px; bottom: auto; }
+  .wm--cta { width: 84px; left: -32px; top: -34px; bottom: auto; }
   .wm--footer { display: block; width: 120px; right: -34px; top: 10px; }
-  .wm--diensten { left: auto; right: -56px; top: -56px; bottom: auto; width: 170px; }
-  .wm--portfolio { width: 200px; right: -64px; top: -56px; }
+  .wm--diensten { left: auto; right: -34px; top: -38px; bottom: auto; width: 96px; }
+  .wm--portfolio { width: 104px; right: -36px; top: -40px; }
 }
 
 /* Hero: Tot uw dienst, stil naast de knop */
