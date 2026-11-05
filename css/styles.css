@@ -633,10 +633,8 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .shot { position: absolute; inset: 0; display: block; }
 .shot__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; transition: opacity 0.45s ease; }
 .shot__img.is-aan { opacity: 1; }
-.shot__cta { position: absolute; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: var(--white); color: var(--black); font-size: 13px; font-weight: 500; box-shadow: 0 6px 18px rgba(4,14,31,0.16); transition: transform 0.2s ease; }
-.shot__cta svg { width: 15px; height: 15px; }
-.shot:hover .shot__cta { transform: translateY(-2px); }
-@media (max-width: 760px) { .shot__cta { right: 10px; bottom: 10px; padding: 7px 11px; font-size: 12px; } }
+.rc-web-cta { z-index: 3; text-decoration: none; }
+@media (hover: hover) { .case__panel:hover .rc-web-cta { opacity: 1; transform: translateY(0); } }
 
 /* Footer: het woord komt eenmalig en rustig omhoog, letter voor letter */
 .footer__letters { display: inline-block; font-style: normal; }
