@@ -599,27 +599,14 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 /* Subpagina's: zelfde beeldmerk, afgesneden door de rand van het vlak waar het in staat, per vlak een eigen kleurfamilie */
 .wm--blauw { --wm1: #eef8fd; --wm2: #e5f4fb; --wm3: #bfdff0; --wm4: #f4fbfe; --wm5: #cde6f4; --wm6: #d8edf8; --wml: rgba(30,110,160,0.2); }
 .wm--tealton { --wm1: #2f9e98; --wm2: #27968f; --wm3: #006f69; --wm4: #3aa7a1; --wm5: #148a84; --wm6: #1c8f89; --wml: rgba(255,255,255,0.2); --wmo: rgba(255,255,255,0.4); }
-.wm--hero { right: -110px; bottom: -100px; width: 230px; }
-.wm--kaartje { right: -64px; bottom: -96px; width: 200px; }
-.wm--missie { left: -60px; bottom: -70px; width: clamp(200px, 21vw, 300px); }
-.wm--proc { right: -70px; top: -60px; width: clamp(220px, 22vw, 340px); }
-.wm--zij { left: -80px; bottom: 40px; width: clamp(240px, 24vw, 380px); }
-.wm--tealkaart { right: -56px; bottom: -60px; width: clamp(180px, 17vw, 240px); }
 .wm--tealbutler { right: 34px; bottom: -1px; width: 176px; aspect-ratio: 400 / 430; }
-.wm--cta-sub { left: -17.5%; }
 .sierrand { position: absolute; top: 0; left: 0; width: 100%; height: 460px; overflow: hidden; pointer-events: none; }
-.wm--legal { right: -70px; top: 96px; width: clamp(200px, 20vw, 300px); }
 .wm--404 { right: clamp(32px, 9vw, 140px); bottom: -1px; width: 220px; aspect-ratio: 400 / 430; }
 .e404 { position: relative; overflow: hidden; }
 .e404 > :not(.wm) { position: relative; z-index: 1; }
 .aival__card, .mission, .proc, .contact-sec { position: relative; overflow: hidden; }
 .aival__card > :not(.wm), .mission > .container, .proc > .container, .contact-sec > .container { position: relative; z-index: 1; }
 @media (max-width: 1100px) {
-  .wm--hero, .wm--cta-sub { width: 84px; left: auto; right: -32px; top: -34px; bottom: auto; }
-  .wm--cta-sub { left: -32px; right: auto; }
-  .wm--proc { width: 104px; right: -36px; top: -40px; }
-  .wm--tealbutler { right: 16px; width: 104px; }
-  .wm--legal { width: 84px; right: -32px; top: 74px; }
 }
 @media (max-width: 760px) {
   .wm--cta { width: 84px; left: -32px; top: -34px; bottom: auto; }
@@ -627,11 +614,6 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
   .wm--diensten { left: auto; right: 16px; bottom: -1px; width: 112px; }
   .panel--teal { padding-bottom: 124px; }
   .wm--portfolio { width: 104px; right: -36px; top: -40px; }
-  .wm--kaartje { width: 84px; right: -30px; bottom: -30px; }
-  .wm--missie { width: 104px; left: auto; right: -36px; top: -40px; bottom: auto; }
-  .wm--zij { width: 84px; left: auto; right: -32px; top: -6px; bottom: auto; }
-  .wm--tealkaart { width: 84px; right: -30px; bottom: -30px; }
-  .val-item--teal:has(.wm--tealbutler) { padding-bottom: 124px; }
   .wm--404 { right: 16px; width: 112px; }
 }
 
@@ -726,3 +708,34 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 /* Butler in het dienstenblok: tone-on-tone, zelfde vlakken en lijn als het strikje */
 .wm__lijn { stroke: var(--wml); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
 .wm__oog { fill: none; stroke-linecap: round; stroke: var(--wmo, rgba(0,132,125,0.34)); }
+
+/* Subpagina's: merkteken grotendeels in beeld. Pc: hoek met kleine afsnijding. Tablet en mobiel: op de onderrand of boven de kop, volledig zichtbaar */
+.wm--hero { width: clamp(110px, 9vw, 140px); right: 12px; bottom: -18px; }
+.wm--kaartje { width: 120px; right: 16px; bottom: -22px; }
+.wm--missie { left: -34px; bottom: -44px; width: clamp(200px, 21vw, 300px); }
+.wm--proc { right: -44px; top: -44px; width: clamp(220px, 22vw, 340px); }
+.wm--zij { left: -50px; bottom: 40px; width: clamp(240px, 24vw, 380px); }
+.wm--tealkaart { right: -14px; bottom: -22px; width: clamp(120px, 10vw, 150px); }
+.wm--cta-sub { width: clamp(200px, 17vw, 240px); left: -5%; bottom: -10%; }
+.wm--legal { right: -50px; top: 96px; width: clamp(200px, 20vw, 300px); }
+@media (max-width: 1100px) {
+  .dhero-wrap .dhero, .phero-wrap .phero, .ahero-wrap .ahero { padding-bottom: 108px; }
+  .wm--hero { width: 84px; left: 50%; right: auto; transform: translateX(-50%); bottom: -12px; }
+  .proc:has(.wm--proc) { padding-top: 124px; }
+  .wm--proc { width: 60px; left: 50%; right: auto; transform: translateX(-50%); top: 30px; }
+  .contact-sec:has(.wm--zij) { padding-top: 112px; }
+  .wm--zij { width: 80px; left: auto; right: 18px; top: 14px; bottom: auto; }
+  .cta:has(.wm--cta-sub) { padding-top: 108px; }
+  .wm--cta-sub { width: 56px; left: 50%; right: auto; transform: translateX(-50%); top: 26px; bottom: auto; }
+  .val-item--teal:has(.wm--tealbutler) { padding-bottom: 124px; }
+  .wm--tealbutler { right: 16px; width: 104px; }
+  .wm--legal { width: 72px; right: 12px; top: 80px; }
+}
+@media (max-width: 760px) {
+  .aival__card:has(.wm--kaartje) { padding-bottom: 96px; }
+  .wm--kaartje { width: 80px; right: 18px; bottom: -12px; }
+  .mission:has(.wm--missie) { padding-top: 124px; }
+  .wm--missie { width: 64px; left: 14px; top: 34px; bottom: auto; }
+  .wm--tealkaart { width: 96px; right: 14px; bottom: -18px; }
+  .wm--legal { right: 8px; }
+}
