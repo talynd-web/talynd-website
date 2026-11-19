@@ -2,6 +2,7 @@
 // Draaien: node build.mjs
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { htmlNaarMd } from "./agent/html-naar-md.mjs";
 
 const PAGES = readdirSync(".").filter((f) => f.endsWith(".html"));
 const header = readFileSync("partials/header.html", "utf8").trimEnd();
@@ -24,6 +25,21 @@ for (const page of PAGES) {
   html = html.replace(INC_RE, (_, naam) => `  <!-- include:${naam} -->\n${readFileSync(`partials/${naam}.svg`, "utf8").trimEnd()}\n  <!-- /include:${naam} -->`);
   html = html.replace(/css\/styles\.css\?v=[\w-]+/g, `css/styles.css?v=${cssV}`);
   html = html.replace(/js\/main\.js\?v=[\w-]+/g, `js/main.js?v=${jsV}`);
+  // Is Agentic (19-11): Markdown-versie voor AI-agents naast de pagina, en een verwijzing ernaar in de kop
+  const md = slug === "404" ? null : `${slug}.md`;
+  html = html.replace(/\n  <link rel="alternate" type="text\/markdown"[^>]*>/g, "");
+  if (md) html = html.replace(/(\n  <link rel="canonical"[^>]*>)/, `$1\n  <link rel="alternate" type="text/markdown" href="/${md}">`);
   writeFileSync(page, html);
+  if (md) writeFileSync(md, htmlNaarMd(html));
   console.log(`${page}: nav${FOOT_RE.test(html) ? " + footer" : ""}, css ${cssV}, js ${jsV}`);
 }
+
+// Is Agentic (19-11): wat een agent krijgt op een pad dat niet bestaat (de middleware geeft dit met status 404)
+writeFileSync("404.md", `# Pagina niet gevonden
+
+Deze pagina bestaat niet op talynd.com. Een overzicht van alle pagina's en wanneer je Talynd inschakelt staat in [llms.txt](https://talynd.com/llms.txt). Alle pagina's staan ook in de [sitemap](https://talynd.com/sitemap.xml).
+
+- [Home](https://talynd.com/)
+- [Contact](https://talynd.com/contact)
+`);
+console.log("404.md en Markdown per pagina geschreven");

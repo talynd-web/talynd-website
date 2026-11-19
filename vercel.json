@@ -1,30 +1,104 @@
 {
   "cleanUrls": true,
   "redirects": [
-    { "source": "/cases/via-vastgoed", "destination": "/portfolio#via-vastgoed", "permanent": true },
-    { "source": "/cases/via-vastgoed.html", "destination": "/portfolio#via-vastgoed", "permanent": true },
-    { "source": "/cases/yns", "destination": "/portfolio#yns", "permanent": true },
-    { "source": "/cases/yns.html", "destination": "/portfolio#yns", "permanent": true },
-    { "source": "/en", "destination": "/", "permanent": true },
-    { "source": "/en/:path*", "destination": "/", "permanent": true }
+    {
+      "source": "/cases/via-vastgoed",
+      "destination": "/portfolio#via-vastgoed",
+      "permanent": true
+    },
+    {
+      "source": "/cases/via-vastgoed.html",
+      "destination": "/portfolio#via-vastgoed",
+      "permanent": true
+    },
+    {
+      "source": "/cases/yns",
+      "destination": "/portfolio#yns",
+      "permanent": true
+    },
+    {
+      "source": "/cases/yns.html",
+      "destination": "/portfolio#yns",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/over-ons",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacybeleid",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/css/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/js/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/((?!api/|.*\\..*).*)",
+      "headers": [
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
       ]
     }
   ]

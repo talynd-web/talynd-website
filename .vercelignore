@@ -2,3 +2,5 @@ build.mjs
 partials/
 .taste-skill/
 .claude/
+agent/*.test.mjs
+agent/html-naar-md.mjs
