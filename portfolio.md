@@ -384,7 +384,7 @@ Onze eerste klanten komen uit het vastgoed, dus daar zit onze diepste ervaring. 
 
 ### Hoe lang duurt een traject?
 
-De meeste trajecten lopen van intake tot werkend systeem in vier tot zes weken. De exacte planning hangt af van de omvang en de beschikbare data, maar we werken in korte, concrete stappen zodat je snel resultaat ziet.
+De meeste trajecten lopen van intake tot werkend systeem in twee tot vier weken. De exacte planning hangt af van de omvang en de beschikbare data, maar we werken in korte stappen zodat je snel resultaat ziet.
 
 ### Wat als wij al met bepaalde tools werken?
 
@@ -396,11 +396,11 @@ Nee. Wij bouwen de techniek en zorgen dat je team het daarna zelf kan beheren. B
 
 ### Wat gebeurt er na de oplevering?
 
-Het systeem is van jou en je beheert het zelfstandig. We blijven beschikbaar voor onderhoud en doorontwikkeling, en komen graag langs als er iets nieuws nodig is. Geen verplicht abonnement, wel een vast aanspreekpunt.
+Het systeem is van jou en je beheert het zelfstandig. We blijven beschikbaar voor onderhoud en doorontwikkeling, en komen graag langs als er iets nieuws nodig is. Je houdt één vast aanspreekpunt.
 
 ### Is onze data veilig?
 
-Ja. We bouwen volgens het principe van security by design, werken met versleutelde verbindingen en gerenommeerde infrastructuur, en verwerken niet meer data dan nodig. Meer hierover lees je op onze [beveiligingspagina](https://talynd.com/beveiliging).
+We bouwen beveiliging vanaf het begin in, werken met versleutelde verbindingen en verwerken niet meer gegevens dan nodig. Wat we precies doen staat op onze [beveiligingspagina](https://talynd.com/beveiliging).
 
 ## Wordt jouw bedrijf de volgende case?
 
