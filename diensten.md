@@ -1,8 +1,8 @@
-# Alles wat we bouwen, en overdragen.
+# Zes bouwstenen die je handwerk overnemen.
 
 Diensten
 
-Geen advies, geen abonnement. Concrete systemen die je leads, data en opvolging automatiseren, en die jij daarna zelf beheert.
+Concrete systemen die je leads, data en opvolging overnemen. Na de oplevering staat alles op jouw naam en beheer je het zelf.
 
 Vertrouwd door
 
