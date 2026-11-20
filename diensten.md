@@ -96,11 +96,11 @@ Saar
 
 [Reformed Collective, bekijk de case](https://talynd.com/portfolio#reformed-collective)
 
-## FAQ
+## Veelgestelde vragen
 
 ### Kunnen we één losse dienst afnemen, of moet het een compleet traject zijn?
 
-Allebei kan. Soms bouwen we alleen mailautomatisering of één koppeling, soms een compleet systeem van intake tot CRM. In de gratis intake bepalen we samen de kleinste set die het meeste oplevert, zonder dat je meteen aan een groot traject vastzit.
+Allebei kan. Soms bouwen we alleen mailautomatisering of één koppeling, soms een compleet systeem van intake tot CRM. In het eerste gesprek bepalen we samen de kleinste set die het meeste oplevert.
 
 ### Wat kost het om een systeem te laten bouwen?
 
@@ -108,7 +108,7 @@ Dat hangt af van wat je nodig hebt. Omdat we op maat bouwen, krijg je na de inta
 
 ### Hoe snel staat een dienst live?
 
-De meeste systemen bouwen we in vier tot zes weken van intake tot oplevering. Losse automatiseringen vaak sneller. We werken in korte, concrete stappen zodat je onderweg al resultaat ziet in plaats van pas aan het eind.
+Dat hangt af van de omvang. Losse automatiseringen staan het snelst. We werken in korte stappen en spreken per stap een datum af, zodat je onderweg al resultaat ziet.
 
 ### Bouwen jullie ook maatwerk dat niet in dit rijtje staat?
 
@@ -120,7 +120,7 @@ Vrijwel altijd. We koppelen aan bestaande CRM's en tools zoals Pipedrive en Acti
 
 ### Wat gebeurt er met onderhoud na de oplevering?
 
-Het systeem is van jou en draait zelfstandig. We leveren documentatie en training mee, zodat je team het zelf beheert, en blijven beschikbaar voor onderhoud of doorontwikkeling, zonder verplicht abonnement.
+Het systeem is van jou en draait zelfstandig. Je krijgt documentatie en training zodat je team het zelf beheert, en je kunt ons erbij halen voor onderhoud of een uitbreiding.
 
 ## Weet je niet wat je nodig hebt?
 
