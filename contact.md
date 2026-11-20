@@ -24,7 +24,7 @@ Tijdens een traject zitten we naast je, niet tegenover je. We denken mee over he
 
 Succes is voor ons niet een klant die afhankelijk blijft, maar een team dat het systeem zelf beheert. Daarom documenteren we alles en trainen we je mensen, zodat je verder kunt zonder ons.
 
-Bouwen. Implementeren. Overdragen.
+Wij bouwen het. Jij houdt het.
 
 Twee mensen uit Amsterdam die het herhaalwerk in je bedrijf overnemen.
 

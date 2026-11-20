@@ -48,7 +48,7 @@ Op deze voorwaarden is Nederlands recht van toepassing. Geschillen worden voorge
 
 Heb je vragen over deze voorwaarden? Neem contact met ons op via [info@talynd.com](mailto:info@talynd.com).
 
-Bouwen. Implementeren. Overdragen.
+Wij bouwen het. Jij houdt het.
 
 Twee mensen uit Amsterdam die het herhaalwerk in je bedrijf overnemen.
 

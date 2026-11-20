@@ -74,7 +74,7 @@ We nemen passende technische en organisatorische maatregelen om je gegevens te b
 
 We kunnen dit privacybeleid van tijd tot tijd aanpassen. De meest actuele versie staat altijd op deze pagina, met de datum van de laatste wijziging bovenaan.
 
-Bouwen. Implementeren. Overdragen.
+Wij bouwen het. Jij houdt het.
 
 Twee mensen uit Amsterdam die het herhaalwerk in je bedrijf overnemen.
 

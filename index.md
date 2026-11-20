@@ -1,14 +1,14 @@
 # Meer winst zonder extra personeel.
 
-Bouwen. Implementeren. Overdragen.
+Wij bouwen het. Jij houdt het.
 
-Wij nemen het herhaalwerk in je bedrijf over.
+Wij halen het herhaalwerk uit je bedrijf.
 
-Eén gesprek is genoeg om te zien waar het vastloopt. Daarna bouwen wij de tools die het werk overnemen.
+Eén gesprek is genoeg om te zien waar het vastloopt.
 
-[Plan een gesprek](https://talynd.com/contact)
+[Gratis kennismaking](https://talynd.com/contact)
 
-Wat doen we bij Talynd? Bekijk het filmpje, 33 s
+In 33 seconden zie je hoe Talynd werkt.
 
 ## Jouw digitale butler
 
@@ -146,7 +146,7 @@ In één gesprek zie je wat we kunnen overnemen. We komen langs en zeggen eerlij
 
 [Plan een gratis gesprek](https://talynd.com/contact)
 
-Bouwen. Implementeren. Overdragen.
+Wij bouwen het. Jij houdt het.
 
 Twee mensen uit Amsterdam die het herhaalwerk in je bedrijf overnemen.
 

@@ -126,7 +126,7 @@ Plan een gratis intake. We komen langs, kijken naar je proces en vertellen eerli
 
 [Plan een gratis intake](https://talynd.com/contact)
 
-Bouwen. Implementeren. Overdragen.
+Wij bouwen het. Jij houdt het.
 
 Twee mensen uit Amsterdam die het herhaalwerk in je bedrijf overnemen.
 

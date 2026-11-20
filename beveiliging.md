@@ -38,7 +38,7 @@ Ontdek je een kwetsbaarheid of een mogelijk beveiligingsprobleem in een van onze
 
 Heb je vragen over hoe we omgaan met beveiliging? Neem gerust contact op via [info@talynd.com](mailto:info@talynd.com). Lees ook ons [privacybeleid](https://talynd.com/privacybeleid) voor meer over de verwerking van persoonsgegevens.
 
-Bouwen. Implementeren. Overdragen.
+Wij bouwen het. Jij houdt het.
 
 Twee mensen uit Amsterdam die het herhaalwerk in je bedrijf overnemen.
 
