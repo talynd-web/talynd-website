@@ -6,7 +6,7 @@ Bel ons of stuur een bericht. Geen verkooppraat, gewoon een eerlijk gesprek over
 
 ### Bedankt, bericht ontvangen
 
-Je bericht staat bij ons binnen. Je hoort binnen één werkdag van ons, per mail of telefoon.
+Je bericht staat bij ons binnen. We nemen snel contact met je op.
 
 Waar we voor staan
 
