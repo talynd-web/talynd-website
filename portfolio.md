@@ -60,7 +60,7 @@ Spaans vastgoed · bemiddeling voor Nederlandse kopers · [viavastgoed.com](http
 
 De uitdaging
 
-VIA Vastgoed werkte met een verouderd salesproces. Leads kwamen binnen via meerdere kanalen, werden handmatig opgevolgd en vielen weg. Geen CRM-structuur, geen automatische opvolging, en geen manier om het woningaanbod live op de website te tonen.
+VIA Vastgoed bemiddelt in Spaans vastgoed voor Nederlandse kopers. Leads kwamen via meerdere kanalen binnen en werden met de hand opgevolgd. Het aanbod uit het Spaanse CRM stond nog niet live op de website.
 
 Wat we bouwden
 
@@ -72,39 +72,37 @@ Zoeken op de kaart, op website en app
 
 - Zelfde filters als de lijst (plaats, budget, slaapkamers) en met &eacute;&eacute;n knop wisselen tussen lijst en kaart.
 
-- De kaart is ook de ingang vanaf de homepage-hero, het menu en de footer, zodat bezoekers er vanzelf terechtkomen.
+- De kaart is ook de ingang vanaf de homepage, het menu en de footer, zodat bezoekers er vanzelf terechtkomen.
 
 Van lead tot deal gesloten
 
-- 8-fasen Pipedrive pipeline ingericht: van Nieuwe Lead tot Deal Gesloten.
+- Pipedrive ingericht met acht fases, van nieuwe lead tot gesloten deal.
 
-- 4 automatiserings-flows: beltaak binnen 24u bij nieuwe lead, folder verzenden na Google Meet, follow-up bij 3 dagen stilte, onboarding bij gewonnen deal.
+- Vier automatische acties: beltaak binnen 24 uur bij een nieuwe lead, brochure na het videogesprek, herinnering na drie dagen stilte en een startmail bij een gewonnen deal.
 
-- 7-mail nurture campagne in ActiveCampaign: van eerste interesse tot Google Meet-uitnodiging.
+- Mailreeks van zeven berichten in ActiveCampaign, van eerste interesse tot de uitnodiging voor een videogesprek.
 
 - Leads via elk kanaal worden automatisch gevolgd. Geen handmatig werk meer.
 
-17.611+ woningen live op de website
+Het hele Spaanse woningaanbod live op de website
 
-- Cloudflare Worker gebouwd als beveiligde API-proxy tussen de website en Inmobalia CRM.
+- Beveiligde koppeling tussen de website en het Inmobalia CRM van VIA.
 
-- Toegang tot het volledige Spaanse MLS: live, met caching, foutafhandeling en token-authenticatie.
+- Het hele Spaanse aanbod komt live binnen, en blijft staan als de bron even uitvalt.
 
 - Woningoverzicht met filterbalk (regio, type, slaapkamers, prijs) plus een detailpagina per woning.
 
-- Zelfde infrastructuur herbruikbaar voor elke nieuwe klant. Geen dubbel werk.
+Rendementscalculator
 
-AI Rendementscalculator
+- Rekentool op maat, met de kosten en belastingen per Spaanse regio erin.
 
-- Maatwerk rekentool gebouwd op Spaanse vastgoedlogica: regio-specifieke belastingtarieven (Andalusie 7%, Valencia 10%, Canarische Eilanden 6,5%).
+- De koper vult zijn budget en eventuele hypotheek in en ziet direct de maximale koopprijs, de aankoopkosten en het rendement.
 
-- Klant vult eigen budget en optionele hypotheek in. Calculator berekent direct maximale koopprijs, aankoopkosten en netto rendement.
+- Verhuur erbij rekenen: vakantie of langdurig, met de bezetting en de belasting erin. Je ziet het rendement en wat er per maand overblijft.
 
-- Verhuurmodule: vakantie of langdurig, bezettingsgraad, IRNR-belasting. Output is bruto/netto rendement plus maandelijkse cashflow.
+- De brochures die bij die koopprijs passen komen er automatisch bij.
 
-- Matcht automatisch de juiste brochures op basis van berekende koopprijs.
-
-- Live op eigen URL, inzetbaar als salestool tijdens en na het intakegesprek.
+- Staat live op een eigen adres, en het team gebruikt hem tijdens en na het gesprek met de koper.
 
 App in de App Store en op Google Play
 
@@ -118,53 +116,13 @@ App in de App Store en op Google Play
 
 - Inloggen met Google of Apple. Door Apple en Google goedgekeurd en live in beide stores.
 
-01 - Invoer & instellingen
+01 Invoer en instellingen
 
-02 - Budget & rendement
+02 Budget en rendement
 
-03 - Passende projecten
+03 Passende projecten
 
 1 / 3
-
-VIA Vastgoed Pipeline8 fasen
-
-Nieuwe Lead2
-
-Erik van Dam
-
-€ 285.000
-
-Andalusie
-
-Sophie de Wit
-
-€ 340.000
-
-Costa del Sol
-
-Google Meet1
-
-Thomas Bakker
-
-€ 420.000
-
-Valencia
-
-Folder Verzonden1
-
-Anna Jansen
-
-€ 295.000
-
-Malaga
-
-Deal Gesloten1
-
-Pieter Verhoeven
-
-€ 375.000
-
-✓ Koopakte getekend
 
 [Bekijk de live site](https://viavastgoed.com)
 
@@ -172,11 +130,9 @@ Pieter Verhoeven
 
 [Bekijk de live site](https://viavastgoed.com)
 
-[SCREENSHOT: AI Rendementscalculator]
+Gekoppeld aan
 
-Gebruikte tools
-
-Pipedrive ActiveCampaign Cloudflare Workers Inmobalia API ManyChat Calendly Capacitor App Store Google Play
+Pipedrive ActiveCampaign Inmobalia ManyChat Calendly App Store Google Play
 
 Case 03
 
