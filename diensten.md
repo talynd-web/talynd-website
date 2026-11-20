@@ -6,17 +6,19 @@ Concrete systemen die je leads, data en opvolging overnemen. Na de oplevering st
 
 Vertrouwd door
 
-## De technologie is niet het probleem. De implementatie wel.
+## AI aanzetten kan iedereen. Inbouwen in je proces niet.
 
-Ruim acht op de tien organisaties gebruiken inmiddels AI. Toch vertaalt slechts een kleine groep koplopers het naar meetbaar rendement. Het verschil zit niet in de tools, maar in de uitvoering.
+Je hebt een paar AI-tools in huis en toch doet iemand het werk nog met de hand. Er was nooit een moment om het echt in te bouwen.
 
-## Klaar om bij de koplopers te horen?
+## Wil je weten waar het bij jou vastloopt?
 
-Onderzoek van MIT en RAND laat zien dat 70 tot 85% van de AI-initiatieven de verwachte resultaten niet haalt. Bijna twee derde van de organisaties blijft steken in pilots die nooit in productie komen.
+Het blijft vaak bij een proef die naast het werk loopt. Zodra het druk wordt pakt iedereen het oude bestand er weer bij.
 
-De koplopers doen het anders. Ze starten bij een concreet probleem, automatiseren alleen wat echt tijd of geld oplevert, en bouwen het in in het dagelijkse proces in plaats van het als los experiment te laten bestaan.
+Het werkt wel als je begint bij één concreet probleem, alleen automatiseert wat tijd of geld oplevert, en het inbouwt in het werk dat er elke dag al is.
 
-Precies zo werken wij, van het eerste gesprek tot een werkend systeem dat jij daarna zelf beheert. Benieuwd wat dat voor jouw organisatie betekent? [Neem contact met ons op](https://talynd.com/contact).
+Zo pakken wij het aan, van het eerste gesprek tot het moment dat jouw team het zelf draait.
+
+[Gratis kennismaking](https://talynd.com/contact)
 
 ## Van eerste gesprek tot werkend systeem dat jij beheert.
 
