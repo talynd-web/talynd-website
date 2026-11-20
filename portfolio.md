@@ -2,7 +2,7 @@
 
 Portfolio
 
-Vijf klanten, vijf verschillende uitdagingen. Allemaal opgelost met een werkend systeem.
+Vijf klanten, vijf systemen die nu zonder ons draaien.
 
 Case 01
 
@@ -12,7 +12,7 @@ Vastgoedfondsen · [zekerwonenfondsen.nl](https://www.zekerwonenfondsen.nl/nl)
 
 De uitdaging
 
-Bij beleggen draait alles om vertrouwen, en de site liep achter op het fonds: traag op mobiel en slecht vindbaar. Het fonds wilde een site die rust en zekerheid uitstraalt, die het team zelf kan bijwerken en waar elke aanvraag direct op de juiste plek binnenkomt.
+Bij beleggen draait alles om vertrouwen, en dat moest de site ook uitstralen. Het fonds wilde een plek die rust geeft, die het team zelf kan bijwerken en waar elke aanvraag direct op de juiste plek binnenkomt.
 
 Wat we bouwden
 
@@ -51,10 +51,6 @@ Aanvragen en beheerportaal
 - Inschrijven gaat online, met een duidelijk stappenplan ernaast.
 
 [Bekijk de live site](https://www.zekerwonenfondsen.nl/nl)
-
-Wat er nog komt
-
-Pipedrive verder inrichten met alle fases Bestaande contacten overzetten naar één CRM Opvolging van aanvragen automatiseren
 
 Case 02
 
