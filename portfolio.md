@@ -418,9 +418,9 @@ Ja. We bouwen volgens het principe van security by design, werken met versleutel
 
 ## Wordt jouw bedrijf de volgende case?
 
-Plan een gratis intake. We komen langs, kijken naar je proces en vertellen eerlijk wat we voor je kunnen bouwen.
+We komen langs en zeggen eerlijk of we iets voor je kunnen doen.
 
-[Plan een gratis intake](https://talynd.com/contact)
+[Gratis kennismaking](https://talynd.com/contact)
 
 Wij bouwen het. Jij houdt het.
 

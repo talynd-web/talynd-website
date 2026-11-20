@@ -120,11 +120,11 @@ Vrijwel altijd. We koppelen aan bestaande CRM's en tools zoals Pipedrive en Acti
 
 Het systeem is van jou en draait zelfstandig. We leveren documentatie en training mee, zodat je team het zelf beheert, en blijven beschikbaar voor onderhoud of doorontwikkeling, zonder verplicht abonnement.
 
-## Niet zeker wat jij nodig hebt?
+## Weet je niet wat je nodig hebt?
 
-Plan een gratis intake. We komen langs, kijken naar je proces en vertellen eerlijk wat we voor je kunnen bouwen.
+We komen langs, kijken naar je proces en zeggen eerlijk wat we voor je kunnen bouwen.
 
-[Plan een gratis intake](https://talynd.com/contact)
+[Gratis kennismaking](https://talynd.com/contact)
 
 Wij bouwen het. Jij houdt het.
 

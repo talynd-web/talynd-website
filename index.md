@@ -142,9 +142,9 @@ Reformed Collective
 
 ## Waar zit bij jou het herhaalwerk?
 
-In één gesprek zie je wat we kunnen overnemen. We komen langs en zeggen eerlijk of we iets voor je kunnen doen.
+We komen langs en zeggen eerlijk of we iets voor je kunnen doen.
 
-[Plan een gratis gesprek](https://talynd.com/contact)
+[Gratis kennismaking](https://talynd.com/contact)
 
 Wij bouwen het. Jij houdt het.
 

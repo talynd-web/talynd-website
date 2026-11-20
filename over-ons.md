@@ -58,9 +58,9 @@ Succes is voor ons niet een klant die afhankelijk blijft, maar een team dat het 
 
 ## Benieuwd wat we voor jou kunnen bouwen?
 
-Plan een gratis intake. We komen langs, kijken naar je proces en vertellen eerlijk wat we kunnen opleveren.
+Plan een gratis kennismaking. We komen langs, kijken naar je proces en vertellen eerlijk wat we kunnen opleveren.
 
-[Plan een gratis intake](https://talynd.com/contact)
+[Gratis kennismaking](https://talynd.com/contact)
 
 Wij bouwen het. Jij houdt het.
 
