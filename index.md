@@ -12,7 +12,7 @@ In 33 seconden zie je hoe Talynd werkt.
 
 ## Jouw digitale butler
 
-Van handmatig werk naar een systeem dat voor je werkt.
+Vier systemen die doen wat jij nu met de hand doet.
 
 Tot uw dienst.
 
@@ -20,11 +20,11 @@ Tot uw dienst.
 
 ### Marketing met AI
 
-Workflows voor posts, video's en advertenties in jouw branche. Je team werkt sneller en heeft meer tijd voor creatief werk.
+Workflows voor posts, video's en advertenties in jouw branche. Je team levert meer, zonder langer te werken.
 
 ### Leads en opvolging
 
-We zetten leadlijsten en e-mailreeksen op in je eigen stijl, zodat je team er zelf mee verder kan.
+Lijsten met de bedrijven die je echt wil spreken, met contactgegevens die kloppen. Niemand blijft liggen.
 
 ### Pipedrive-integratie
 
@@ -32,13 +32,13 @@ Je CRM volledig ingericht en gekoppeld aan je website, mail en advertenties, met
 
 ### Websites, apps en tools
 
-Van site tot rekentool of eigen app, gebouwd op jouw domeinkennis en gekoppeld aan wat je al gebruikt.
+Een site, een rekentool of een eigen app, gekoppeld aan de systemen die je al gebruikt.
 
 Hoe het werkt
 
 ## Minder handwerk in je sales
 
-[Ontdek onze aanpak](https://talynd.com/diensten)
+[De vier stappen](https://talynd.com/diensten)
 
 Gesprek op locatie
 
@@ -46,7 +46,7 @@ We komen langs en kijken waar tijd verloren gaat. Het eerste gesprek is gratis e
 
 Plan
 
-Je krijgt een helder plan: wat we bouwen, wat het koppelt en in welke volgorde. Zo weet je vooraf wat je krijgt.
+Je krijgt een plan met wat we bouwen, wat het koppelt en in welke volgorde.
 
 Bouwen en koppelen
 
@@ -54,7 +54,7 @@ We bouwen het systeem en koppelen het aan wat je al gebruikt. Je test mee en stu
 
 Overdragen
 
-Je team krijgt training en alles op papier. Daarna werken jullie zelf verder, zonder verplicht abonnement.
+Je team krijgt training en alles op papier. Daarna is het systeem van jullie.
 
 Portfolio
 
