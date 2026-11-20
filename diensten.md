@@ -22,23 +22,23 @@ Zo pakken wij het aan, van het eerste gesprek tot het moment dat jouw team het z
 
 ## Van eerste gesprek tot werkend systeem dat jij beheert.
 
-Concrete stappen, van intake tot volledige overdracht.
+Vier stappen, van intake tot overdracht.
 
 Intake op locatie
 
-We kijken waar tijd verloren gaat voordat we ook maar iets bouwen. Je eerste gesprek is altijd gratis, zonder enige verplichting.
+We kijken waar tijd verloren gaat voordat we ook maar iets bouwen. Je zit nergens aan vast na dat gesprek.
 
-Analyse & plan
+Analyse en plan
 
-Een helder plan: wat bouwen we, met welke tools, in welke volgorde. Je weet vooraf welk resultaat je kunt verwachten, geen verrassingen.
+Een helder plan: wat bouwen we, aan welke systemen van jou koppelt het, in welke volgorde. Je weet vooraf welk resultaat je kunt verwachten.
 
-Bouwen & implementeren
+Bouwen en implementeren
 
 We bouwen het systeem en koppelen het aan je bestaande tools. Je test mee gedurende het traject en stuurt bij waar nodig.
 
-Overdracht & training
+Overdracht en training
 
-Je team krijgt training en volledige documentatie van alles. Geen verplicht abonnement: je houdt zelf de controle.
+Je team krijgt training en alles op papier. Het systeem is van jou en je beheert het zelf.
 
 Wat wij bouwen
 
