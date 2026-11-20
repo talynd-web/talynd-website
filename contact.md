@@ -2,11 +2,11 @@
 
 Contact
 
-Plan een gratis intake of stuur ons een bericht. Geen verkooppraat, gewoon een eerlijk gesprek over wat we voor je kunnen bouwen.
+Bel ons of stuur een bericht. Geen verkooppraat, gewoon een eerlijk gesprek over wat we voor je kunnen bouwen.
 
 ### Bedankt, bericht ontvangen
 
-We hebben je bericht binnen en nemen zo snel mogelijk contact met je op.
+Je bericht staat bij ons binnen. Je hoort binnen één werkdag van ons, per mail of telefoon.
 
 Waar we voor staan
 
@@ -14,15 +14,15 @@ Waar we voor staan
 
 ### We maken automatisering tastbaar
 
-Geen abstracte AI-praat. We laten zien wat een systeem concreet oplevert, in tijd, in leads en in rust, en bouwen het binnen weken in plaats van maanden.
+Geen abstracte AI-praat. Je ziet het systeem draaien op je eigen gegevens, en je ziet precies welk werk er uit je week verdwijnt.
 
 ### We werken als verlengstuk van je team
 
-Tijdens een traject zitten we naast je, niet tegenover je. We denken mee over het proces en passen aan wat in de praktijk beter werkt.
+Tijdens een traject zitten we naast je aan tafel. We denken mee over het proces en passen aan wat in de praktijk beter blijkt te werken.
 
 ### We bouwen om over te dragen
 
-Succes is voor ons niet een klant die afhankelijk blijft, maar een team dat het systeem zelf beheert. Daarom documenteren we alles en trainen we je mensen, zodat je verder kunt zonder ons.
+Succes is voor ons een team dat het systeem zelf beheert. Daarom leggen we alles vast en trainen we je mensen, zodat je verder kunt zonder ons.
 
 Wij bouwen het. Jij houdt het.
 
