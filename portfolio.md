@@ -252,11 +252,11 @@ Case 04
 
 ## Reformed Collective
 
-Reformer Pilates studio · Beverwijk · [reformedcollective.nl](https://reformedcollective.nl)
+Reformer-pilatesstudio · Beverwijk · [reformedcollective.nl](https://reformedcollective.nl)
 
 De uitdaging
 
-Reformed Collective opende een nieuwe reformer-pilatesstudio, maar had nog niets digitaals. Geen website, geen manier om lessen te boeken of te betalen, en geen systeem om leden, roosters en abonnementen te beheren. Alles moest van de grond af: een merk-website, een boekingsplatform met betalingen, én een beheeromgeving waarmee de studio zelfstandig verder kan.
+Reformed Collective opende een nieuwe reformer-pilatesstudio en begon digitaal met een leeg blad. Ze wilden een eigen website, leden die zelf een les boeken en betalen, en een beheeromgeving voor rooster, abonnementen en ledenlijst waarmee de studio zelfstandig verder kan.
 
 Wat we bouwden
 
@@ -264,7 +264,7 @@ Website + live boekingssysteem
 
 - Tweetalige website (NL/EN) van nul gebouwd in de huisstijl van de studio.
 
-- Live rooster gekoppeld aan de database: lessen die de studio toevoegt verschijnen direct online.
+- Lessen die de studio toevoegt staan direct online in het rooster.
 
 - Leden maken een account, boeken en annuleren lessen en beheren hun eigen planning.
 
@@ -272,31 +272,31 @@ Website + live boekingssysteem
 
 Betalen, credits & abonnementen
 
-- Volledige betaalintegratie met Mollie: losse lessen, rittenkaarten én terugkerende abonnementen.
+- Betalen via Mollie: losse lessen, rittenkaarten en doorlopende abonnementen.
 
 - Creditsysteem: leden kopen tegoed en boeken daarmee lessen. Bij annulering wordt de credit automatisch teruggestort.
 
-- Idempotente webhooks en beveiligde edge-functions. Elke betaling komt exact één keer aan.
+- Elke betaling komt precies één keer aan, ook als de verbinding wegvalt.
 
-- Transactionele e-mails (welkom, aankoop, boeking, annulering) vanaf het eigen domein.
+- Mails bij welkom, aankoop, boeking en annulering, vanaf het eigen domein van de studio.
 
 iOS-app + beheerportaal
 
-- Native iOS-app in de App Store, zodat leden ook vanaf hun telefoon boeken en betalen.
+- Eigen iPhone-app in de App Store, zodat leden ook op hun telefoon boeken en betalen.
 
 - Beheerportaal voor de studio: rooster, lessen, capaciteit, deelnemers en leden beheren.
 
-- Rechtenstructuur: de studio beheert alles, leden zien alleen hun eigen gegevens.
+- De studio beheert alles, en leden zien alleen hun eigen gegevens.
 
-- Volledig getest en overgedragen. De studio draait er zelfstandig op verder.
+- Overgedragen en zelfstandig in gebruik: 137 leden in de eerste maand.
 
 [Bekijk de live site](https://reformedcollective.nl)
 
 [App Store](https://apps.apple.com/nl/app/reformed-collective/id6790157228)
 
-Gebruikte tools
+Gekoppeld aan
 
-Nuxt Vue 3 TypeScript Supabase Mollie Resend Vercel App Store
+Mollie App Store
 
 Case 05
 
