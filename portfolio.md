@@ -184,39 +184,37 @@ Spaans vastgoed · [ynsspain.com](https://ynsspain.com)
 
 De uitdaging
 
-YNS Spain had een sterk merk en een bewezen track record, maar geen website die dat weerspiegelde. De bestaande site was technisch zwak, niet organisch vindbaar en toonde het aanbod niet live. Leads konden woningen niet zelf bekijken of filteren.
+YNS Spain heeft een sterk merk en veel tevreden kopers. Ze wilden een site die dat laat zien, met het aanbod live erop, filters voor de bezoeker en pagina's die in Google gevonden worden.
 
 Wat we bouwden
 
 Website van nul opgebouwd
 
-- Website van nul opgebouwd in Next.js 15: 10 pagina's live op Vercel.
+- Nieuwe website van de grond af gebouwd, met tien pagina's live.
 
-- Salesgerichte opbouw: hero met sociale proof, live woningstrip, team, testimonials en FAQ.
+- Opbouw gericht op aanvragen: reviews bovenaan, het actuele aanbod, het team en de vragen die kopers stellen.
 
-- 9 individuele projectpagina's. Elke woning heeft een eigen URL, foto's en content.
+- Negen projectpagina's, elk met een eigen adres, foto's en tekst.
 
-- Gebouwd met een 5.0-rating en 163 reviews als vertrekpunt.
+Vindbaar gemaakt in Google
 
-SEO-fundament van nul opgebouwd
+- Alle pagina's zo gebouwd dat Google de teksten echt kan lezen.
 
-- Alle pagina's omgezet naar server-side rendering zodat Google de content kan indexeren.
+- Schema-markup op elke pagina: RealEstateAgent, FAQPage, BreadcrumbList en Product per woning.
 
-- Schema markup geimplementeerd op elke pagina: RealEstateAgent, FAQPage, BreadcrumbList en Product per woning.
+- Adressen van de pagina's gekozen op de woorden waar kopers echt op zoeken.
 
-- URL-structuur geoptimaliseerd op zoekvolume: /properties-for-sale-costa-del-sol (2.400 zoekopdrachten per maand).
+- Alle foto's lichter gemaakt, zodat de site ook op mobiel snel opent.
 
-- Afbeeldingen gecomprimeerd van 28,5 MB naar 552 KB. Directe laadtijdverbetering.
+- Google Search Console gekoppeld en de sitemap ingediend, zodat de pagina's in Google komen.
 
-- Google Search Console gekoppeld, sitemap ingediend: 15 URLs geindexeerd.
+Rendementscalculator met live aanbod
 
-Investment calculator met live matching
-
-- Klant vult budget in. Calculator toont direct passende live woningen vanuit het CRM.
+- De koper vult zijn budget in en ziet direct de woningen die daarbij passen, live uit het CRM.
 
 - Filtert automatisch op koopprijs: alleen woningen die financieel haalbaar zijn worden getoond.
 
-- Gecombineerd met de hypotheek/aankoopkosten berekening. Een tool die orientatie en concrete opties samenvoegt.
+- De hypotheek en de aankoopkosten zitten in dezelfde berekening, dus de koper ziet in één keer wat haalbaar is.
 
 - Elke woning in de resultaten is klikbaar naar de volledige projectpagina.
 
@@ -228,7 +226,7 @@ ynsspain.com › properties-for-sale-costa-del-sol
 
 Properties for Sale on the Costa del Sol | YNS Spain
 
-Browse 31+ properties for sale on the Costa del Sol. Apartments, villas and new builds — live pricing direct from our CRM, updated in real time.
+Browse 31+ properties for sale on the Costa del Sol. Apartments, villas and new builds, with live pricing direct from our CRM.
 
 URLs geïndexeerd
 
@@ -238,7 +236,7 @@ zoekvolume per maand
 
 552 KB
 
-afbeeldingen (was 28 MB)
+afbeeldingen (was 28,5 MB)
 
 Schema markup
 
@@ -246,9 +244,9 @@ RealEstateAgent FAQPage BreadcrumbList Product
 
 [Bekijk de live site](https://ynsspain.com)
 
-Gebruikte tools
+Gekoppeld aan
 
-Next.js 15 TypeScript Tailwind CSS Cloudflare Workers Inmobalia API Vercel Google Search Console
+Inmobalia Google Search Console
 
 Case 04
 
