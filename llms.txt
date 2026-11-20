@@ -21,7 +21,7 @@ Niet de juiste partij voor alleen een adviesrapport zonder dat er iets gebouwd w
 
 - [Home](https://talynd.com/index.md): wat Talynd doet, in het kort
 - [Diensten](https://talynd.com/diensten.md): wat we bouwen en hoe een traject loopt
-- [Portfolio](https://talynd.com/portfolio.md): cases met wat er voor klanten gebouwd is
+- [Portfolio](https://talynd.com/portfolio.md): vijf cases, Zeker Wonen Fondsen, VIA Vastgoed, YNS Spain, Reformed Collective en CS Cleaning
 - [Over ons](https://talynd.com/over-ons.md): wie we zijn en hoe we werken
 - [Contact](https://talynd.com/contact.md): een gratis kennismaking plannen
 
