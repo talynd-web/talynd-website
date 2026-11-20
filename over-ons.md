@@ -1,42 +1,40 @@
-# Hands-on AI, zonder omwegen.
+# AI in je bedrijf, zonder omwegen.
 
 Over ons
 
-Een AI-consultancy uit Amsterdam. Geen adviesdecks, maar werkende systemen die we bouwen en overdragen.
+Wij brengen in kaart hoe je bedrijf werkt en bouwen de systemen die het herhaalwerk overnemen.
 
 ## Talynd ontstond uit één frustratie. Advies zonder een werkend resultaat.
 
-We zagen vastgoedbedrijven verdrinken in handmatig werk, terwijl adviesbureaus rapporten leverden in plaats van werkende systemen.
+We zagen bedrijven verdrinken in handmatig werk, terwijl adviesbureaus een rapport achterlieten en weer vertrokken.
 
-Leads die bleven liggen, data verspreid over Excel en losse tools, en geen tijd om automatisering zelf op te zetten. Daarom bouwden we Talynd: geen adviesdeck, maar systemen die we opleveren, uitleggen en overdragen, zodat jij ze daarna zelf beheert.
+Leads die bleven liggen, data verspreid over Excel en losse tools, en geen tijd om automatisering zelf op te zetten. Daarom bouwden we Talynd: wij leveren het systeem op, leggen het uit en dragen het over, zodat jij het daarna zelf beheert.
 
 Onze missie
 
 ## Waarom Talynd?
 
-[Plan een intake](https://talynd.com/contact)
+[Gratis kennismaking](https://talynd.com/contact)
 
-Wij geloven dat automatisering pas waarde heeft als je het zelf in handen hebt. Daarom leveren we geen rapport en geen abonnement, maar een werkend systeem dat we bouwen, uitleggen en volledig aan jou overdragen.
+Automatisering heeft pas waarde als je het zelf in handen hebt. Daarom bouwen wij het systeem, leggen we uit hoe het werkt en zetten we het volledig op jouw naam.
 
-We werken op locatie en op maat. Elk traject begint met een gratis intake, waarin we eerlijk vertellen wat we kunnen bouwen, wat het oplevert en wat het kost, nog voordat je iets beslist.
+We werken op locatie en op maat. Elk traject begint met een gratis kennismaking, waarin we eerlijk vertellen wat we kunnen bouwen, wat het oplevert en wat het kost, nog voordat je iets beslist.
 
-Wij bouwen. Jij houdt de controle.
-
-## Meet the founders
+## De mensen achter Talynd
 
 Dimas Smit
 
 Co-founder
 
-Dimas bouwt de websites en brengt het klantproces in kaart. De intakegesprekken doet hij samen met Rayco op locatie. Met certificering in AI Consulting en Python wordt de digitale basis gelegd voor alles wat we opleveren.
+Dimas brengt in kaart hoe je bedrijf werkt en bouwt daarna de websites en de workflows die het herhaalwerk overnemen. De kennismaking doet hij samen met Rayco bij jou op locatie.
 
-Webontwikkeling AI Consulting Python
+Webontwikkeling AI-workflows Procesanalyse
 
 Rayco de Bruijn
 
 Co-founder
 
-Rayco zet de techniek neer die het salesproces automatiseert. Van CRM-inrichting in Pipedrive tot geautomatiseerde mailflows en API-koppelingen, alles gericht op één traject: van eerste lead tot gesloten deal.
+Rayco bouwt de techniek achter je salesproces: Pipedrive ingericht, koppelingen met je website en mail, en opvolging die automatisch doorloopt. Niemand blijft liggen.
 
 Pipedrive & CRM API-koppelingen Automatisering
 
@@ -46,15 +44,15 @@ Waar we voor staan
 
 ### We maken automatisering tastbaar
 
-Geen abstracte AI-praat. We laten zien wat een systeem concreet oplevert, in tijd, in leads en in rust, en bouwen het binnen weken in plaats van maanden.
+Geen abstracte AI-praat. Je ziet het systeem draaien op je eigen gegevens, en je ziet precies welk werk er uit je week verdwijnt.
 
 ### We werken als verlengstuk van je team
 
-Tijdens een traject zitten we naast je, niet tegenover je. We denken mee over het proces en passen aan wat in de praktijk beter werkt.
+Tijdens een traject zitten we naast je aan tafel. We denken mee over het proces en passen aan wat in de praktijk beter blijkt te werken.
 
 ### We bouwen om over te dragen
 
-Succes is voor ons niet een klant die afhankelijk blijft, maar een team dat het systeem zelf beheert. Daarom documenteren we alles en trainen we je mensen, zodat je verder kunt zonder ons.
+Succes is voor ons een team dat het systeem zelf beheert. Daarom leggen we alles vast en trainen we je mensen, zodat je verder kunt zonder ons.
 
 ## Benieuwd wat we voor jou kunnen bouwen?
 
