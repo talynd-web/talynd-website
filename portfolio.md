@@ -338,11 +338,11 @@ Offertes en werken bij
 
 [Bekijk de live site](https://cs-cleaningservice.nl/)
 
-Zo verliep het
+Zo gaat het
 
 ## Van eerste gesprek tot werkend systeem, en daarna.
 
-We bouwen op locatie en op maat, afgestemd op jouw proces en domeinkennis.
+We bouwen bij jou op locatie, op jouw proces en jouw vakkennis.
 
 Na de overdracht beheer je het systeem zelf. We blijven beschikbaar voor doorontwikkeling.
 
@@ -352,7 +352,7 @@ Week 1
 
 - We komen langs op locatie en brengen het proces in kaart
 
-- We bepalen wat we bouwen, met welke tools en welk resultaat
+- We bepalen samen wat we bouwen en welk resultaat dat moet geven
 
 - Je krijgt een heldere offerte op maat, altijd na een gratis intake
 
@@ -360,7 +360,7 @@ Week 2 – 4
 
 ### Bouwen & implementeren
 
-- Rayco bouwt de systemen, van Pipedrive-pipelines tot API-koppelingen
+- Rayco bouwt de systemen en koppelt ze aan wat je al gebruikt
 
 - Dimas begeleidt, test mee en documenteert alles wat we opleveren
 
@@ -372,7 +372,7 @@ Na livegang
 
 - Systeem staat live, je team krijgt training en documentatie
 
-- Je beheert het systeem zelfstandig, zonder afhankelijkheid
+- Je beheert het systeem zelf, zonder dat je ons nodig hebt
 
 - We blijven langskomen voor onderhoud en doorontwikkeling
 
