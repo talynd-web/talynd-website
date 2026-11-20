@@ -90,7 +90,7 @@ Website op maat Zes dienstpagina's Offerteformulier Werken bij-pagina Nieuwe hos
 
 [Bekijk case](https://talynd.com/portfolio#cs-cleaning)
 
-## Ook als app, op de telefoon van hun klanten
+## Ook als app, op de telefoon van je klanten
 
 [Alle cases bekijken](https://talynd.com/portfolio)
 
@@ -98,7 +98,7 @@ Website op maat Zes dienstpagina's Offerteformulier Werken bij-pagina Nieuwe hos
 
 Spaans vastgoed, iOS en Android
 
-Live aanbod met prijs en verwacht rendement, een digitale adviseur die direct passende woningen toont, een budgetcalculator en zoeken op de kaart.
+Live aanbod met prijs en verwacht rendement, zoeken op de kaart en een calculator die het budget uitrekent.
 
 [App Store](https://apps.apple.com/nl/app/via-vastgoed/id6803245255) [Google Play](https://play.google.com/store/apps/details?id=com.viavastgoed.app)
 
