@@ -338,10 +338,6 @@ Offertes en werken bij
 
 [Bekijk de live site](https://cs-cleaningservice.nl/)
 
-Wat er nog komt
-
-Planningsapp voor het eigen personeel Website voor zusterbedrijf CS Hospitality
-
 Zo verliep het
 
 ## Van eerste gesprek tot werkend systeem, en daarna.
