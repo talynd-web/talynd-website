@@ -8,7 +8,7 @@ Deze voorwaarden zijn van toepassing op het gebruik van de website talynd.com en
 
 ## 1. Over Talynd
 
-Talynd is een hands-on AI consultancy gevestigd in Amsterdam, ingeschreven bij de KVK onder nummer 99836882. We bouwen, implementeren en dragen AI- en automatiseringssystemen over aan onze opdrachtgevers.
+Talynd bouwt en implementeert AI-systemen voor bedrijven, gevestigd in Amsterdam, ingeschreven bij de KVK onder nummer 99836882.
 
 ## 2. Gebruik van de website
 
