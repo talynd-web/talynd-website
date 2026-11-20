@@ -46,29 +46,29 @@ Wat wij bouwen
 
 Veeg voor meer
 
-Persoonlijk gesprek op locatie. We brengen je proces in kaart en adviseren eerlijk of we waarde kunnen toevoegen.
+Persoonlijk gesprek op locatie. We brengen je proces in kaart en zeggen eerlijk of wij er iets aan kunnen verbeteren.
 
-### Consulting & intake
+### Intake en procesanalyse
 
-Automatische opvolging na elke lead of bezichtiging. Op het juiste moment, zonder handmatig werk.
+Automatische opvolging na elke lead of elk gesprek. Op het juiste moment, zonder dat iemand eraan hoeft te denken.
 
 ### Mailautomatisering
 
 Gestructureerde e-mailreeksen die leads warm houden totdat ze klaar zijn om te beslissen.
 
-### Nurture programs
+### Opvolgreeksen
 
-Maatwerk rekentool op basis van jouw domeinkennis: huurrendement, verkoopprognose of een eigen model.
+Maatwerk rekentool op basis van jouw eigen cijfers: een prijsopgave, een rendement of je eigen rekenmodel.
 
-### AI-calculator
+### Rekentool op maat
 
-Workflows, databases en koppelingen samengevoegd tot één centraal systeem dat je team zelf beheert.
+Koppelingen tussen je bestaande systemen, zodat gegevens één keer ingevoerd worden en overal kloppen.
 
-### Systeemautomatisering
+### Systeemkoppelingen
 
 Je CRM volledig ingericht en geautomatiseerd: pipelines, triggers en rapportages die kloppen met jouw proces.
 
-### PipeDrive-integratie
+### Pipedrive-integratie
 
 Wat klanten zeggen
 
