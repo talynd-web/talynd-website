@@ -576,7 +576,7 @@
               <li>De kaart is ook de ingang vanaf de homepage, het menu en de footer, zodat bezoekers er vanzelf terechtkomen.</li>
             </ul></div>
           </div>
-          <div class="case-tab" data-panel="Pipedrive" data-panel-type="screenshot" data-screenshot-src="assets/diensten-pipedrive.webp" data-screenshot-alt="Pipedrive op de telefoon" data-screenshot-fit="cover">
+          <div class="case-tab" data-panel="Pipedrive" data-panel-type="pipeline">
             <div class="case-tab__num">02</div>
             <div class="case-tab__label">Van lead tot deal gesloten</div>
             <div class="case-tab__body"><ul>
@@ -586,7 +586,7 @@
               <li>Leads via elk kanaal worden automatisch gevolgd. Geen handmatig werk meer.</li>
             </ul></div>
           </div>
-          <div class="case-tab" data-panel="Woningaanbod" data-panel-type="screenshot" data-screenshot-src="assets/via-woningen.webp" data-screenshot-alt="Woningaanbod live op de VIA-website">
+          <div class="case-tab" data-panel="Woningaanbod" data-panel-type="screenshot" data-screenshot-src="assets/via-woningen.webp">
             <div class="case-tab__num">03</div>
             <div class="case-tab__label">Het hele Spaanse woningaanbod live op de website</div>
             <div class="case-tab__body"><ul>
@@ -648,6 +648,43 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </button>
             </div>
+          </div>
+          <div class="pipe-anim" id="pipeAnim" style="display:none">
+            <div class="pipe-topbar">
+              <div class="pipe-topbar-left"><span class="pipe-crm-name">VIA Vastgoed Pipeline</span><span class="pipe-stages-tag">8 fasen</span></div>
+            </div>
+            <div class="pipe-board">
+              <div class="pipe-col">
+                <div class="pipe-col-head-row"><span class="pipe-col-name">Nieuwe Lead</span><span class="pipe-col-cnt" id="pc1">2</span></div>
+                <div class="pipe-col-line"></div>
+                <div class="pipe-cards" id="pb1">
+                  <div class="pipe-card"><div class="pipe-card__name">Erik van Dam</div><div class="pipe-card__val">€ 285.000</div><div class="pipe-card__detail">Andalusie</div></div>
+                  <div class="pipe-card"><div class="pipe-card__name">Sophie de Wit</div><div class="pipe-card__val">€ 340.000</div><div class="pipe-card__detail">Costa del Sol</div></div>
+                </div>
+              </div>
+              <div class="pipe-col">
+                <div class="pipe-col-head-row"><span class="pipe-col-name">Google Meet</span><span class="pipe-col-cnt" id="pc2">1</span></div>
+                <div class="pipe-col-line"></div>
+                <div class="pipe-cards" id="pb2">
+                  <div class="pipe-card"><div class="pipe-card__name">Thomas Bakker</div><div class="pipe-card__val">€ 420.000</div><div class="pipe-card__detail">Valencia</div></div>
+                </div>
+              </div>
+              <div class="pipe-col">
+                <div class="pipe-col-head-row"><span class="pipe-col-name">Folder Verzonden</span><span class="pipe-col-cnt" id="pc3">1</span></div>
+                <div class="pipe-col-line"></div>
+                <div class="pipe-cards" id="pb3">
+                  <div class="pipe-card"><div class="pipe-card__name">Anna Jansen</div><div class="pipe-card__val">€ 295.000</div><div class="pipe-card__detail">Malaga</div></div>
+                </div>
+              </div>
+              <div class="pipe-col pipe-col--won">
+                <div class="pipe-col-head-row"><span class="pipe-col-name">Deal Gesloten</span><span class="pipe-col-cnt" id="pc4">1</span></div>
+                <div class="pipe-col-line"></div>
+                <div class="pipe-cards" id="pb4">
+                  <div class="pipe-card pipe-card--won"><div class="pipe-card__name">Pieter Verhoeven</div><div class="pipe-card__val">€ 375.000</div><div class="pipe-card__detail">✓ Koopakte getekend</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="pipe-toast" id="pipeToast"><div class="pipe-toast-dot"></div><span id="pipeToastTxt"></span></div>
           </div>
           <div class="screenshot-panel" id="viaScreenshot" style="display:none">
             <img src="assets/via-woningen.webp" alt="Woningaanbod live op de VIA-website" />
@@ -1253,8 +1290,6 @@
             if (ss) ss.style.display = "none";
             if (pa) pa.style.display = "none";
             if (scr) scr.style.display = "flex";
-            var scrImg = scr && scr.querySelector("img"), scrSrc = tab.getAttribute("data-screenshot-src");
-            if (scrImg && scrSrc) { scrImg.src = scrSrc; scrImg.alt = tab.getAttribute("data-screenshot-alt") || ""; scrImg.style.objectFit = tab.getAttribute("data-screenshot-fit") || ""; scrImg.style.objectPosition = tab.getAttribute("data-screenshot-fit") ? "center" : ""; }
             if (label) label.style.display = "none";
             panel.classList.remove("calc-active"); panel.classList.remove("pipe-active");
             panel.classList.add("screenshot-active");
@@ -1349,10 +1384,98 @@
     })();
   </script>
   <script>
+    /* ---------- Pipeline animation ---------- */
+    (function () {
+      var timers = [];
+      function after(ms, fn) { var t = setTimeout(fn, ms); timers.push(t); }
+      function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+      function cnt(id, n) { var el = document.getElementById(id); if (el) el.textContent = n; }
+      function showToast(msg) {
+        var t = document.getElementById('pipeToast'), tx = document.getElementById('pipeToastTxt');
+        if (!t) return; if (tx) tx.textContent = msg; t.classList.add('visible');
+      }
+      function hideToast() { var t = document.getElementById('pipeToast'); if (t) t.classList.remove('visible'); }
+      function makeCard(d, entering) {
+        var c = document.createElement('div');
+        c.className = 'pipe-card' + (d.won ? ' pipe-card--won' : '') + (entering ? ' pipe-card-entering' : '');
+        c.innerHTML = '<div class="pipe-card__name">' + d.name + '</div><div class="pipe-card__val">' + d.val + '</div><div class="pipe-card__detail">' + d.tag + '</div>';
+        return c;
+      }
+      function resetBoard() {
+        var pb1 = document.getElementById('pb1'), pb2 = document.getElementById('pb2'),
+            pb3 = document.getElementById('pb3'), pb4 = document.getElementById('pb4');
+        if (!pb1) return;
+        pb1.innerHTML = '';
+        [{ name: 'Erik van Dam', val: '\u20ac\u00a0285.000', tag: 'Andalusie' }, { name: 'Sophie de Wit', val: '\u20ac\u00a0340.000', tag: 'Costa del Sol' }].forEach(function (d) { pb1.appendChild(makeCard(d, false)); });
+        pb2.innerHTML = ''; pb2.appendChild(makeCard({ name: 'Thomas Bakker', val: '\u20ac\u00a0420.000', tag: 'Valencia' }, false));
+        pb3.innerHTML = ''; pb3.appendChild(makeCard({ name: 'Anna Jansen', val: '\u20ac\u00a0295.000', tag: 'Malaga' }, false));
+        pb4.innerHTML = ''; pb4.appendChild(makeCard({ name: 'Pieter Verhoeven', val: '\u20ac\u00a0375.000', tag: '\u2713 Koopakte getekend', won: true }, false));
+        cnt('pc1', 2); cnt('pc2', 1); cnt('pc3', 1); cnt('pc4', 1); hideToast();
+      }
+      function runSequence() {
+        resetBoard();
+        after(1400, function () {
+          var pb1 = document.getElementById('pb1'); if (!pb1) return;
+          pb1.insertBefore(makeCard({ name: 'James Morrison', val: '\u20ac\u00a0310.000', tag: 'Via Instagram' }, true), pb1.firstChild);
+          cnt('pc1', 3);
+        });
+        after(2100, function () { showToast('Beltaak aangemaakt \u2014 James Morrison'); });
+        after(4200, function () { hideToast(); });
+        after(5800, function () {
+          var pb2 = document.getElementById('pb2'), pb3 = document.getElementById('pb3'); if (!pb2 || !pb3) return;
+          var card = pb2.querySelector('.pipe-card'); if (!card) return;
+          card.classList.add('pipe-card-leaving');
+          setTimeout(function () {
+            card.remove(); cnt('pc2', 0);
+            pb3.insertBefore(makeCard({ name: 'Thomas Bakker', val: '\u20ac\u00a0420.000', tag: 'Folder ontvangen' }, true), pb3.firstChild);
+            cnt('pc3', 2);
+            showToast('Folder verzonden \u2014 automatisch');
+          }, 300);
+        });
+        after(8200, function () { hideToast(); });
+        after(9800, function () {
+          var pb3 = document.getElementById('pb3'), pb4 = document.getElementById('pb4'); if (!pb3 || !pb4) return;
+          var cards = Array.from(pb3.querySelectorAll('.pipe-card')).filter(function (c) {
+            var n = c.querySelector('.pipe-card__name'); return n && n.textContent.indexOf('Anna') !== -1;
+          });
+          if (!cards.length) return;
+          cards[0].classList.add('pipe-card-leaving');
+          setTimeout(function () {
+            cards[0].remove(); cnt('pc3', 1);
+            pb4.insertBefore(makeCard({ name: 'Anna Jansen', val: '\u20ac\u00a0295.000', tag: '\u2713 Koopakte getekend', won: true }, true), pb4.firstChild);
+            cnt('pc4', 2); showToast('Deal gesloten \u2014 Anna Jansen');
+          }, 300);
+        });
+        after(12500, function () { hideToast(); });
+        after(15500, function () { runSequence(); });
+      }
+      window.pipelineStart = function () { clearTimers(); runSequence(); };
+      window.pipelineStop = function () { clearTimers(); hideToast(); };
+      /* Auto-start when scrolled into view */
+      var pipePanel = document.querySelector('[data-case-panel="via"]');
+      if (pipePanel && 'IntersectionObserver' in window) {
+        var pipeObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting && document.querySelector('[data-case="via"] .case-tab.active[data-panel-type="pipeline"]')) { window.pipelineStart(); }
+            else { window.pipelineStop(); }
+          });
+        }, { threshold: 0.3 });
+        pipeObs.observe(pipePanel);
+      }
+    })();
+  </script>
+  <script>
     /* ---------- Calculator slideshow ---------- */
     (function () {
       var panel = document.querySelector('[data-case-panel="via"]');
       if (!panel) return;
+      /* Alleen starten als de pipeline-tab het actieve punt is; de kaart staat nu vooraan */
+      if (document.querySelector('[data-case="via"] .case-tab.active[data-panel-type="pipeline"]')) {
+        panel.classList.add('pipe-active');
+        var pipeEl = panel.querySelector('.pipe-anim');
+        if (pipeEl) pipeEl.style.display = 'flex';
+        if (typeof window.pipelineStart === 'function') window.pipelineStart();
+      }
       var slides = panel.querySelectorAll('.calc-slide');
       var dots = panel.querySelectorAll('.calc-dot');
       var counter = document.getElementById('calcCounter');

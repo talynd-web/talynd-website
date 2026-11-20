@@ -124,6 +124,46 @@ App in de App Store en op Google Play
 
 1 / 3
 
+VIA Vastgoed Pipeline8 fasen
+
+Nieuwe Lead2
+
+Erik van Dam
+
+€ 285.000
+
+Andalusie
+
+Sophie de Wit
+
+€ 340.000
+
+Costa del Sol
+
+Google Meet1
+
+Thomas Bakker
+
+€ 420.000
+
+Valencia
+
+Folder Verzonden1
+
+Anna Jansen
+
+€ 295.000
+
+Malaga
+
+Deal Gesloten1
+
+Pieter Verhoeven
+
+€ 375.000
+
+✓ Koopakte getekend
+
 [Bekijk de live site](https://viavastgoed.com)
 
 [App Store](https://apps.apple.com/nl/app/via-vastgoed/id6803245255) [Google Play](https://play.google.com/store/apps/details?id=com.viavastgoed.app)
