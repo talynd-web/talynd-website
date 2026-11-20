@@ -68,13 +68,13 @@ Website in vijf talen Beheerportaal Zelf publiceren Online inschrijven Pipedrive
 
 ### VIA Vastgoed
 
-Inmobalia CRM-integratie Pipedrive pipeline E-mail nurture Eigen API-koppeling iOS- en Android-app Interactieve kaart
+Inmobalia CRM-integratie Pipedrive pipeline Mailopvolging Eigen API-koppeling iOS- en Android-app Interactieve kaart
 
 [Bekijk case](https://talynd.com/portfolio#via-vastgoed)
 
 ### YNS Spain
 
-Salesgerichte website Live woningdata Pipedrive pipeline E-mail automatisering
+Salesgerichte website Live woningdata Pipedrive pipeline Mailopvolging
 
 [Bekijk case](https://talynd.com/portfolio#yns)
 
@@ -84,7 +84,7 @@ Website (NL/EN) Boekingsplatform Mollie-abonnementen iOS-app (App Store) Beheerp
 
 [Bekijk case](https://talynd.com/portfolio#reformed-collective)
 
-### CS Cleaning
+### CS Cleaning Service
 
 Website op maat Zes dienstpagina's Offerteformulier Werken bij-pagina Nieuwe hosting
 
@@ -154,7 +154,7 @@ Tot uw dienst.
 
 #### Portfolio
 
-[Zeker Wonen Fondsen](https://talynd.com/portfolio#zeker-wonen) [VIA Vastgoed](https://talynd.com/portfolio#via-vastgoed) [YNS Spain](https://talynd.com/portfolio#yns) [Reformed Collective](https://talynd.com/portfolio#reformed-collective) [CS Cleaning](https://talynd.com/portfolio#cs-cleaning) [Alle cases](https://talynd.com/portfolio)
+[Zeker Wonen Fondsen](https://talynd.com/portfolio#zeker-wonen) [VIA Vastgoed](https://talynd.com/portfolio#via-vastgoed) [YNS Spain](https://talynd.com/portfolio#yns) [Reformed Collective](https://talynd.com/portfolio#reformed-collective) [CS Cleaning Service](https://talynd.com/portfolio#cs-cleaning) [Alle cases](https://talynd.com/portfolio)
 
 #### Bedrijf
 

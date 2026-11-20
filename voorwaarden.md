@@ -56,7 +56,7 @@ Tot uw dienst.
 
 #### Portfolio
 
-[Zeker Wonen Fondsen](https://talynd.com/portfolio#zeker-wonen) [VIA Vastgoed](https://talynd.com/portfolio#via-vastgoed) [YNS Spain](https://talynd.com/portfolio#yns) [Reformed Collective](https://talynd.com/portfolio#reformed-collective) [CS Cleaning](https://talynd.com/portfolio#cs-cleaning) [Alle cases](https://talynd.com/portfolio)
+[Zeker Wonen Fondsen](https://talynd.com/portfolio#zeker-wonen) [VIA Vastgoed](https://talynd.com/portfolio#via-vastgoed) [YNS Spain](https://talynd.com/portfolio#yns) [Reformed Collective](https://talynd.com/portfolio#reformed-collective) [CS Cleaning Service](https://talynd.com/portfolio#cs-cleaning) [Alle cases](https://talynd.com/portfolio)
 
 #### Bedrijf
 
