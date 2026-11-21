@@ -4,8 +4,6 @@ Portfolio
 
 Vijf klanten, vijf systemen die nu zonder ons draaien.
 
-Case 01
-
 ## Zeker Wonen Fondsen
 
 Vastgoedfondsen · [zekerwonenfondsen.nl](https://www.zekerwonenfondsen.nl/nl)
@@ -18,41 +16,21 @@ Wat we bouwden
 
 Website in vijf talen
 
-- Volledig nieuwe website in het Nederlands, Engels, Frans, Duits en Pools.
-
-- Alle inhoud overgenomen en aangescherpt, met een duidelijke opbouw per fonds.
-
-- Oude adressen sturen door naar de nieuwe pagina's, zodat niemand op een foutpagina belandt.
-
-- Snel op mobiel en ingericht om gevonden te worden.
+Volledig nieuwe website in het Nederlands, Engels, Frans, Duits en Pools. Alle inhoud overgenomen en aangescherpt, met een duidelijke opbouw per fonds. Oude adressen sturen door naar de nieuwe pagina's, zodat niemand op een foutpagina belandt. Snel op mobiel en ingericht om gevonden te worden.
 
 Projecten op de site
 
-- Alle panden op één pagina, in aankoop of in verhuur.
-
-- Per pand het type, bouwjaar, energielabel en de manier van verhuur.
-
-- Elk project heeft een eigen pagina met foto's en toelichting.
+Alle panden op één pagina, in aankoop of in verhuur. Per pand het type, bouwjaar, energielabel en de manier van verhuur. Elk project heeft een eigen pagina met foto's en toelichting.
 
 Rekentool voor beleggers
 
-- Bezoekers kiezen een deelnamebedrag en zien direct de rente per maand, per jaar en over de hele looptijd.
-
-- Het rendement past zich aan op het bedrag.
-
-- Vanuit de uitkomst vraag je in één klik de brochure aan.
+Bezoekers kiezen een deelnamebedrag en zien direct de rente per maand, per jaar en over de hele looptijd. Het rendement past zich aan op het bedrag. Vanuit de uitkomst vraag je in één klik de brochure aan.
 
 Aanvragen en beheerportaal
 
-- Vier formulieren, van brochure tot inschrijving, komen direct in Pipedrive binnen.
-
-- Beheerportaal waarmee het team zelf projecten toevoegt en publiceert, zonder ontwikkelaar.
-
-- Inschrijven gaat online, met een duidelijk stappenplan ernaast.
+Vier formulieren, van brochure tot inschrijving, komen direct in Pipedrive binnen. Beheerportaal waarmee het team zelf projecten toevoegt en publiceert, zonder ontwikkelaar. Inschrijven gaat online, met een duidelijk stappenplan ernaast.
 
 [Bekijk de live site](https://www.zekerwonenfondsen.nl/nl)
-
-Case 02
 
 ## VIA Vastgoed
 
@@ -66,55 +44,23 @@ Wat we bouwden
 
 Zoeken op de kaart, op website en app
 
-- Interactieve kaart van Spanje met elk project als prijsspeld, op de website en in de app dezelfde kaart.
-
-- Uitgezoomd zie je per regio hoeveel projecten er zijn, ingezoomd de prijs per project. Tik op een speld en je staat op de projectpagina.
-
-- Zelfde filters als de lijst (plaats, budget, slaapkamers) en met &eacute;&eacute;n knop wisselen tussen lijst en kaart.
-
-- De kaart is ook de ingang vanaf de homepage, het menu en de footer, zodat bezoekers er vanzelf terechtkomen.
+Interactieve kaart van Spanje met elk project als prijsspeld, op de website en in de app dezelfde kaart. Uitgezoomd zie je per regio hoeveel projecten er zijn, ingezoomd de prijs per project. Tik op een speld en je staat op de projectpagina. Zelfde filters als de lijst (plaats, budget, slaapkamers) en met &eacute;&eacute;n knop wisselen tussen lijst en kaart. De kaart is ook de ingang vanaf de homepage, het menu en de footer, zodat bezoekers er vanzelf terechtkomen.
 
 Van lead tot deal gesloten
 
-- Pipedrive ingericht met acht fases, van nieuwe lead tot gesloten deal.
-
-- Vier automatische acties: beltaak binnen 24 uur bij een nieuwe lead, brochure na het videogesprek, herinnering na drie dagen stilte en een startmail bij een gewonnen deal.
-
-- Mailreeks van zeven berichten in ActiveCampaign, van eerste interesse tot de uitnodiging voor een videogesprek.
-
-- Leads via elk kanaal worden automatisch gevolgd. Geen handmatig werk meer.
+Pipedrive ingericht met acht fases, van nieuwe lead tot gesloten deal. Vier automatische acties: beltaak binnen 24 uur bij een nieuwe lead, brochure na het videogesprek, herinnering na drie dagen stilte en een startmail bij een gewonnen deal. Mailreeks van zeven berichten in ActiveCampaign, van eerste interesse tot de uitnodiging voor een videogesprek. Leads via elk kanaal worden automatisch gevolgd. Geen handmatig werk meer.
 
 Het hele Spaanse woningaanbod live op de website
 
-- Beveiligde koppeling tussen de website en het Inmobalia CRM van VIA.
-
-- Het hele Spaanse aanbod komt live binnen, en blijft staan als de bron even uitvalt.
-
-- Woningoverzicht met filterbalk (regio, type, slaapkamers, prijs) plus een detailpagina per woning.
+Beveiligde koppeling tussen de website en het Inmobalia CRM van VIA. Het hele Spaanse aanbod komt live binnen, en blijft staan als de bron even uitvalt. Woningoverzicht met filterbalk (regio, type, slaapkamers, prijs) plus een detailpagina per woning.
 
 Rendementscalculator
 
-- Rekentool op maat, met de kosten en belastingen per Spaanse regio erin.
-
-- De koper vult zijn budget en eventuele hypotheek in en ziet direct de maximale koopprijs, de aankoopkosten en het rendement.
-
-- Verhuur erbij rekenen: vakantie of langdurig, met de bezetting en de belasting erin. Je ziet het rendement en wat er per maand overblijft.
-
-- De brochures die bij die koopprijs passen komen er automatisch bij.
-
-- Staat live op een eigen adres, en het team gebruikt hem tijdens en na het gesprek met de koper.
+Rekentool op maat, met de kosten en belastingen per Spaanse regio erin. De koper vult zijn budget en eventuele hypotheek in en ziet direct de maximale koopprijs, de aankoopkosten en het rendement. Verhuur erbij rekenen: vakantie of langdurig, met de bezetting en de belasting erin. Je ziet het rendement en wat er per maand overblijft. De brochures die bij die koopprijs passen komen er automatisch bij. Staat live op een eigen adres, en het team gebruikt hem tijdens en na het gesprek met de koper.
 
 App in de App Store en op Google Play
 
-- Eigen app voor iPhone en Android, gebouwd op dezelfde data als de website. E&eacute;n bron, geen dubbel beheer.
-
-- Live aanbod met prijs, betaalschema en verwacht rendement per project.
-
-- Digitale adviseur: kopers stellen hun vraag en zien direct welke woningen bij hun budget passen.
-
-- Budgetcalculator en zoeken op de kaart met prijsspelden.
-
-- Inloggen met Google of Apple. Door Apple en Google goedgekeurd en live in beide stores.
+Eigen app voor iPhone en Android, gebouwd op dezelfde data als de website. E&eacute;n bron, geen dubbel beheer. Live aanbod met prijs, betaalschema en verwacht rendement per project. Digitale adviseur: kopers stellen hun vraag en zien direct welke woningen bij hun budget passen. Budgetcalculator en zoeken op de kaart met prijsspelden. Inloggen met Google of Apple. Door Apple en Google goedgekeurd en live in beide stores.
 
 01 Invoer en instellingen
 
@@ -174,8 +120,6 @@ Gekoppeld aan
 
 Pipedrive ActiveCampaign Inmobalia ManyChat Calendly App Store Google Play
 
-Case 03
-
 ## YNS Spain
 
 Spaans vastgoed · [ynsspain.com](https://ynsspain.com)
@@ -190,33 +134,15 @@ Wat we bouwden
 
 Website van nul opgebouwd
 
-- Nieuwe website van de grond af gebouwd, met tien pagina's live.
-
-- Opbouw gericht op aanvragen: reviews bovenaan, het actuele aanbod, het team en de vragen die kopers stellen.
-
-- Negen projectpagina's, elk met een eigen adres, foto's en tekst.
+Nieuwe website van de grond af gebouwd, met tien pagina's live. Opbouw gericht op aanvragen: reviews bovenaan, het actuele aanbod, het team en de vragen die kopers stellen. Negen projectpagina's, elk met een eigen adres, foto's en tekst.
 
 Vindbaar gemaakt in Google
 
-- Alle pagina's zo gebouwd dat Google de teksten echt kan lezen.
-
-- Schema-markup op elke pagina: RealEstateAgent, FAQPage, BreadcrumbList en Product per woning.
-
-- Adressen van de pagina's gekozen op de woorden waar kopers echt op zoeken.
-
-- Alle foto's lichter gemaakt, zodat de site ook op mobiel snel opent.
-
-- Google Search Console gekoppeld en de sitemap ingediend, zodat de pagina's in Google komen.
+Alle pagina's zo gebouwd dat Google de teksten echt kan lezen. Schema-markup op elke pagina: RealEstateAgent, FAQPage, BreadcrumbList en Product per woning. Adressen van de pagina's gekozen op de woorden waar kopers echt op zoeken. Alle foto's lichter gemaakt, zodat de site ook op mobiel snel opent. Google Search Console gekoppeld en de sitemap ingediend, zodat de pagina's in Google komen.
 
 Rendementscalculator met live aanbod
 
-- De koper vult zijn budget in en ziet direct de woningen die daarbij passen, live uit het CRM.
-
-- Filtert automatisch op koopprijs: alleen woningen die financieel haalbaar zijn worden getoond.
-
-- De hypotheek en de aankoopkosten zitten in dezelfde berekening, dus de koper ziet in één keer wat haalbaar is.
-
-- Elke woning in de resultaten is klikbaar naar de volledige projectpagina.
+De koper vult zijn budget in en ziet direct de woningen die daarbij passen, live uit het CRM. Filtert automatisch op koopprijs: alleen woningen die financieel haalbaar zijn worden getoond. De hypotheek en de aankoopkosten zitten in dezelfde berekening, dus de koper ziet in één keer wat haalbaar is. Elke woning in de resultaten is klikbaar naar de volledige projectpagina.
 
 [Bekijk de live site](https://ynsspain.com)
 
@@ -248,8 +174,6 @@ Gekoppeld aan
 
 Inmobalia Google Search Console
 
-Case 04
-
 ## Reformed Collective
 
 Reformer-pilatesstudio · Beverwijk · [reformedcollective.nl](https://reformedcollective.nl)
@@ -262,33 +186,15 @@ Wat we bouwden
 
 Website + live boekingssysteem
 
-- Tweetalige website (NL/EN) van nul gebouwd in de huisstijl van de studio.
-
-- Lessen die de studio toevoegt staan direct online in het rooster.
-
-- Leden maken een account, boeken en annuleren lessen en beheren hun eigen planning.
-
-- Wachtlijst met automatische melding zodra er een plek vrijkomt.
+Tweetalige website (NL/EN) van nul gebouwd in de huisstijl van de studio. Lessen die de studio toevoegt staan direct online in het rooster. Leden maken een account, boeken en annuleren lessen en beheren hun eigen planning. Wachtlijst met automatische melding zodra er een plek vrijkomt.
 
 Betalen, credits & abonnementen
 
-- Betalen via Mollie: losse lessen, rittenkaarten en doorlopende abonnementen.
-
-- Creditsysteem: leden kopen tegoed en boeken daarmee lessen. Bij annulering wordt de credit automatisch teruggestort.
-
-- Elke betaling komt precies één keer aan, ook als de verbinding wegvalt.
-
-- Mails bij welkom, aankoop, boeking en annulering, vanaf het eigen domein van de studio.
+Betalen via Mollie: losse lessen, rittenkaarten en doorlopende abonnementen. Creditsysteem: leden kopen tegoed en boeken daarmee lessen. Bij annulering wordt de credit automatisch teruggestort. Elke betaling komt precies één keer aan, ook als de verbinding wegvalt. Mails bij welkom, aankoop, boeking en annulering, vanaf het eigen domein van de studio.
 
 iOS-app + beheerportaal
 
-- Eigen iPhone-app in de App Store, zodat leden ook op hun telefoon boeken en betalen.
-
-- Beheerportaal voor de studio: rooster, lessen, capaciteit, deelnemers en leden beheren.
-
-- De studio beheert alles, en leden zien alleen hun eigen gegevens.
-
-- Overgedragen en zelfstandig in gebruik: 137 leden in de eerste maand.
+Eigen iPhone-app in de App Store, zodat leden ook op hun telefoon boeken en betalen. Beheerportaal voor de studio: rooster, lessen, capaciteit, deelnemers en leden beheren. De studio beheert alles, en leden zien alleen hun eigen gegevens. Overgedragen en zelfstandig in gebruik: 137 leden in de eerste maand.
 
 [Bekijk de live site](https://reformedcollective.nl)
 
@@ -297,8 +203,6 @@ iOS-app + beheerportaal
 Gekoppeld aan
 
 Mollie App Store
-
-Case 05
 
 ## CS Cleaning
 
@@ -312,29 +216,15 @@ Wat we bouwden
 
 Nieuwe website
 
-- Nieuwe website op maat, gebouwd rond de eigen huisstijl en het logo.
-
-- Homepage met film, die meteen laat zien wat schoon werk betekent.
-
-- Nieuwe hosting, en oude adressen sturen netjes door.
-
-- Klaar voor Google, met een eigen titel en omschrijving per pagina.
+Nieuwe website op maat, gebouwd rond de eigen huisstijl en het logo. Homepage met film, die meteen laat zien wat schoon werk betekent. Nieuwe hosting, en oude adressen sturen netjes door. Klaar voor Google, met een eigen titel en omschrijving per pagina.
 
 Zes dienstpagina's
 
-- Eén vaste opbouw voor elke dienst: wat we doen, voor wie en hoe je start.
-
-- Kantoren, bedrijfspanden, hotels, evenementen, oplevering en dieptereiniging.
-
-- Op elke pagina één duidelijke knop naar een offerte.
+Eén vaste opbouw voor elke dienst: wat we doen, voor wie en hoe je start. Kantoren, bedrijfspanden, hotels, evenementen, oplevering en dieptereiniging. Op elke pagina één duidelijke knop naar een offerte.
 
 Offertes en werken bij
 
-- Offerteformulier dat direct bij het team binnenkomt, met het type schoonmaak erbij.
-
-- Reactie binnen 24 uur staat duidelijk op de pagina.
-
-- Eigen Werken bij-pagina om nieuwe collega's te vinden.
+Offerteformulier dat direct bij het team binnenkomt, met het type schoonmaak erbij. Reactie binnen 24 uur staat duidelijk op de pagina. Eigen Werken bij-pagina om nieuwe collega's te vinden.
 
 [Bekijk de live site](https://cs-cleaningservice.nl/)
 
