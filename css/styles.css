@@ -703,18 +703,19 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .ms__cijfer--top b { color: var(--dark-teal); }
 @container (max-width: 245px) { .ms__feed { grid-template-columns: repeat(2, 1fr); } .ms__post:nth-child(3) { display: none; } }
 
-/* Leads: belijst voor vandaag. Eén regel springt eruit (wie je nu belt), wat al gedaan is staat rustig in grijs */
-.ms--leads .ms__in { padding-top: 0.9em; padding-bottom: 0.45em; }
-.ms__lead { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: space-between; gap: 1em; font-size: 1.08em; }
-.ms__lead + .ms__lead { border-top: 1px solid var(--gray-1); }
-.ms__lead b { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; letter-spacing: -0.01em; color: var(--gray-6); }
-.ms__st { flex: none; color: var(--gray-4); }
-.ms__lead--nu { flex: 1.45; margin: 0 -0.75em; padding: 0 0.75em; border-radius: 0.75em; background: var(--pale-teal); }
-.ms__lead--nu + .ms__lead { border-top: 0; }
-.ms__wie { min-width: 0; display: flex; flex-direction: column; gap: 0.15em; font-size: 0.9em; color: var(--gray-5); }
-.ms__wie b { font-size: 1.2em; font-weight: 600; color: var(--black); }
-.ms__bel { flex: none; width: 2.6em; height: 2.6em; border-radius: 50%; display: grid; place-items: center; color: var(--white); background: var(--dark-teal); box-shadow: 0 0.5em 1em -0.5em rgba(0,132,125,0.7); }
-.ms__bel svg { width: 1.1em; height: 1.1em; }
+/* Leads: de lijst zoals de klant hem echt krijgt, een werkblad. Gedaan is groen, de cel die nu aan de beurt is staat geselecteerd */
+.ms__sheet { position: absolute; inset: 0; display: grid; grid-template-columns: 1.7em 1.55fr 1fr 0.95fr; grid-auto-rows: 1fr; font-size: 0.95em; font-size: clamp(10px, 3.7cqw, 14.5px); }
+.ms__sheet > * { min-width: 0; display: flex; align-items: center; padding: 0 0.6em; overflow: hidden; white-space: nowrap; color: var(--gray-6); border-right: 1px solid var(--gray-2); border-bottom: 1px solid var(--gray-2); }
+.ms__sheet > :nth-child(4n) { border-right: 0; }
+.ms__k { justify-content: center; padding: 0 !important; font-style: normal; font-size: 0.82em; color: var(--gray-4) !important; background: var(--gray-0); }
+.ms__k--kop { border-bottom-color: var(--gray-3) !important; }
+.ms__h { font-weight: 600; color: var(--black) !important; }
+.ms__cel--ok { color: #1b6b4f !important; background: #e6f5ef; }
+.ms__cel--nu { position: relative; overflow: visible !important; font-weight: 600; color: var(--black) !important; box-shadow: inset 0 0 0 2px var(--dark-teal); }
+.ms__cel--nu::after { content: ""; position: absolute; right: -1px; bottom: -1px; width: 0.42em; height: 0.42em; background: var(--dark-teal); }
+.ms__vaag { opacity: 0.45; }
+.ms__k--c::before { content: "C"; }
+@container (max-width: 275px) { .ms__k--c::before { content: "B"; } .ms__sheet { grid-template-columns: 1.7em 1.5fr 1fr; } .ms__sheet > .ms__b { display: none; } .ms__sheet > :nth-child(4n) { border-right: 1px solid var(--gray-2); } .ms__sheet > :nth-child(4n+4) { border-right: 0; } }
 
 .ms--bord .ms__in { padding: 1.1em; }
 .ms__kolommen { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
@@ -745,10 +746,13 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 /* Eén keer bewegen als het blok in beeld komt; de eindstand is de gewone stand */
 @keyframes msIn { from { opacity: 0; transform: translateY(0.6em); } }
 @keyframes msSchuif { from { transform: translateX(calc(-100% - 1.7em)); } }
+@keyframes msSel { from { box-shadow: inset 0 0 0 2px transparent; } }
+.build-item.visible .ms__cel--nu { animation: msSel 0.3s ease 0.9s backwards; }
+.build-item.visible .ms__cel--nu::after { animation: msIn 0.3s ease 0.9s backwards; }
 @keyframes msTel { from { transform: translateY(3em); } }
-.build-item.visible .ms__post, .build-item.visible .ms__lead { animation: msIn 0.5s cubic-bezier(0.22,1,0.36,1) 0.35s backwards; }
-.build-item.visible .ms__post:nth-child(2), .build-item.visible .ms__lead:nth-child(2) { animation-delay: 0.5s; }
-.build-item.visible .ms__post:nth-child(3), .build-item.visible .ms__lead:nth-child(3) { animation-delay: 0.65s; }
+.build-item.visible .ms__post { animation: msIn 0.5s cubic-bezier(0.22,1,0.36,1) 0.35s backwards; }
+.build-item.visible .ms__post:nth-child(2) { animation-delay: 0.5s; }
+.build-item.visible .ms__post:nth-child(3) { animation-delay: 0.65s; }
 .build-item.visible .ms__kaart--actief { animation: msSchuif 0.9s cubic-bezier(0.65,0,0.25,1) 0.7s backwards; }
 .build-item.visible .ms__tel { animation: msTel 0.8s cubic-bezier(0.22,1,0.36,1) 0.45s backwards; }
 @media (prefers-reduced-motion: reduce) { .ms, .ms * { animation: none !important; transition: none !important; } }
