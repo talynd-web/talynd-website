@@ -2,8 +2,6 @@
 
 Portfolio
 
-Vijf klanten, vijf systemen die nu zonder ons draaien.
-
 ## Zeker Wonen Fondsen
 
 Vastgoedfondsen · [zekerwonenfondsen.nl](https://www.zekerwonenfondsen.nl/nl)
