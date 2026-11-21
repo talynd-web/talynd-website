@@ -843,7 +843,6 @@ html.reveal-fallback .ms * { animation: none !important; }
 }
 
 /* ---------- Diensten, Wat wij bouwen (21-11): acht kaarten, echt beeld in plaats van stock ---------- */
-.dsol-card { scroll-margin-top: 104px; }
 .dsol-card .dsol-card__img--g { background: linear-gradient(150deg, #eee3ff, #dacdf5); border: none; }
 .dsol-card .dsol-card__img--h { background: linear-gradient(150deg, #d3e8e3, #b7d8cf); border: none; }
 .dsol-vis { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; padding: 9%; text-align: left; }
@@ -906,26 +905,18 @@ html.reveal-fallback .ms * { animation: none !important; }
 .mac__lichten i:nth-child(2) { background: #febc2e; }
 .mac__lichten i:nth-child(3) { background: #28c840; }
 .mac__titel { font: 600 10.5px/1 -apple-system, system-ui, sans-serif; color: #4a4a4f; }
-.mac__inhoud { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 12px; }
-.mac__inhoud figure { margin: 0; }
-.mac__inhoud img { display: block; width: 100%; height: auto; border-radius: 4px; }
-.mac__inhoud figcaption { margin-top: 6px; font: 400 9.5px/1.2 -apple-system, system-ui, sans-serif; color: #8a8a8f; white-space: nowrap; }
-.mac__inhoud figcaption b { display: block; font-size: 15px; font-weight: 600; color: var(--gray-6); }
-.mac__inhoud figure:first-child figcaption b { color: var(--dark-teal); }
 /* Content op data: outlier-overzicht van concurrenten, bovenste post geopend */
 .od { container-type: inline-size; }
 .od__inhoud { padding: 2.4cqw 4cqw 3.6cqw; font-family: -apple-system, system-ui, sans-serif; text-align: left; }
-.od__kop, .od__rij { display: grid; grid-template-columns: minmax(0, 1fr) 11cqw 30cqw 5cqw; gap: 2.6cqw; align-items: center; }
-.od__kop { padding: 1.4cqw 0; font-size: 2.9cqw; font-weight: 500; color: #8a8a8f; border-bottom: 1px solid #ececf0; }
+.od__kop, .od__rij { display: grid; gap: 2.6cqw; align-items: center; }
+.od__rij { grid-template-columns: 7.4cqw minmax(0, 1fr) 9.5cqw 28cqw 4.4cqw; }
+.od__kop { grid-template-columns: minmax(0, 1fr) 9.5cqw 28cqw 4.4cqw; }
+.od__kop { padding: 1.4cqw 0 1.4cqw 9.9cqw; font-size: 2.9cqw; font-weight: 500; color: #8a8a8f; border-bottom: 1px solid #ececf0; }
 .od__kop span:nth-child(3) { grid-column: 3 / 5; }
 .od__rij { padding: 1.8cqw 1.6cqw; margin: 0 -1.6cqw; border-radius: 2cqw; border-bottom: 1px solid #f1f1f4; }
 .od__rij.is-open { background: #eef6f5; border-bottom-color: transparent; }
-.od__rij > .od__thumb { display: none; }
-.od__wie { display: flex; align-items: center; gap: 2cqw; min-width: 0; font-size: 2.9cqw; line-height: 1.2; color: #8a8a8f; white-space: nowrap; }
-.od__rij { grid-template-columns: 7.4cqw minmax(0, 1fr) 9.5cqw 28cqw 4.4cqw; }
-.od__kop { grid-template-columns: minmax(0, 1fr) 9.5cqw 28cqw 4.4cqw; padding-left: 9.9cqw; }
+.od__wie { display: flex; flex-direction: column; align-items: flex-start; gap: 0.2cqw; min-width: 0; font-size: 2.9cqw; line-height: 1.2; color: #8a8a8f; white-space: nowrap; }
 .od__rij > .od__thumb { display: grid; }
-.od__wie { flex-direction: column; align-items: flex-start; gap: 0.2cqw; }
 .od__wie b { font-size: 3.2cqw; font-weight: 600; color: #1c1c1e; }
 .od__thumb { width: 7.4cqw; aspect-ratio: 4 / 5; border-radius: 1cqw; place-items: center; position: relative; overflow: hidden; }
 .od__thumb svg { width: 3.4cqw; height: 3.4cqw; }

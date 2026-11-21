@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=dcc6734c">
+  <link rel="stylesheet" href="css/styles.css?v=b301a7af">
   <style>
     /* ============================================================
        DIENSTEN — cambio.ai platform-style layout (Talynd tokens)
@@ -97,6 +97,7 @@
     .dsol__rijkop { font-family: var(--font-display); font-weight: 400; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.1; letter-spacing: -0.01em; color: var(--black); margin: 0 4px 22px; }
     .dsol__rij .dsol__grid { gap: 28px 18px; }
     .dsol__rij .dsol-card[id] { scroll-margin-top: 180px; }
+    .dsol-card__foot { order: 2; }
     .dsol-card { display: flex; flex-direction: column; text-decoration: none; }
     .dsol-card__img { position: relative; aspect-ratio: 5/6; border-radius: 16px; overflow: hidden;
       background: #1C2540; border: 1px dashed rgba(255,255,255,0.22); display: grid; place-items: center; text-align: center; }
@@ -533,6 +534,9 @@
       <div class="dsol__grid">
 
         <div id="marketing" class="dsol-card fade-in-up">
+          <div class="dsol-card__foot">
+            <h4 class="dsol-card__label">Content op data</h4>
+          </div>
           <div class="dsol-card__img dsol-card__img--c">
             <div class="dsol-vis dsol-vis--mac" aria-hidden="true">
               <div class="mac od">
@@ -549,12 +553,12 @@
             </div>
             <div class="dsol-card__hover">Elke maandag zie je welke posts bij je concurrenten beter lopen dan normaal. Daar haalt je team de onderwerpen uit.</div>
           </div>
-          <div class="dsol-card__foot">
-            <h4 class="dsol-card__label">Content op data</h4>
-          </div>
         </div>
 
         <div id="posts" class="dsol-card fade-in-up" data-delay="1">
+          <div class="dsol-card__foot">
+            <h4 class="dsol-card__label">Posts sneller en mooier</h4>
+          </div>
           <div class="dsol-card__img dsol-card__img--g">
             <div class="dsol-vis dsol-vis--mac" aria-hidden="true">
               <div class="mac pm">
@@ -571,12 +575,12 @@
             </div>
             <div class="dsol-card__hover">We kijken hoe je team nu posts maakt en bouwen die werkwijze om. Sneller klaar en mooier, in jullie eigen huisstijl.</div>
           </div>
-          <div class="dsol-card__foot">
-            <h4 class="dsol-card__label">Posts sneller en mooier</h4>
-          </div>
         </div>
 
         <div id="advertenties" class="dsol-card fade-in-up" data-delay="2">
+          <div class="dsol-card__foot">
+            <h4 class="dsol-card__label">Advertenties en video</h4>
+          </div>
           <div class="dsol-card__img dsol-card__img--h">
             <div class="dsol-vis dsol-vis--ip" aria-hidden="true">
               <div class="ip">
@@ -594,12 +598,12 @@
             </div>
             <div class="dsol-card__hover">Advertenties en reels op basis van wat in jouw markt werkt. In varianten, zodat je ziet welke het best loopt.</div>
           </div>
-          <div class="dsol-card__foot">
-            <h4 class="dsol-card__label">Advertenties en video</h4>
-          </div>
         </div>
 
         <div id="websites" class="dsol-card fade-in-up" data-delay="3">
+          <div class="dsol-card__foot">
+            <h4 class="dsol-card__label">Website en app</h4>
+          </div>
           <div class="dsol-card__img dsol-card__img--f">
             <div class="dsol-vis dsol-vis--scherm" aria-hidden="true">
               <div class="ms ms--site" aria-hidden="true"><div class="ms__in">
@@ -609,9 +613,6 @@
               </div></div>
             </div>
             <div class="dsol-card__hover">Een site die je team zelf bijwerkt en een eigen app in de stores. Goed te vinden in Google en door AI-assistenten.</div>
-          </div>
-          <div class="dsol-card__foot">
-            <h4 class="dsol-card__label">Website en app</h4>
           </div>
         </div>
 
@@ -623,6 +624,9 @@
       <div class="dsol__grid">
 
         <div id="leads" class="dsol-card fade-in-up">
+          <div class="dsol-card__foot">
+            <h4 class="dsol-card__label">Leadlijsten</h4>
+          </div>
           <div class="dsol-card__img dsol-card__img--b">
             <div class="dsol-vis dsol-vis--scherm" aria-hidden="true">
               <div class="ms ms--leads" aria-hidden="true"><div class="ms__sheet">
@@ -636,12 +640,12 @@
             </div>
             <div class="dsol-card__hover">Lijsten met de bedrijven die je echt wil spreken. Elk contact is nagekeken, en daarna draait je salesteam ze zelf.</div>
           </div>
-          <div class="dsol-card__foot">
-            <h4 class="dsol-card__label">Leadlijsten</h4>
-          </div>
         </div>
 
         <div id="opvolging" class="dsol-card fade-in-up" data-delay="1">
+          <div class="dsol-card__foot">
+            <h4 class="dsol-card__label">Opvolging na elke aanvraag</h4>
+          </div>
           <div class="dsol-card__img dsol-card__img--c">
             <div class="dsol-vis dsol-vis--ip" aria-hidden="true">
               <div class="ip ip--lock">
@@ -659,12 +663,12 @@
             </div>
             <div class="dsol-card__hover">Mail, WhatsApp en een beltaak gaan vanzelf de deur uit. Geen aanvraag blijft liggen.</div>
           </div>
-          <div class="dsol-card__foot">
-            <h4 class="dsol-card__label">Opvolging na elke aanvraag</h4>
-          </div>
         </div>
 
         <div id="pipedrive" class="dsol-card fade-in-up" data-delay="2">
+          <div class="dsol-card__foot">
+            <h4 class="dsol-card__label">Pipedrive en koppelingen</h4>
+          </div>
           <div class="dsol-card__img dsol-card__img--g">
             <div class="dsol-vis dsol-vis--scherm" aria-hidden="true">
               <div class="ms ms--bord" aria-hidden="true"><div class="ms__in">
@@ -677,12 +681,12 @@
             </div>
             <div class="dsol-card__hover">Je CRM ingericht en gekoppeld aan je website, mail en advertenties. Zo kloppen je rapportages.</div>
           </div>
-          <div class="dsol-card__foot">
-            <h4 class="dsol-card__label">Pipedrive en koppelingen</h4>
-          </div>
         </div>
 
         <div id="rekentool" class="dsol-card fade-in-up" data-delay="3">
+          <div class="dsol-card__foot">
+            <h4 class="dsol-card__label">Rekentool op maat</h4>
+          </div>
           <div class="dsol-card__img dsol-card__img--e">
             <div class="dsol-vis dsol-vis--ip" aria-hidden="true">
               <div class="ip">
@@ -694,9 +698,6 @@
               </div>
             </div>
             <div class="dsol-card__hover">Een rekentool op jouw eigen cijfers. Voor een prijsopgave, een rendement of je eigen rekenmodel.</div>
-          </div>
-          <div class="dsol-card__foot">
-            <h4 class="dsol-card__label">Rekentool op maat</h4>
           </div>
         </div>
 
@@ -951,10 +952,17 @@
       });
     });
     /* ---------- Link vanaf home: kaart plus rijkop in beeld, ook na het laden van de beelden ---------- */
-    window.addEventListener('load', function () {
-      var doel = location.hash && document.getElementById(location.hash.slice(1));
-      if (doel && doel.closest('.dsol__rij')) doel.scrollIntoView({ block: 'start', behavior: 'instant' });
-    });
+    (function () {
+      var zelfGescrold = false;
+      ['wheel', 'touchstart', 'keydown'].forEach(function (t) { addEventListener(t, function () { zelfGescrold = true; }, { once: true, passive: true }); });
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      var terug = nav && (nav.type === 'back_forward' || nav.type === 'reload');
+      window.addEventListener('load', function () {
+        if (zelfGescrold || terug) return;
+        var doel = location.hash && document.getElementById(location.hash.slice(1));
+        if (doel && doel.closest('.dsol__rij')) doel.scrollIntoView({ block: 'start', behavior: 'instant' });
+      });
+    })();
   </script>
 </body>
 </html>

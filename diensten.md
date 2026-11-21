@@ -48,39 +48,39 @@ Veeg voor meer
 
 ### Marketing
 
-Elke maandag zie je welke posts bij je concurrenten beter lopen dan normaal. Daar haalt je team de onderwerpen uit.
-
 #### Content op data
 
-We kijken hoe je team nu posts maakt en bouwen die werkwijze om. Sneller klaar en mooier, in jullie eigen huisstijl.
+Elke maandag zie je welke posts bij je concurrenten beter lopen dan normaal. Daar haalt je team de onderwerpen uit.
 
 #### Posts sneller en mooier
 
-Advertenties en reels op basis van wat in jouw markt werkt. In varianten, zodat je ziet welke het best loopt.
+We kijken hoe je team nu posts maakt en bouwen die werkwijze om. Sneller klaar en mooier, in jullie eigen huisstijl.
 
 #### Advertenties en video
 
-Een site die je team zelf bijwerkt en een eigen app in de stores. Goed te vinden in Google en door AI-assistenten.
+Advertenties en reels op basis van wat in jouw markt werkt. In varianten, zodat je ziet welke het best loopt.
 
 #### Website en app
 
-### Sales
+Een site die je team zelf bijwerkt en een eigen app in de stores. Goed te vinden in Google en door AI-assistenten.
 
-Lijsten met de bedrijven die je echt wil spreken. Elk contact is nagekeken, en daarna draait je salesteam ze zelf.
+### Sales
 
 #### Leadlijsten
 
-Mail, WhatsApp en een beltaak gaan vanzelf de deur uit. Geen aanvraag blijft liggen.
+Lijsten met de bedrijven die je echt wil spreken. Elk contact is nagekeken, en daarna draait je salesteam ze zelf.
 
 #### Opvolging na elke aanvraag
 
-Je CRM ingericht en gekoppeld aan je website, mail en advertenties. Zo kloppen je rapportages.
+Mail, WhatsApp en een beltaak gaan vanzelf de deur uit. Geen aanvraag blijft liggen.
 
 #### Pipedrive en koppelingen
 
-Een rekentool op jouw eigen cijfers. Voor een prijsopgave, een rendement of je eigen rekenmodel.
+Je CRM ingericht en gekoppeld aan je website, mail en advertenties. Zo kloppen je rapportages.
 
 #### Rekentool op maat
+
+Een rekentool op jouw eigen cijfers. Voor een prijsopgave, een rendement of je eigen rekenmodel.
 
 Wat klanten zeggen
 
