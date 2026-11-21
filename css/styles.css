@@ -736,7 +736,7 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .ms__cijfer { display: flex; flex-direction: column; font-size: 0.88em; line-height: 1.2; color: var(--gray-4); white-space: nowrap; }
 .ms__cijfer b { font-size: 1.42em; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-6); font-variant-numeric: tabular-nums; }
 .ms__cijfer--top b { color: var(--dark-teal); }
-@container (max-width: 258px) { .ms__feed { grid-template-columns: repeat(2, 1fr); } .ms__post:nth-child(3) { display: none; } }
+@container (max-width: 258px) { .ms__beeld--car { padding-top: 1.6em; } .ms__feed { grid-template-columns: repeat(2, 1fr); } .ms__post:nth-child(3) { display: none; } }
 
 /* Leads: de lijst zoals de klant hem echt krijgt, een werkblad. Gedaan is groen, de cel die nu aan de beurt is staat geselecteerd */
 .ms__sheet { position: absolute; inset: 0; display: grid; grid-template-columns: 1.7em 1.55fr 1fr 0.95fr; grid-auto-rows: 1fr; font-size: 0.95em; font-size: clamp(10px, 3.7cqw, 14.5px); }
@@ -841,3 +841,30 @@ html.reveal-fallback .ms * { animation: none !important; }
   .wm--tealkaart { width: 96px; right: 14px; bottom: -18px; }
   .wm--legal { right: 8px; }
 }
+
+/* ---------- Diensten, Wat wij bouwen (21-11): acht kaarten, echt beeld in plaats van stock ---------- */
+.dsol-card { scroll-margin-top: 104px; }
+.dsol-card .dsol-card__img--g { background: linear-gradient(150deg, #eee3ff, #dacdf5); border: none; }
+.dsol-card .dsol-card__img--h { background: linear-gradient(150deg, #d3e8e3, #b7d8cf); border: none; }
+.dsol-vis { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; padding: 9%; text-align: left; }
+.dsol-vis--scherm .ms { width: 100%; }
+.dsol-vis--posts { grid-template-columns: 1fr 1fr; gap: 6%; align-content: center; }
+.dsol-vis--posts figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.dsol-vis--posts img { width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 14px 26px -16px rgba(4,14,31,0.5); }
+.dsol-vis--posts figcaption { font-size: 12px; font-weight: 500; color: rgba(20,40,40,0.66); text-align: center; }
+.dsol-tel { container-type: inline-size; position: absolute; left: 50%; bottom: -14%; width: 56%; aspect-ratio: 9 / 18.5; translate: -50% 0; padding: 4px; border-radius: 26px; background: #141212; box-shadow: 0 24px 40px -20px rgba(0,0,0,0.6); overflow: hidden; }
+.dsol-tel video { width: 100%; height: 100%; object-fit: cover; border-radius: 22px; display: block; }
+.dsol-tel--lock { width: 64%; display: flex; flex-direction: column; text-align: left; padding: 20% 5% 0; background: linear-gradient(170deg, #2b6b66, #0c3a3a); border: 4px solid #141212; }
+.dsol-melding { margin-bottom: 4cqw; display: flex; gap: 4cqw; padding: 4.4cqw; border-radius: 6cqw; background: #fff; box-shadow: 0 2cqw 5cqw -3cqw rgba(0,0,0,0.5); }
+.dsol-melding__ico { flex: none; width: 10cqw; height: 10cqw; border-radius: 2.6cqw; display: grid; place-items: center; color: #fff; }
+.dsol-melding__ico svg { width: 6cqw; height: 6cqw; }
+.dsol-melding__ico--wa { background: #25a35a; }
+.dsol-melding__ico--mail { background: #2f7ad8; }
+.dsol-melding__ico--taak { background: var(--dark-teal); }
+.dsol-melding__tekst { min-width: 0; display: flex; flex-direction: column; font-size: 5.8cqw; line-height: 1.25; color: var(--gray-6); }
+.dsol-melding__tekst b { font-weight: 600; color: var(--black); }
+.dsol-melding__app { display: flex; justify-content: space-between; font-size: 4.6cqw; color: var(--gray-4); text-transform: uppercase; letter-spacing: 0.02em; }
+.dsol-melding__app i { font-style: normal; text-transform: none; letter-spacing: 0; }
+.dsol-blad { position: absolute; left: 50%; bottom: -10%; width: 64%; translate: -50% 0; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 22px 40px -20px rgba(4,14,31,0.45); }
+.dsol-blad img { width: 100%; height: auto; display: block; }
+@media (max-width: 1240px) and (min-width: 1001px) { .dsol-vis { padding: 7%; } }

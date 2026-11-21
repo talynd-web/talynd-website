@@ -1,8 +1,8 @@
-# Zes bouwstenen die je handwerk overnemen.
+# Acht bouwstenen die je handwerk overnemen.
 
 Diensten
 
-Concrete systemen die je leads, data en opvolging overnemen. Na de oplevering staat alles op jouw naam en beheer je het zelf.
+Concrete systemen voor je marketing, je leads en je opvolging. Na de oplevering staat alles op jouw naam en beheer je het zelf.
 
 Vertrouwd door
 
@@ -42,33 +42,41 @@ Je team krijgt training en alles op papier. Het systeem is van jou en je beheert
 
 Wat wij bouwen
 
-## Zes bouwstenen waarmee we je commerciële proces automatiseren, los of als één samenhangend systeem.
+## Vier voor meer aanvragen, vier zodat elke aanvraag wordt opgepakt. Los te nemen of als één systeem.
 
 Veeg voor meer
 
-Persoonlijk gesprek op locatie. We brengen je proces in kaart en zeggen eerlijk of wij er iets aan kunnen verbeteren.
+Elke maandag zie je welke posts bij je concurrenten beter lopen dan normaal. Daar haalt je team de onderwerpen uit.
 
-### Intake en procesanalyse
+### Content op data
 
-Automatische opvolging na elke lead of elk gesprek. Op het juiste moment, zonder dat iemand eraan hoeft te denken.
+We kijken hoe je team nu posts maakt en bouwen die werkwijze om. Sneller klaar en mooier, in jullie eigen huisstijl.
 
-### Mailautomatisering
+### Posts sneller en mooier
 
-Gestructureerde e-mailreeksen die leads warm houden totdat ze klaar zijn om te beslissen.
+Advertenties en reels op basis van wat in jouw markt werkt. In varianten, zodat je ziet welke het best loopt.
 
-### Opvolgreeksen
+### Advertenties en video
 
-Maatwerk rekentool op basis van jouw eigen cijfers: een prijsopgave, een rendement of je eigen rekenmodel.
+Een site die je team zelf bijwerkt en een eigen app in de stores. Goed te vinden in Google en door AI-assistenten.
+
+### Website en app
+
+Lijsten met de bedrijven die je echt wil spreken. Elk contact is nagekeken, en daarna draait je salesteam ze zelf.
+
+### Leadlijsten
+
+Mail, WhatsApp en een beltaak gaan vanzelf de deur uit. Geen aanvraag blijft liggen.
+
+### Opvolging na elke aanvraag
+
+Je CRM ingericht en gekoppeld aan je website, mail en advertenties. Zo kloppen je rapportages.
+
+### Pipedrive en koppelingen
+
+Een rekentool op jouw eigen cijfers. Voor een prijsopgave, een rendement of je eigen rekenmodel.
 
 ### Rekentool op maat
-
-Koppelingen tussen je bestaande systemen, zodat gegevens één keer ingevoerd worden en overal kloppen.
-
-### Systeemkoppelingen
-
-Je CRM volledig ingericht en geautomatiseerd: pipelines, triggers en rapportages die kloppen met jouw proces.
-
-### Pipedrive-integratie
 
 Wat klanten zeggen
 
@@ -100,7 +108,7 @@ Saar
 
 ### Kunnen we één losse dienst afnemen, of moet het een compleet traject zijn?
 
-Allebei kan. Soms bouwen we alleen mailautomatisering of één koppeling, soms een compleet systeem van intake tot CRM. In het eerste gesprek bepalen we samen de kleinste set die het meeste oplevert.
+Allebei kan. Soms bouwen we alleen leadlijsten of één koppeling, soms alles van content tot CRM. In het eerste gesprek bepalen we samen de kleinste set die het meeste oplevert.
 
 ### Wat kost het om een systeem te laten bouwen?
 

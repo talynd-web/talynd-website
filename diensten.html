@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diensten: zes bouwstenen voor AI-automatisering | Talynd</title>
-  <meta name="description" content="Intake, mailautomatisering, opvolgreeksen, rekentools op maat, systeemkoppelingen en Pipedrive-integratie. Talynd bouwt het en zet het daarna op jouw naam.">
+  <title>Diensten: acht bouwstenen voor AI-automatisering | Talynd</title>
+  <meta name="description" content="Van content en advertenties tot leadlijsten, opvolging en Pipedrive. Talynd bouwt het en zet het daarna op jouw naam.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://talynd.com/diensten">
   <link rel="alternate" type="text/markdown" href="/diensten.md">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://talynd.com/diensten">
-  <meta property="og:title" content="Diensten: zes bouwstenen voor AI-automatisering | Talynd">
-  <meta property="og:description" content="Intake, mailautomatisering, opvolgreeksen, rekentools op maat, systeemkoppelingen en Pipedrive-integratie. Talynd bouwt het en zet het daarna op jouw naam.">
+  <meta property="og:title" content="Diensten: acht bouwstenen voor AI-automatisering | Talynd">
+  <meta property="og:description" content="Van content en advertenties tot leadlijsten, opvolging en Pipedrive. Talynd bouwt het en zet het daarna op jouw naam.">
   <meta property="og:image" content="https://talynd.com/assets/og-talynd.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=a24986de">
+  <link rel="stylesheet" href="css/styles.css?v=37254e1c">
   <style>
     /* ============================================================
        DIENSTEN — cambio.ai platform-style layout (Talynd tokens)
@@ -89,7 +89,7 @@
     .dsol__heading em { font-style: italic; }
     .dsol__hint { display: none; align-items: center; gap: 7px; margin-top: 16px; font-size: 13px; font-weight: 500; color: var(--dark-teal); letter-spacing: 0.01em; }
     .dsol__hint svg { width: 15px; height: 15px; }
-    .dsol__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 24px; }
+    .dsol__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 20px; }
     .dsol-card { display: flex; flex-direction: column; text-decoration: none; }
     .dsol-card__img { position: relative; aspect-ratio: 5/6; border-radius: 16px; overflow: hidden;
       background: #1C2540; border: 1px dashed rgba(255,255,255,0.22); display: grid; place-items: center; text-align: center; }
@@ -189,13 +189,15 @@
       .dfeat { grid-template-columns: 1fr; gap: 28px; margin-bottom: 56px; }
       .dfeat.reverse .dfeat__visual { order: 0; }
       /* Solutions: 2-kolommen grid op mobiel */
-      .dsol__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; overflow-x: visible; margin: 0; padding: 0; scroll-snap-type: none; }
-      .dsol-card { flex: none; scroll-snap-align: none; }
+      .dsol__grid { display: flex; gap: 14px; overflow-x: auto; margin: 0 calc(-1 * var(--pad-x)); padding: 0 var(--pad-x) 6px; scroll-snap-type: x mandatory; scroll-padding-left: var(--pad-x); scrollbar-width: none; }
+      .dsol__grid::-webkit-scrollbar { display: none; }
+      .dsol-card { flex: 0 0 76%; scroll-snap-align: start; }
+      .dsol-card.fade-in-up { opacity: 1; transform: none; transition: none; }
       .dsol-card__img { aspect-ratio: 4/5; }
       .dsol-card__hover { font-size: 12.5px; padding: 14px 14px 12px; }
       .dsol-card__label { font-size: 15px; }
       .dsol-card__foot { padding: 10px 2px 0; }
-      .dsol__head .dsol__hint { display: none; }
+      .dsol__head .dsol__hint { display: inline-flex; }
       .dquote__grid { grid-template-columns: 1fr; }
       .dpromise__grid { grid-template-columns: 1fr; }
       .dquote-card, .dpromise-card { padding: 32px; }
@@ -264,7 +266,7 @@
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "AI Automatisering voor Bedrijven",
-    "description": "Talynd bouwt AI-automatisering voor bedrijven in zes bouwstenen: intake en procesanalyse, mailautomatisering, opvolgreeksen, rekentools op maat, systeemkoppelingen en Pipedrive-integratie. Daarna staat alles op jouw naam.",
+    "description": "Talynd bouwt AI-automatisering voor bedrijven in acht bouwstenen: content op data, posts sneller en mooier, advertenties en video, website en app, leadlijsten, opvolging na elke aanvraag, Pipedrive en koppelingen, en rekentools op maat. Daarna staat alles op jouw naam.",
     "provider": {
       "@type": "Organization",
       "name": "Talynd",
@@ -296,7 +298,7 @@
         "name": "Kunnen we één losse dienst afnemen, of moet het een compleet traject zijn?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Allebei kan. Soms bouwen we alleen mailautomatisering of één koppeling, soms een compleet systeem van intake tot CRM. In het eerste gesprek bepalen we samen de kleinste set die het meeste oplevert."
+          "text": "Allebei kan. Soms bouwen we alleen leadlijsten of één koppeling, soms alles van content tot CRM. In het eerste gesprek bepalen we samen de kleinste set die het meeste oplevert."
         }
       },
       {
@@ -384,8 +386,8 @@
       </div>
       <div class="dhero__inner">
         <span class="eyebrow fade-in-up">Diensten</span>
-        <h1 class="dhero__title fade-in-up" data-delay="1">Zes bouwstenen die je handwerk overnemen.</h1>
-        <p class="dhero__sub fade-in-up" data-delay="2">Concrete systemen die je leads, data en opvolging overnemen. Na de oplevering staat alles op jouw naam en beheer je het zelf.</p>
+        <h1 class="dhero__title fade-in-up" data-delay="1">Acht bouwstenen die je handwerk overnemen.</h1>
+        <p class="dhero__sub fade-in-up" data-delay="2">Concrete systemen voor je marketing, je leads en je opvolging. Na de oplevering staat alles op jouw naam en beheer je het zelf.</p>
       </div>
     </header>
     <div class="dhero-media">
@@ -513,74 +515,133 @@
     <div class="container">
       <div class="dsol__head fade-in-up">
         <span class="eyebrow">Wat wij bouwen</span>
-        <h2 class="dsol__heading">Zes bouwstenen waarmee we je commerciële proces automatiseren, los of als <em>één samenhangend systeem.</em></h2>
+        <h2 class="dsol__heading">Vier voor meer aanvragen, vier zodat elke aanvraag wordt opgepakt. Los te nemen of als <em>één systeem.</em></h2>
         <span class="dsol__hint">Veeg voor meer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
       </div>
       <div class="dsol__grid">
 
-        <div class="dsol-card fade-in-up">
-          <div class="dsol-card__img dsol-card__img--a">
-            <span class="dsol-card__num">01</span>
-            <img src="assets/diensten-intake.webp" alt="Intake en procesanalyse" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.85;" />
-            <div class="dsol-card__hover">Persoonlijk gesprek op locatie. We brengen je proces in kaart en zeggen eerlijk of wij er iets aan kunnen verbeteren.</div>
-          </div>
-          <div class="dsol-card__foot">
-            <h3 class="dsol-card__label">Intake en procesanalyse</h3>
-          </div>
-        </div>
-
-        <div class="dsol-card fade-in-up" data-delay="1">
-          <div class="dsol-card__img dsol-card__img--b">
-            <span class="dsol-card__num">02</span>
-            <img src="assets/diensten-mail.webp" alt="Mailautomatisering" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
-            <div class="dsol-card__hover">Automatische opvolging na elke lead of elk gesprek. Op het juiste moment, zonder dat iemand eraan hoeft te denken.</div>
-          </div>
-          <div class="dsol-card__foot">
-            <h3 class="dsol-card__label">Mailautomatisering</h3>
-          </div>
-        </div>
-
-        <div id="leads" class="dsol-card fade-in-up" data-delay="2">
+        <div id="marketing" class="dsol-card fade-in-up">
           <div class="dsol-card__img dsol-card__img--c">
-            <span class="dsol-card__num">03</span>
-            <img src="assets/diensten-nurture.webp" alt="Opvolgreeksen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
-            <div class="dsol-card__hover">Gestructureerde e-mailreeksen die leads warm houden totdat ze klaar zijn om te beslissen.</div>
+            <div class="dsol-vis dsol-vis--scherm" aria-hidden="true">
+              <div class="ms ms--radar" aria-hidden="true"><div class="ms__in">
+              <div class="ms__kopregel">Inzicht in wat werkt bij je concurrenten</div>
+              <div class="ms__feed">
+              <div class="ms__post"><div class="ms__beeld ms__beeld--reel"><span class="ms__duur">0:24</span><span class="ms__play"></span><b>Een dag achter de schermen</b></div><div class="ms__cijfer ms__cijfer--top"><b>4&times;</b>hun gemiddelde</div></div>
+              <div class="ms__post"><div class="ms__beeld ms__beeld--car"><span class="ms__teller">1/5</span><b>5 fouten bij de start</b></div><div class="ms__cijfer"><b>3&times;</b>hun gemiddelde</div></div>
+              <div class="ms__post"><div class="ms__beeld ms__beeld--quote"><span class="ms__aanh">&ldquo;</span><b>Binnen een week geregeld.</b></div><div class="ms__cijfer"><b>2&times;</b>hun gemiddelde</div></div>
+              </div>
+              </div></div>
+            </div>
+            <div class="dsol-card__hover">Elke maandag zie je welke posts bij je concurrenten beter lopen dan normaal. Daar haalt je team de onderwerpen uit.</div>
           </div>
           <div class="dsol-card__foot">
-            <h3 class="dsol-card__label">Opvolgreeksen</h3>
+            <h3 class="dsol-card__label">Content op data</h3>
           </div>
         </div>
 
-        <div id="tools" class="dsol-card fade-in-up">
+        <div id="posts" class="dsol-card fade-in-up" data-delay="1">
           <div class="dsol-card__img dsol-card__img--e">
-            <span class="dsol-card__num">04</span>
-            <img src="assets/diensten-calculator.webp" alt="Rekentool op maat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
-            <div class="dsol-card__hover">Maatwerk rekentool op basis van jouw eigen cijfers: een prijsopgave, een rendement of je eigen rekenmodel.</div>
+            <div class="dsol-vis dsol-vis--posts" aria-hidden="true">
+              <figure><img src="assets/post-voor-2111.webp" alt="" loading="lazy" width="432" height="540" /><figcaption>Voor</figcaption></figure>
+              <figure><img src="assets/post-na-2111.webp" alt="" loading="lazy" width="432" height="540" /><figcaption>Na</figcaption></figure>
+            </div>
+            <div class="dsol-card__hover">We kijken hoe je team nu posts maakt en bouwen die werkwijze om. Sneller klaar en mooier, in jullie eigen huisstijl.</div>
           </div>
           <div class="dsol-card__foot">
-            <h3 class="dsol-card__label">Rekentool op maat</h3>
+            <h3 class="dsol-card__label">Posts sneller en mooier</h3>
           </div>
         </div>
 
-        <div class="dsol-card fade-in-up" data-delay="1">
-          <div class="dsol-card__img dsol-card__img--d">
-            <span class="dsol-card__num">05</span>
-            <img src="assets/diensten-systeem.webp" alt="Systeemkoppelingen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% center;z-index:0;opacity:0.85;" />
-            <div class="dsol-card__hover">Koppelingen tussen je bestaande systemen, zodat gegevens één keer ingevoerd worden en overal kloppen.</div>
+        <div id="advertenties" class="dsol-card fade-in-up" data-delay="2">
+          <div class="dsol-card__img dsol-card__img--a">
+            <div class="dsol-vis" aria-hidden="true">
+              <div class="dsol-tel"><video autoplay muted loop playsinline preload="none" poster="assets/video/butler-poster.jpg" width="720" height="1280"><source src="assets/video/butler-klein.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="dsol-card__hover">Advertenties en reels op basis van wat in jouw markt werkt. In varianten, zodat je ziet welke het best loopt.</div>
           </div>
           <div class="dsol-card__foot">
-            <h3 class="dsol-card__label">Systeemkoppelingen</h3>
+            <h3 class="dsol-card__label">Advertenties en video</h3>
+          </div>
+        </div>
+
+        <div id="websites" class="dsol-card fade-in-up" data-delay="3">
+          <div class="dsol-card__img dsol-card__img--f">
+            <div class="dsol-vis dsol-vis--scherm" aria-hidden="true">
+              <div class="ms ms--site" aria-hidden="true"><div class="ms__in">
+              <div class="ms__browser"><span class="ms__dots"><i></i><i></i><i></i></span><span class="ms__adres"></span></div>
+              <img class="ms__shot" src="assets/ms-site-via-2111.webp" alt="" loading="lazy" width="720" height="405" />
+              <span class="ms__tel"><img src="assets/ms-app-via.webp" alt="" loading="lazy" width="240" height="480" /></span>
+              </div></div>
+            </div>
+            <div class="dsol-card__hover">Een site die je team zelf bijwerkt en een eigen app in de stores. Goed te vinden in Google en door AI-assistenten.</div>
+          </div>
+          <div class="dsol-card__foot">
+            <h3 class="dsol-card__label">Website en app</h3>
+          </div>
+        </div>
+
+        <div id="leads" class="dsol-card fade-in-up">
+          <div class="dsol-card__img dsol-card__img--b">
+            <div class="dsol-vis dsol-vis--scherm" aria-hidden="true">
+              <div class="ms ms--leads" aria-hidden="true"><div class="ms__sheet">
+              <i class="ms__k ms__k--kop"></i><span class="ms__k ms__k--kop">A</span><span class="ms__k ms__k--kop ms__b">B</span><span class="ms__k ms__k--kop ms__k--c"></span>
+              <i class="ms__k">1</i><span class="ms__h">Bedrijf</span><span class="ms__h ms__b">Contact</span><span class="ms__h">Status</span>
+              <i class="ms__k">2</i><span>Installatiebedrijf</span><span class="ms__b">Directeur</span><span class="ms__cel--ok">Gebeld</span>
+              <i class="ms__k">3</i><span>Adviesbureau</span><span class="ms__b">Eigenaar</span><span class="ms__cel--ok">Gebeld</span>
+              <i class="ms__k">4</i><span>Groothandel</span><span class="ms__b">Inkoper</span><span class="ms__cel--nu">Bellen</span>
+              <i class="ms__k">5</i><span class="ms__vaag">Bouwbedrijf</span><span class="ms__b ms__vaag">Directeur</span><span class="ms__vaag">Ingepland</span>
+              </div></div>
+            </div>
+            <div class="dsol-card__hover">Lijsten met de bedrijven die je echt wil spreken. Elk contact is nagekeken, en daarna draait je salesteam ze zelf.</div>
+          </div>
+          <div class="dsol-card__foot">
+            <h3 class="dsol-card__label">Leadlijsten</h3>
+          </div>
+        </div>
+
+        <div id="opvolging" class="dsol-card fade-in-up" data-delay="1">
+          <div class="dsol-card__img dsol-card__img--d">
+            <div class="dsol-vis" aria-hidden="true">
+              <div class="dsol-tel dsol-tel--lock">
+                <div class="dsol-melding"><span class="dsol-melding__ico dsol-melding__ico--wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1 0 12 3.5z"/></svg></span><span class="dsol-melding__tekst"><span class="dsol-melding__app">WhatsApp<i>nu</i></span><b>Jouw bedrijf</b>Bedankt voor je aanvraag. De brochure staat in je mail.</span></div>
+                <div class="dsol-melding"><span class="dsol-melding__ico dsol-melding__ico--mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/></svg></span><span class="dsol-melding__tekst"><span class="dsol-melding__app">Mail<i>nu</i></span><b>Je brochure staat klaar</b>Alles over het project in één document.</span></div>
+                <div class="dsol-melding"><span class="dsol-melding__ico dsol-melding__ico--taak"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z"/></svg></span><span class="dsol-melding__tekst"><span class="dsol-melding__app">CRM<i>nu</i></span><b>Beltaak voor sales</b>Bel de nieuwe aanvraag vandaag.</span></div>
+              </div>
+            </div>
+            <div class="dsol-card__hover">Mail, WhatsApp en een beltaak gaan vanzelf de deur uit. Geen aanvraag blijft liggen.</div>
+          </div>
+          <div class="dsol-card__foot">
+            <h3 class="dsol-card__label">Opvolging na elke aanvraag</h3>
           </div>
         </div>
 
         <div id="pipedrive" class="dsol-card fade-in-up" data-delay="2">
-          <div class="dsol-card__img dsol-card__img--f">
-            <span class="dsol-card__num">06</span>
-            <img src="assets/diensten-pipedrive.webp" alt="Pipedrive-integratie" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
-            <div class="dsol-card__hover">Je CRM volledig ingericht en geautomatiseerd: pipelines, triggers en rapportages die kloppen met jouw proces.</div>
+          <div class="dsol-card__img dsol-card__img--g">
+            <div class="dsol-vis dsol-vis--scherm" aria-hidden="true">
+              <div class="ms ms--bord" aria-hidden="true"><div class="ms__in">
+              <div class="ms__kolommen">
+              <div class="ms__kolom"><span class="ms__kop">Nieuw</span><span class="ms__kaart"><i></i><i></i></span></div>
+              <div class="ms__kolom"><span class="ms__kop">Gesprek</span><span class="ms__kaart"><i></i><i></i></span><span class="ms__kaart ms__kaart--actief"><em>Aanvraag via de site</em><i></i></span></div>
+              <div class="ms__kolom"><span class="ms__kop">Deal</span><span class="ms__kaart ms__kaart--klaar"><i></i><i></i></span><span class="ms__kaart ms__kaart--klaar"><i></i><i></i></span></div>
+              </div>
+              </div></div>
+            </div>
+            <div class="dsol-card__hover">Je CRM ingericht en gekoppeld aan je website, mail en advertenties. Zo kloppen je rapportages.</div>
           </div>
           <div class="dsol-card__foot">
-            <h3 class="dsol-card__label">Pipedrive-integratie</h3>
+            <h3 class="dsol-card__label">Pipedrive en koppelingen</h3>
+          </div>
+        </div>
+
+        <div id="rekentool" class="dsol-card fade-in-up" data-delay="3">
+          <div class="dsol-card__img dsol-card__img--h">
+            <div class="dsol-vis" aria-hidden="true">
+              <div class="dsol-blad"><img src="assets/rekentool-uitkomst-2111b.webp" alt="" loading="lazy" /></div>
+            </div>
+            <div class="dsol-card__hover">Een rekentool op jouw eigen cijfers. Voor een prijsopgave, een rendement of je eigen rekenmodel.</div>
+          </div>
+          <div class="dsol-card__foot">
+            <h3 class="dsol-card__label">Rekentool op maat</h3>
           </div>
         </div>
 
@@ -674,7 +735,7 @@
             <div class="faq-icon"></div>
           </div>
           <div class="faq-a">
-            <p>Allebei kan. Soms bouwen we alleen mailautomatisering of één koppeling, soms een compleet systeem van intake tot CRM. In het eerste gesprek bepalen we samen de kleinste set die het meeste oplevert.</p>
+            <p>Allebei kan. Soms bouwen we alleen leadlijsten of één koppeling, soms alles van content tot CRM. In het eerste gesprek bepalen we samen de kleinste set die het meeste oplevert.</p>
           </div>
         </div>
 
