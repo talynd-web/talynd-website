@@ -686,6 +686,8 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .panel--teal .build__kop { align-self: start; }
 .panel--teal .build__intro h2 { margin: 0 0 10px; }
 .panel--teal .build__kop .build__dienst { margin: 0; }
+/* Markering achter de kop, gelijk aan de tekstmarkering van Chrome (#e9d2fd, volle letterhoogte): trekt het oog eerst naar de kop (Dimas 21-11) */
+.build__markeer { background-color: #e9d2fd; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .panel--teal .build__tekst .build__sub { max-width: none; margin-bottom: 16px; text-wrap: balance; }
 .build__intro .wm--diensten { left: auto; right: calc(400px + 48px + clamp(24px, 5vw, 70px)); bottom: 0; width: clamp(140px, 12vw, 172px); }
 /* Geen harde snijlijn onder de butler: zijn onderkant loopt zacht weg voordat de kaarten beginnen */
