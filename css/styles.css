@@ -679,16 +679,17 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 
 /* Dienstenblok v3, indeling (21-11): kop links en tekst rechts, de vier systemen in één rij,
    de butler staat tussen kop en tekst en de kaarten schuiven over zijn onderkant */
-.panel.panel--teal { padding-top: clamp(52px, 5vw, 68px); padding-bottom: clamp(52px, 5vw, 68px); }
+.panel.panel--teal { padding-top: clamp(52px, 5vw, 64px); padding-bottom: clamp(48px, 4.6vw, 60px); }
+@media (min-width: 1100px) { .panel.panel--teal { padding-left: clamp(40px, 3.4vw, 48px); padding-right: clamp(40px, 3.4vw, 48px); } }
 .panel--teal .build { display: block; }
-.panel--teal .build__intro { position: relative; display: grid; grid-template-columns: 1fr minmax(0, 400px); column-gap: 48px; align-items: end; padding-bottom: clamp(40px, 4vw, 56px); }
+.panel--teal .build__intro { position: relative; display: grid; grid-template-columns: 1fr minmax(0, 400px); column-gap: 48px; align-items: end; padding-bottom: clamp(36px, 3.4vw, 46px); }
 .panel--teal .build__intro h2 { margin: 0; align-self: start; }
 .panel--teal .build__tekst .build__sub { max-width: none; margin-bottom: 6px; text-wrap: balance; }
 .panel--teal .build__tekst .build__dienst { margin-bottom: 16px; }
 .build__intro .wm--diensten { left: auto; right: calc(400px + 48px + clamp(24px, 5vw, 70px)); bottom: 0; width: clamp(140px, 12vw, 172px); }
 /* Geen harde snijlijn onder de butler: zijn onderkant loopt zacht weg voordat de kaarten beginnen */
 .build__intro .wm--diensten .wm__svg { -webkit-mask-image: linear-gradient(to bottom, #000 52%, transparent 94%); mask-image: linear-gradient(to bottom, #000 52%, transparent 94%); }
-.panel--teal .build .build__grid { position: relative; z-index: 1; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px clamp(18px, 2vw, 28px); }
+.panel--teal .build .build__grid { position: relative; z-index: 1; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px clamp(16px, 1.5vw, 20px); }
 @media (max-width: 1240px) { .build__intro .wm--diensten { right: calc(400px + 36px); width: 132px; } }
 @media (max-width: 1150px) and (min-width: 1100px) { .panel--teal .build__intro { grid-template-columns: 1fr minmax(0, 360px); } .build__intro .wm--diensten { right: calc(360px + 30px); width: 120px; } }
 @media (max-width: 1099px) {
@@ -730,7 +731,7 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .ms__cijfer { display: flex; flex-direction: column; font-size: 0.88em; line-height: 1.2; color: var(--gray-4); white-space: nowrap; }
 .ms__cijfer b { font-size: 1.42em; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-6); font-variant-numeric: tabular-nums; }
 .ms__cijfer--top b { color: var(--dark-teal); }
-@container (max-width: 245px) { .ms__feed { grid-template-columns: repeat(2, 1fr); } .ms__post:nth-child(3) { display: none; } }
+@container (max-width: 258px) { .ms__feed { grid-template-columns: repeat(2, 1fr); } .ms__post:nth-child(3) { display: none; } }
 
 /* Leads: de lijst zoals de klant hem echt krijgt, een werkblad. Gedaan is groen, de cel die nu aan de beurt is staat geselecteerd */
 .ms__sheet { position: absolute; inset: 0; display: grid; grid-template-columns: 1.7em 1.55fr 1fr 0.95fr; grid-auto-rows: 1fr; font-size: 0.95em; font-size: clamp(10px, 3.7cqw, 14.5px); }
