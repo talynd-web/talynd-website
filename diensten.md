@@ -42,7 +42,7 @@ Je team krijgt training en alles op papier. Het systeem is van jou en je beheert
 
 Wat wij bouwen
 
-## Acht bouwstenen waarmee we je marketing en sales automatiseren, los of als één samenhangend systeem.
+## Van content tot CRM. Voor je marketing en je sales, los of samen.
 
 Veeg voor meer
 
@@ -112,7 +112,7 @@ Saar
 
 ### Kunnen we één losse dienst afnemen, of moet het een compleet traject zijn?
 
-Allebei kan. Soms bouwen we alleen leadlijsten of één koppeling, soms alles van content tot CRM. In het eerste gesprek bepalen we samen de kleinste set die het meeste oplevert.
+Allebei kan. Soms bouwen we alleen leadlijsten of één koppeling, soms alle acht. In het eerste gesprek bepalen we samen de kleinste set die het meeste oplevert.
 
 ### Wat kost het om een systeem te laten bouwen?
 
