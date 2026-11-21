@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=a24986de">
+  <link rel="stylesheet" href="css/styles.css?v=8fdd5a11">
   <style>
     /* ============================================================
        DIENSTEN — cambio.ai platform-style layout (Talynd tokens)
@@ -508,6 +508,93 @@
     </div>
   </section>
 
+  <!-- ============ VIER SYSTEMEN (21-11): lijst links, paneel rechts dat meewisselt ============ -->
+  <section class="d4-sec" id="systemen">
+    <div class="container">
+      <div class="d4">
+        <div class="d4__links fade-in-up">
+          <h2 class="d4__kop">Wat er in elk systeem zit</h2>
+          <div class="d4__lijst" role="tablist" aria-label="Vier systemen">
+          <button class="d4__tab is-actief" type="button" role="tab" id="d4-tab-marketing" aria-controls="systeem-marketing" aria-selected="true">Marketing met AI<span class="d4__pijl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></button>
+          <button class="d4__tab" type="button" role="tab" id="d4-tab-leads" aria-controls="systeem-leads" aria-selected="false" tabindex="-1">Leads en opvolging<span class="d4__pijl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></button>
+          <button class="d4__tab" type="button" role="tab" id="d4-tab-pipedrive" aria-controls="systeem-pipedrive" aria-selected="false" tabindex="-1">Pipedrive-integratie<span class="d4__pijl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></button>
+          <button class="d4__tab" type="button" role="tab" id="d4-tab-websites" aria-controls="systeem-websites" aria-selected="false" tabindex="-1">Websites, apps en tools<span class="d4__pijl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></button>
+          </div>
+        </div>
+        <div class="d4__rechts fade-in-up" data-delay="1">
+        <div class="d4__paneel is-actief" id="systeem-marketing" role="tabpanel" aria-labelledby="d4-tab-marketing" tabindex="0">
+          <div class="d4__beeld">
+                  <div class="ms ms--radar" aria-hidden="true"><div class="ms__in">
+                    <div class="ms__kopregel">Inzicht in wat werkt bij je concurrenten</div>
+                    <div class="ms__feed">
+                      <div class="ms__post"><div class="ms__beeld ms__beeld--reel"><span class="ms__duur">0:24</span><span class="ms__play"></span><b>Een dag achter de schermen</b></div><div class="ms__cijfer ms__cijfer--top"><b>4&times;</b>hun gemiddelde</div></div>
+                      <div class="ms__post"><div class="ms__beeld ms__beeld--car"><span class="ms__teller">1/5</span><b>5 fouten bij de start</b></div><div class="ms__cijfer"><b>3&times;</b>hun gemiddelde</div></div>
+                      <div class="ms__post"><div class="ms__beeld ms__beeld--quote"><span class="ms__aanh">&ldquo;</span><b>Binnen een week geregeld.</b></div><div class="ms__cijfer"><b>2&times;</b>hun gemiddelde</div></div>
+                    </div>
+                  </div></div>
+          </div>
+          <h3 class="d4__titel">Marketing met AI</h3>
+          <ul class="d4__punten">
+              <li>Elke maandag een overzicht van wat bij je concurrenten goed loopt, met een score per post.</li>
+              <li>Vaste posts maak je in één opdracht. Daarna pas je ze zelf aan.</li>
+              <li>Wij zoeken uit welke AI-tools bij jullie werk passen en leren je team ermee werken.</li>
+          </ul>
+        </div>
+        <div class="d4__paneel" id="systeem-leads" role="tabpanel" aria-labelledby="d4-tab-leads" tabindex="0">
+          <div class="d4__beeld">
+                  <div class="ms ms--leads" aria-hidden="true"><div class="ms__sheet">
+                    <i class="ms__k ms__k--kop"></i><span class="ms__k ms__k--kop">A</span><span class="ms__k ms__k--kop ms__b">B</span><span class="ms__k ms__k--kop ms__k--c"></span>
+                    <i class="ms__k">1</i><span class="ms__h">Bedrijf</span><span class="ms__h ms__b">Contact</span><span class="ms__h">Status</span>
+                    <i class="ms__k">2</i><span>Installatiebedrijf</span><span class="ms__b">Directeur</span><span class="ms__cel--ok">Gebeld</span>
+                    <i class="ms__k">3</i><span>Adviesbureau</span><span class="ms__b">Eigenaar</span><span class="ms__cel--ok">Gebeld</span>
+                    <i class="ms__k">4</i><span>Groothandel</span><span class="ms__b">Inkoper</span><span class="ms__cel--nu">Bellen</span>
+                    <i class="ms__k">5</i><span class="ms__vaag">Bouwbedrijf</span><span class="ms__b ms__vaag">Directeur</span><span class="ms__vaag">Ingepland</span>
+                  </div></div>
+          </div>
+          <h3 class="d4__titel">Leads en opvolging</h3>
+          <ul class="d4__punten">
+              <li>Eigen lijsten met de bedrijven die je wil spreken, geen gekochte bestanden.</li>
+              <li>Elk bedrijf en elk contact is nagekeken voordat je belt.</li>
+              <li>Daarna draait je salesteam de lijsten zelf.</li>
+          </ul>
+        </div>
+        <div class="d4__paneel" id="systeem-pipedrive" role="tabpanel" aria-labelledby="d4-tab-pipedrive" tabindex="0">
+          <div class="d4__beeld">
+                  <div class="ms ms--bord" aria-hidden="true"><div class="ms__in">
+                    <div class="ms__kolommen">
+                      <div class="ms__kolom"><span class="ms__kop">Nieuw</span><span class="ms__kaart"><i></i><i></i></span></div>
+                      <div class="ms__kolom"><span class="ms__kop">Gesprek</span><span class="ms__kaart"><i></i><i></i></span><span class="ms__kaart ms__kaart--actief"><em>Aanvraag via de site</em><i></i></span></div>
+                      <div class="ms__kolom"><span class="ms__kop">Deal</span><span class="ms__kaart ms__kaart--klaar"><i></i><i></i></span><span class="ms__kaart ms__kaart--klaar"><i></i><i></i></span></div>
+                    </div>
+                  </div></div>
+          </div>
+          <h3 class="d4__titel">Pipedrive-integratie</h3>
+          <ul class="d4__punten">
+              <li>Elke aanvraag staat direct in je CRM, ook als die uit een advertentie komt.</li>
+              <li>De aanvrager krijgt meteen een WhatsApp en de brochure die bij zijn vraag past.</li>
+              <li>Sales krijgt een beltaak, en bij elke aanvraag zie je waar die vandaan komt.</li>
+          </ul>
+        </div>
+        <div class="d4__paneel" id="systeem-websites" role="tabpanel" aria-labelledby="d4-tab-websites" tabindex="0">
+          <div class="d4__beeld">
+                  <div class="ms ms--site" aria-hidden="true"><div class="ms__in">
+                    <div class="ms__browser"><span class="ms__dots"><i></i><i></i><i></i></span><span class="ms__adres"></span></div>
+                    <img class="ms__shot" src="assets/ms-site-via-2111.webp" alt="" loading="lazy" width="720" height="405" />
+                    <span class="ms__tel"><img src="assets/ms-app-via.webp" alt="" loading="lazy" width="240" height="480" /></span>
+                  </div></div>
+          </div>
+          <h3 class="d4__titel">Websites, apps en tools</h3>
+          <ul class="d4__punten">
+              <li>Een site die je team zelf bijwerkt.</li>
+              <li>Een eigen app in de App Store en op Google Play.</li>
+              <li>Goed leesbaar voor Google en voor AI-assistenten als ChatGPT.</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ SOLUTIONS GRID ============ -->
   <section class="dsol" id="wat-wij-bouwen">
     <div class="container">
@@ -803,7 +890,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=97c5c99e"></script>
+  <script src="js/main.js?v=03f6327a"></script>
   <script>
     /* ---------- FAQ accordion ---------- */
     document.querySelectorAll(".faq-block").forEach(function (block) {

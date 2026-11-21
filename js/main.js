@@ -347,3 +347,37 @@ function animateCount(el) {
     kijker.disconnect();
   }, { threshold: 0.25 }).observe(vak);
 })();
+
+/* ---------- Diensten: vier systemen, tabs (21-11) ---------- */
+(function () {
+  const lijst = document.querySelector(".d4__lijst");
+  if (!lijst) return;
+  const tabs = Array.from(lijst.querySelectorAll(".d4__tab"));
+  const kies = (tab, focus) => {
+    tabs.forEach((t) => {
+      const aan = t === tab;
+      t.classList.toggle("is-actief", aan);
+      t.setAttribute("aria-selected", aan ? "true" : "false");
+      t.tabIndex = aan ? 0 : -1;
+      const p = document.getElementById(t.getAttribute("aria-controls"));
+      if (p) p.classList.toggle("is-actief", aan);
+    });
+    if (focus) tab.focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => kies(t, false));
+    t.addEventListener("keydown", (e) => {
+      const stap = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (e.key === "Home") { e.preventDefault(); kies(tabs[0], true); }
+      else if (e.key === "End") { e.preventDefault(); kies(tabs[tabs.length - 1], true); }
+      else if (stap) { e.preventDefault(); kies(tabs[(i + stap + tabs.length) % tabs.length], true); }
+    });
+  });
+  // Komt iemand binnen via een link naar een systeem (diensten#systeem-leads), open dat systeem
+  const vanHash = () => {
+    const t = tabs.find((x) => "#" + x.getAttribute("aria-controls") === location.hash);
+    if (t) kies(t, false); // de browser springt daarna zelf naar het paneel (scroll-margin houdt de menubalk vrij)
+  };
+  vanHash();
+  window.addEventListener("hashchange", vanHash);
+})();
