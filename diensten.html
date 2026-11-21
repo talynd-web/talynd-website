@@ -957,10 +957,15 @@
       ['wheel', 'touchstart', 'keydown'].forEach(function (t) { addEventListener(t, function () { zelfGescrold = true; }, { once: true, passive: true }); });
       var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
       var terug = nav && (nav.type === 'back_forward' || nav.type === 'reload');
+      var doel = location.hash && document.getElementById(location.hash.slice(1));
+      if (!doel || !doel.closest('.dsol__rij')) return;
+      var html = document.documentElement;
+      html.style.scrollBehavior = 'auto';
       window.addEventListener('load', function () {
-        if (zelfGescrold || terug) return;
-        var doel = location.hash && document.getElementById(location.hash.slice(1));
-        if (doel && doel.closest('.dsol__rij')) doel.scrollIntoView({ block: 'start', behavior: 'instant' });
+        requestAnimationFrame(function () {
+          if (!zelfGescrold && !terug) doel.scrollIntoView({ block: 'start' });
+          setTimeout(function () { html.style.scrollBehavior = ''; }, 400);
+        });
       });
     })();
   </script>
