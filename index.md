@@ -12,9 +12,9 @@ In 33 seconden zie je hoe Talynd werkt.
 
 ## Jouw digitale butler
 
-Vier systemen die doen wat jij nu met de hand doet.
-
 Tot uw dienst.
+
+Vier systemen die doen wat jij nu met de hand doet.
 
 [Alle diensten bekijken](https://talynd.com/diensten)
 

@@ -683,9 +683,10 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 @media (min-width: 1100px) { .panel.panel--teal { padding-left: clamp(40px, 3.4vw, 48px); padding-right: clamp(40px, 3.4vw, 48px); } }
 .panel--teal .build { display: block; }
 .panel--teal .build__intro { position: relative; display: grid; grid-template-columns: 1fr minmax(0, 400px); column-gap: 48px; align-items: end; padding-bottom: clamp(36px, 3.4vw, 46px); }
-.panel--teal .build__intro h2 { margin: 0; align-self: start; }
-.panel--teal .build__tekst .build__sub { max-width: none; margin-bottom: 6px; text-wrap: balance; }
-.panel--teal .build__tekst .build__dienst { margin-bottom: 16px; }
+.panel--teal .build__kop { align-self: start; }
+.panel--teal .build__intro h2 { margin: 0 0 10px; }
+.panel--teal .build__kop .build__dienst { margin: 0; }
+.panel--teal .build__tekst .build__sub { max-width: none; margin-bottom: 16px; text-wrap: balance; }
 .build__intro .wm--diensten { left: auto; right: calc(400px + 48px + clamp(24px, 5vw, 70px)); bottom: 0; width: clamp(140px, 12vw, 172px); }
 /* Geen harde snijlijn onder de butler: zijn onderkant loopt zacht weg voordat de kaarten beginnen */
 .build__intro .wm--diensten .wm__svg { -webkit-mask-image: linear-gradient(to bottom, #000 52%, transparent 94%); mask-image: linear-gradient(to bottom, #000 52%, transparent 94%); }
@@ -697,7 +698,7 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 }
 @media (max-width: 1099px) {
   .panel--teal .build__intro { grid-template-columns: minmax(0, 1fr) 132px; column-gap: 20px; padding-bottom: 32px; }
-  .panel--teal .build__intro h2 { grid-column: 1 / -1; margin-bottom: 14px; }
+  .panel--teal .build__kop { grid-column: 1 / -1; margin-bottom: 18px; }
   .build__intro .wm--diensten { right: 0; bottom: 0; width: 132px; }
 }
 @media (max-width: 600px) {
