@@ -707,9 +707,11 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
   .panel--teal .build__intro { grid-template-columns: minmax(0, 1fr) 92px; column-gap: 12px; padding-bottom: 26px; }
   .build__intro .wm--diensten { right: -4px; bottom: 0; width: 100px; }
   /* Telefoon: de vier systemen als veegrij, de volgende kaart kijkt erachter vandaan */
-  .panel--teal .build .build__grid { display: flex; gap: 14px; margin: 0 -22px; padding: 0 22px 6px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 22px; scrollbar-width: none; }
+  .panel--teal .build .build__grid { display: flex; gap: 14px; margin: -10px -22px 0; padding: 10px 22px 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 22px; scrollbar-width: none; }
   .panel--teal .build .build__grid::-webkit-scrollbar { display: none; }
   .panel--teal .build .build__grid > .build-item { flex: 0 0 84%; scroll-snap-align: start; }
+  /* In de veegrij niet invliegen: anders schuiven kaart 3 en 4 leeg binnen en kan de rij verticaal schuiven */
+  .panel--teal .build .build__grid > .build-item.fade-in-up { opacity: 1; transform: none; transition: none; }
 }
 
 .ms { container-type: inline-size; position: relative; aspect-ratio: 16 / 10; border-radius: 14px; background: var(--white); overflow: hidden;
