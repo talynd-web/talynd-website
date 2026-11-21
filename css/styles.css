@@ -687,20 +687,37 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .ms__titel { font-weight: 600; font-size: 1.04em; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ms__meta { flex: none; font-size: 0.86em; color: var(--gray-4); }
 @container (max-width: 250px) { .ms__meta { display: none; } }
-.ms__rij { flex: 1; min-height: 0; display: flex; align-items: center; gap: 0.85em; border-top: 1px solid var(--gray-1); }
-.ms__thumb { flex: none; width: 2.5em; height: 2.5em; border-radius: 0.6em; display: grid; place-items: center; color: var(--deep-teal); }
-.ms__thumb svg { width: 1.25em; height: 1.25em; }
-.ms__thumb--1 { background: var(--light-blue); }
-.ms__thumb--2 { background: var(--orange); }
-.ms__thumb--3 { background: var(--light-forest); }
-.ms__tekst { flex: 1; min-width: 0; display: flex; flex-direction: column; font-size: 0.9em; color: var(--gray-5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.ms__tekst b { font-weight: 600; font-size: 1.1em; color: var(--black); }
-.ms__score { flex: none; padding: 0.3em 0.62em; border-radius: 99px; font-weight: 600; font-size: 0.92em; font-variant-numeric: tabular-nums; background: var(--gray-1); color: var(--gray-6); }
-.ms__score--top { background: var(--dark-teal); color: var(--white); }
-.ms__vink { flex: none; width: 1.6em; height: 1.6em; border-radius: 50%; display: grid; place-items: center; background: var(--pale-teal); color: var(--dark-teal); }
-.ms__vink svg { width: 0.9em; height: 0.9em; }
-.ms__band { flex: none; width: 1.95em; height: 1.95em; border-radius: 0.5em; display: grid; place-items: center; font-weight: 600; font-size: 0.92em; background: var(--gray-1); color: var(--gray-5); }
-.ms__band--a { background: var(--light-blue); color: #1d5a85; }
+/* Marketing: drie posts naast elkaar zoals in een feed, eigen kop erop; eronder hoeveel beter dan normaal */
+.ms__feed { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7em; }
+.ms__post { min-width: 0; min-height: 0; display: flex; flex-direction: column; gap: 0.45em; }
+.ms__beeld { position: relative; flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 0.62em; border-radius: 0.55em; }
+.ms__beeld b { font-weight: 700; font-size: 0.98em; line-height: 1.12; letter-spacing: -0.015em; }
+.ms__beeld--reel { color: var(--white); background: linear-gradient(180deg, rgba(4,14,31,0) 35%, rgba(4,14,31,0.55)), var(--deep-teal); }
+.ms__beeld--car { justify-content: flex-start; padding-top: 1.9em; background: var(--orange); }
+.ms__beeld--car b { font-size: 1.16em; line-height: 1.05; letter-spacing: -0.025em; }
+.ms__beeld--quote { background: var(--light-blue); }
+.ms__beeld--quote b { font-weight: 600; }
+.ms__aanh { margin-bottom: auto; font-family: var(--font-display); font-size: 2.7em; line-height: 0.9; color: var(--dark-teal); }
+.ms__duur { position: absolute; top: 0.55em; left: 0.62em; font-size: 0.78em; opacity: 0.8; }
+.ms__play { position: absolute; top: 0.72em; right: 0.66em; border-left: 0.56em solid var(--white); border-top: 0.34em solid transparent; border-bottom: 0.34em solid transparent; }
+.ms__teller { position: absolute; top: 0.5em; right: 0.5em; padding: 0.08em 0.45em; border-radius: 99px; font-size: 0.76em; background: rgba(4,14,31,0.08); color: var(--gray-6); }
+.ms__cijfer { display: flex; justify-content: space-between; align-items: baseline; gap: 0.3em; font-size: 0.9em; font-variant-numeric: tabular-nums; }
+.ms__cijfer b { font-weight: 600; color: var(--gray-6); }
+.ms__cijfer .ms__top { color: var(--dark-teal); }
+.ms__cijfer span { color: var(--gray-4); }
+
+/* Leads: een werkblad, wat er met elke lead gebeurt staat er in woorden */
+.ms__tabel { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.ms__tr { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.6fr 0.95fr 1.15fr; gap: 0.8em; align-items: center; border-top: 1px solid var(--gray-1); font-size: 0.9em; color: var(--gray-6); }
+.ms__tr > span { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ms__tr > span:first-child { color: var(--gray-4); }
+.ms__tr b { display: block; overflow: hidden; text-overflow: ellipsis; font-weight: 600; font-size: 1.06em; color: var(--black); }
+.ms__th { flex: none; padding-bottom: 0.4em; border-top: 0; font-size: 0.8em; }
+.ms__th > span, .ms__th > span:first-child { color: var(--gray-4); }
+.ms__st--klaar { color: var(--dark-teal); }
+.ms__st--nu { font-weight: 600; color: #a0521d; }
+@container (max-width: 245px) { .ms__beeld--car { padding-top: 1.75em; } .ms__beeld--car b { font-size: 1.02em; } }
+@container (max-width: 275px) { .ms__tr { grid-template-columns: 1.45fr 1fr; } .ms__tr > span:nth-child(2) { display: none; } }
 
 .ms--bord .ms__in { padding: 1.1em; }
 .ms__kolommen { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
@@ -732,10 +749,9 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 @keyframes msIn { from { opacity: 0; transform: translateY(0.6em); } }
 @keyframes msSchuif { from { transform: translateX(calc(-100% - 1.7em)); } }
 @keyframes msTel { from { transform: translateY(3em); } }
-.build-item.visible .ms__rij { animation: msIn 0.5s cubic-bezier(0.22,1,0.36,1) backwards; }
-.build-item.visible .ms__rij:nth-of-type(2) { animation-delay: 0.35s; }
-.build-item.visible .ms__rij:nth-of-type(3) { animation-delay: 0.5s; }
-.build-item.visible .ms__rij:nth-of-type(4) { animation-delay: 0.65s; }
+.build-item.visible .ms__post, .build-item.visible .ms__tr:not(.ms__th) { animation: msIn 0.5s cubic-bezier(0.22,1,0.36,1) 0.35s backwards; }
+.build-item.visible .ms__post:nth-child(2), .build-item.visible .ms__tr:nth-child(3) { animation-delay: 0.5s; }
+.build-item.visible .ms__post:nth-child(3), .build-item.visible .ms__tr:nth-child(4) { animation-delay: 0.65s; }
 .build-item.visible .ms__kaart--actief { animation: msSchuif 0.9s cubic-bezier(0.65,0,0.25,1) 0.7s backwards; }
 .build-item.visible .ms__tel { animation: msTel 0.8s cubic-bezier(0.22,1,0.36,1) 0.45s backwards; }
 @media (prefers-reduced-motion: reduce) { .ms, .ms * { animation: none !important; transition: none !important; } }
