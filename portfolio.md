@@ -228,6 +228,22 @@ Offerteformulier dat direct bij het team binnenkomt, met het type schoonmaak erb
 
 [Bekijk de live site](https://cs-cleaningservice.nl/)
 
+## Ook gebouwd.
+
+Niet elke klant staat met naam op onze site.
+
+### Een marketingteam
+
+Elke maandag zien ze welke posts bij hun concurrenten beter lopen dan normaal. Hun eigen posts maken ze nu sneller, en het team werkt er zelf mee.
+
+### Een salesteam
+
+Eigen leadlijsten in plaats van gekochte bestanden. Elk contact is nagekeken voordat er gebeld wordt, en het salesteam draait de lijsten nu zelf.
+
+### Een makelaarskantoor
+
+Elke ochtend krijgen hun klanten het nieuwe aanbod dat bij hun zoekprofiel past. De mail gaat uit naam van de makelaar.
+
 Zo gaat het
 
 ## Van eerste gesprek tot werkend systeem, en daarna.
