@@ -40,42 +40,6 @@ Overdracht en training
 
 Je team krijgt training en alles op papier. Het systeem is van jou en je beheert het zelf.
 
-## Wat er in elk systeem zit
-
-Marketing met AI Leads en opvolging Pipedrive-integratie Websites, apps en tools
-
-### Marketing met AI
-
-- Elke maandag een overzicht van wat bij je concurrenten goed loopt, met een score per post.
-
-- Vaste posts maak je in één opdracht. Daarna pas je ze zelf aan.
-
-- Wij zoeken uit welke AI-tools bij jullie werk passen en leren je team ermee werken.
-
-### Leads en opvolging
-
-- Eigen lijsten met de bedrijven die je wil spreken, geen gekochte bestanden.
-
-- Elk bedrijf en elk contact is nagekeken voordat je belt.
-
-- Daarna draait je salesteam de lijsten zelf.
-
-### Pipedrive-integratie
-
-- Elke aanvraag staat direct in je CRM, ook als die uit een advertentie komt.
-
-- De aanvrager krijgt meteen een WhatsApp en de brochure die bij zijn vraag past.
-
-- Sales krijgt een beltaak, en bij elke aanvraag zie je waar die vandaan komt.
-
-### Websites, apps en tools
-
-- Een site die je team zelf bijwerkt.
-
-- Een eigen app in de App Store en op Google Play.
-
-- Goed leesbaar voor Google en voor AI-assistenten als ChatGPT.
-
 Wat wij bouwen
 
 ## Zes bouwstenen waarmee we je commerciële proces automatiseren, los of als één samenhangend systeem.
