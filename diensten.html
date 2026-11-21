@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=37254e1c">
+  <link rel="stylesheet" href="css/styles.css?v=41f3406e">
   <style>
     /* ============================================================
        DIENSTEN — cambio.ai platform-style layout (Talynd tokens)
@@ -522,15 +522,16 @@
 
         <div id="marketing" class="dsol-card fade-in-up">
           <div class="dsol-card__img dsol-card__img--c">
-            <div class="dsol-vis dsol-vis--scherm" aria-hidden="true">
-              <div class="ms ms--radar" aria-hidden="true"><div class="ms__in">
-              <div class="ms__kopregel">Inzicht in wat werkt bij je concurrenten</div>
-              <div class="ms__feed">
-              <div class="ms__post"><div class="ms__beeld ms__beeld--reel"><span class="ms__duur">0:24</span><span class="ms__play"></span><b>Een dag achter de schermen</b></div><div class="ms__cijfer ms__cijfer--top"><b>4&times;</b>hun gemiddelde</div></div>
-              <div class="ms__post"><div class="ms__beeld ms__beeld--car"><span class="ms__teller">1/5</span><b>5 fouten bij de start</b></div><div class="ms__cijfer"><b>3&times;</b>hun gemiddelde</div></div>
-              <div class="ms__post"><div class="ms__beeld ms__beeld--quote"><span class="ms__aanh">&ldquo;</span><b>Binnen een week geregeld.</b></div><div class="ms__cijfer"><b>2&times;</b>hun gemiddelde</div></div>
+            <div class="dsol-vis dsol-vis--mac" aria-hidden="true">
+              <div class="mac">
+                <div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">Wat werkt bij je concurrenten</span></div>
+                <div class="mac__inhoud">
+                  <figure><img src="assets/wb-data-1.webp" alt="" width="240" height="300" loading="lazy" /><figcaption><b>4&times;</b> hun gemiddelde</figcaption></figure>
+                  <figure><img src="assets/wb-data-2.webp" alt="" width="240" height="300" loading="lazy" /><figcaption><b>3&times;</b> hun gemiddelde</figcaption></figure>
+                  <figure><img src="assets/wb-data-3.webp" alt="" width="240" height="300" loading="lazy" /><figcaption><b>2&times;</b> hun gemiddelde</figcaption></figure>
+                </div>
               </div>
-              </div></div>
+              <div class="mac__melding"><img src="icon-512.png" alt="" width="64" height="64" loading="lazy" /><span><b>Overzicht van deze week</b>De posts die nu het best lopen staan klaar.</span></div>
             </div>
             <div class="dsol-card__hover">Elke maandag zie je welke posts bij je concurrenten beter lopen dan normaal. Daar haalt je team de onderwerpen uit.</div>
           </div>
@@ -540,10 +541,12 @@
         </div>
 
         <div id="posts" class="dsol-card fade-in-up" data-delay="1">
-          <div class="dsol-card__img dsol-card__img--e">
-            <div class="dsol-vis dsol-vis--posts" aria-hidden="true">
-              <figure><img src="assets/post-voor-2111.webp" alt="" loading="lazy" width="432" height="540" /><figcaption>Voor</figcaption></figure>
-              <figure><img src="assets/post-na-2111.webp" alt="" loading="lazy" width="432" height="540" /><figcaption>Na</figcaption></figure>
+          <div class="dsol-card__img dsol-card__img--g">
+            <div class="dsol-vis dsol-vis--vn" aria-hidden="true">
+              <div class="vn">
+                <figure class="vn__voor"><img src="assets/wb-post-voor.webp" alt="" width="360" height="450" loading="lazy" /><figcaption>Voor</figcaption></figure>
+                <figure class="vn__na"><img src="assets/wb-post-na.webp" alt="" width="480" height="600" loading="lazy" /><figcaption>Na</figcaption></figure>
+              </div>
             </div>
             <div class="dsol-card__hover">We kijken hoe je team nu posts maakt en bouwen die werkwijze om. Sneller klaar en mooier, in jullie eigen huisstijl.</div>
           </div>
@@ -553,9 +556,20 @@
         </div>
 
         <div id="advertenties" class="dsol-card fade-in-up" data-delay="2">
-          <div class="dsol-card__img dsol-card__img--a">
-            <div class="dsol-vis" aria-hidden="true">
-              <div class="dsol-tel"><video autoplay muted loop playsinline preload="none" poster="assets/video/butler-poster.jpg" width="720" height="1280"><source src="assets/video/butler-klein.mp4" type="video/mp4"></video></div>
+          <div class="dsol-card__img dsol-card__img--h">
+            <div class="dsol-vis dsol-vis--ip" aria-hidden="true">
+              <div class="ip">
+                <div class="ip__rand"><div class="ip__scherm">
+                  <div class="ip__status ip__status--donker"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="0.8"/><rect x="5" y="5.5" width="3" height="6.5" rx="0.8"/><rect x="10" y="3" width="3" height="9" rx="0.8"/><rect x="15" y="0" width="3" height="12" rx="0.8"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l1.2-1.3A10.4 10.4 0 0 0 8 .6 10.4 10.4 0 0 0 .8 3.5L2 4.8a8.6 8.6 0 0 1 6-2.4zm0 3.6c1.3 0 2.5.5 3.4 1.3l1.2-1.3A6.7 6.7 0 0 0 8 4.2c-1.8 0-3.4.7-4.6 1.8l1.2 1.3c.9-.8 2.1-1.3 3.4-1.3zm0 3.6c-.4 0-.8.2-1.1.5L8 11.4l1.1-1.3a1.6 1.6 0 0 0-1.1-.5z"/></svg><span class="ip__batterij"><i></i></span></span></div>
+                  <span class="ip__eiland"></span>
+                  <div class="ip__ig">
+                    <div class="ip__igkop"><img src="icon-512.png" alt="" width="64" height="64" loading="lazy" /><span><b>talynd.ai</b>Gesponsord</span><i>&middot;&middot;&middot;</i></div>
+                    <img class="ip__igbeeld" src="assets/wb-ad-kassabon.webp" alt="" width="480" height="600" loading="lazy" />
+                    <div class="ip__igcta">Stuur bericht<svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="ip__igacties"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/></svg><svg viewBox="0 0 24 24"><path d="M21 4L10 13.5M21 4l-6.5 16-3.5-7-7-3.5z"/></svg></div>
+                  </div>
+                </div></div>
+              </div>
             </div>
             <div class="dsol-card__hover">Advertenties en reels op basis van wat in jouw markt werkt. In varianten, zodat je ziet welke het best loopt.</div>
           </div>
@@ -600,12 +614,19 @@
         </div>
 
         <div id="opvolging" class="dsol-card fade-in-up" data-delay="1">
-          <div class="dsol-card__img dsol-card__img--d">
-            <div class="dsol-vis" aria-hidden="true">
-              <div class="dsol-tel dsol-tel--lock">
-                <div class="dsol-melding"><span class="dsol-melding__ico dsol-melding__ico--wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1 0 12 3.5z"/></svg></span><span class="dsol-melding__tekst"><span class="dsol-melding__app">WhatsApp<i>nu</i></span><b>Jouw bedrijf</b>Bedankt voor je aanvraag. De brochure staat in je mail.</span></div>
-                <div class="dsol-melding"><span class="dsol-melding__ico dsol-melding__ico--mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/></svg></span><span class="dsol-melding__tekst"><span class="dsol-melding__app">Mail<i>nu</i></span><b>Je brochure staat klaar</b>Alles over het project in één document.</span></div>
-                <div class="dsol-melding"><span class="dsol-melding__ico dsol-melding__ico--taak"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z"/></svg></span><span class="dsol-melding__tekst"><span class="dsol-melding__app">CRM<i>nu</i></span><b>Beltaak voor sales</b>Bel de nieuwe aanvraag vandaag.</span></div>
+          <div class="dsol-card__img dsol-card__img--c">
+            <div class="dsol-vis dsol-vis--ip" aria-hidden="true">
+              <div class="ip ip--lock">
+                <div class="ip__rand"><div class="ip__scherm">
+                  <div class="ip__status ip__status--licht"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="0.8"/><rect x="5" y="5.5" width="3" height="6.5" rx="0.8"/><rect x="10" y="3" width="3" height="9" rx="0.8"/><rect x="15" y="0" width="3" height="12" rx="0.8"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l1.2-1.3A10.4 10.4 0 0 0 8 .6 10.4 10.4 0 0 0 .8 3.5L2 4.8a8.6 8.6 0 0 1 6-2.4zm0 3.6c1.3 0 2.5.5 3.4 1.3l1.2-1.3A6.7 6.7 0 0 0 8 4.2c-1.8 0-3.4.7-4.6 1.8l1.2 1.3c.9-.8 2.1-1.3 3.4-1.3zm0 3.6c-.4 0-.8.2-1.1.5L8 11.4l1.1-1.3a1.6 1.6 0 0 0-1.1-.5z"/></svg><span class="ip__batterij"><i></i></span></span></div>
+                  <span class="ip__eiland"></span>
+                  <div class="ip__lock">
+                    <span class="ip__datum">vrijdag 21 november</span>
+                    <span class="ip__klok">9:41</span>
+                    <div class="ip__melding"><span class="ip__app ip__app--wa"><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2zm0 1.6a7.2 7.2 0 1 1-3.7 13.4l-.3-.2-2.7.7.7-2.6-.2-.3A7.2 7.2 0 0 1 12 4.8zm-3 3.4c-.2 0-.5 0-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1 2.7c.2.2 1.8 2.8 4.4 3.8 2.2.9 2.6.7 3.1.7.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.5-.3-1.8-.9c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.8-.2-.3 0-.4.1-.5l.4-.5.3-.4v-.4l-.8-2c-.2-.5-.4-.4-.6-.4H9z"/></svg></span><span class="ip__mtekst"><span class="ip__mkop"><b>Jouw bedrijf</b><i>nu</i></span>Bedankt voor je aanvraag! De brochure staat in je mail. Morgen bellen we je even op.</span></div>
+                    <div class="ip__melding"><span class="ip__app ip__app--mail"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12.5" rx="2" fill="#fff"/><path d="M3.6 7l8.4 6.2L20.4 7" fill="none" stroke="#1a7cf0" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="ip__mtekst"><span class="ip__mkop"><b>Jouw bedrijf</b><i>nu</i></span><strong>Je brochure staat klaar</strong>Alles over het project, met prijzen en plattegronden.</span></div>
+                  </div>
+                </div></div>
               </div>
             </div>
             <div class="dsol-card__hover">Mail, WhatsApp en een beltaak gaan vanzelf de deur uit. Geen aanvraag blijft liggen.</div>
@@ -634,9 +655,15 @@
         </div>
 
         <div id="rekentool" class="dsol-card fade-in-up" data-delay="3">
-          <div class="dsol-card__img dsol-card__img--h">
-            <div class="dsol-vis" aria-hidden="true">
-              <div class="dsol-blad"><img src="assets/rekentool-uitkomst-2111b.webp" alt="" loading="lazy" /></div>
+          <div class="dsol-card__img dsol-card__img--e">
+            <div class="dsol-vis dsol-vis--ip" aria-hidden="true">
+              <div class="ip">
+                <div class="ip__rand"><div class="ip__scherm">
+                  <div class="ip__status ip__status--donker"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="0.8"/><rect x="5" y="5.5" width="3" height="6.5" rx="0.8"/><rect x="10" y="3" width="3" height="9" rx="0.8"/><rect x="15" y="0" width="3" height="12" rx="0.8"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l1.2-1.3A10.4 10.4 0 0 0 8 .6 10.4 10.4 0 0 0 .8 3.5L2 4.8a8.6 8.6 0 0 1 6-2.4zm0 3.6c1.3 0 2.5.5 3.4 1.3l1.2-1.3A6.7 6.7 0 0 0 8 4.2c-1.8 0-3.4.7-4.6 1.8l1.2 1.3c.9-.8 2.1-1.3 3.4-1.3zm0 3.6c-.4 0-.8.2-1.1.5L8 11.4l1.1-1.3a1.6 1.6 0 0 0-1.1-.5z"/></svg><span class="ip__batterij"><i></i></span></span></div>
+                  <span class="ip__eiland"></span>
+                  <div class="ip__site"><img src="assets/wb-rekentool-scherm2.webp" alt="" width="786" height="1688" loading="lazy" /></div>
+                </div></div>
+              </div>
             </div>
             <div class="dsol-card__hover">Een rekentool op jouw eigen cijfers. Voor een prijsopgave, een rendement of je eigen rekenmodel.</div>
           </div>

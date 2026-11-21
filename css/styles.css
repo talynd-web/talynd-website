@@ -848,23 +848,82 @@ html.reveal-fallback .ms * { animation: none !important; }
 .dsol-card .dsol-card__img--h { background: linear-gradient(150deg, #d3e8e3, #b7d8cf); border: none; }
 .dsol-vis { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; padding: 9%; text-align: left; }
 .dsol-vis--scherm .ms { width: 100%; }
-.dsol-vis--posts { grid-template-columns: 1fr 1fr; gap: 6%; align-content: center; }
-.dsol-vis--posts figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
-.dsol-vis--posts img { width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 14px 26px -16px rgba(4,14,31,0.5); }
-.dsol-vis--posts figcaption { font-size: 12px; font-weight: 500; color: rgba(20,40,40,0.66); text-align: center; }
-.dsol-tel { container-type: inline-size; position: absolute; left: 50%; bottom: -14%; width: 56%; aspect-ratio: 9 / 18.5; translate: -50% 0; padding: 4px; border-radius: 26px; background: #141212; box-shadow: 0 24px 40px -20px rgba(0,0,0,0.6); overflow: hidden; }
-.dsol-tel video { width: 100%; height: 100%; object-fit: cover; border-radius: 22px; display: block; }
-.dsol-tel--lock { width: 64%; display: flex; flex-direction: column; text-align: left; padding: 20% 5% 0; background: linear-gradient(170deg, #2b6b66, #0c3a3a); border: 4px solid #141212; }
-.dsol-melding { margin-bottom: 4cqw; display: flex; gap: 4cqw; padding: 4.4cqw; border-radius: 6cqw; background: #fff; box-shadow: 0 2cqw 5cqw -3cqw rgba(0,0,0,0.5); }
-.dsol-melding__ico { flex: none; width: 10cqw; height: 10cqw; border-radius: 2.6cqw; display: grid; place-items: center; color: #fff; }
-.dsol-melding__ico svg { width: 6cqw; height: 6cqw; }
-.dsol-melding__ico--wa { background: #25a35a; }
-.dsol-melding__ico--mail { background: #2f7ad8; }
-.dsol-melding__ico--taak { background: var(--dark-teal); }
-.dsol-melding__tekst { min-width: 0; display: flex; flex-direction: column; font-size: 5.8cqw; line-height: 1.25; color: var(--gray-6); }
-.dsol-melding__tekst b { font-weight: 600; color: var(--black); }
-.dsol-melding__app { display: flex; justify-content: space-between; font-size: 4.6cqw; color: var(--gray-4); text-transform: uppercase; letter-spacing: 0.02em; }
-.dsol-melding__app i { font-style: normal; text-transform: none; letter-spacing: 0; }
-.dsol-blad { position: absolute; left: 50%; bottom: -10%; width: 64%; translate: -50% 0; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 22px 40px -20px rgba(4,14,31,0.45); }
-.dsol-blad img { width: 100%; height: auto; display: block; }
+/* Echte iPhone (Dynamic Island, statusbalk, titanium rand), alles in cqw zodat hij meeschaalt */
+.dsol-vis--ip { padding: 0; }
+.ip { container-type: inline-size; position: absolute; left: 50%; bottom: -17%; width: 60%; aspect-ratio: 71.5 / 147; translate: -50% 0; }
+.ip__rand { position: absolute; inset: 0; padding: 1.1cqw; border-radius: 17cqw;
+  background: linear-gradient(140deg, #e9eaee 0%, #9a9da3 22%, #d9dbe0 48%, #85888e 76%, #c9cbd0 100%);
+  box-shadow: 0 3cqw 6cqw -2cqw rgba(4,14,31,0.35), 0 18cqw 30cqw -14cqw rgba(4,14,31,0.55); }
+.ip__rand::before, .ip__rand::after { content: ""; position: absolute; width: 0.9cqw; border-radius: 1cqw; background: #8c8f95; }
+.ip__rand::before { left: -0.6cqw; top: 26cqw; height: 13cqw; box-shadow: 0 17cqw 0 #8c8f95; }
+.ip__rand::after { right: -0.6cqw; top: 34cqw; height: 20cqw; }
+.ip__scherm { position: relative; height: 100%; overflow: hidden; border-radius: 15.6cqw; border: 2.6cqw solid #0b0b0c; background: #fff; }
+.ip__eiland { position: absolute; z-index: 6; top: 2.6cqw; left: 50%; width: 30cqw; height: 8.8cqw; translate: -50% 0; border-radius: 99px; background: #000; }
+.ip__status { position: absolute; z-index: 5; top: 3.4cqw; left: 8.5cqw; right: 7.5cqw; display: flex; align-items: center; justify-content: space-between; font: 600 4.9cqw/1 -apple-system, "SF Pro Text", system-ui, sans-serif; letter-spacing: -0.01em; }
+.ip__status--licht { color: #fff; }
+.ip__status--donker { color: #000; }
+.ip__iconen { display: flex; align-items: center; gap: 1.4cqw; }
+.ip__iconen svg { height: 3.2cqw; width: auto; fill: currentColor; }
+.ip__batterij { position: relative; width: 7cqw; height: 3.5cqw; border-radius: 1.1cqw; border: 0.35cqw solid currentColor; opacity: 0.95; }
+.ip__batterij i { position: absolute; inset: 0.45cqw; right: 1.2cqw; border-radius: 0.5cqw; background: currentColor; }
+.ip__batterij::after { content: ""; position: absolute; right: -1.2cqw; top: 1cqw; width: 0.7cqw; height: 1.2cqw; border-radius: 0 0.5cqw 0.5cqw 0; background: currentColor; opacity: 0.6; }
+/* Vergrendelscherm */
+.ip__lock { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; padding: 15cqw 3.4cqw 0; background: url(../assets/wb-lock-bergen.webp) center 30% / cover; text-align: left; }
+.ip__lock::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,30,50,0.25), rgba(10,30,50,0.05) 40%, rgba(0,0,0,0.25)); }
+.ip__lock > * { position: relative; }
+.ip__datum { font: 600 4.6cqw/1.2 -apple-system, system-ui, sans-serif; color: rgba(255,255,255,0.88); }
+.ip__klok { margin: 0.5cqw 0 7cqw; font: 600 23cqw/1 -apple-system, "SF Pro Display", system-ui, sans-serif; letter-spacing: -0.02em; color: rgba(255,255,255,0.92); }
+.ip__melding { width: 100%; display: flex; gap: 3cqw; margin-bottom: 2cqw; padding: 3.4cqw 3.6cqw; border-radius: 6.4cqw; background: rgba(246,246,248,0.82); -webkit-backdrop-filter: blur(14px) saturate(170%); backdrop-filter: blur(14px) saturate(170%); }
+.ip__app { flex: none; width: 9.6cqw; height: 9.6cqw; border-radius: 2.4cqw; display: grid; place-items: center; }
+.ip__app svg { width: 7cqw; height: 7cqw; }
+.ip__app--wa { background: linear-gradient(180deg, #5df57c, #23b744); }
+.ip__app--mail { background: linear-gradient(180deg, #3ab0ff, #1a6ff0); }
+.ip__mtekst { min-width: 0; display: flex; flex-direction: column; font: 400 3.9cqw/1.28 -apple-system, system-ui, sans-serif; color: #1c1c1e; }
+.ip__mkop { display: flex; justify-content: space-between; gap: 2cqw; }
+.ip__mkop b, .ip__mtekst strong { font-weight: 600; }
+.ip__mkop i { font-style: normal; color: rgba(60,60,67,0.6); }
+/* Gesponsorde post */
+.ip__ig { position: absolute; inset: 0; padding-top: 13cqw; background: #fff; text-align: left; font-family: -apple-system, system-ui, sans-serif; }
+.ip__igkop { display: flex; align-items: center; gap: 2.6cqw; padding: 2.4cqw 3.4cqw; }
+.ip__igkop img { width: 8.4cqw; height: 8.4cqw; border-radius: 50%; box-shadow: 0 0 0 0.3cqw #e5e5ea; }
+.ip__igkop span { flex: 1; display: flex; flex-direction: column; font-size: 3.4cqw; line-height: 1.25; color: #3c3c43; }
+.ip__igkop b { font-weight: 600; color: #000; }
+.ip__igkop i { font-style: normal; font-weight: 700; color: #000; font-size: 4cqw; }
+.ip__igbeeld { display: block; width: 100%; height: auto; }
+.ip__igcta { display: flex; align-items: center; justify-content: space-between; padding: 2.8cqw 3.4cqw; font-size: 3.6cqw; font-weight: 600; color: #fff; background: #3a7bd5; }
+.ip__igcta svg { width: 4cqw; height: 4cqw; }
+.ip__igacties { display: flex; gap: 3.6cqw; padding: 2.8cqw 3.4cqw; }
+.ip__igacties svg { width: 6cqw; height: 6cqw; fill: none; stroke: #000; stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
+/* Site in de telefoon */
+.ip__site { position: absolute; inset: 0; padding-top: 11cqw; background: #f3eee5; }
+.ip__site img { display: block; width: 100%; height: auto; }
+/* Mac-venster met echte posts en een melding erover */
+.dsol-vis--mac { padding: 0 7%; }
+.mac { width: 100%; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 0 0 1px rgba(4,14,31,0.08), 0 24px 44px -24px rgba(4,14,31,0.5); }
+.mac__balk { position: relative; display: flex; align-items: center; justify-content: center; height: 26px; background: #f2f2f4; border-bottom: 1px solid #e3e3e8; }
+.mac__lichten { position: absolute; left: 10px; display: flex; gap: 6px; }
+.mac__lichten i { width: 8px; height: 8px; border-radius: 50%; background: #ff5f57; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.15); }
+.mac__lichten i:nth-child(2) { background: #febc2e; }
+.mac__lichten i:nth-child(3) { background: #28c840; }
+.mac__titel { font: 600 10.5px/1 -apple-system, system-ui, sans-serif; color: #4a4a4f; }
+.mac__inhoud { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 12px; }
+.mac__inhoud figure { margin: 0; }
+.mac__inhoud img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.mac__inhoud figcaption { margin-top: 6px; font: 400 9.5px/1.2 -apple-system, system-ui, sans-serif; color: #8a8a8f; white-space: nowrap; }
+.mac__inhoud figcaption b { display: block; font-size: 15px; font-weight: 600; color: var(--gray-6); }
+.mac__inhoud figure:first-child figcaption b { color: var(--dark-teal); }
+.mac__melding { position: absolute; top: 9%; right: 4%; width: 66%; display: flex; gap: 9px; align-items: center; padding: 9px 11px; border-radius: 14px; background: rgba(250,250,252,0.86); -webkit-backdrop-filter: blur(14px) saturate(170%); backdrop-filter: blur(14px) saturate(170%); box-shadow: 0 10px 26px -10px rgba(4,14,31,0.4); text-align: left; }
+.mac__melding img { flex: none; width: 26px; height: 26px; border-radius: 6px; }
+.mac__melding span { display: flex; flex-direction: column; font: 400 10.5px/1.3 -apple-system, system-ui, sans-serif; color: #3c3c43; }
+.mac__melding b { font-weight: 600; color: #000; }
+/* Voor en na van een eigen post */
+.vn { position: relative; width: 100%; height: 100%; }
+.vn figure { position: absolute; margin: 0; }
+.vn img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.vn figcaption { margin-top: 8px; font: 500 12px/1 var(--font-body); color: rgba(20,40,40,0.7); }
+.vn__voor { left: 5%; top: 21%; width: 46%; }
+.vn__voor img { filter: saturate(0.7); box-shadow: 0 10px 22px -14px rgba(4,14,31,0.45); }
+.vn__na { right: 5%; top: 8%; width: 62%; z-index: 1; }
+.vn__na img { box-shadow: 0 26px 44px -22px rgba(4,14,31,0.6); }
+.vn__na figcaption { text-align: right; }
 @media (max-width: 1240px) and (min-width: 1001px) { .dsol-vis { padding: 7%; } }
