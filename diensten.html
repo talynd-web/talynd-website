@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=41f3406e">
+  <link rel="stylesheet" href="css/styles.css?v=dcc6734c">
   <style>
     /* ============================================================
        DIENSTEN — cambio.ai platform-style layout (Talynd tokens)
@@ -523,15 +523,17 @@
         <div id="marketing" class="dsol-card fade-in-up">
           <div class="dsol-card__img dsol-card__img--c">
             <div class="dsol-vis dsol-vis--mac" aria-hidden="true">
-              <div class="mac">
-                <div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">Wat werkt bij je concurrenten</span></div>
-                <div class="mac__inhoud">
-                  <figure><img src="assets/wb-data-1.webp" alt="" width="240" height="300" loading="lazy" /><figcaption><b>4&times;</b> hun gemiddelde</figcaption></figure>
-                  <figure><img src="assets/wb-data-2.webp" alt="" width="240" height="300" loading="lazy" /><figcaption><b>3&times;</b> hun gemiddelde</figcaption></figure>
-                  <figure><img src="assets/wb-data-3.webp" alt="" width="240" height="300" loading="lazy" /><figcaption><b>2&times;</b> hun gemiddelde</figcaption></figure>
+              <div class="mac od">
+                <div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">Outliers deze week</span></div>
+                <div class="od__inhoud">
+                  <div class="od__kop"><span>Post</span><span>Views</span><span>Outlier-score</span></div>
+                  <div class="od__rij is-open"><span class="od__thumb od__thumb--1"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="#fff"/></svg></span><span class="od__wie"><b>Concurrent A</b>Reel</span><span class="od__views">48k</span><span class="od__score"><i style="--w:100%"></i><b>4,2&times;</b></span><span class="od__link"><svg viewBox="0 0 24 24"><path d="M8 16L16 8M9 8h7v7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                  <div class="od__rij"><span class="od__thumb od__thumb--2"></span><span class="od__wie"><b>Concurrent B</b>Carrousel</span><span class="od__views">31k</span><span class="od__score"><i style="--w:67%"></i><b>2,8&times;</b></span><span class="od__link"><svg viewBox="0 0 24 24"><path d="M8 16L16 8M9 8h7v7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                  <div class="od__rij"><span class="od__thumb od__thumb--3"></span><span class="od__wie"><b>Concurrent C</b>Foto</span><span class="od__views">19k</span><span class="od__score"><i style="--w:45%"></i><b>1,9&times;</b></span><span class="od__link"><svg viewBox="0 0 24 24"><path d="M8 16L16 8M9 8h7v7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                  <div class="od__rij"><span class="od__thumb od__thumb--4"></span><span class="od__wie"><b>Concurrent A</b>Carrousel</span><span class="od__views">12k</span><span class="od__score"><i style="--w:29%"></i><b>1,2&times;</b></span><span class="od__link"><svg viewBox="0 0 24 24"><path d="M8 16L16 8M9 8h7v7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
                 </div>
               </div>
-              <div class="mac__melding"><img src="icon-512.png" alt="" width="64" height="64" loading="lazy" /><span><b>Overzicht van deze week</b>De posts die nu het best lopen staan klaar.</span></div>
+              <div class="od__open"><span class="od__groot"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="#fff"/></svg><b>Zo plannen wij een drukke week</b></span><span class="od__les"><em>Waarom het werkt</em>Vraag in de eerste seconde, echte werkplek in beeld</span></div>
             </div>
             <div class="dsol-card__hover">Elke maandag zie je welke posts bij je concurrenten beter lopen dan normaal. Daar haalt je team de onderwerpen uit.</div>
           </div>
@@ -542,10 +544,17 @@
 
         <div id="posts" class="dsol-card fade-in-up" data-delay="1">
           <div class="dsol-card__img dsol-card__img--g">
-            <div class="dsol-vis dsol-vis--vn" aria-hidden="true">
-              <div class="vn">
-                <figure class="vn__voor"><img src="assets/wb-post-voor.webp" alt="" width="360" height="450" loading="lazy" /><figcaption>Voor</figcaption></figure>
-                <figure class="vn__na"><img src="assets/wb-post-na.webp" alt="" width="480" height="600" loading="lazy" /><figcaption>Na</figcaption></figure>
+            <div class="dsol-vis dsol-vis--mac" aria-hidden="true">
+              <div class="mac pm">
+                <div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">Nieuwe post</span></div>
+                <div class="pm__inhoud">
+                  <div class="pm__opdracht"><span>Welkomstpost voor de nieuwe collega, in onze huisstijl</span><i><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i></div>
+                  <div class="pm__rij">
+                    <figure class="pm__post pm__post--story"><div class="pm__ontwerp"><span class="pm__merk"></span><span class="pm__vorm"></span><b>Welkom in het team</b><small>Vanaf maandag bij ons</small></div><figcaption>Story</figcaption></figure>
+                    <figure class="pm__post pm__post--feed"><div class="pm__ontwerp"><span class="pm__merk"></span><span class="pm__vorm"></span><b>Welkom in het team</b><small>Vanaf maandag bij ons</small></div><figcaption>Feed</figcaption></figure>
+                    <figure class="pm__post pm__post--li"><div class="pm__ontwerp"><span class="pm__merk"></span><span class="pm__vorm"></span><b>Welkom in het team</b><small>Vanaf maandag bij ons</small></div><figcaption>LinkedIn</figcaption></figure>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="dsol-card__hover">We kijken hoe je team nu posts maakt en bouwen die werkwijze om. Sneller klaar en mooier, in jullie eigen huisstijl.</div>
