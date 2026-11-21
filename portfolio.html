@@ -50,9 +50,6 @@
     .phero__sub { font-size: 18px; line-height: 1.6; color: var(--gray-6); max-width: none; margin: 0 auto; white-space: nowrap; }
     .phero__sub em { font-style: italic; font-weight: 600; color: var(--deep-teal); }
 
-    /* Image card below the mint hero card — cambio cinematic ratio (same as diensten) */
-    .phero-media { position: relative; z-index: 1; width: 100%; margin-top: 16px; border-radius: var(--radius-section); overflow: hidden; aspect-ratio: 5 / 2; }
-    .phero-media video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; border-radius: var(--radius-section); border: none; }
 
     /* ---- CASE SECTION ---- */
     .case { padding: var(--section-y) 0; }
@@ -373,7 +370,7 @@
     .ww__band { display: flex; flex-direction: column; gap: 18px; padding-bottom: 18px; }
     .ww.is-loopt .ww__kol > div { animation: ww-op var(--ww-duur, 70s) linear infinite; }
     .ww.is-loopt .ww__kol--2 > div, .ww.is-loopt .ww__kol--4 > div { animation-name: ww-neer; }
-    .ww.is-loopt:hover .ww__kol > div { animation-play-state: paused; }
+    @media (hover: hover) { .ww.is-loopt:hover .ww__kol > div { animation-play-state: paused; } }
     @keyframes ww-op { from { transform: translateY(0); } to { transform: translateY(-100%); } }
     @keyframes ww-neer { from { transform: translateY(-100%); } to { transform: translateY(0); } }
     .ww__tegel { margin: 0; }
@@ -572,7 +569,7 @@
         <figure class="ww__tegel"><div class="ww__beeld ww__beeld--tel ww--h"><div class="ip"><div class="ip__rand"><div class="ip__scherm"><div class="ip__eiland"></div><div class="ip__status ip__status--donker"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><span class="ip__batterij"><i></i></span></span></div><div class="ip__site" style="background:#f6efe6"><img src="assets/rc-store-shop.webp" alt="" width="1000" height="2164" fetchpriority="low" decoding="async" /></div></div></div></div></div><figcaption>Lidmaatschappen</figcaption></figure>
       </div></div>
       <div class="ww__kol ww__kol--4"><div class="ww__band">
-        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--tel ww--f"><div class="ip"><div class="ip__rand"><div class="ip__scherm"><div class="ip__eiland"></div><div class="ip__status ip__status--donker"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><span class="ip__batterij"><i></i></span></span></div><div class="ip__site" style="background:#f6f1e9"><img src="assets/via-app-3-v2.webp" alt="" width="780" height="1560" fetchpriority="low" decoding="async" /></div></div></div></div></div><figcaption>Zoeken op de kaart</figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--tel ww--f"><div class="ip"><div class="ip__rand"><div class="ip__scherm"><div class="ip__eiland"></div><div class="ip__status ip__status--donker"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><span class="ip__batterij"><i></i></span></span></div><div class="ip__site" style="background:#f6f1e9"><img src="assets/via-app-3-v2.webp" alt="" width="780" height="1560" fetchpriority="low" decoding="async" /></div></div></div></div></div><figcaption>Zoeken op de kaart in de app</figcaption></figure>
         <figure class="ww__tegel"><div class="ww__beeld ww__beeld--web ww--c"><div class="mac"><div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">zekerwonenfondsen.nl</span></div><img src="assets/case/zw-projecten.webp" alt="" width="1400" height="875" fetchpriority="low" decoding="async" style="object-position:center top" /></div></div><figcaption>Projecten</figcaption></figure>
         <figure class="ww__tegel"><div class="ww__beeld ww__beeld--web ww--b"><div class="mac"><div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">cs-cleaningservice.nl</span></div><img src="assets/case/cs-offerte.webp" alt="" width="1400" height="875" fetchpriority="low" decoding="async" style="object-position:center top" /></div></div><figcaption>Offerte-aanvraag</figcaption></figure>
       </div></div>
@@ -650,7 +647,7 @@
         <div class="case-tabs" data-case="via">
           <div class="case-tab active" data-panel="Zoeken op de kaart" data-panel-type="via-kaart">
             <div class="case-tab__label">Zoeken op de kaart, op website en app</div>
-            <div class="case-tab__body"><p>Interactieve kaart van Spanje met elk project als prijsspeld, op de website en in de app dezelfde kaart. Uitgezoomd zie je per regio hoeveel projecten er zijn, ingezoomd de prijs per project. Tik op een speld en je staat op de projectpagina. Zelfde filters als de lijst (plaats, budget, slaapkamers) en met &eacute;&eacute;n knop wisselen tussen lijst en kaart. De kaart is ook de ingang vanaf de homepage, het menu en de footer, zodat bezoekers er vanzelf terechtkomen.</p></div>
+            <div class="case-tab__body"><p>Interactieve kaart van Spanje met elk project als prijsspeld, op de website en in de app dezelfde kaart. Uitgezoomd zie je per regio hoeveel projecten er zijn, ingezoomd de prijs per project. Tik op een speld en je staat op de projectpagina. Zelfde filters als de lijst (plaats, budget, slaapkamers) en met één knop wisselen tussen lijst en kaart. De kaart is ook de ingang vanaf de homepage, het menu en de footer, zodat bezoekers er vanzelf terechtkomen.</p></div>
           </div>
           <div class="case-tab" data-panel="Pipedrive" data-panel-type="pipeline">
             <div class="case-tab__label">Van lead tot deal gesloten</div>
@@ -666,7 +663,7 @@
           </div>
           <div class="case-tab" data-panel="VIA Vastgoed app" data-panel-type="via-app">
             <div class="case-tab__label">App in de App Store en op Google Play</div>
-            <div class="case-tab__body"><p>Eigen app voor iPhone en Android, gebouwd op dezelfde data als de website. E&eacute;n bron, geen dubbel beheer. Live aanbod met prijs, betaalschema en verwacht rendement per project. Digitale adviseur: kopers stellen hun vraag en zien direct welke woningen bij hun budget passen. Budgetcalculator en zoeken op de kaart met prijsspelden. Inloggen met Google of Apple. Door Apple en Google goedgekeurd en live in beide stores.</p></div>
+            <div class="case-tab__body"><p>Eigen app voor iPhone en Android, gebouwd op dezelfde data als de website. Eén bron, geen dubbel beheer. Live aanbod met prijs, betaalschema en verwacht rendement per project. Digitale adviseur: kopers stellen hun vraag en zien direct welke woningen bij hun budget passen. Budgetcalculator en zoeken op de kaart met prijsspelden. Inloggen met Google of Apple. Door Apple en Google goedgekeurd en live in beide stores.</p></div>
           </div>
         </div>
         <div class="case__panel via-kaart-active" data-case-panel="via">
@@ -1195,19 +1192,6 @@
   </footer>
 
   <script src="js/main.js?v=97c5c99e"></script>
-  <script>
-    /* ---------- Hero video: ensure autoplay loop ---------- */
-    (function () {
-      var v = document.querySelector(".phero-media video");
-      if (!v) return;
-      v.muted = true;
-      var tryPlay = function () { var p = v.play(); if (p && p.catch) p.catch(function(){}); };
-      tryPlay();
-      v.addEventListener("loadeddata", tryPlay);
-      v.addEventListener("canplay", tryPlay);
-      document.addEventListener("visibilitychange", function () { if (!document.hidden) tryPlay(); });
-    })();
-  </script>
   <script>
     /* ---------- Case deliverable tabs (per case) ---------- */
     document.querySelectorAll(".case-tabs").forEach(function (group) {

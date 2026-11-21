@@ -44,7 +44,7 @@ Wat we bouwden
 
 Zoeken op de kaart, op website en app
 
-Interactieve kaart van Spanje met elk project als prijsspeld, op de website en in de app dezelfde kaart. Uitgezoomd zie je per regio hoeveel projecten er zijn, ingezoomd de prijs per project. Tik op een speld en je staat op de projectpagina. Zelfde filters als de lijst (plaats, budget, slaapkamers) en met &eacute;&eacute;n knop wisselen tussen lijst en kaart. De kaart is ook de ingang vanaf de homepage, het menu en de footer, zodat bezoekers er vanzelf terechtkomen.
+Interactieve kaart van Spanje met elk project als prijsspeld, op de website en in de app dezelfde kaart. Uitgezoomd zie je per regio hoeveel projecten er zijn, ingezoomd de prijs per project. Tik op een speld en je staat op de projectpagina. Zelfde filters als de lijst (plaats, budget, slaapkamers) en met één knop wisselen tussen lijst en kaart. De kaart is ook de ingang vanaf de homepage, het menu en de footer, zodat bezoekers er vanzelf terechtkomen.
 
 Van lead tot deal gesloten
 
@@ -60,7 +60,7 @@ Rekentool op maat, met de kosten en belastingen per Spaanse regio erin. De koper
 
 App in de App Store en op Google Play
 
-Eigen app voor iPhone en Android, gebouwd op dezelfde data als de website. E&eacute;n bron, geen dubbel beheer. Live aanbod met prijs, betaalschema en verwacht rendement per project. Digitale adviseur: kopers stellen hun vraag en zien direct welke woningen bij hun budget passen. Budgetcalculator en zoeken op de kaart met prijsspelden. Inloggen met Google of Apple. Door Apple en Google goedgekeurd en live in beide stores.
+Eigen app voor iPhone en Android, gebouwd op dezelfde data als de website. Eén bron, geen dubbel beheer. Live aanbod met prijs, betaalschema en verwacht rendement per project. Digitale adviseur: kopers stellen hun vraag en zien direct welke woningen bij hun budget passen. Budgetcalculator en zoeken op de kaart met prijsspelden. Inloggen met Google of Apple. Door Apple en Google goedgekeurd en live in beide stores.
 
 01 Invoer en instellingen
 
