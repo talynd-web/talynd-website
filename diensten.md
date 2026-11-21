@@ -42,41 +42,45 @@ Je team krijgt training en alles op papier. Het systeem is van jou en je beheert
 
 Wat wij bouwen
 
-## Vier voor meer aanvragen, vier zodat elke aanvraag wordt opgepakt. Los te nemen of als één systeem.
+## Acht bouwstenen waarmee we je marketing en sales automatiseren, los of als één samenhangend systeem.
 
 Veeg voor meer
 
+### Marketing
+
 Elke maandag zie je welke posts bij je concurrenten beter lopen dan normaal. Daar haalt je team de onderwerpen uit.
 
-### Content op data
+#### Content op data
 
 We kijken hoe je team nu posts maakt en bouwen die werkwijze om. Sneller klaar en mooier, in jullie eigen huisstijl.
 
-### Posts sneller en mooier
+#### Posts sneller en mooier
 
 Advertenties en reels op basis van wat in jouw markt werkt. In varianten, zodat je ziet welke het best loopt.
 
-### Advertenties en video
+#### Advertenties en video
 
 Een site die je team zelf bijwerkt en een eigen app in de stores. Goed te vinden in Google en door AI-assistenten.
 
-### Website en app
+#### Website en app
+
+### Sales
 
 Lijsten met de bedrijven die je echt wil spreken. Elk contact is nagekeken, en daarna draait je salesteam ze zelf.
 
-### Leadlijsten
+#### Leadlijsten
 
 Mail, WhatsApp en een beltaak gaan vanzelf de deur uit. Geen aanvraag blijft liggen.
 
-### Opvolging na elke aanvraag
+#### Opvolging na elke aanvraag
 
 Je CRM ingericht en gekoppeld aan je website, mail en advertenties. Zo kloppen je rapportages.
 
-### Pipedrive en koppelingen
+#### Pipedrive en koppelingen
 
 Een rekentool op jouw eigen cijfers. Voor een prijsopgave, een rendement of je eigen rekenmodel.
 
-### Rekentool op maat
+#### Rekentool op maat
 
 Wat klanten zeggen
 
