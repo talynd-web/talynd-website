@@ -373,6 +373,36 @@
     .rc-app-dots { display: flex; gap: 7px; }
     .rc-app-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(90,50,30,0.28); cursor: pointer; transition: background 0.3s ease, width 0.3s ease; }
     .rc-app-dot.active { background: #a24b32; width: 18px; border-radius: 4px; }
+    /* ---- Werkwand onder de kop (22-11) ---- */
+    .ww { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; height: clamp(560px, 46vw, 680px); margin-top: 16px; overflow: hidden;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 7%, #000 88%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 7%, #000 88%, transparent 100%); }
+    .ww__kol { min-width: 0; }
+    .ww__band { display: flex; flex-direction: column; gap: 18px; padding-bottom: 18px; }
+    .ww.is-loopt .ww__kol > div { animation: ww-op var(--ww-duur, 70s) linear infinite; }
+    .ww.is-loopt .ww__kol--2 > div, .ww.is-loopt .ww__kol--4 > div { animation-name: ww-neer; }
+    .ww.is-loopt:hover .ww__kol > div { animation-play-state: paused; }
+    @keyframes ww-op { from { transform: translateY(0); } to { transform: translateY(-100%); } }
+    @keyframes ww-neer { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+    .ww__tegel { margin: 0; }
+    .ww__beeld { position: relative; overflow: hidden; border-radius: 16px; }
+    .ww__beeld--tel { aspect-ratio: 5 / 6; }
+    .ww__beeld--tel .ip { width: 58%; bottom: -19%; }
+    .ww__beeld--tel .ip__site img { width: 100%; height: auto; }
+    .ww__beeld--web { aspect-ratio: 5 / 4; display: grid; place-items: center; padding: 0 7%; }
+    .ww__beeld--web .mac img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+    .ww__beeld--reel { aspect-ratio: 9 / 16; background: #f3f5f8; }
+    .ww__beeld--reel video { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .ww--b { background: linear-gradient(150deg, #cfe9e6, #a9d6d0); }
+    .ww--c { background: linear-gradient(150deg, #d7e3f7, #b9ccef); }
+    .ww--e { background: linear-gradient(150deg, #fce9d0, #f3d2a8); }
+    .ww--f { background: linear-gradient(150deg, #e7eaef, #cdd4de); }
+    .ww--g { background: linear-gradient(150deg, #e9e3fb, #d3c8f5); }
+    .ww--h { background: linear-gradient(150deg, #f6e1d9, #ecc5b6); }
+    .ww__tegel figcaption { display: flex; justify-content: space-between; gap: 10px; padding: 9px 4px 0; font-size: 13px; line-height: 1.3; color: var(--gray-5); }
+    .ww__tegel figcaption b { font-weight: 500; color: var(--black); }
+    @media (max-width: 1000px) { .ww { grid-template-columns: repeat(3, minmax(0, 1fr)); } .ww__kol--4 { display: none; } }
+    @media (max-width: 600px) { .ww { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; height: 520px; } .ww__kol--3 { display: none; } .ww__band { gap: 12px; padding-bottom: 12px; } .ww__beeld { border-radius: 12px; } .ww__tegel figcaption { font-size: 11.5px; flex-direction: column; gap: 1px; padding-top: 6px; } .ww__beeld--web .mac__titel { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .ww.is-loopt .ww__kol > div { animation: none; } }
   </style>
   <!-- Schema Markup — CollectionPage -->
   <script type="application/ld+json">
@@ -530,8 +560,31 @@
         <p class="phero__sub fade-in-up" data-delay="2">Vijf klanten, vijf systemen die nu <em>zonder ons</em> draaien.</p>
       </div>
     </header>
-    <div class="phero-media">
-      <video src="assets/hero-video.mp4" poster="assets/poster-portfolio.webp" autoplay muted loop playsinline preload="auto"></video>
+    <div class="ww" aria-hidden="true">
+      <div class="ww__kol ww__kol--1"><div class="ww__band">
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--tel ww--e"><div class="ip"><div class="ip__rand"><div class="ip__scherm"><div class="ip__eiland"></div><div class="ip__status ip__status--donker"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><span class="ip__batterij"><i></i></span></span></div><div class="ip__site" style="background:#f6f1e9"><img src="assets/via-app-1-v2.webp" alt="" width="780" height="1560" fetchpriority="low" decoding="async" /></div></div></div></div></div><figcaption><b>App</b><span>VIA Vastgoed</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--web ww--c"><div class="mac"><div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">zekerwonenfondsen.nl</span></div><img src="assets/case/zw-home-2.webp" alt="" width="1400" height="875" fetchpriority="low" decoding="async" style="object-position:center top" /></div></div><figcaption><b>Website</b><span>Zeker Wonen Fondsen</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--tel ww--h"><div class="ip"><div class="ip__rand"><div class="ip__scherm"><div class="ip__eiland"></div><div class="ip__status ip__status--licht"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><span class="ip__batterij"><i></i></span></span></div><div class="ip__site" style="background:#a9492f"><img src="assets/rc-store-planning.webp" alt="" width="1000" height="2164" fetchpriority="low" decoding="async" /></div></div></div></div></div><figcaption><b>Boekingsapp</b><span>Reformed Collective</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--web ww--f"><div class="mac"><div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">ynsspain.com</span></div><img src="assets/yns-slide-1.webp" alt="" width="1400" height="763" fetchpriority="low" decoding="async" style="object-position:center top" /></div></div><figcaption><b>Website</b><span>YNS Spain</span></figcaption></figure>
+      </div></div>
+      <div class="ww__kol ww__kol--2"><div class="ww__band">
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--web ww--b"><div class="mac"><div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">viavastgoed.com</span></div><img src="assets/via-kaart-web.webp" alt="" width="1600" height="911" fetchpriority="low" decoding="async" style="object-position:center top" /></div></div><figcaption><b>Projectkaart</b><span>VIA Vastgoed</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--tel ww--e"><div class="ip"><div class="ip__rand"><div class="ip__scherm"><div class="ip__eiland"></div><div class="ip__status ip__status--donker"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><span class="ip__batterij"><i></i></span></span></div><div class="ip__site" style="background:#f3eee5"><img src="assets/wb-rekentool-scherm2.webp" alt="" width="786" height="1688" fetchpriority="low" decoding="async" /></div></div></div></div></div><figcaption><b>Rekentool</b><span>VIA Vastgoed</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--reel"><video src="assets/pf-reel-zw.mp4" poster="assets/pf-reel-zw-poster.webp" muted loop playsinline preload="none" data-ww-video></video></div><figcaption><b>Reel</b><span>Zeker Wonen Fondsen</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--web ww--g"><div class="mac"><div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">cs-cleaningservice.nl</span></div><img src="assets/case/cs-home.webp" alt="" width="1400" height="875" fetchpriority="low" decoding="async" style="object-position:center top" /></div></div><figcaption><b>Website</b><span>CS Cleaning</span></figcaption></figure>
+      </div></div>
+      <div class="ww__kol ww__kol--3"><div class="ww__band">
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--web ww--h"><div class="mac"><div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">reformedcollective.nl</span></div><img src="assets/portfolio-reformed.webp" alt="" width="1200" height="653" fetchpriority="low" decoding="async" style="object-position:center top" /></div></div><figcaption><b>Website</b><span>Reformed Collective</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--tel ww--c"><div class="ip"><div class="ip__rand"><div class="ip__scherm"><div class="ip__eiland"></div><div class="ip__status ip__status--donker"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><span class="ip__batterij"><i></i></span></span></div><div class="ip__site" style="background:#f6f1e9"><img src="assets/via-app-2-v2.webp" alt="" width="780" height="1560" fetchpriority="low" decoding="async" /></div></div></div></div></div><figcaption><b>Digitale adviseur</b><span>VIA Vastgoed</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--web ww--b"><div class="mac"><div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">zekerwonenfondsen.nl</span></div><img src="assets/case/zw-rekentool.webp" alt="" width="1400" height="875" fetchpriority="low" decoding="async" style="object-position:center top" /></div></div><figcaption><b>Rekentool</b><span>Zeker Wonen Fondsen</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--tel ww--g"><div class="ip"><div class="ip__rand"><div class="ip__scherm"><div class="ip__eiland"></div><div class="ip__status ip__status--donker"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><span class="ip__batterij"><i></i></span></span></div><div class="ip__site" style="background:#f6efe6"><img src="assets/rc-store-shop.webp" alt="" width="1000" height="2164" fetchpriority="low" decoding="async" /></div></div></div></div></div><figcaption><b>Lidmaatschappen</b><span>Reformed Collective</span></figcaption></figure>
+      </div></div>
+      <div class="ww__kol ww__kol--4"><div class="ww__band">
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--web ww--c"><div class="mac"><div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">ynsspain.com</span></div><img src="assets/yns-calc.webp" alt="" width="1200" height="1328" fetchpriority="low" decoding="async" style="object-position:center top" /></div></div><figcaption><b>Rekentool</b><span>YNS Spain</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--tel ww--f"><div class="ip"><div class="ip__rand"><div class="ip__scherm"><div class="ip__eiland"></div><div class="ip__status ip__status--donker"><span>9:41</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><span class="ip__batterij"><i></i></span></span></div><div class="ip__site" style="background:#f6f1e9"><img src="assets/via-app-3-v2.webp" alt="" width="780" height="1560" fetchpriority="low" decoding="async" /></div></div></div></div></div><figcaption><b>Zoeken op de kaart</b><span>VIA Vastgoed</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--web ww--e"><div class="mac"><div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">zekerwonenfondsen.nl</span></div><img src="assets/case/zw-projecten.webp" alt="" width="1400" height="875" fetchpriority="low" decoding="async" style="object-position:center top" /></div></div><figcaption><b>Projecten</b><span>Zeker Wonen Fondsen</span></figcaption></figure>
+        <figure class="ww__tegel"><div class="ww__beeld ww__beeld--web ww--b"><div class="mac"><div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">cs-cleaningservice.nl</span></div><img src="assets/case/cs-offerte.webp" alt="" width="1400" height="875" fetchpriority="low" decoding="async" style="object-position:center top" /></div></div><figcaption><b>Offerte-aanvraag</b><span>CS Cleaning</span></figcaption></figure>
+      </div></div>
     </div>
   </div>
 
@@ -1638,6 +1691,31 @@
         });
       });
     });
+  </script>
+  <script>
+    /* ---------- Werkwand: kolommen verdubbelen en laten lopen, reel alleen in beeld ---------- */
+    (function () {
+      var wand = document.querySelector('.ww');
+      if (!wand) return;
+      var stil = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!stil) {
+        wand.querySelectorAll('.ww__kol').forEach(function (kol) {
+          var band = kol.querySelector('.ww__band');
+          kol.appendChild(band.cloneNode(true));
+        });
+        wand.classList.add('is-loopt');
+      }
+      var films = wand.querySelectorAll('[data-ww-video]');
+      if (!('IntersectionObserver' in window)) return;
+      var io = new IntersectionObserver(function (items) {
+        items.forEach(function (it) {
+          var v = it.target;
+          if (it.isIntersecting && !stil) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          else v.pause();
+        });
+      }, { threshold: 0.2 });
+      films.forEach(function (v) { io.observe(v); });
+    })();
   </script>
 </body>
 </html>
