@@ -42,7 +42,7 @@ Je team krijgt training en alles op papier. Het systeem is van jou en je beheert
 
 Wat wij bouwen
 
-## Acht bouwstenen waarmee we je marketing en sales sneller laten draaien.
+## Acht bouwstenen waarmee we je marketing en sales meer laten opleveren.
 
 Veeg voor meer
 
