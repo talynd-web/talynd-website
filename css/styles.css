@@ -677,7 +677,34 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .build-item__pijl svg { width: 16px; height: 16px; display: block; }
 .build-item:focus-visible { outline: 2px solid var(--dark-teal); outline-offset: 6px; }
 
-@media (min-width: 1001px) { .wm--diensten { width: 262px; } }
+/* Dienstenblok v3, indeling (21-11): kop links en tekst rechts, de vier systemen in één rij,
+   de butler staat tussen kop en tekst en de kaarten schuiven over zijn onderkant */
+.panel.panel--teal { padding-top: clamp(52px, 5vw, 68px); padding-bottom: clamp(52px, 5vw, 68px); }
+.panel--teal .build { display: block; }
+.panel--teal .build__intro { position: relative; display: grid; grid-template-columns: 1fr minmax(0, 400px); column-gap: 48px; align-items: end; padding-bottom: clamp(40px, 4vw, 56px); }
+.panel--teal .build__intro h2 { margin: 0; align-self: start; }
+.panel--teal .build__tekst .build__sub { max-width: none; margin-bottom: 6px; }
+.panel--teal .build__tekst .build__dienst { margin-bottom: 16px; }
+.build__intro .wm--diensten { left: auto; right: calc(400px + 48px + clamp(24px, 5vw, 70px)); bottom: 0; width: clamp(140px, 12vw, 172px); }
+.panel--teal .build .build__grid { position: relative; z-index: 1; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px clamp(18px, 2vw, 28px); }
+@media (max-width: 1240px) { .build__intro .wm--diensten { right: calc(400px + 36px); width: 132px; } }
+@media (max-width: 1150px) and (min-width: 1100px) { .panel--teal .build__intro { grid-template-columns: 1fr minmax(0, 360px); } .build__intro .wm--diensten { right: calc(360px + 30px); width: 120px; } }
+@media (max-width: 1099px) {
+  .panel--teal .build .build__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 26px; }
+}
+@media (max-width: 1099px) {
+  .panel--teal .build__intro { grid-template-columns: minmax(0, 1fr) 132px; column-gap: 20px; padding-bottom: 32px; }
+  .panel--teal .build__intro h2 { grid-column: 1 / -1; margin-bottom: 14px; }
+  .build__intro .wm--diensten { right: 0; bottom: 0; width: 132px; }
+}
+@media (max-width: 600px) {
+  .panel--teal .build__intro { grid-template-columns: minmax(0, 1fr) 92px; column-gap: 12px; padding-bottom: 26px; }
+  .build__intro .wm--diensten { right: -4px; bottom: 0; width: 100px; }
+  /* Telefoon: de vier systemen als veegrij, de volgende kaart kijkt erachter vandaan */
+  .panel--teal .build .build__grid { display: flex; gap: 14px; margin: 0 -22px; padding: 0 22px 6px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 22px; scrollbar-width: none; }
+  .panel--teal .build .build__grid::-webkit-scrollbar { display: none; }
+  .panel--teal .build .build__grid > .build-item { flex: 0 0 84%; scroll-snap-align: start; }
+}
 
 .ms { container-type: inline-size; position: relative; aspect-ratio: 16 / 10; border-radius: 14px; background: var(--white); overflow: hidden;
   box-shadow: 0 0 0 1px rgba(10,73,73,0.07), 0 20px 36px -24px rgba(10,73,73,0.5);
@@ -794,8 +821,6 @@ html.reveal-fallback .ms * { animation: none !important; }
   .wm--cta, .wm--cta-sub { width: 56px; left: 50%; right: auto; transform: translateX(-50%); top: 26px; bottom: auto; }
   .portfolio-sec:has(.wm--portfolio) { padding-top: 124px; }
   .wm--portfolio { width: 64px; left: 50%; right: auto; transform: translateX(-50%); top: 34px; }
-  .panel--teal { padding-bottom: 124px; }
-  .wm--diensten { left: auto; right: 16px; bottom: -1px; width: 112px; }
   .val-item--teal:has(.wm--tealbutler) { padding-bottom: 124px; }
   .wm--tealbutler { right: 16px; width: 104px; }
   .wm--legal { width: 72px; right: 12px; top: 80px; }

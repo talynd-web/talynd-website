@@ -28,11 +28,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=fdc15a63">
+  <link rel="stylesheet" href="css/styles.css?v=4161c24b">
   <style>
     /* ---- WAT WIJ BOUWEN (cambio-style split: intro + feature grid) ---- */
-    .build { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(40px, 5vw, 96px); align-items: start; }
-    .build__intro { display: flex; flex-direction: column; align-items: flex-start; }
     .build__intro .eyebrow { color: var(--gray-5); margin-bottom: 18px; }
     .build__intro h2 { font-weight: 400; color: var(--black); margin-bottom: 18px; }
     .build__intro h2 em { font-style: normal; font-weight: 400; color: inherit; }
@@ -98,11 +96,7 @@
     }
     .build-item p { font-size: 14.5px; line-height: 1.55; color: var(--gray-6); }
     @media (max-width: 1000px) {
-      .build { grid-template-columns: 1fr; gap: clamp(36px, 5vw, 52px); }
       .build__sub { max-width: none; }
-    }
-    @media (max-width: 600px) {
-      .build__grid { grid-template-columns: 1fr; gap: 30px; }
     }
 
     /* ---- PORTFOLIO (cream, Cambio-rhythm) ---- */
@@ -349,19 +343,21 @@
   <section class="section" style="padding-bottom: clamp(36px, 4vw, 48px);">
     <div class="container">
       <div class="panel panel--teal">
-        <div class="wm wm--diensten" aria-hidden="true">
+        <div class="build">
+          <div class="build__intro">
+            <h2 class="fade-in-up">Jouw digitale butler</h2>
+            <div class="build__tekst fade-in-up" data-delay="1">
+              <p class="build__sub">Vier systemen die doen wat jij nu met de hand doet.</p>
+              <p class="build__dienst">Tot uw dienst.</p>
+              <a href="diensten" class="build__link">Alle diensten bekijken
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+            <div class="wm wm--diensten" aria-hidden="true">
   <!-- include:butler-stil -->
 <svg class="wm__svg" viewBox="0 0 400 430" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="wm__v5 wm__lijn" d="M32 430 L32 342 Q32 282 96 264 L158 244 L242 244 L304 264 Q368 282 368 342 L368 430 Z"/><path class="wm__v4 wm__lijn" d="M156 246 L200 336 L244 246 L252 430 L148 430 Z"/><path class="wm__v6 wm__lijn" d="M156 245 L112 266 L150 326 L134 344 L196 430 L200 336 Z"/><path class="wm__v6 wm__lijn" d="M244 245 L288 266 L250 326 L266 344 L204 430 L200 336 Z"/><path class="wm__v2 wm__lijn" d="M168 186 L168 240 Q200 258 232 240 L232 186 Z"/><path class="wm__v1 wm__lijn" d="M128 112 Q116 112 116 127 Q116 144 131 144 Z"/><path class="wm__v1 wm__lijn" d="M272 112 Q284 112 284 127 Q284 144 269 144 Z"/><path class="wm__v1 wm__lijn" d="M128 96 Q128 34 200 34 Q272 34 272 96 L272 130 Q272 204 200 204 Q128 204 128 130 Z"/><path class="wm__v5 wm__lijn" d="M126 112 Q118 26 204 24 Q286 26 274 112 Q266 82 234 66 Q190 88 146 78 Q132 90 126 112 Z"/><path class="wm__v5 wm__lijn" d="M200 156 Q186 146 170 152 Q158 158 150 150 Q156 170 176 168 Q192 166 200 160 Q208 166 224 168 Q244 170 250 150 Q242 158 230 152 Q214 146 200 156 Z"/><path class="wm__oog" d="M154 120 Q166 128 178 120 M222 120 Q234 128 246 120"/><g transform="translate(151.4 204) scale(0.19)"><path class="wm__v3 wm__lijn" d="M256 256 L256 102 A154 154 0 0 1 410 256 Z"/><path class="wm__v3 wm__lijn" d="M256 256 L256 410 A154 154 0 0 1 102 256 Z"/><rect class="wm__v1 wm__lijn" x="154" y="154" width="102" height="102"/><rect class="wm__v1 wm__lijn" x="256" y="256" width="102" height="102"/></g></svg>
   <!-- /include:butler-stil -->
-        </div>
-        <div class="build">
-          <div class="build__intro fade-in-up">
-            <h2>Jouw digitale butler</h2>
-            <p class="build__sub">Vier systemen die doen wat jij nu met de hand doet.</p>
-            <p class="build__dienst">Tot uw dienst.</p>
-            <a href="diensten" class="build__link">Alle diensten bekijken
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+            </div>
           </div>
           <div class="build__grid">
             <a class="build-item fade-in-up" href="diensten#wat-wij-bouwen">
@@ -383,7 +379,7 @@
                 <i class="ms__k">2</i><span>Installatiebedrijf</span><span class="ms__b">Directeur</span><span class="ms__cel--ok">Gebeld</span>
                 <i class="ms__k">3</i><span>Adviesbureau</span><span class="ms__b">Eigenaar</span><span class="ms__cel--ok">Gebeld</span>
                 <i class="ms__k">4</i><span>Groothandel</span><span class="ms__b">Inkoper</span><span class="ms__cel--nu">Bellen</span>
-                <i class="ms__k">5</i><span class="ms__vaag">Bouwbedrijf</span><span class="ms__b ms__vaag">Directeur</span><span></span>
+                <i class="ms__k">5</i><span class="ms__vaag">Bouwbedrijf</span><span class="ms__b ms__vaag">Directeur</span><span class="ms__vaag">Ingepland</span>
               </div></div>
               <div class="build-item__kop"><h3>Leads en opvolging</h3><span class="build-item__pijl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div>
               <p>Lijsten met de bedrijven die je echt wil spreken, met contactgegevens die kloppen. Niemand blijft liggen.</p>
