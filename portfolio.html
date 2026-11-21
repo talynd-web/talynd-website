@@ -395,29 +395,6 @@
     @media (max-width: 1000px) { .ww { grid-template-columns: repeat(3, minmax(0, 1fr)); } .ww__kol--4 { display: none; } }
     @media (max-width: 600px) { .ww { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; height: 520px; } .ww__kol--3 { display: none; } .ww__band { gap: 12px; padding-bottom: 12px; } .ww__beeld { border-radius: 12px; } .ww__tegel figcaption { font-size: 12px; padding-top: 6px; } .ww__beeld--web .mac__titel { display: none; } }
     @media (prefers-reduced-motion: reduce) { .ww.is-loopt .ww__kol > div { animation: none; } }
-    /* ---- Ook gebouwd, zonder klantnaam (22-11) ---- */
-    .og { padding: var(--section-y) 0; border-top: 1px solid var(--gray-2); }
-    .og__head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 34px; }
-    .og__titel { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 3.6vw, 46px); line-height: 1; letter-spacing: -0.015em; color: var(--black); }
-    .og__sub { font-size: 15px; color: var(--gray-5); }
-    .og__rij { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-    .og__kaart { min-width: 0; }
-    .og__beeld { position: relative; aspect-ratio: 10 / 9; border-radius: 16px; overflow: hidden; }
-    .og__beeld .dsol-vis--ip .ip { width: 50%; bottom: -24%; }
-    .og--b { background: linear-gradient(150deg, #cfe9e6, #a9d6d0); }
-    .og--c { background: linear-gradient(150deg, #d7e3f7, #b9ccef); }
-    .og--e { background: linear-gradient(150deg, #fce9d0, #f3d2a8); }
-    .og__kop { margin: 18px 4px 6px; font-family: var(--font-display); font-weight: 400; font-size: clamp(20px, 1.8vw, 24px); line-height: 1.2; letter-spacing: -0.01em; color: var(--black); }
-    .og__tekst { margin: 0 4px; font-size: 15px; line-height: 1.6; color: var(--gray-6); }
-    @media (max-width: 1000px) { .og__rij { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 760px) {
-      .og__rij { display: flex; gap: 14px; overflow-x: auto; margin: 0 calc(-1 * var(--pad-x)); padding: 0 var(--pad-x) 6px; scroll-snap-type: x mandatory; scroll-padding-left: var(--pad-x); scrollbar-width: none; }
-      .og__rij::-webkit-scrollbar { display: none; }
-      .og__kaart { flex: 0 0 82%; scroll-snap-align: start; }
-      .og__rij.fade-in-up { opacity: 1; transform: none; }
-      .og__head { margin-bottom: 22px; }
-      .og__tekst { font-size: 14px; }
-    }
   </style>
   <!-- Schema Markup — CollectionPage -->
   <script type="application/ld+json">
@@ -1011,74 +988,7 @@
     </div>
   </section>
 
-    <!-- ============ OOK GEBOUWD (zonder klantnaam) ============ -->
-  <section class="og" id="ook-gebouwd">
-    <div class="container">
-      <div class="og__head fade-in-up">
-        <h2 class="og__titel">Ook gebouwd.</h2>
-        <p class="og__sub">Niet elke klant staat met naam op onze site.</p>
-      </div>
-      <div class="og__rij fade-in-up">
-        <article class="og__kaart">
-          <div class="og__beeld og--c">
-            <div class="dsol-vis dsol-vis--mac" aria-hidden="true">
-              <div class="mac od">
-                <div class="mac__balk"><span class="mac__lichten"><i></i><i></i><i></i></span><span class="mac__titel">Outliers deze week</span></div>
-                <div class="od__inhoud">
-                  <div class="od__kop"><span>Post</span><span>Views</span><span>Outlier-score</span></div>
-                  <div class="od__rij is-open"><span class="od__thumb od__thumb--1"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="#fff"/></svg></span><span class="od__wie"><b>Concurrent A</b>Reel</span><span class="od__views">48k</span><span class="od__score"><i style="--w:100%"></i><b>4,2&times;</b></span><span class="od__link"><svg viewBox="0 0 24 24"><path d="M8 16L16 8M9 8h7v7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-                  <div class="od__rij"><span class="od__thumb od__thumb--2"></span><span class="od__wie"><b>Concurrent B</b>Carrousel</span><span class="od__views">31k</span><span class="od__score"><i style="--w:67%"></i><b>2,8&times;</b></span><span class="od__link"><svg viewBox="0 0 24 24"><path d="M8 16L16 8M9 8h7v7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-                  <div class="od__rij"><span class="od__thumb od__thumb--3"></span><span class="od__wie"><b>Concurrent C</b>Foto</span><span class="od__views">19k</span><span class="od__score"><i style="--w:45%"></i><b>1,9&times;</b></span><span class="od__link"><svg viewBox="0 0 24 24"><path d="M8 16L16 8M9 8h7v7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-                  <div class="od__rij"><span class="od__thumb od__thumb--4"></span><span class="od__wie"><b>Concurrent A</b>Carrousel</span><span class="od__views">12k</span><span class="od__score"><i style="--w:29%"></i><b>1,2&times;</b></span><span class="od__link"><svg viewBox="0 0 24 24"><path d="M8 16L16 8M9 8h7v7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-                </div>
-              </div>
-              <div class="od__open"><span class="od__groot"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="#fff"/></svg><b>Zo plannen wij een drukke week</b></span><span class="od__les"><em>Waarom het werkt</em>Vraag in de eerste seconde, echte werkplek in beeld</span></div>
-            </div>
-          </div>
-          <h3 class="og__kop">Een marketingteam</h3>
-          <p class="og__tekst">Elke maandag zien ze welke posts bij hun concurrenten beter lopen dan normaal. Hun eigen posts maken ze nu sneller, en het team werkt er zelf mee.</p>
-        </article>
-        <article class="og__kaart">
-          <div class="og__beeld og--b">
-            <div class="dsol-vis dsol-vis--scherm" aria-hidden="true">
-              <div class="ms ms--leads" aria-hidden="true"><div class="ms__sheet">
-              <i class="ms__k ms__k--kop"></i><span class="ms__k ms__k--kop">A</span><span class="ms__k ms__k--kop ms__b">B</span><span class="ms__k ms__k--kop ms__k--c"></span>
-              <i class="ms__k">1</i><span class="ms__h">Bedrijf</span><span class="ms__h ms__b">Contact</span><span class="ms__h">Status</span>
-              <i class="ms__k">2</i><span>Installatiebedrijf</span><span class="ms__b">Directeur</span><span class="ms__cel--ok">Gebeld</span>
-              <i class="ms__k">3</i><span>Adviesbureau</span><span class="ms__b">Eigenaar</span><span class="ms__cel--ok">Gebeld</span>
-              <i class="ms__k">4</i><span>Groothandel</span><span class="ms__b">Inkoper</span><span class="ms__cel--nu">Bellen</span>
-              <i class="ms__k">5</i><span class="ms__vaag">Bouwbedrijf</span><span class="ms__b ms__vaag">Directeur</span><span class="ms__vaag">Ingepland</span>
-              </div></div>
-            </div>
-          </div>
-          <h3 class="og__kop">Een salesteam</h3>
-          <p class="og__tekst">Eigen leadlijsten in plaats van gekochte bestanden. Elk contact is nagekeken voordat er gebeld wordt, en het salesteam draait de lijsten nu zelf.</p>
-        </article>
-        <article class="og__kaart">
-          <div class="og__beeld og--e">
-            <div class="dsol-vis dsol-vis--ip" aria-hidden="true">
-              <div class="ip ip--lock">
-                <div class="ip__rand"><div class="ip__scherm">
-                  <div class="ip__status ip__status--licht"><span>8:02</span><span class="ip__iconen"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="0.8"/><rect x="5" y="5.5" width="3" height="6.5" rx="0.8"/><rect x="10" y="3" width="3" height="9" rx="0.8"/><rect x="15" y="0" width="3" height="12" rx="0.8"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l1.2-1.3A10.4 10.4 0 0 0 8 .6 10.4 10.4 0 0 0 .8 3.5L2 4.8a8.6 8.6 0 0 1 6-2.4zm0 3.6c1.3 0 2.5.5 3.4 1.3l1.2-1.3A6.7 6.7 0 0 0 8 4.2c-1.8 0-3.4.7-4.6 1.8l1.2 1.3c.9-.8 2.1-1.3 3.4-1.3zm0 3.6c-.4 0-.8.2-1.1.5L8 11.4l1.1-1.3a1.6 1.6 0 0 0-1.1-.5z"/></svg><span class="ip__batterij"><i></i></span></span></div>
-                  <span class="ip__eiland"></span>
-                  <div class="ip__lock">
-                    <span class="ip__datum">maandag 23 november</span>
-                    <span class="ip__klok">8:02</span>
-                    <div class="ip__melding"><span class="ip__app ip__app--mail"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12.5" rx="2" fill="#fff"/><path d="M3.6 7l8.4 6.2L20.4 7" fill="none" stroke="#1a7cf0" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="ip__mtekst"><span class="ip__mkop"><b>Jouw makelaar</b><i>nu</i></span><strong>3 nieuwe woningen voor je zoekprofiel</strong>Passend bij je wensen voor buurt, kamers en budget.</span></div>
-                    <div class="ip__melding"><span class="ip__app ip__app--mail"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12.5" rx="2" fill="#fff"/><path d="M3.6 7l8.4 6.2L20.4 7" fill="none" stroke="#1a7cf0" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="ip__mtekst"><span class="ip__mkop"><b>Jouw makelaar</b><i>gisteren</i></span><strong>2 nieuwe woningen voor je zoekprofiel</strong>Vandaag online gekomen, morgen te bezichtigen.</span></div>
-                  </div>
-                </div></div>
-              </div>
-            </div>
-          </div>
-          <h3 class="og__kop">Een makelaarskantoor</h3>
-          <p class="og__tekst">Elke ochtend krijgen hun klanten het nieuwe aanbod dat bij hun zoekprofiel past. De mail gaat uit naam van de makelaar.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-<!-- ============ PROCESS TIMELINE ============ -->
+  <!-- ============ PROCESS TIMELINE ============ -->
   <section class="proc">
     <div class="wm wm--proc wm--koel" aria-hidden="true">
   <!-- include:mark -->
