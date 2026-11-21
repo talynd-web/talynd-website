@@ -684,6 +684,7 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
   transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease; }
 .ms__in { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 1.2em 1.35em 0.7em; font-size: 11.5px; font-size: clamp(10.5px, 3.9cqw, 15.5px); line-height: 1.3; color: var(--black); }
 /* Marketing: drie posts naast elkaar zoals in een feed, eigen kop erop; eronder hoeveel beter dan normaal */
+.ms__kopregel { flex: none; padding-bottom: 0.75em; font-weight: 600; font-size: 1.02em; letter-spacing: -0.01em; color: var(--black); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ms__feed { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7em; }
 .ms__post { min-width: 0; min-height: 0; display: flex; flex-direction: column; gap: 0.45em; }
 .ms__beeld { position: relative; flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 0.62em; border-radius: 0.55em; }
@@ -697,18 +698,23 @@ html.reveal-fallback .fade-in-up { opacity: 1 !important; transform: none !impor
 .ms__duur { position: absolute; top: 0.55em; left: 0.62em; font-size: 0.78em; opacity: 0.8; }
 .ms__play { position: absolute; top: 0.72em; right: 0.66em; border-left: 0.56em solid var(--white); border-top: 0.34em solid transparent; border-bottom: 0.34em solid transparent; }
 .ms__teller { position: absolute; top: 0.5em; right: 0.5em; padding: 0.08em 0.45em; border-radius: 99px; font-size: 0.76em; background: rgba(4,14,31,0.08); color: var(--gray-6); }
-.ms__cijfer { font-size: 0.92em; font-weight: 500; line-height: 1.2; color: var(--gray-5); white-space: nowrap; }
-.ms__cijfer--top { font-weight: 600; color: var(--dark-teal); }
+.ms__cijfer { display: flex; flex-direction: column; font-size: 0.88em; line-height: 1.2; color: var(--gray-4); white-space: nowrap; }
+.ms__cijfer b { font-size: 1.42em; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; color: var(--gray-6); font-variant-numeric: tabular-nums; }
+.ms__cijfer--top b { color: var(--dark-teal); }
 @container (max-width: 245px) { .ms__feed { grid-template-columns: repeat(2, 1fr); } .ms__post:nth-child(3) { display: none; } }
 
-/* Leads: alleen het bedrijf en wat ermee gebeurt, in woorden */
-.ms--leads .ms__in { padding-top: 0.5em; padding-bottom: 0.5em; }
-.ms__lead { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: space-between; gap: 1em; font-size: 1.12em; }
+/* Leads: belijst voor vandaag. Eén regel springt eruit (wie je nu belt), wat al gedaan is staat rustig in grijs */
+.ms--leads .ms__in { padding-top: 0.9em; padding-bottom: 0.45em; }
+.ms__lead { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: space-between; gap: 1em; font-size: 1.08em; }
 .ms__lead + .ms__lead { border-top: 1px solid var(--gray-1); }
-.ms__lead b { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; letter-spacing: -0.01em; }
-.ms__st { flex: none; color: var(--gray-5); }
-.ms__st--klaar { color: var(--dark-teal); }
-.ms__st--nu { font-weight: 600; color: #a0521d; }
+.ms__lead b { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; letter-spacing: -0.01em; color: var(--gray-6); }
+.ms__st { flex: none; color: var(--gray-4); }
+.ms__lead--nu { flex: 1.45; margin: 0 -0.75em; padding: 0 0.75em; border-radius: 0.75em; background: var(--pale-teal); }
+.ms__lead--nu + .ms__lead { border-top: 0; }
+.ms__wie { min-width: 0; display: flex; flex-direction: column; gap: 0.15em; font-size: 0.9em; color: var(--gray-5); }
+.ms__wie b { font-size: 1.2em; font-weight: 600; color: var(--black); }
+.ms__bel { flex: none; width: 2.6em; height: 2.6em; border-radius: 50%; display: grid; place-items: center; color: var(--white); background: var(--dark-teal); box-shadow: 0 0.5em 1em -0.5em rgba(0,132,125,0.7); }
+.ms__bel svg { width: 1.1em; height: 1.1em; }
 
 .ms--bord .ms__in { padding: 1.1em; }
 .ms__kolommen { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6em; }
